@@ -1,3 +1,7 @@
+import WEAPONS from '../data/weapons';
+import { CharacterData, Weapon } from '../types';
+import { CHARACTER_TEMPLATES } from './constants';
+
 type ScalingTier = 'S' | 'A' | 'B' | 'C' | 'D';
 
 const MAX_STAT = 99;
@@ -38,4 +42,24 @@ export function calcWeaponPower(
       bonusValues.luck);
 
   return Math.round(totalPower);
+}
+
+export function getTemplateData(characterId: CharacterData['id']) {
+  const characterTemplate = CHARACTER_TEMPLATES.find((tmp) => tmp.characterId === characterId);
+
+  if (!characterTemplate) {
+    throw new Error(`Character with id: ${characterId} not found...`);
+  }
+
+  return { ...characterTemplate };
+}
+
+export function getWeaponData(weaponId: Weapon['id']) {
+  const weaponData = WEAPONS.find((wpn) => wpn.id === weaponId);
+
+  if (!weaponData) {
+    throw new Error(`Weapon with id: ${weaponId} not found...`);
+  }
+
+  return weaponData;
 }

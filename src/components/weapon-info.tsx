@@ -1,8 +1,10 @@
 import Image from 'next/image';
-import { calcWeaponPower } from '../lib/utils';
+import { calcWeaponPower, getWeaponData } from '../lib/utils';
 import { Stat, Weapon } from '../types';
 
-const WeaponInfo = ({ weaponData, stats }: { weaponData: Weapon; stats: Record<Stat, number> }) => {
+const WeaponInfo = ({ weaponId, stats }: { weaponId: Weapon['id']; stats: Record<Stat, number> }) => {
+  const weaponData = getWeaponData(weaponId);
+
   return (
     <div className="flex w-md flex-col border border-taupe-700">
       {/* Weapon info */}
@@ -33,7 +35,10 @@ const WeaponInfo = ({ weaponData, stats }: { weaponData: Weapon; stats: Record<S
             </div>
             <div className="flex flex-1">
               {Object.entries(weaponData.scaling).map(([key, value]) => (
-                <div className="flex flex-1 flex-col items-center px-2">
+                <div
+                  key={key}
+                  className="flex flex-1 flex-col items-center px-2"
+                >
                   <span className="text-sm text-taupe-400 capitalize">{key}</span>
                   <span className="text-xl">{value}</span>
                 </div>

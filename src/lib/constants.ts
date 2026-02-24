@@ -1,16 +1,17 @@
-import { Character } from '../types';
+import { CharacterTemplate } from '../types';
 
-const CHARACTERS_BASE: Record<string, Character> = {
-  GUSTAVE: {
-    id: 'gustave',
+export const CHARACTER_TEMPLATES: CharacterTemplate[] = [
+  {
+    id: 'gustave-template',
     name: 'Gustave',
+    characterId: 'gustave',
+    characterName: 'Gustave',
     imgData: {
       src: '/characters/gustave.png',
       alt: '',
       width: 40,
       height: 40
     },
-    level: 0,
     stats: {
       vitality: 0,
       might: 0,
@@ -18,33 +19,10 @@ const CHARACTERS_BASE: Record<string, Character> = {
       defense: 0,
       luck: 0
     },
+    level: 0,
     weaponId: 'noahram',
-    abilities: [],
-    pictos: [],
-    lumina: []
-  },
-  LUNE: {
-    id: 'lune',
-    name: 'Lune',
-    imgData: {
-      src: '/characters/lune.png',
-      alt: '',
-      width: 40,
-      height: 40
-    },
-    level: 0,
-    stats: {
-      vitality: 0,
-      might: 0,
-      agility: 0,
-      defense: 0,
-      luck: 0
-    },
-    weaponId: 'lunerim',
-    abilities: [],
-    pictos: [],
-    lumina: []
+    abilitiesIds: ['lumiere-assault', 'overcharge'],
+    pictosIds: ['', '', ''],
+    luminasIds: []
   }
-};
-
-export default CHARACTERS_BASE;
+];

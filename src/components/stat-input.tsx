@@ -1,15 +1,15 @@
 import { ChangeEvent, useId } from 'react';
-import { useCharacters } from '../context/character-context';
-import { Character, Stat } from '../types';
+import { useBuild } from '../context/build-context';
+import { Stat } from '../types';
 
-const StatInput = ({ stat, character }: { stat: Stat; character: Character }) => {
+const StatInput = ({ statId, value }: { statId: Stat; value: number }) => {
   const inputId = useId();
 
-  const { changeStat } = useCharacters();
+  const { changeStat } = useBuild();
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
     const newValue = Number(event.target.value);
-    changeStat(stat, newValue, character.id);
+    changeStat(statId, newValue);
   }
 
   return (
@@ -18,12 +18,12 @@ const StatInput = ({ stat, character }: { stat: Stat; character: Character }) =>
         htmlFor={inputId}
         className="capitalize"
       >
-        {stat}
+        {statId}
       </label>
       <input
         id={inputId}
         type="number"
-        value={character.stats[stat]}
+        value={value}
         onChange={handleChange}
         className="border border-taupe-700 text-center"
       />

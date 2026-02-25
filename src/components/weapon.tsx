@@ -1,15 +1,24 @@
 import Image from 'next/image';
 import { calcWeaponPower, getWeaponData } from '../lib/utils';
-import { Stat, Weapon } from '../types';
+import { useModal } from '../context/modal-context';
+import { useBuild } from '../context/build-context';
 
-const WeaponInfo = ({ weaponId, stats }: { weaponId: Weapon['id']; stats: Record<Stat, number> }) => {
+const Weapon = () => {
+  const { build } = useBuild();
+  const { weaponId, attributes } = build;
+
+  const { openModal } = useModal();
+
   const weaponData = getWeaponData(weaponId);
 
   return (
     <div className="flex w-md flex-col border border-taupe-700">
       {/* Weapon info */}
       <div className="flex items-center">
-        <div className="size-32">
+        <div
+          onClick={() => openModal('weapons')}
+          className="size-32 hover:cursor-pointer"
+        >
           <Image
             src={weaponData.imgData.src}
             alt={weaponData.imgData.alt}
@@ -27,7 +36,7 @@ const WeaponInfo = ({ weaponId, stats }: { weaponId: Weapon['id']; stats: Record
           <div className="flex justify-between">
             <div className="flex flex-1 flex-col items-center">
               <span className="text-sm text-taupe-400">Power</span>
-              <span className="text-xl">{calcWeaponPower(weaponData.basePower, weaponData.scaling, stats)}</span>
+              <span className="text-xl">{calcWeaponPower(weaponData.basePower, weaponData.scaling, attributes)}</span>
             </div>
             <div className="flex flex-1 flex-col items-center">
               <span className="text-sm text-taupe-400">Element</span>
@@ -67,4 +76,4 @@ const WeaponInfo = ({ weaponId, stats }: { weaponId: Weapon['id']; stats: Record
   );
 };
 
-export default WeaponInfo;
+export default Weapon;

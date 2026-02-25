@@ -1,4 +1,5 @@
 import { Activity, createContext, useContext, useState } from 'react';
+import WeaponSelector from '../components/modals/weapon-selector';
 
 export const Modal = ({
   isOpen,
@@ -31,7 +32,7 @@ export const Modal = ({
 };
 
 const DEFAULT_MODAL = {
-  pickCharacter: false
+  weapons: false
 };
 
 type ModalType = typeof DEFAULT_MODAL;
@@ -69,7 +70,15 @@ export const ModalProvider = ({ children }: { children: React.ReactNode }) => {
 
   const modalValue = { isModalOpen, openModal };
 
-  return <ModalContext.Provider value={modalValue}>{children}</ModalContext.Provider>;
+  return (
+    <ModalContext.Provider value={modalValue}>
+      <WeaponSelector
+        isOpen={isModalOpen.weapons}
+        onClose={closeAll}
+      />
+      {children}
+    </ModalContext.Provider>
+  );
 };
 
 export default ModalContext;

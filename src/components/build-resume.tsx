@@ -6,7 +6,7 @@ const BuildResume = ({ build }: { build: Build }) => {
   const characterData = getTemplateData(build.characterId);
 
   return (
-    <div className="flex gap-2 border border-taupe-700 p-4">
+    <div className="flex items-center gap-4 border border-taupe-700 p-4">
       <Image
         src={characterData.imgData.src}
         alt={characterData.imgData.alt}
@@ -14,14 +14,14 @@ const BuildResume = ({ build }: { build: Build }) => {
         height={80}
       />
       <div className="flex gap-4">
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center justify-center">
           <span className="text-xs">{build.id}</span>
           <h2 className="font-semibold">{build.name}</h2>
           <span className="text-xs capitalize">
             {build.characterId}, Level {build.level}
           </span>
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col items-center justify-center">
           <span className="text-xs">Pictos: {build.pictosIds.length}</span>
           <span className="text-xs">Luminas: {build.luminasIds.length}</span>
         </div>

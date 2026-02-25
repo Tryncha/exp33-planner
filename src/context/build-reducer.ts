@@ -11,7 +11,7 @@ type BuildAction =
   | {
       type: 'CHANGE_STAT';
       payload: {
-        statToChange: string;
+        attributeToChange: string;
         newValue: number;
       };
     };
@@ -24,12 +24,12 @@ function buildReducer(buildState: Build, action: BuildAction) {
     }
 
     case 'CHANGE_STAT': {
-      const { statToChange, newValue } = action.payload;
+      const { attributeToChange: statToChange, newValue } = action.payload;
 
       return {
         ...buildState,
-        stats: {
-          ...buildState.stats,
+        attributes: {
+          ...buildState.attributes,
           [statToChange]: newValue
         }
       };

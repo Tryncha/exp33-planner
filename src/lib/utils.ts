@@ -1,6 +1,17 @@
+import PICTOS from '../data/pictos';
 import WEAPONS from '../data/weapons';
-import { CharacterData, Weapon } from '../types';
+import { Attributes, CharacterData, PictoData, PictoStats, Stats, WeaponData } from '../types';
 import { CHARACTER_TEMPLATES } from './constants';
+import {
+  ATTACK_POWER_FROM_MIGHT,
+  CRIT_FROM_DEFENSE,
+  CRIT_FROM_LUCK,
+  DEFENSE_FROM_AGILITY,
+  DEFENSE_FROM_DEFENSE,
+  HEALTH_FROM_VITALITY,
+  SPEED_FROM_AGILITY,
+  SPEED_FROM_LUCK
+} from './stats-from-attibutes';
 
 type ScalingTier = 'S' | 'A' | 'B' | 'C' | 'D';
 
@@ -16,7 +27,7 @@ const SCALING_VALUES = {
 export function calcWeaponPower(
   basePower: number,
   scaling: { vitality?: string; might?: string; agility?: string; defense?: string; luck?: string },
-  stats: { vitality: number; might: number; agility: number; defense: number; luck: number }
+  attributes: { vitality: number; might: number; agility: number; defense: number; luck: number }
 ) {
   const bonusValues = { vitality: 0, might: 0, agility: 0, defense: 0, luck: 0 };
 
@@ -24,12 +35,12 @@ export function calcWeaponPower(
     if (!scaling[stat]) {
       bonusValues[stat] = 0;
     } else {
-      bonusValues[stat] = (SCALING_VALUES[scaling[stat] as ScalingTier] / MAX_STAT) * stats[stat];
+      bonusValues[stat] = (SCALING_VALUES[scaling[stat] as ScalingTier] / MAX_STAT) * attributes[stat];
     }
   }
 
   // Might scaling
-  const mightBonus = (0.5 / MAX_STAT) * stats.might;
+  const mightBonus = (0.5 / MAX_STAT) * attributes.might;
 
   const totalPower =
     basePower *
@@ -54,7 +65,7 @@ export function getTemplateData(characterId: CharacterData['id']) {
   return { ...characterTemplate };
 }
 
-export function getWeaponData(weaponId: Weapon['id']) {
+export function getWeaponData(weaponId: WeaponData['id']) {
   const weaponData = WEAPONS.find((wpn) => wpn.id === weaponId);
 
   if (!weaponData) {
@@ -62,4 +73,43 @@ export function getWeaponData(weaponId: Weapon['id']) {
   }
 
   return weaponData;
+}
+
+export function getPictoData(pictoId: PictoData['id']) {
+  const pictoData = PICTOS.find((pic) => pic.id === pictoId);
+
+  if (!pictoData) {
+    throw new Error(`Picto with id: ${pictoId} not found...`);
+  }
+
+  return pictoData;
+}
+
+export function formatPictoStats(stats: PictoStats) {
+  const parts = [];
+
+  if (stats.health) parts.push(`${stats.health} Health`);
+  if (stats.defense) parts.push(`${stats.defense} Defense`);
+  if (stats.speed) parts.push(`${stats.speed} Speed`);
+  if (stats.critRate) parts.push(`${stats.critRate}% Crit. Rate`);
+
+  return parts.join(', ');
+}
+
+export function calcStats(baseStats: Stats, attributes: Attributes) {
+  const { vitality, might, agility, defense: defenseAttr, luck } = attributes;
+
+  const attackPower = baseStats.attackPower + ATTACK_POWER_FROM_MIGHT[might];
+  const speed = baseStats.speed + SPEED_FROM_AGILITY[agility] + SPEED_FROM_LUCK[luck];
+  const criticalRate = baseStats.criticalRate + CRIT_FROM_DEFENSE[defenseAttr] + CRIT_FROM_LUCK[luck];
+  const health = baseStats.health + HEALTH_FROM_VITALITY[vitality];
+  const defense = baseStats.defense + DEFENSE_FROM_AGILITY[agility] + DEFENSE_FROM_DEFENSE[defenseAttr];
+
+  return {
+    attackPower,
+    speed,
+    criticalRate,
+    health,
+    defense
+  };
 }

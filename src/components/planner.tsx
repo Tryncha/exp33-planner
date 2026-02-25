@@ -1,10 +1,13 @@
-import StatInput from './stat-input';
+import AttributeInput from './attribute-input';
 import { useBuild } from '../context/build-context';
 import { useState } from 'react';
 import { CharacterData } from '../types';
-import WeaponInfo from './weapon-info';
+import Weapon from './weapon';
 import OptionTemplate from './option-template';
 import { useVault } from '../context/vault-context';
+import Pictos from './pictos';
+import Luminas from './luminas';
+import Stats from './stats';
 
 const Planner = () => {
   const { build, setTemplate } = useBuild();
@@ -37,32 +40,12 @@ const Planner = () => {
   ) : (
     <section>
       <button onClick={() => setHasTemplate(false)}>Return</button>
-      <div className="flex flex-col gap-1">
-        <StatInput
-          statId="vitality"
-          value={build.stats.vitality}
-        />
-        <StatInput
-          statId="might"
-          value={build.stats.might}
-        />
-        <StatInput
-          statId="agility"
-          value={build.stats.agility}
-        />
-        <StatInput
-          statId="defense"
-          value={build.stats.defense}
-        />
-        <StatInput
-          statId="luck"
-          value={build.stats.luck}
-        />
+      <div className="flex gap-2">
+        <Stats />
+        <Weapon />
+        <Pictos />
+        <Luminas />
       </div>
-      <WeaponInfo
-        weaponId={build.weaponId}
-        stats={build.stats}
-      />
       <div>
         <button
           className="border px-2"

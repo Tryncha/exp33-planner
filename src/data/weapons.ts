@@ -1,9 +1,10 @@
-import { Weapon } from '../types';
+import { WeaponData } from '../types';
 
-const WEAPONS: Weapon[] = [
+const GUSTAVE_VERSO: WeaponData[] = [
   {
     id: 'noahram',
     name: 'Noahram',
+    characterIds: ['gustave', 'verso'],
     imgData: {
       src: '/weapons/noahram.png',
       alt: '',
@@ -20,6 +21,7 @@ const WEAPONS: Weapon[] = [
   {
     id: 'lanceram',
     name: 'Lanceram',
+    characterIds: ['gustave', 'verso'],
     imgData: {
       src: '/weapons/lanceram.png',
       alt: '',
@@ -41,6 +43,7 @@ const WEAPONS: Weapon[] = [
   {
     id: 'glaceso',
     name: 'Glaceso',
+    characterIds: ['gustave', 'verso'],
     imgData: {
       src: '/weapons/glaceso.png',
       alt: '',
@@ -60,5 +63,7 @@ const WEAPONS: Weapon[] = [
     }
   }
 ];
+
+const WEAPONS: WeaponData[] = [...GUSTAVE_VERSO];
 
 export default WEAPONS;

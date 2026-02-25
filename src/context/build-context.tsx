@@ -1,12 +1,12 @@
 import { createContext, useContext, useReducer, useState } from 'react';
-import { Build, CharacterData, Stat } from '../types';
+import { Build, CharacterData, AttributeId } from '../types';
 import buildReducer from './build-reducer';
 import { CHARACTER_TEMPLATES } from '../lib/constants';
 
 interface BuildContextType {
   build: Build;
   setTemplate: (characterId: CharacterData['id']) => void;
-  changeStat: (statToChange: Stat, newValue: number) => void;
+  changeStat: (statToChange: AttributeId, newValue: number) => void;
 }
 
 const BuildContext = createContext<BuildContextType | undefined>(undefined);
@@ -28,8 +28,8 @@ export const BuildProvider = ({ children }: { children: React.ReactNode }) => {
     buildDispatch({ type: 'SET_CHARACTER_TEMPLATE', payload: { characterId } });
   }
 
-  function changeStat(statToChange: Stat, newValue: number) {
-    buildDispatch({ type: 'CHANGE_STAT', payload: { statToChange, newValue } });
+  function changeStat(statToChange: AttributeId, newValue: number) {
+    buildDispatch({ type: 'CHANGE_STAT', payload: { attributeToChange: statToChange, newValue } });
   }
 
   const charactersValue = { build, setTemplate, changeStat };

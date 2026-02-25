@@ -1,6 +1,8 @@
 import { GUSTAVE_BASE } from './lib/constants';
 
-export type Stat = 'vitality' | 'might' | 'agility' | 'defense' | 'luck';
+export type CharacterId = 'gustave' | 'lune' | 'verso';
+export type AttributeId = 'vitality' | 'might' | 'agility' | 'defense' | 'luck';
+export type CharacterStatId = 'attack-power' | 'speed' | 'critical-rate' | 'health' | 'defense';
 
 export interface ImageData {
   src: string;
@@ -10,8 +12,8 @@ export interface ImageData {
 }
 
 export interface Character {
-  id: 'gustave' | 'lune';
-  name: 'Gustave' | 'Lune';
+  id: CharacterId;
+  name: string;
   imgData: {
     src: string;
     alt: string;
@@ -33,8 +35,8 @@ export interface Character {
 }
 
 export interface CharacterData {
-  id: 'gustave' | 'lune';
-  name: 'Gustave' | 'Lune';
+  id: CharacterId;
+  name: string;
   imgData: {
     src: string;
     alt: string;
@@ -43,9 +45,10 @@ export interface CharacterData {
   };
 }
 
-export interface Weapon {
+export interface WeaponData {
   id: string;
   name: string;
+  characterIds: Array<Character['id']>;
   imgData: ImageData;
   basePower: number;
   element: string;
@@ -62,23 +65,9 @@ export interface Weapon {
 export interface Build {
   id: string;
   name: string;
-  characterId: 'gustave' | 'lune';
+  characterId: CharacterId;
   level: number;
-  stats: Stats;
-  weaponId: string;
-  abilitiesIds: string[];
-  pictosIds: [string, string, string];
-  luminasIds: string[];
-}
-
-export interface CharacterTemplate {
-  id: string;
-  name: string;
-  characterId: 'gustave' | 'lune';
-  characterName: string;
-  imgData: ImageData;
-  stats: Stats;
-  level: number;
+  attributes: Attributes;
   weaponId: string;
   abilitiesIds: string[];
   pictosIds: [string, string, string];
@@ -86,9 +75,48 @@ export interface CharacterTemplate {
 }
 
 export interface Stats {
+  attackPower: number;
+  speed: number;
+  criticalRate: number;
+  health: number;
+  defense: number;
+}
+
+export interface CharacterTemplate {
+  id: string;
+  name: string;
+  characterId: CharacterId;
+  characterName: string;
+  imgData: ImageData;
+  attributes: Attributes;
+  baseStats: Stats;
+  level: number;
+  weaponId: string;
+  abilitiesIds: string[];
+  pictosIds: [string, string, string];
+  luminasIds: string[];
+}
+
+export interface Attributes {
   vitality: number;
   might: number;
   agility: number;
   defense: number;
   luck: number;
+}
+
+export interface PictoStats {
+  health: number;
+  defense: number;
+  speed: number;
+  critRate: number;
+}
+
+export interface PictoData {
+  id: string;
+  name: string;
+  imgData: ImageData;
+  effect: string;
+  luminaPoints: number;
+  stats: PictoStats;
 }

@@ -26,20 +26,9 @@ export const CHARACTER_TEMPLATES: CharacterTemplate[] = [
       health: 150,
       defense: 0
     },
-    level: 0,
     weaponId: 'noahram',
-    abilitiesIds: ['lumiere-assault', 'overcharge'],
-    pictosIds: ['accelerating-heal', 'accelerating-last-stance', 'accelerating-shots'],
-    luminasIds: [
-      'accelerating-heal',
-      'accelerating-last-stance',
-      'accelerating-shots',
-      'accelerating-heal',
-      'accelerating-last-stance',
-      'accelerating-shots',
-      'accelerating-heal',
-      'accelerating-last-stance',
-      'accelerating-shots'
-    ]
+    skillIds: ['lumiere-assault', '', 'overcharge', '', '', ''],
+    pictosIds: ['', '', ''],
+    luminasIds: []
   }
 ];

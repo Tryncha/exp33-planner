@@ -3,9 +3,18 @@ import { calcWeaponPower, getWeaponData } from '../lib/utils';
 import { useModal } from '../context/modal-context';
 import { useBuild } from '../context/build-context';
 
+const WeaponPassive = ({ level, passive }: { level: number; passive: string }) => {
+  return (
+    <div className="flex h-20 items-center gap-4 border-t border-taupe-700 px-4 py-2">
+      <h2 className="w-12 text-center text-xl font-semibold">Level {level}</h2>
+      <p className="text-sm">{passive}</p>
+    </div>
+  );
+};
+
 const Weapon = () => {
   const { build } = useBuild();
-  const { weaponId, attributes } = build;
+  const { characterId, weaponId, attributes } = build;
 
   const { openModal } = useModal();
 
@@ -58,20 +67,25 @@ const Weapon = () => {
       </div>
 
       {/* Passives */}
-      <div className="flex flex-col">
-        <div className="flex items-center border-t border-taupe-700">
-          <h2 className="w-20 px-2 text-center text-xl">Level 4</h2>
-          <p>{weaponData.passives[0]}</p>
+      {characterId === 'gustave' ? (
+        <div className="flex h-60 items-center justify-center border-t border-taupe-700 text-taupe-500 italic">
+          Gustave doesn't have weapon passives
         </div>
-        <div className="flex items-center border-t border-taupe-700">
-          <h2 className="w-20 px-2 text-center text-xl">Level 10</h2>
-          <p>{weaponData.passives[1]}</p>
+      ) : !weaponData.passives ? (
+        <div className="flex h-60 items-center justify-center border-t border-taupe-700 text-taupe-500 italic">
+          This weapon has not passives
         </div>
-        <div className="flex items-center border-t border-taupe-700">
-          <h2 className="w-20 px-2 text-center text-xl">Level 20</h2>
-          <p>{weaponData.passives[2]}</p>
+      ) : (
+        <div className="flex flex-col">
+          {weaponData.passives.map((pss, i) => (
+            <WeaponPassive
+              key={`weapon-passive-${i}`}
+              level={[4, 10, 20][i]}
+              passive={pss}
+            />
+          ))}
         </div>
-      </div>
+      )}
     </div>
   );
 };

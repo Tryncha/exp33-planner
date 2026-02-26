@@ -1,9 +1,16 @@
 import Image from 'next/image';
 import { Build } from '../types';
-import { getTemplateData } from '../lib/utils';
+import { calcLevel, getTemplateData } from '../lib/utils';
+import { useBuild } from '../context/build-context';
 
-const BuildResume = ({ build }: { build: Build }) => {
-  const characterData = getTemplateData(build.characterId);
+const BuildResume = ({ buildResume }: { buildResume: Build }) => {
+  const { setBaseBuild } = useBuild();
+
+  const characterData = getTemplateData(buildResume.characterId);
+
+  function editBuild() {
+    setBaseBuild(buildResume);
+  }
 
   return (
     <div className="flex items-center gap-4 border border-taupe-700 p-4">
@@ -15,17 +22,18 @@ const BuildResume = ({ build }: { build: Build }) => {
       />
       <div className="flex gap-4">
         <div className="flex flex-col items-center justify-center">
-          <span className="text-xs">{build.id}</span>
-          <h2 className="font-semibold">{build.name}</h2>
+          <span className="text-xs">{buildResume.id}</span>
+          <h2 className="font-semibold">{buildResume.name}</h2>
           <span className="text-xs capitalize">
-            {build.characterId}, Level {build.level}
+            {buildResume.characterId}, Level {calcLevel(buildResume.attributes)}
           </span>
         </div>
         <div className="flex flex-col items-center justify-center">
-          <span className="text-xs">Pictos: {build.pictosIds.length}</span>
-          <span className="text-xs">Luminas: {build.luminasIds.length}</span>
+          <span className="text-xs">Pictos: {buildResume.pictosIds.length}</span>
+          <span className="text-xs">Luminas: {buildResume.luminasIds.length}</span>
         </div>
       </div>
+      <button onClick={editBuild}>Edit</button>
     </div>
   );
 };

@@ -13,7 +13,6 @@ const GUSTAVE_VERSO: WeaponData[] = [
     },
     basePower: 2260,
     element: 'Physical',
-    passives: ['', '', ''],
     scaling: {
       vitality: 'S'
     }

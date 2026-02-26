@@ -52,7 +52,7 @@ export interface WeaponData {
   imgData: ImageData;
   basePower: number;
   element: string;
-  passives: [string, string, string];
+  passives?: [string, string, string];
   scaling: {
     vitality?: string;
     might?: string;
@@ -66,10 +66,9 @@ export interface Build {
   id: string;
   name: string;
   characterId: CharacterId;
-  level: number;
   attributes: Attributes;
   weaponId: string;
-  abilitiesIds: string[];
+  skillIds: string[];
   pictosIds: [string, string, string];
   luminasIds: string[];
 }
@@ -90,9 +89,8 @@ export interface CharacterTemplate {
   imgData: ImageData;
   attributes: Attributes;
   baseStats: Stats;
-  level: number;
   weaponId: string;
-  abilitiesIds: string[];
+  skillIds: [string, string, string, string, string, string];
   pictosIds: [string, string, string];
   luminasIds: string[];
 }
@@ -119,4 +117,13 @@ export interface PictoData {
   effect: string;
   luminaPoints: number;
   stats: PictoStats;
+}
+
+export interface SkillData {
+  id: string;
+  name: string;
+  imgData: ImageData;
+  characterId: CharacterId;
+  effect: string;
+  apCost: number;
 }

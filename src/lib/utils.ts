@@ -1,6 +1,7 @@
 import PICTOS from '../data/pictos';
+import SKILLS from '../data/skills';
 import WEAPONS from '../data/weapons';
-import { Attributes, CharacterData, PictoData, PictoStats, Stats, WeaponData } from '../types';
+import { Attributes, CharacterData, PictoData, PictoStats, SkillData, Stats, WeaponData } from '../types';
 import { CHARACTER_TEMPLATES } from './constants';
 import {
   ATTACK_POWER_FROM_MIGHT,
@@ -76,13 +77,21 @@ export function getWeaponData(weaponId: WeaponData['id']) {
 }
 
 export function getPictoData(pictoId: PictoData['id']) {
-  const pictoData = PICTOS.find((pic) => pic.id === pictoId);
+  return PICTOS.find((pic) => pic.id === pictoId);
+}
 
-  if (!pictoData) {
-    throw new Error(`Picto with id: ${pictoId} not found...`);
+export function getSkillData(skillId: SkillData['id']) {
+  return SKILLS.find((pic) => pic.id === skillId);
+}
+
+export function getLuminaData(pictoId: PictoData['id']) {
+  const luminaData = PICTOS.find((pic) => pic.id === pictoId);
+
+  if (!luminaData) {
+    throw new Error(`Lumina with id: ${pictoId} not found...`);
   }
 
-  return pictoData;
+  return luminaData;
 }
 
 export function formatPictoStats(stats: PictoStats) {
@@ -96,20 +105,41 @@ export function formatPictoStats(stats: PictoStats) {
   return parts.join(', ');
 }
 
-export function calcStats(baseStats: Stats, attributes: Attributes) {
+export function calcStats(baseStats: Stats, attributes: Attributes, pictos: (PictoData | undefined)[]) {
   const { vitality, might, agility, defense: defenseAttr, luck } = attributes;
 
-  const attackPower = baseStats.attackPower + ATTACK_POWER_FROM_MIGHT[might];
-  const speed = baseStats.speed + SPEED_FROM_AGILITY[agility] + SPEED_FROM_LUCK[luck];
-  const criticalRate = baseStats.criticalRate + CRIT_FROM_DEFENSE[defenseAttr] + CRIT_FROM_LUCK[luck];
-  const health = baseStats.health + HEALTH_FROM_VITALITY[vitality];
-  const defense = baseStats.defense + DEFENSE_FROM_AGILITY[agility] + DEFENSE_FROM_DEFENSE[defenseAttr];
+  let attackPower = baseStats.attackPower;
+  let speed = baseStats.speed;
+  let critRate = baseStats.criticalRate;
+  let health = baseStats.health;
+  let defense = baseStats.defense;
+
+  attackPower += ATTACK_POWER_FROM_MIGHT[might];
+  speed += SPEED_FROM_AGILITY[agility] + SPEED_FROM_LUCK[luck];
+  critRate += CRIT_FROM_DEFENSE[defenseAttr] + CRIT_FROM_LUCK[luck];
+  health += HEALTH_FROM_VITALITY[vitality];
+  defense += DEFENSE_FROM_AGILITY[agility] + DEFENSE_FROM_DEFENSE[defenseAttr];
+
+  for (const picto of pictos) {
+    if (!picto) continue;
+
+    speed += picto.stats.speed;
+    critRate += picto.stats.critRate;
+    health += picto.stats.health;
+    defense += picto.stats.defense;
+  }
 
   return {
     attackPower,
     speed,
-    criticalRate,
+    critRate,
     health,
     defense
   };
+}
+
+export function calcLevel(attributes: Attributes) {
+  const totalValues = Object.values(attributes).reduce((acc, val) => acc + val, 0);
+  const level = Math.ceil(totalValues / 3);
+  return level;
 }

@@ -28,7 +28,7 @@ const HomePage = () => {
             {vault.map((bld) => (
               <BuildResume
                 key={bld.id}
-                build={bld}
+                buildResume={bld}
               />
             ))}
           </div>

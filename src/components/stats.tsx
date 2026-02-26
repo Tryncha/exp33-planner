@@ -1,14 +1,16 @@
 import { useBuild } from '../context/build-context';
-import { calcStats, getTemplateData } from '../lib/utils';
+import { calcStats, getPictoData, getTemplateData } from '../lib/utils';
 import AttributeInput from './attribute-input';
 import StatOutput from './stat-output';
 
 const Stats = () => {
   const { build } = useBuild();
-  const { characterId, attributes } = build;
+  const { characterId, attributes, pictosIds } = build;
+
+  const pictosData = pictosIds.map((pId) => getPictoData(pId));
 
   const baseStats = getTemplateData(characterId).baseStats;
-  const stats = calcStats(baseStats, attributes);
+  const stats = calcStats(baseStats, attributes, pictosData);
 
   return (
     <div className="border border-taupe-700">
@@ -33,7 +35,7 @@ const Stats = () => {
         />
         <StatOutput
           label="Critical Rate"
-          value={`${stats.criticalRate}%`}
+          value={`${stats.critRate}%`}
         />
         <StatOutput
           label="Health"

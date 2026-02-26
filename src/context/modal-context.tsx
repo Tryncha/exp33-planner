@@ -1,5 +1,6 @@
 import { Activity, createContext, useContext, useState } from 'react';
 import WeaponSelector from '../components/modals/weapon-selector';
+import PictosSelector from '../components/modals/pictos-selector';
 
 export const Modal = ({
   isOpen,
@@ -32,7 +33,10 @@ export const Modal = ({
 };
 
 const DEFAULT_MODAL = {
-  weapons: false
+  weapons: false,
+  skills: false,
+  pictos: false,
+  luminas: false
 };
 
 type ModalType = typeof DEFAULT_MODAL;
@@ -40,6 +44,7 @@ type ModalType = typeof DEFAULT_MODAL;
 interface ModalContextType {
   isModalOpen: ModalType;
   openModal: (modalId: keyof ModalType) => void;
+  closeAll: () => void;
 }
 
 const ModalContext = createContext<ModalContextType | undefined>(undefined);
@@ -68,7 +73,7 @@ export const ModalProvider = ({ children }: { children: React.ReactNode }) => {
     setIsModalOpen(DEFAULT_MODAL);
   }
 
-  const modalValue = { isModalOpen, openModal };
+  const modalValue = { isModalOpen, openModal, closeAll };
 
   return (
     <ModalContext.Provider value={modalValue}>

@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 import { Build, Character } from '../types';
 
 interface VaultContextType {
@@ -21,14 +21,26 @@ export function useVault() {
 }
 
 export const VaultProvider = ({ children }: { children: React.ReactNode }) => {
-  const [vault, setVault] = useState<Build[]>([]);
+  const [vault, setVault] = useState<Build[]>(() => {
+    try {
+      const savedVault = localStorage.getItem('vault');
+      return savedVault ? JSON.parse(savedVault) : [];
+    } catch {
+      return [];
+    }
+  });
 
   function createBuild(characterId: Character['id']) {
     setVault(vault.concat());
   }
 
   function addBuild(newBuild: Build) {
-    setVault(vault.concat(newBuild));
+    const newVault = vault.concat(newBuild);
+    setVault(newVault);
+
+    try {
+      localStorage.setItem('vault', JSON.stringify(newVault));
+    } catch {}
   }
 
   function updateBuild(buildId: Build['id'], newBuild: Build) {
@@ -38,7 +50,12 @@ export const VaultProvider = ({ children }: { children: React.ReactNode }) => {
       throw new Error(`Build with id: ${buildId} not found...`);
     }
 
-    setVault(vault.toSpliced(vault.indexOf(buildToUpdate), 1, newBuild));
+    const newVault = vault.toSpliced(vault.indexOf(buildToUpdate), 1, newBuild);
+    setVault(newVault);
+
+    try {
+      localStorage.setItem('vault', JSON.stringify(newVault));
+    } catch {}
   }
 
   function removeBuild(buildId: Build['id']) {

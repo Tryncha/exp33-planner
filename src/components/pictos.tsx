@@ -1,12 +1,37 @@
 import Image from 'next/image';
-import { formatPictoStats, getPictoData, getWeaponData } from '../lib/utils';
-import { PictoData, PictoStats, AttributeId, WeaponData } from '../types';
+import { formatPictoStats, getPictoData } from '../lib/utils';
+import { PictoData } from '../types';
 import { useModal } from '../context/modal-context';
 import { useBuild } from '../context/build-context';
+import PictosSelector from './modals/pictos-selector';
+import { MouseEvent, useState } from 'react';
+import { X } from 'lucide-react';
 
-const PictoInfo = ({ pictoData }: { pictoData: PictoData }) => {
+const EmptyPictoSlot = ({ onClick }: { onClick: () => void }) => {
   return (
-    <div className="flex flex-1 items-center justify-between gap-2 border-b border-taupe-700 px-4 py-2 last:border-0">
+    <div
+      onClick={onClick}
+      className="flex flex-1 items-center justify-center rounded-xs border-b border-taupe-700 px-4 py-2 text-taupe-500 italic last:border-0 hover:cursor-pointer"
+    >
+      Select a Picto
+    </div>
+  );
+};
+
+const PictoSlot = ({
+  pictoData,
+  onClick,
+  removePicto
+}: {
+  pictoData: PictoData;
+  onClick: () => void;
+  removePicto: (e: MouseEvent<HTMLButtonElement>) => void;
+}) => {
+  return (
+    <div
+      onClick={onClick}
+      className="relative flex flex-1 items-center justify-between gap-2 rounded-xs border-b border-taupe-700 px-4 py-2 last:border-0 hover:cursor-pointer"
+    >
       <Image
         src={pictoData.imgData.src}
         alt={pictoData.imgData.alt}
@@ -16,37 +41,61 @@ const PictoInfo = ({ pictoData }: { pictoData: PictoData }) => {
       <div className="flex flex-col items-center">
         <h2 className="text-xl font-semibold">{pictoData.name}</h2>
         <span className="text-xs">{formatPictoStats(pictoData.stats)}</span>
-        <p className="mt-2 text-sm">{pictoData.effect}</p>
+        <p className="mt-2 text-center text-sm">{pictoData.effect}</p>
       </div>
-      <div className="flex items-center">
-        <span className="text-2xl font-bold">{pictoData.luminaPoints}</span>
-        <Image
-          src="/misc/lumina.png"
-          alt="Lumina Point"
-          width={20}
-          height={19}
-        />
-      </div>
+      <span className="text-2xl font-bold">{pictoData.luminaPoints}</span>
+      <button
+        onClick={removePicto}
+        className="absolute top-2 right-2 rounded-xs text-red-300 transition-colors hover:cursor-pointer hover:bg-red-950 active:bg-red-800"
+      >
+        <X strokeWidth={3} />
+      </button>
     </div>
   );
 };
 
 const Pictos = () => {
-  const { build } = useBuild();
+  const { build, changePicto } = useBuild();
   const { pictosIds } = build;
+
+  const { openModal, isModalOpen, closeAll } = useModal();
+  const [selectedSlot, setSelectedSlot] = useState(0);
 
   const pictosData = pictosIds.map((pId) => getPictoData(pId));
 
-  const { openModal } = useModal();
+  function openModalAndSetSlot(indexSlot: number) {
+    openModal('pictos');
+    setSelectedSlot(indexSlot);
+  }
+
+  function removePicto(e: MouseEvent<HTMLButtonElement>, indexSlot: number) {
+    e.stopPropagation();
+    changePicto(indexSlot, '');
+  }
 
   return (
-    <div className="flex w-md flex-col border border-taupe-700">
-      {pictosData.map((pic) => (
-        <PictoInfo
-          key={pic.id}
-          pictoData={pic}
-        />
-      ))}
+    <div className="flex w-md flex-col rounded-xs border border-taupe-700">
+      <PictosSelector
+        selectedSlot={selectedSlot}
+        isOpen={isModalOpen.pictos}
+        onClose={closeAll}
+      />
+      <h2 className="border-b border-taupe-700 py-1 text-center text-xl font-semibold">Pictos</h2>
+      {pictosData.map((pic, indexSlot) =>
+        !pic ? (
+          <EmptyPictoSlot
+            key={`empty-picto-${indexSlot}`}
+            onClick={() => openModalAndSetSlot(indexSlot)}
+          />
+        ) : (
+          <PictoSlot
+            key={`picto-${indexSlot}`}
+            pictoData={pic}
+            onClick={() => openModalAndSetSlot(indexSlot)}
+            removePicto={(e) => removePicto(e, indexSlot)}
+          />
+        )
+      )}
     </div>
   );
 };

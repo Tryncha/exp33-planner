@@ -113,7 +113,6 @@ export interface PictoStats {
 export interface PictoData {
   id: string;
   name: string;
-  imgData: ImageData;
   effect: string;
   luminaPoints: number;
   stats: PictoStats;

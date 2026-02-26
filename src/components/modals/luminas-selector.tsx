@@ -20,10 +20,10 @@ const LuminaOption = ({
     >
       <div>
         <Image
-          src={pictoData.imgData.src}
-          alt={pictoData.imgData.alt}
-          width={pictoData.imgData.width}
-          height={pictoData.imgData.height}
+          src={`/pictos/${pictoData.id}.png`}
+          alt={`${pictoData.name} Picto`}
+          width={54}
+          height={54}
         />
       </div>
       <h2>{pictoData.name}</h2>

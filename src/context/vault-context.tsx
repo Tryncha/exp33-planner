@@ -21,14 +21,14 @@ export function useVault() {
 }
 
 export const VaultProvider = ({ children }: { children: React.ReactNode }) => {
-  const [vault, setVault] = useState<Build[]>(() => {
+  const [vault, setVault] = useState<Build[]>([]);
+
+  useEffect(() => {
     try {
       const savedVault = localStorage.getItem('vault');
-      return savedVault ? JSON.parse(savedVault) : [];
-    } catch {
-      return [];
-    }
-  });
+      if (savedVault) setVault(JSON.parse(savedVault));
+    } catch {}
+  }, []);
 
   function createBuild(characterId: Character['id']) {
     setVault(vault.concat());
@@ -63,6 +63,8 @@ export const VaultProvider = ({ children }: { children: React.ReactNode }) => {
   }
 
   const vaultValue = { vault, addBuild, updateBuild, removeBuild };
+
+  console.log(vault);
 
   return <VaultContext.Provider value={vaultValue}>{children}</VaultContext.Provider>;
 };

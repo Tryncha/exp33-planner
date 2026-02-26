@@ -6,7 +6,6 @@ import { CHARACTER_TEMPLATES } from '../lib/constants';
 interface BuildContextType {
   build: Build;
   setBaseBuild: (newBaseBuild: Build) => void;
-  setTemplate: (characterId: CharacterData['id']) => void;
   changeStat: (statToChange: AttributeId, newValue: number) => void;
   changeWeapon: (newWeaponId: WeaponData['id']) => void;
   changeSkil: (slotToChange: number, newSkillId: SkillData['id']) => void;
@@ -32,10 +31,6 @@ export const BuildProvider = ({ children }: { children: React.ReactNode }) => {
 
   function setBaseBuild(newBaseBuild: Build) {
     buildDispatch({ type: 'SET_BASE_BUILD', payload: { newBaseBuild } });
-  }
-
-  function setTemplate(characterId: CharacterData['id']) {
-    buildDispatch({ type: 'SET_CHARACTER_TEMPLATE', payload: { characterId } });
   }
 
   function changeStat(statToChange: AttributeId, newValue: number) {
@@ -65,7 +60,6 @@ export const BuildProvider = ({ children }: { children: React.ReactNode }) => {
   const charactersValue = {
     build,
     setBaseBuild,
-    setTemplate,
     changeStat,
     changeWeapon,
     changeSkil,

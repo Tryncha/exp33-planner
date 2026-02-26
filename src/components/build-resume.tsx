@@ -3,13 +3,14 @@ import { Build } from '../types';
 import { calcLevel, getTemplateData } from '../lib/utils';
 import { useBuild } from '../context/build-context';
 
-const BuildResume = ({ buildResume }: { buildResume: Build }) => {
+const BuildResume = ({ buildResume, openPlanner }: { buildResume: Build; openPlanner: () => void }) => {
   const { setBaseBuild } = useBuild();
 
   const characterData = getTemplateData(buildResume.characterId);
 
   function editBuild() {
     setBaseBuild(buildResume);
+    openPlanner();
   }
 
   return (

@@ -143,3 +143,9 @@ export function calcLevel(attributes: Attributes) {
   const level = Math.ceil(totalValues / 3);
   return level;
 }
+
+export function swapElements<T>(arr: T[], indexA: number, indexB: number) {
+  const temp = arr[indexA];
+  arr[indexA] = arr[indexB];
+  arr[indexB] = temp;
+}

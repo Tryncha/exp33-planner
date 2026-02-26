@@ -1,9 +1,5 @@
-import AttributeInput from './attribute-input';
 import { useBuild } from '../context/build-context';
-import { useState } from 'react';
-import { CharacterData } from '../types';
 import Weapon from './weapon';
-import OptionTemplate from './option-template';
 import { useVault } from '../context/vault-context';
 import Pictos from './pictos';
 import Luminas from './luminas';
@@ -12,17 +8,10 @@ import Skills from './skills';
 import CharacterInfo from './character-info';
 
 const Planner = () => {
-  const { build, setTemplate } = useBuild();
+  const { build } = useBuild();
   const { vault, addBuild, updateBuild } = useVault();
 
-  const [hasTemplate, setHasTemplate] = useState(false);
-
   const buildExists = vault.map((b) => b.id).includes(build.id);
-
-  function confirmTemplate(characterId: CharacterData['id']) {
-    setTemplate(characterId);
-    setHasTemplate(true);
-  }
 
   function saveBuildAndClose() {
     if (!buildExists) {
@@ -37,17 +26,8 @@ const Planner = () => {
     }
   }
 
-  return !hasTemplate ? (
-    <section className="border border-taupe-700 p-2">
-      <h2 className="font-semibold">Select a Character</h2>
-      <OptionTemplate
-        characterId="gustave"
-        onClick={() => confirmTemplate('gustave')}
-      />
-    </section>
-  ) : (
+  return (
     <section>
-      <button onClick={() => setHasTemplate(false)}>Return</button>
       <div className="flex gap-2">
         <div className="flex flex-col gap-2">
           <CharacterInfo />

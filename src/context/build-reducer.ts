@@ -1,4 +1,4 @@
-import { getTemplateData } from '../lib/utils';
+import { getTemplateData, swapElements } from '../lib/utils';
 import { Build, CharacterData, PictoData, SkillData, WeaponData } from '../types';
 
 type BuildAction =
@@ -6,12 +6,6 @@ type BuildAction =
       type: 'SET_BASE_BUILD';
       payload: {
         newBaseBuild: Build;
-      };
-    }
-  | {
-      type: 'SET_CHARACTER_TEMPLATE';
-      payload: {
-        characterId: CharacterData['id'];
       };
     }
   | {
@@ -61,18 +55,13 @@ function buildReducer(buildState: Build, action: BuildAction) {
       return { ...newBaseBuild };
     }
 
-    case 'SET_CHARACTER_TEMPLATE': {
-      const { characterId } = action.payload;
-      return getTemplateData(characterId);
-    }
-
     case 'CHANGE_STAT': {
-      const { attributeToChange: statToChange, newValue } = action.payload;
+      const { attributeToChange, newValue } = action.payload;
       return {
         ...buildState,
         attributes: {
           ...buildState.attributes,
-          [statToChange]: newValue
+          [attributeToChange]: newValue
         }
       };
     }
@@ -87,6 +76,19 @@ function buildReducer(buildState: Build, action: BuildAction) {
 
     case 'CHANGE_SKILL': {
       const { slotToChange, newSkillId } = action.payload;
+
+      if (buildState.skillIds.includes(newSkillId) && buildState.skillIds[slotToChange] !== newSkillId) {
+        const newSkillIds = [...buildState.skillIds];
+        const skillIndex = buildState.skillIds.indexOf(newSkillId);
+
+        swapElements(newSkillIds, skillIndex, slotToChange);
+
+        return {
+          ...buildState,
+          skillIds: newSkillIds as [string, string, string, string, string, string]
+        };
+      }
+
       return {
         ...buildState,
         skillIds: buildState.skillIds.with(slotToChange, newSkillId) as [string, string, string, string, string, string]
@@ -95,6 +97,19 @@ function buildReducer(buildState: Build, action: BuildAction) {
 
     case 'CHANGE_PICTO': {
       const { slotToChange, newPictoId } = action.payload;
+
+      if (buildState.pictosIds.includes(newPictoId) && buildState.pictosIds[slotToChange] !== newPictoId) {
+        const newPictosIds = [...buildState.pictosIds];
+        const pictoIndex = buildState.pictosIds.indexOf(newPictoId);
+
+        swapElements(newPictosIds, pictoIndex, slotToChange);
+
+        return {
+          ...buildState,
+          pictosIds: newPictosIds as [string, string, string]
+        };
+      }
+
       return {
         ...buildState,
         pictosIds: buildState.pictosIds.with(slotToChange, newPictoId) as [string, string, string]
@@ -103,6 +118,9 @@ function buildReducer(buildState: Build, action: BuildAction) {
 
     case 'ADD_LUMINA': {
       const { luminaToAdd } = action.payload;
+
+      if (buildState.luminasIds.includes(luminaToAdd)) return buildState;
+
       return {
         ...buildState,
         luminasIds: buildState.luminasIds.concat(luminaToAdd)

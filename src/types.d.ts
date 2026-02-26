@@ -124,6 +124,6 @@ export interface SkillData {
   name: string;
   imgData: ImageData;
   characterId: CharacterId;
-  effect: string;
-  apCost: number;
+  description: string;
+  cost: number;
 }

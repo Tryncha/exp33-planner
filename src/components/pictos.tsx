@@ -30,7 +30,7 @@ const PictoSlot = ({
   return (
     <div
       onClick={onClick}
-      className="relative flex flex-1 items-center justify-between gap-2 rounded-xs border-b border-taupe-700 px-4 py-2 last:border-0 hover:cursor-pointer"
+      className="relative flex flex-1 items-center justify-between gap-2 rounded-xs border-b border-taupe-700 px-4 py-2 last:border-0 hover:cursor-pointer hover:bg-taupe-900"
     >
       <Image
         src={pictoData.imgData.src}

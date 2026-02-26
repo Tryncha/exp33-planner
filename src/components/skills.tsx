@@ -30,7 +30,7 @@ const SkillSlot = ({
   return (
     <div
       onClick={onClick}
-      className="relative flex h-18 items-center gap-2 border border-taupe-700 p-2"
+      className="relative flex h-18 items-center gap-2 border border-taupe-700 p-2 hover:cursor-pointer hover:bg-taupe-900"
     >
       <Image
         src={skillData.imgData.src}
@@ -40,7 +40,7 @@ const SkillSlot = ({
       />
       <div className="flex flex-1 flex-col">
         <span className="text-center font-semibold">{skillData.name}</span>
-        <span className="text-center text-xs">Cost: {skillData.apCost}</span>
+        <span className="text-center text-xs">Cost: {skillData.cost}</span>
       </div>
       <button
         onClick={removeSkill}

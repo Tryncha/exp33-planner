@@ -53,7 +53,7 @@ const Luminas = () => {
           <Plus strokeWidth={3} />
         </button>
       </div>
-      <div className="scrollbar-thumb-taupe-600 scrollbar-track-taupe-800 scrollbar-thin flex h-72 flex-col overflow-y-auto">
+      <div className="scrollbar-thumb-taupe-600 scrollbar-track-taupe-800 scrollbar-thin flex h-156 flex-col overflow-y-auto">
         {pictosData.map((pic) => (
           <LuminaInfo
             key={pic.id}

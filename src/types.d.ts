@@ -1,6 +1,6 @@
 import { GUSTAVE_BASE } from './lib/constants';
 
-export type CharacterId = 'gustave' | 'lune' | 'verso';
+export type CharacterId = 'gustave' | 'lune' | 'maelle' | 'sciel' | 'verso' | 'monoco';
 export type AttributeId = 'vitality' | 'might' | 'agility' | 'defense' | 'luck';
 export type CharacterStatId = 'attack-power' | 'speed' | 'critical-rate' | 'health' | 'defense';
 
@@ -49,7 +49,6 @@ export interface WeaponData {
   id: string;
   name: string;
   characterIds: Array<Character['id']>;
-  imgData: ImageData;
   basePower: number;
   element: string;
   passives?: [string, string, string];

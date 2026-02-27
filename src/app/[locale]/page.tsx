@@ -1,48 +1,26 @@
-'use client';
-
-import Planner from '../../components/planner';
-import { useState } from 'react';
-import { useBuild } from '../../context/build-context';
-import { CharacterData } from '../../types';
-import { getTemplateData } from '../../lib/utils';
-import BaseSelector from '../../components/base-selector';
-import Vault from '../../components/vault';
+import { use } from 'react';
 import { useTranslations } from 'next-intl';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
+import Placeholder from '@/src/components/page-placeholder';
 
-const HomePage = () => {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'Metadata' });
+
+  return {
+    title: t('title')
+  };
+}
+
+const HomePage = ({ params }: { params: Promise<{ locale: string }> }) => {
+  const { locale } = use(params);
+  setRequestLocale(locale);
   const t = useTranslations('HomePage');
-
-  const { setBaseBuild } = useBuild();
-
-  const [showBaseSelector, setShowBaseSelector] = useState(false);
-  const [showPlanner, setShowPlanner] = useState(false);
-
-  function openPlanner() {
-    setShowBaseSelector(false);
-    setShowPlanner(true);
-  }
-
-  function selectBaseBuild(characterId: CharacterData['id']) {
-    const baseBuild = getTemplateData(characterId);
-    setBaseBuild(baseBuild);
-    openPlanner();
-  }
 
   return (
     <main className="p-4">
       <h1>{t('title')}</h1>
-      <button
-        onClick={() => setShowBaseSelector(true)}
-        className="border border-taupe-700 bg-taupe-900 px-2 hover:cursor-pointer"
-      >
-        Add Build
-      </button>
-
-      {showBaseSelector && <BaseSelector selectBaseBuild={selectBaseBuild} />}
-      {showPlanner && <Planner />}
-
-      <hr className="my-4 border border-taupe-700" />
-      <Vault openPlanner={openPlanner} />
+      <Placeholder />
     </main>
   );
 };

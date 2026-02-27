@@ -7,6 +7,11 @@ import Providers from '../../components/providers';
 import { routing } from '@/src/i18n/routing';
 import { notFound } from 'next/navigation';
 import '../globals.css';
+import { setRequestLocale } from 'next-intl/server';
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 const RootLocaleLayout = async ({
   children,
@@ -19,6 +24,8 @@ const RootLocaleLayout = async ({
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
+
+  setRequestLocale(locale);
 
   return (
     <html lang="en">

@@ -3,17 +3,23 @@ import { calcWeaponPower, getWeaponData } from '../lib/utils';
 import { useModal } from '../context/modal-context';
 import { useBuild } from '../context/build-context';
 import WeaponPassive from './weapon-passive';
+import WeaponSelector from './modals/weapon-selector';
 
 const Weapon = () => {
   const { build } = useBuild();
   const { characterId, weaponId, attributes } = build;
 
-  const { openModal } = useModal();
+  const { openModal, closeAll, isModalOpen } = useModal();
 
   const weaponData = getWeaponData(weaponId);
 
   return (
     <div className="flex w-md flex-col border border-taupe-700">
+      <WeaponSelector
+        isOpen={isModalOpen.weapons}
+        onClose={closeAll}
+      />
+
       {/* Weapon info */}
       <div className="flex items-center">
         <div
@@ -21,7 +27,7 @@ const Weapon = () => {
           className="size-32 hover:cursor-pointer"
         >
           <Image
-            src={`/weapons/${weaponData.id}.png`}
+            src={`/weapons/${characterId}/${weaponData.id}.png`}
             alt={`${weaponData.name}`}
             width={36}
             height={36}

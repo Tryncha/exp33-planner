@@ -63,7 +63,7 @@ export interface WeaponData {
 
 export interface Build {
   id: string;
-  name: string;
+  buildName: string;
   characterId: CharacterId;
   attributes: Attributes;
   weaponId: string;
@@ -82,10 +82,8 @@ export interface Stats {
 
 export interface CharacterTemplate {
   id: string;
-  name: string;
+  buildName: string;
   characterId: CharacterId;
-  characterName: string;
-  imgData: ImageData;
   attributes: Attributes;
   baseStats: Stats;
   weaponId: string;
@@ -120,7 +118,6 @@ export interface PictoData {
 export interface SkillData {
   id: string;
   name: string;
-  imgData: ImageData;
   characterId: CharacterId;
   description: string;
   cost: number;

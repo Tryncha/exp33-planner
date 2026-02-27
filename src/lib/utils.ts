@@ -2,7 +2,7 @@ import PICTOS from '../data/pictos';
 import SKILLS from '../data/skills';
 import WEAPONS from '../data/weapons';
 import { Attributes, CharacterData, PictoData, PictoStats, SkillData, Stats, WeaponData } from '../types';
-import { CHARACTER_TEMPLATES } from './constants';
+import { CHARACTER_DATA, CHARACTER_TEMPLATES } from './constants';
 import {
   ATTACK_POWER_FROM_MIGHT,
   CRIT_FROM_DEFENSE,
@@ -54,6 +54,16 @@ export function calcWeaponPower(
       bonusValues.luck);
 
   return Math.round(totalPower);
+}
+
+export function getCharacterData(characterId: CharacterData['id']) {
+  const characterData = CHARACTER_DATA.find((char) => char.id === characterId);
+
+  if (!characterData) {
+    throw new Error(`Character with id: ${characterId} not found...`);
+  }
+
+  return { ...characterData };
 }
 
 export function getTemplateData(characterId: CharacterData['id']) {

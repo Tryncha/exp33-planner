@@ -1,12 +1,14 @@
 import Image from 'next/image';
 import { Build } from '../types';
-import { calcLevel, getTemplateData } from '../lib/utils';
+import { calcLevel, getCharacterData } from '../lib/utils';
 import { useBuild } from '../context/build-context';
+import { useVault } from '../context/vault-context';
 
 const BuildResume = ({ buildResume, openPlanner }: { buildResume: Build; openPlanner: () => void }) => {
   const { setBaseBuild } = useBuild();
+  const { removeBuild } = useVault();
 
-  const characterData = getTemplateData(buildResume.characterId);
+  const characterData = getCharacterData(buildResume.characterId);
 
   function editBuild() {
     setBaseBuild(buildResume);
@@ -20,11 +22,12 @@ const BuildResume = ({ buildResume, openPlanner }: { buildResume: Build; openPla
         alt={characterData.imgData.alt}
         width={80}
         height={80}
+        loading="eager"
       />
       <div className="flex gap-4">
         <div className="flex flex-col items-center justify-center">
           <span className="text-xs">{buildResume.id}</span>
-          <h2 className="font-semibold">{buildResume.name}</h2>
+          <h2 className="font-semibold">{buildResume.buildName}</h2>
           <span className="text-xs capitalize">
             {buildResume.characterId}, Level {calcLevel(buildResume.attributes)}
           </span>
@@ -35,6 +38,7 @@ const BuildResume = ({ buildResume, openPlanner }: { buildResume: Build; openPla
         </div>
       </div>
       <button onClick={editBuild}>Edit</button>
+      <button onClick={() => removeBuild(buildResume.id)}>Remove</button>
     </div>
   );
 };

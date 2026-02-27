@@ -2,19 +2,17 @@
 
 import Planner from '../components/planner';
 import { useState } from 'react';
-import { useVault } from '../context/vault-context';
-import BuildResume from '../components/build-resume';
 import { useBuild } from '../context/build-context';
 import { CharacterData } from '../types';
 import { getTemplateData } from '../lib/utils';
 import BaseSelector from '../components/base-selector';
+import Vault from '../components/vault';
 
 const HomePage = () => {
   const { setBaseBuild } = useBuild();
 
   const [showBaseSelector, setShowBaseSelector] = useState(false);
   const [showPlanner, setShowPlanner] = useState(false);
-  const { vault } = useVault();
 
   function openPlanner() {
     setShowBaseSelector(false);
@@ -22,8 +20,8 @@ const HomePage = () => {
   }
 
   function selectBaseBuild(characterId: CharacterData['id']) {
-    const baseCharacter = getTemplateData(characterId);
-    setBaseBuild(baseCharacter);
+    const baseBuild = getTemplateData(characterId);
+    setBaseBuild(baseBuild);
     openPlanner();
   }
 
@@ -40,22 +38,7 @@ const HomePage = () => {
       {showPlanner && <Planner />}
 
       <hr className="my-4 border border-taupe-700" />
-      <section>
-        <h2>Saved builds</h2>
-        {vault.length === 0 ? (
-          <div className="text-xs">Empty vault</div>
-        ) : (
-          <div className="flex gap-2">
-            {vault.map((bld) => (
-              <BuildResume
-                key={bld.id}
-                buildResume={bld}
-                openPlanner={openPlanner}
-              />
-            ))}
-          </div>
-        )}
-      </section>
+      <Vault openPlanner={openPlanner} />
     </main>
   );
 };

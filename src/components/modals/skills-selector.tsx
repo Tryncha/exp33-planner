@@ -22,10 +22,10 @@ const SkillOption = ({
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Image
-            src={skillData.imgData.src}
-            alt={skillData.imgData.alt}
-            width={skillData.imgData.width}
-            height={skillData.imgData.height}
+            src={`/skills/${skillData.characterId}/${skillData.id}.png`}
+            alt={`${skillData.name} Skill`}
+            width={48}
+            height={48}
           />
           <h2 className="text-lg font-semibold">{skillData.name}</h2>
         </div>
@@ -48,12 +48,14 @@ const SkillsSelector = ({
   onClose: () => void;
 }) => {
   const { build, changeSkil } = useBuild();
-  const { skillIds } = build;
+  const { characterId, skillIds } = build;
 
   function handleChange(newSkillId: SkillData['id']) {
     changeSkil(selectedSlot, newSkillId);
     onClose();
   }
+
+  const filteredSkills = SKILLS.filter((sk) => sk.characterId === characterId);
 
   return (
     <Modal
@@ -61,7 +63,7 @@ const SkillsSelector = ({
       onClose={onClose}
       className="flex w-236 flex-wrap gap-2 rounded-xs bg-taupe-900 p-2"
     >
-      {SKILLS.map((skill) => (
+      {filteredSkills.map((skill) => (
         <SkillOption
           key={skill.id}
           skillData={skill}

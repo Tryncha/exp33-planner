@@ -33,10 +33,10 @@ const SkillSlot = ({
       className="relative flex h-18 items-center gap-2 border border-taupe-700 p-2 hover:cursor-pointer hover:bg-taupe-900"
     >
       <Image
-        src={skillData.imgData.src}
-        alt={skillData.imgData.alt}
-        width={skillData.imgData.width}
-        height={skillData.imgData.height}
+        src={`/skills/${skillData.characterId}/${skillData.id}.png`}
+        alt={`${skillData.name} Skill`}
+        width={48}
+        height={48}
       />
       <div className="flex flex-1 flex-col">
         <span className="text-center font-semibold">{skillData.name}</span>

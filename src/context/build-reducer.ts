@@ -1,5 +1,5 @@
-import { getTemplateData, swapElements } from '../lib/utils';
-import { Build, CharacterData, PictoData, SkillData, WeaponData } from '../types';
+import { swapElements } from '../lib/utils';
+import { Build, PictoData, SkillData, WeaponData } from '../types';
 
 type BuildAction =
   | {
@@ -77,7 +77,7 @@ function buildReducer(buildState: Build, action: BuildAction) {
     case 'CHANGE_SKILL': {
       const { slotToChange, newSkillId } = action.payload;
 
-      if (buildState.skillIds.includes(newSkillId) && buildState.skillIds[slotToChange] !== newSkillId) {
+      if (newSkillId && buildState.skillIds.includes(newSkillId) && buildState.skillIds[slotToChange] !== newSkillId) {
         const newSkillIds = [...buildState.skillIds];
         const skillIndex = buildState.skillIds.indexOf(newSkillId);
 

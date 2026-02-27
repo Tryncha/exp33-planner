@@ -1,13 +1,13 @@
 import Image from 'next/image';
 import { useBuild } from '../context/build-context';
-import { calcLevel, getTemplateData } from '../lib/utils';
+import { calcLevel, getCharacterData, getTemplateData } from '../lib/utils';
 import { Attributes } from '../types';
 
 const CharacterInfo = () => {
   const { build } = useBuild();
   const { characterId, attributes } = build;
 
-  const characterData = getTemplateData(characterId);
+  const characterData = getCharacterData(characterId);
 
   return (
     <div className="flex flex-col items-center justify-center border border-taupe-700 p-4">

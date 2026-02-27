@@ -202,7 +202,7 @@ const GUSTAVE_VERSO: WeaponData[] = [
     passives: [
       '+1 Perfection on Critical hit.',
       'Self-Heal by 2% Health on dealing a Critical hit.',
-      'Countemttack is always a Critical hit.'
+      'Counterattack is always a Critical hit.'
     ]
   },
   {
@@ -274,7 +274,7 @@ const GUSTAVE_VERSO: WeaponData[] = [
     basePower: 3713,
     scaling: { vitality: 'C', agility: 'B' },
     passives: [
-      "-1 to all Perfection gain but can't reach Rank S.",
+      "+1 to all Perfection gain but can't reach Rank S.",
       'Base Attack gives 4 Perfection.',
       '20% increased Light damage with Skills.'
     ]

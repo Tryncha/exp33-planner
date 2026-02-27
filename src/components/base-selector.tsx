@@ -9,6 +9,10 @@ const BaseSelector = ({ selectBaseBuild }: { selectBaseBuild: (characterId: Char
         characterId="gustave"
         onClick={() => selectBaseBuild('gustave')}
       />
+      <OptionTemplate
+        characterId="lune"
+        onClick={() => selectBaseBuild('lune')}
+      />
     </section>
   );
 };

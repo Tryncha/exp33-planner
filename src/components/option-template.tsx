@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import { CharacterData } from '../types';
-import { getTemplateData } from '../lib/utils';
+import { getCharacterData, getTemplateData } from '../lib/utils';
 
 const OptionTemplate = ({ characterId, onClick }: { characterId: CharacterData['id']; onClick: () => void }) => {
-  const templateData = getTemplateData(characterId);
+  const characterData = getCharacterData(characterId);
 
   return (
     <div
@@ -11,12 +11,12 @@ const OptionTemplate = ({ characterId, onClick }: { characterId: CharacterData['
       className="flex size-32 flex-col items-center justify-center gap-1 rounded-xs border border-taupe-700 hover:cursor-pointer hover:bg-taupe-800"
     >
       <Image
-        src={templateData.imgData.src}
-        alt={templateData.imgData.alt}
+        src={characterData.imgData.src}
+        alt={characterData.imgData.alt}
         width={80}
         height={80}
       />
-      <h2 className="text-sm font-semibold">{templateData.characterName}</h2>
+      <h2 className="text-sm font-semibold">{characterData.name}</h2>
     </div>
   );
 };

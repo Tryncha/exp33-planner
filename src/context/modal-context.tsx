@@ -1,6 +1,4 @@
 import { Activity, createContext, useContext, useState } from 'react';
-import WeaponSelector from '../components/modals/weapon-selector';
-import PictosSelector from '../components/modals/pictos-selector';
 
 export const Modal = ({
   isOpen,
@@ -75,15 +73,7 @@ export const ModalProvider = ({ children }: { children: React.ReactNode }) => {
 
   const modalValue = { isModalOpen, openModal, closeAll };
 
-  return (
-    <ModalContext.Provider value={modalValue}>
-      <WeaponSelector
-        isOpen={isModalOpen.weapons}
-        onClose={closeAll}
-      />
-      {children}
-    </ModalContext.Provider>
-  );
+  return <ModalContext.Provider value={modalValue}>{children}</ModalContext.Provider>;
 };
 
 export default ModalContext;

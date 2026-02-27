@@ -1,17 +1,33 @@
-import { CharacterTemplate } from '../types';
+import { CharacterData, CharacterTemplate } from '../types';
+
+export const CHARACTER_DATA: CharacterData[] = [
+  {
+    id: 'gustave',
+    name: 'Gustave',
+    imgData: {
+      src: '/characters/gustave.png',
+      alt: 'Gustave Artwork',
+      width: 40,
+      height: 40
+    }
+  },
+  {
+    id: 'lune',
+    name: 'Lune',
+    imgData: {
+      src: '/characters/lune.png',
+      alt: 'Lune Artwork',
+      width: 40,
+      height: 40
+    }
+  }
+];
 
 export const CHARACTER_TEMPLATES: CharacterTemplate[] = [
   {
     id: 'gustave-template',
-    name: 'Gustave',
+    buildName: 'Gustave',
     characterId: 'gustave',
-    characterName: 'Gustave',
-    imgData: {
-      src: '/characters/gustave.png',
-      alt: '',
-      width: 40,
-      height: 40
-    },
     attributes: {
       vitality: 0,
       might: 0,
@@ -28,6 +44,29 @@ export const CHARACTER_TEMPLATES: CharacterTemplate[] = [
     },
     weaponId: 'noahram',
     skillIds: ['lumiere-assault', '', 'overcharge', '', '', ''],
+    pictosIds: ['', '', ''],
+    luminasIds: []
+  },
+  {
+    id: 'lune-template',
+    buildName: 'Lune',
+    characterId: 'lune',
+    attributes: {
+      vitality: 0,
+      might: 0,
+      agility: 0,
+      defense: 0,
+      luck: 0
+    },
+    baseStats: {
+      attackPower: 51,
+      speed: 200,
+      criticalRate: 5,
+      health: 150,
+      defense: 0
+    },
+    weaponId: 'lunerim',
+    skillIds: ['immolation', '', 'ice-lance', '', '', ''],
     pictosIds: ['', '', ''],
     luminasIds: []
   }

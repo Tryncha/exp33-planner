@@ -98,7 +98,11 @@ function buildReducer(buildState: Build, action: BuildAction) {
     case 'CHANGE_PICTO': {
       const { slotToChange, newPictoId } = action.payload;
 
-      if (buildState.pictosIds.includes(newPictoId) && buildState.pictosIds[slotToChange] !== newPictoId) {
+      if (
+        newPictoId &&
+        buildState.pictosIds.includes(newPictoId) &&
+        buildState.pictosIds[slotToChange] !== newPictoId
+      ) {
         const newPictosIds = [...buildState.pictosIds];
         const pictoIndex = buildState.pictosIds.indexOf(newPictoId);
 

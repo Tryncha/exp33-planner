@@ -11,17 +11,11 @@ const LuminaInfo = ({ pictoData }: { pictoData: PictoData }) => {
 
   return (
     <div className="flex h-16 items-center justify-between gap-2 border-b border-taupe-700 px-4 py-2">
-      <Image
-        src={`/pictos/${pictoData.id}.png`}
-        alt={`${pictoData.name} Picto`}
-        width={54 / 2}
-        height={54 / 2}
-      />
-      <div className="flex flex-col items-center">
+      <div className="flex flex-1 flex-col">
         <h2 className="font-semibold">{pictoData.name}</h2>
         <p className="text-xs">{pictoData.effect}</p>
       </div>
-      <span className="text-2xl font-bold">{pictoData.luminaPoints}</span>
+      <span className="px-2 text-2xl font-bold">{pictoData.luminaPoints}</span>
       <button onClick={() => removeLumina(pictoData.id)}>
         <X />
       </button>

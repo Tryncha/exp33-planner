@@ -1,6 +1,7 @@
 import { useBuild } from '@/src/context/build-context';
 import { Modal } from '@/src/context/modal-context';
 import PICTOS from '@/src/data/pictos';
+import { formatPictoStats } from '@/src/lib/utils';
 import { PictoData } from '@/src/types';
 import Image from 'next/image';
 
@@ -16,17 +17,13 @@ const LuminaOption = ({
   return (
     <div
       onClick={onClick}
-      className={`${isEquipped && 'bg-taupe-700'} border border-taupe-700`}
+      className={`${isEquipped ? 'bg-taupe-700 hover:bg-taupe-600' : 'hover:bg-taupe-800'} flex w-84 flex-col gap-1 border border-taupe-700 px-4 py-2 hover:cursor-pointer`}
     >
-      <div>
-        <Image
-          src={`/pictos/${pictoData.id}.png`}
-          alt={`${pictoData.name} Picto`}
-          width={54}
-          height={54}
-        />
+      <div className="flex items-center justify-between">
+        <h2 className="font-semibold">{pictoData.name}</h2>
+        <span className="font-bold">{pictoData.luminaPoints}</span>
       </div>
-      <h2>{pictoData.name}</h2>
+      <p className="text-xs">{pictoData.effect}</p>
     </div>
   );
 };
@@ -39,7 +36,7 @@ const LuminasSelector = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => 
     <Modal
       isOpen={isOpen}
       onClose={onClose}
-      className="flex flex-col gap-2 rounded-xs bg-taupe-900 p-2"
+      className="scrollbar-thumb-taupe-600 scrollbar-track-taupe-800 scrollbar-thin flex h-180 w-348.5 flex-wrap gap-2 overflow-y-auto rounded-xs bg-taupe-900 p-2"
     >
       {PICTOS.map((pic) => (
         <LuminaOption

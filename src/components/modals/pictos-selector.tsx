@@ -1,6 +1,7 @@
 import { useBuild } from '@/src/context/build-context';
 import { Modal } from '@/src/context/modal-context';
 import PICTOS from '@/src/data/pictos';
+import { formatPictoStats } from '@/src/lib/utils';
 import { PictoData } from '@/src/types';
 import Image from 'next/image';
 
@@ -16,17 +17,22 @@ const PictoOption = ({
   return (
     <div
       onClick={onClick}
-      className={`${isEquipped ? 'bg-taupe-700 hover:bg-taupe-600' : 'hover:bg-taupe-800'} flex w-76 flex-col gap-2 border border-taupe-700 p-2 hover:cursor-pointer`}
+      className={`${isEquipped ? 'bg-taupe-700 hover:bg-taupe-600' : 'hover:bg-taupe-800'} flex w-84 items-center justify-between gap-2 border border-taupe-700 px-4 py-2 hover:cursor-pointer`}
     >
-      <div>
+      <div className="flex w-8 items-center justify-center">
         <Image
           src={`/pictos/${pictoData.id}.png`}
           alt={`${pictoData.name} Picto`}
-          width={54}
-          height={54}
+          width={54 / 2}
+          height={54 / 2}
         />
       </div>
-      <h2>{pictoData.name}</h2>
+      <div className="flex flex-col items-center">
+        <h2 className="text-lg font-semibold">{pictoData.name}</h2>
+        <span className="text-xs">{formatPictoStats(pictoData.stats)}</span>
+        <p className="mt-2 text-center text-sm">{pictoData.effect}</p>
+      </div>
+      <span className="text-xl font-bold">{pictoData.luminaPoints}</span>
     </div>
   );
 };
@@ -52,10 +58,11 @@ const PictosSelector = ({
     <Modal
       isOpen={isOpen}
       onClose={onClose}
-      className="scrollbar-thumb-taupe-600 scrollbar-track-taupe-800 scrollbar-thin flex h-180 w-238.5 flex-wrap gap-2 overflow-y-auto rounded-xs bg-taupe-900 p-2"
+      className="scrollbar-thumb-taupe-600 scrollbar-track-taupe-800 scrollbar-thin flex h-180 w-348.5 flex-wrap gap-2 overflow-y-auto rounded-xs bg-taupe-900 p-2"
     >
       {PICTOS.map((pic) => (
         <PictoOption
+          key={pic.id}
           isEquipped={pictosIds.includes(pic.id)}
           pictoData={pic}
           onClick={() => handleChange(pic.id)}

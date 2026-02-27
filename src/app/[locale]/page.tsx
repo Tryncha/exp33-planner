@@ -1,14 +1,17 @@
 'use client';
 
-import Planner from '../components/planner';
+import Planner from '../../components/planner';
 import { useState } from 'react';
-import { useBuild } from '../context/build-context';
-import { CharacterData } from '../types';
-import { getTemplateData } from '../lib/utils';
-import BaseSelector from '../components/base-selector';
-import Vault from '../components/vault';
+import { useBuild } from '../../context/build-context';
+import { CharacterData } from '../../types';
+import { getTemplateData } from '../../lib/utils';
+import BaseSelector from '../../components/base-selector';
+import Vault from '../../components/vault';
+import { useTranslations } from 'next-intl';
 
 const HomePage = () => {
+  const t = useTranslations('HomePage');
+
   const { setBaseBuild } = useBuild();
 
   const [showBaseSelector, setShowBaseSelector] = useState(false);
@@ -27,6 +30,7 @@ const HomePage = () => {
 
   return (
     <main className="p-4">
+      <h1>{t('title')}</h1>
       <button
         onClick={() => setShowBaseSelector(true)}
         className="border border-taupe-700 bg-taupe-900 px-2 hover:cursor-pointer"

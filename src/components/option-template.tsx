@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { CharacterData } from '../types';
-import { getCharacterData, getTemplateData } from '../lib/utils';
+import { getCharacterData } from '../lib/utils';
 
 const OptionTemplate = ({ characterId, onClick }: { characterId: CharacterData['id']; onClick: () => void }) => {
   const characterData = getCharacterData(characterId);

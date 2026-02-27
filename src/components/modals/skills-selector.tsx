@@ -61,7 +61,7 @@ const SkillsSelector = ({
     <Modal
       isOpen={isOpen}
       onClose={onClose}
-      className="flex w-236 flex-wrap gap-2 rounded-xs bg-taupe-900 p-2"
+      className="scrollbar-thumb-taupe-600 scrollbar-track-taupe-800 scrollbar-thin flex h-180 w-240 flex-wrap gap-2 overflow-y-auto rounded-xs bg-taupe-900 p-2"
     >
       {filteredSkills.map((skill) => (
         <SkillOption

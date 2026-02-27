@@ -13,6 +13,22 @@ const BaseSelector = ({ selectBaseBuild }: { selectBaseBuild: (characterId: Char
         characterId="lune"
         onClick={() => selectBaseBuild('lune')}
       />
+      <OptionTemplate
+        characterId="maelle"
+        onClick={() => selectBaseBuild('maelle')}
+      />
+      <OptionTemplate
+        characterId="sciel"
+        onClick={() => selectBaseBuild('sciel')}
+      />
+      <OptionTemplate
+        characterId="verso"
+        onClick={() => selectBaseBuild('verso')}
+      />
+      <OptionTemplate
+        characterId="monoco"
+        onClick={() => selectBaseBuild('monoco')}
+      />
     </section>
   );
 };

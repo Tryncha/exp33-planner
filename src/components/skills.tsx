@@ -1,19 +1,22 @@
 import Image from 'next/image';
 import { useBuild } from '../context/build-context';
 import { getSkillData } from '../lib/utils';
-import { SkillData } from '../types';
+import { Skill } from '../types';
 import SkillsSelector from './modals/skills-selector';
 import { MouseEvent, useState } from 'react';
 import { useModal } from '../context/modal-context';
 import { X } from 'lucide-react';
+import { useLocale, useTranslations } from 'next-intl';
 
 const EmptySkillSlot = ({ onClick }: { onClick: () => void }) => {
+  const t = useTranslations('Skills');
+
   return (
     <div
       onClick={onClick}
-      className="flex h-18 items-center justify-center border border-taupe-700 text-taupe-500 italic hover:cursor-pointer"
+      className="flex h-18 items-center justify-center border border-taupe-700 text-sm text-taupe-500 italic hover:cursor-pointer"
     >
-      Select a skill
+      {t('selectSkill')}
     </div>
   );
 };
@@ -23,10 +26,13 @@ const SkillSlot = ({
   onClick,
   removeSkill
 }: {
-  skillData: SkillData;
+  skillData: Skill;
   onClick: () => void;
   removeSkill: (e: MouseEvent<HTMLButtonElement>) => void;
 }) => {
+  const locale = useLocale();
+  const t = useTranslations('Skills');
+
   return (
     <div
       onClick={onClick}
@@ -34,13 +40,15 @@ const SkillSlot = ({
     >
       <Image
         src={`/skills/${skillData.characterId}/${skillData.id}.png`}
-        alt={`${skillData.name} Skill`}
+        alt={skillData[locale].name}
         width={48}
         height={48}
       />
       <div className="flex flex-1 flex-col">
-        <span className="text-center font-semibold">{skillData.name}</span>
-        <span className="text-center text-xs">Cost: {skillData.cost}</span>
+        <span className="text-center font-semibold">{skillData[locale].name}</span>
+        <span className="text-center text-xs">
+          {t('cost')}: {skillData.cost}
+        </span>
       </div>
       <button
         onClick={removeSkill}
@@ -53,6 +61,8 @@ const SkillSlot = ({
 };
 
 const Skills = () => {
+  const t = useTranslations('Skills');
+
   const { build, changeSkil } = useBuild();
   const { skillIds } = build;
 
@@ -78,7 +88,7 @@ const Skills = () => {
         isOpen={isModalOpen.skills}
         onClose={closeAll}
       />
-      <h2 className="text-center font-semibold">Skills</h2>
+      <h2 className="text-center font-semibold">{t('title')}</h2>
       <div className="grid grid-cols-2 grid-rows-2 gap-2">
         {skillsData.map((skill, indexSlot) =>
           !skill ? (

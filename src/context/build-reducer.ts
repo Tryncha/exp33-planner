@@ -1,5 +1,5 @@
 import { swapElements } from '../lib/utils';
-import { Build, PictoData, SkillData, WeaponData } from '../types';
+import { Build, PictoData, Skill, WeaponData } from '../types';
 
 type BuildAction =
   | {
@@ -19,7 +19,7 @@ type BuildAction =
       type: 'CHANGE_SKILL';
       payload: {
         slotToChange: number;
-        newSkillId: SkillData['id'];
+        newSkillId: Skill['id'];
       };
     }
   | {

@@ -1,7 +1,7 @@
 import PICTOS from '../data/pictos';
 import SKILLS from '../data/skills';
 import WEAPONS from '../data/weapons';
-import { Attributes, CharacterData, PictoData, PictoStats, SkillData, Stats, WeaponData } from '../types';
+import { Attributes, CharacterData, PictoData, PictoStats, Skill, Stats, WeaponData } from '../types';
 import { CHARACTER_DATA, CHARACTER_TEMPLATES } from './constants';
 import {
   ATTACK_POWER_FROM_MIGHT,
@@ -90,7 +90,7 @@ export function getPictoData(pictoId: PictoData['id']) {
   return PICTOS.find((pic) => pic.id === pictoId);
 }
 
-export function getSkillData(skillId: SkillData['id']) {
+export function getSkillData(skillId: Skill['id']) {
   return SKILLS.find((pic) => pic.id === skillId);
 }
 

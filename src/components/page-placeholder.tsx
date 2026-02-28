@@ -7,12 +7,21 @@ import { CharacterData } from '../types';
 import Planner from './planner';
 import BaseSelector from './base-selector';
 import Vault from './vault';
+import { useTranslations } from 'next-intl';
 
 const Placeholder = () => {
+  const t = useTranslations();
+
   const { setBaseBuild } = useBuild();
 
+  const [showButton, setShowButton] = useState(true);
   const [showBaseSelector, setShowBaseSelector] = useState(false);
   const [showPlanner, setShowPlanner] = useState(false);
+
+  function openSelector() {
+    setShowButton(false);
+    setShowBaseSelector(true);
+  }
 
   function openPlanner() {
     setShowBaseSelector(false);
@@ -26,20 +35,20 @@ const Placeholder = () => {
   }
 
   return (
-    <>
-      <button
-        onClick={() => setShowBaseSelector(true)}
-        className="border border-taupe-700 bg-taupe-900 px-2 hover:cursor-pointer"
-      >
-        Add Build
-      </button>
-
+    <section className="flex flex-col gap-2">
+      {showButton && (
+        <button
+          onClick={openSelector}
+          className="border border-taupe-700 bg-taupe-900 px-2 py-1 text-sm hover:cursor-pointer"
+        >
+          {t('addBuildButton')}
+        </button>
+      )}
       {showBaseSelector && <BaseSelector selectBaseBuild={selectBaseBuild} />}
       {showPlanner && <Planner />}
 
-      <hr className="my-4 border border-taupe-700" />
       <Vault openPlanner={openPlanner} />
-    </>
+    </section>
   );
 };
 

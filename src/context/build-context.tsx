@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer } from 'react';
-import { Build, CharacterData, AttributeId, WeaponData, PictoData, SkillData } from '../types';
+import { Build, CharacterData, AttributeId, WeaponData, PictoData, Skill } from '../types';
 import buildReducer from './build-reducer';
 import { CHARACTER_TEMPLATES } from '../lib/constants';
 
@@ -8,7 +8,7 @@ interface BuildContextType {
   setBaseBuild: (newBaseBuild: Build) => void;
   changeStat: (statToChange: AttributeId, newValue: number) => void;
   changeWeapon: (newWeaponId: WeaponData['id']) => void;
-  changeSkil: (slotToChange: number, newSkillId: SkillData['id']) => void;
+  changeSkil: (slotToChange: number, newSkillId: Skill['id']) => void;
   changePicto: (slotToChange: number, newPictoId: PictoData['id']) => void;
   addLumina: (luminaToAdd: PictoData['id']) => void;
   removeLumina: (luminaToRemove: PictoData['id']) => void;
@@ -41,7 +41,7 @@ export const BuildProvider = ({ children }: { children: React.ReactNode }) => {
     buildDispatch({ type: 'CHANGE_WEAPON', payload: { newWeaponId } });
   }
 
-  function changeSkil(slotToChange: number, newSkillId: SkillData['id']) {
+  function changeSkil(slotToChange: number, newSkillId: Skill['id']) {
     buildDispatch({ type: 'CHANGE_SKILL', payload: { slotToChange, newSkillId } });
   }
 

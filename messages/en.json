@@ -4,5 +4,42 @@
   },
   "HomePage": {
     "title": "Title"
+  },
+  "Skills": {
+    "title": "Skills",
+    "cost": "Cost",
+    "imgAlt": "{name} Skill",
+    "selectSkill": "Select a skill"
+  },
+  "addBuildButton": "Add build",
+  "BaseSelector": {
+    "selectCharacter": "Select a Character"
+  },
+  "Planner": {
+    "saveButton": "Save",
+    "confirm": "Confirm changes"
+  },
+  "Vault": {
+    "savedBuilds": "Saved builds",
+    "empty": "Empty"
+  },
+  "CharacterInfo": {
+    "level": "Level"
+  },
+  "Attributes": {
+    "title": "Attributes",
+    "vitality": "Vitality",
+    "might": "Might",
+    "agility": "Agility",
+    "defense": "Defense",
+    "luck": "Luck"
+  },
+  "Stats": {
+    "title": "Stats",
+    "attackPower": "Attack Power",
+    "speed": "Speed",
+    "critRate": "Critical Rate",
+    "health": "Health",
+    "defense": "Defense"
   }
 }

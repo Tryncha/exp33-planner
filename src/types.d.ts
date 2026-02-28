@@ -115,10 +115,15 @@ export interface PictoData {
   stats: PictoStats;
 }
 
-export interface SkillData {
-  id: string;
+export interface SkillLocale {
   name: string;
-  characterId: CharacterId;
   description: string;
+}
+
+export interface Skill {
+  id: string;
   cost: number;
+  characterId: CharacterId;
+  en: SkillLocale;
+  es: SkillLocale;
 }

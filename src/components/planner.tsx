@@ -6,8 +6,12 @@ import Luminas from './luminas';
 import Stats from './stats';
 import Skills from './skills';
 import CharacterInfo from './character-info';
+import { useTranslations } from 'next-intl';
+import Attributes from './attributes';
 
 const Planner = () => {
+  const t = useTranslations('Planner');
+
   const { build } = useBuild();
   const { vault, addBuild, updateBuild } = useVault();
 
@@ -24,6 +28,8 @@ const Planner = () => {
     } else {
       updateBuild(build.id, { ...build });
     }
+
+    location.reload();
   }
 
   return (
@@ -31,6 +37,7 @@ const Planner = () => {
       <div className="flex gap-2">
         <div className="flex flex-col gap-2">
           <CharacterInfo />
+          <Attributes />
           <Stats />
         </div>
         <div className="flex w-md flex-col gap-2">
@@ -46,14 +53,14 @@ const Planner = () => {
             className="border px-2"
             onClick={saveBuildAndClose}
           >
-            Save Build
+            {t('saveButton')}
           </button>
         ) : (
           <button
             className="border px-2"
             onClick={saveBuildAndClose}
           >
-            Confirm changes
+            {t('confirm')}
           </button>
         )}
       </div>

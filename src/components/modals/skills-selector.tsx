@@ -1,19 +1,22 @@
 import { useBuild } from '@/src/context/build-context';
 import { Modal } from '@/src/context/modal-context';
 import SKILLS from '@/src/data/skills';
-import { SkillData } from '@/src/types';
+import { Skill } from '@/src/types';
 import Image from 'next/image';
 import Diamond from '../diamond';
+import { useLocale } from 'next-intl';
 
 const SkillOption = ({
   skillData,
   isEquipped,
   onClick
 }: {
-  skillData: SkillData;
+  skillData: Skill;
   isEquipped: boolean;
   onClick: () => void;
 }) => {
+  const locale = useLocale();
+
   return (
     <div
       onClick={onClick}
@@ -23,17 +26,17 @@ const SkillOption = ({
         <div className="flex items-center gap-2">
           <Image
             src={`/skills/${skillData.characterId}/${skillData.id}.png`}
-            alt={`${skillData.name} Skill`}
+            alt={`${skillData[locale].name} Skill`}
             width={48}
             height={48}
           />
-          <h2 className="text-lg font-semibold">{skillData.name}</h2>
+          <h2 className="text-lg font-semibold">{skillData[locale].name}</h2>
         </div>
         <Diamond className="mx-2 flex size-6 rotate-45 items-center justify-center border border-blue-300 bg-blue-950 font-semibold text-blue-300">
           {skillData.cost}
         </Diamond>
       </div>
-      <p className="text-sm">{skillData.description}</p>
+      <p className="text-sm">{skillData[locale].description}</p>
     </div>
   );
 };
@@ -50,7 +53,7 @@ const SkillsSelector = ({
   const { build, changeSkil } = useBuild();
   const { characterId, skillIds } = build;
 
-  function handleChange(newSkillId: SkillData['id']) {
+  function handleChange(newSkillId: Skill['id']) {
     changeSkil(selectedSlot, newSkillId);
     onClose();
   }

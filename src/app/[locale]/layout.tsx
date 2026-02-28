@@ -1,5 +1,5 @@
 // Internalization Provider
-import { hasLocale, NextIntlClientProvider } from 'next-intl';
+import { hasLocale, Locale, NextIntlClientProvider } from 'next-intl';
 
 // App Providers
 import Providers from '../../components/providers';
@@ -18,7 +18,7 @@ const RootLocaleLayout = async ({
   params
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
+  params: Promise<{ locale: Locale }>;
 }) => {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) {

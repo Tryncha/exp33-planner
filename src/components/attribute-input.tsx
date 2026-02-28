@@ -2,7 +2,7 @@ import { ChangeEvent, useId } from 'react';
 import { useBuild } from '../context/build-context';
 import { AttributeId } from '../types';
 
-const AttributeInput = ({ attributeId }: { attributeId: AttributeId }) => {
+const AttributeInput = ({ label, attributeId }: { label: string; attributeId: AttributeId }) => {
   const inputId = useId();
 
   const { build, changeStat } = useBuild();
@@ -26,9 +26,9 @@ const AttributeInput = ({ attributeId }: { attributeId: AttributeId }) => {
     <div className="flex w-64">
       <label
         htmlFor={inputId}
-        className="flex-1 font-semibold capitalize"
+        className="flex-1 font-semibold"
       >
-        {attributeId}
+        {label}
       </label>
       <input
         id={inputId}

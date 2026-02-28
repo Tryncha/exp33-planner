@@ -1,7 +1,7 @@
 import PICTOS from '../data/pictos';
 import SKILLS from '../data/skills';
 import WEAPONS from '../data/weapons';
-import { Attributes, CharacterData, PictoData, PictoStats, Skill, Stats, WeaponData } from '../types';
+import { Attributes, CharacterData, PictoData, PictoStats, Skill, Stats, Weapon } from '../types';
 import { CHARACTER_DATA, CHARACTER_TEMPLATES } from './constants';
 import {
   ATTACK_POWER_FROM_MIGHT,
@@ -76,7 +76,7 @@ export function getTemplateData(characterId: CharacterData['id']) {
   return { ...characterTemplate };
 }
 
-export function getWeaponData(weaponId: WeaponData['id']) {
+export function getWeaponData(weaponId: Weapon['id']) {
   const weaponData = WEAPONS.find((wpn) => wpn.id === weaponId);
 
   if (!weaponData) {

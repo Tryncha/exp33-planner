@@ -2,7 +2,8 @@ import { useBuild } from '@/src/context/build-context';
 import { Modal } from '@/src/context/modal-context';
 import WEAPONS from '@/src/data/weapons';
 import { calcWeaponPower } from '@/src/lib/utils';
-import { WeaponData } from '@/src/types';
+import { Weapon } from '@/src/types';
+import { useLocale } from 'next-intl';
 import Image from 'next/image';
 
 const WeaponOption = ({
@@ -10,10 +11,12 @@ const WeaponOption = ({
   isEquipped,
   onClick
 }: {
-  weaponData: WeaponData;
+  weaponData: Weapon;
   isEquipped: boolean;
   onClick: () => void;
 }) => {
+  const locale = useLocale();
+
   const { build } = useBuild();
   const { characterId, attributes } = build;
 
@@ -28,7 +31,7 @@ const WeaponOption = ({
         <div className="size-28">
           <Image
             src={`/weapons/${characterId}/${weaponData.id}.png`}
-            alt={`${weaponData.name}`}
+            alt={weaponData[locale].name}
             width={32}
             height={32}
             className="translate-x-12 -rotate-135"
@@ -37,7 +40,7 @@ const WeaponOption = ({
 
         {/* Stats */}
         <div className="flex flex-1 flex-col gap-2 px-2">
-          <h2 className="text-2xl font-semibold">{weaponData.name}</h2>
+          <h2 className="text-2xl font-semibold">{weaponData[locale].name}</h2>
           <div className="flex justify-between">
             <div className="flex flex-1 flex-col items-center">
               <span className="text-sm text-taupe-400">Power</span>
@@ -64,13 +67,13 @@ const WeaponOption = ({
 
       {/* Passives */}
       {characterId !== 'gustave' &&
-        (!weaponData.passives ? (
+        (!weaponData[locale].passives ? (
           <div className="flex h-60 items-center justify-center border-t border-taupe-700 text-taupe-500 italic">
             This weapon has not passives
           </div>
         ) : (
           <div className="flex flex-col">
-            {weaponData.passives.map((pss, i) => (
+            {weaponData[locale].passives.map((pss, i) => (
               <p
                 key={`${weaponData.id}-passive-${i}`}
                 className=""
@@ -89,7 +92,7 @@ const WeaponSelector = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
   const { build, changeWeapon } = useBuild();
   const { characterId, weaponId } = build;
 
-  function handleChange(newWeaponId: WeaponData['id']) {
+  function handleChange(newWeaponId: Weapon['id']) {
     changeWeapon(newWeaponId);
     onClose();
   }

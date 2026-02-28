@@ -4,8 +4,11 @@ import { useModal } from '../context/modal-context';
 import { useBuild } from '../context/build-context';
 import WeaponPassive from './weapon-passive';
 import WeaponSelector from './modals/weapon-selector';
+import { useLocale } from 'next-intl';
 
 const Weapon = () => {
+  const locale = useLocale();
+
   const { build } = useBuild();
   const { characterId, weaponId, attributes } = build;
 
@@ -28,7 +31,7 @@ const Weapon = () => {
         >
           <Image
             src={`/weapons/${characterId}/${weaponData.id}.png`}
-            alt={`${weaponData.name}`}
+            alt={weaponData[locale].name}
             width={36}
             height={36}
             className="translate-x-12 -rotate-135"
@@ -37,7 +40,7 @@ const Weapon = () => {
 
         <div className="flex flex-1 flex-col gap-2 p-4">
           <div className="flex items-center justify-between gap-2">
-            <h2 className="text-2xl font-semibold">{weaponData.name}</h2>
+            <h2 className="text-2xl font-semibold">{weaponData[locale].name}</h2>
             <span>Level 33</span>
           </div>
           <div className="flex justify-between">
@@ -69,13 +72,13 @@ const Weapon = () => {
         <div className="flex h-60 items-center justify-center border-t border-taupe-700 text-taupe-500 italic">
           Gustave doesn't have weapon passives
         </div>
-      ) : !weaponData.passives ? (
+      ) : !weaponData[locale].passives ? (
         <div className="flex h-60 items-center justify-center border-t border-taupe-700 text-taupe-500 italic">
           This weapon has not passives
         </div>
       ) : (
         <div className="flex flex-col">
-          {weaponData.passives.map((pss, i) => (
+          {weaponData[locale].passives.map((pss, i) => (
             <WeaponPassive
               key={`weapon-passive-${i}`}
               level={[4, 10, 20][i]}

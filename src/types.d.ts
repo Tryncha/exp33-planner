@@ -45,20 +45,28 @@ export interface CharacterData {
   };
 }
 
-export interface WeaponData {
-  id: string;
+export interface Scaling {
+  vitality?: string;
+  might?: string;
+  agility?: string;
+  defense?: string;
+  luck?: string;
+}
+
+export interface LocaleWeapon {
   name: string;
+  passives?: [string, string, string];
+}
+
+export interface Weapon {
+  id: string;
   characterIds: Array<Character['id']>;
   basePower: number;
   element: string;
-  passives?: [string, string, string];
-  scaling: {
-    vitality?: string;
-    might?: string;
-    agility?: string;
-    defense?: string;
-    luck?: string;
-  };
+  scaling: Scaling;
+  en: LocaleWeapon;
+  es: LocaleWeapon;
+  fr: LocaleWeapon;
 }
 
 export interface Build {

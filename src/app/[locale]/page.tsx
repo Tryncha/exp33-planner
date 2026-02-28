@@ -19,7 +19,7 @@ const HomePage = ({ params }: { params: Promise<{ locale: Locale }> }) => {
 
   return (
     <main className="p-4">
-      {/* <h1>{t('title')}</h1> */}
+      {/* <h1 className="text-center text-2xl">{t('title')}</h1> */}
       <Placeholder />
     </main>
   );

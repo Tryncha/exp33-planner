@@ -24,6 +24,7 @@ const Placeholder = () => {
   }
 
   function openPlanner() {
+    setShowButton(false);
     setShowBaseSelector(false);
     setShowPlanner(true);
   }

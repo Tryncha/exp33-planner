@@ -3,18 +3,18 @@ import { Locale, useTranslations } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Placeholder from '@/src/components/page-placeholder';
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: Locale }> }) {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'Metadata' });
+  const t = await getTranslations({ locale: locale as Locale, namespace: 'Metadata' });
 
   return {
     title: t('title')
   };
 }
 
-const HomePage = ({ params }: { params: Promise<{ locale: Locale }> }) => {
+const HomePage = ({ params }: { params: Promise<{ locale: string }> }) => {
   const { locale } = use(params);
-  setRequestLocale(locale);
+  setRequestLocale(locale as Locale);
   const t = useTranslations('HomePage');
 
   return (

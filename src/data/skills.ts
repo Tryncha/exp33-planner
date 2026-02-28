@@ -120,318 +120,345 @@ const LUNE_SKILLS: Skill[] = [
     id: 'crippling-tsunami',
     cost: 5,
     characterId: 'lune',
+    stains: ['ice', 'light'],
     en: {
       name: 'Crippling Tsunami',
       description:
-        'Deals medium Ice damage to all enemies. 1 hit. Applies Slow  for 3 turns. Consumes    for greatly increased damage.'
+        'Deals medium Ice damage to all enemies. 1 hit. Applies Slow for 3 turns. Consumes {Earth}, {Lightning}, {Fire} for greatly increased damage.'
     },
     es: {
-      name: 'Crippling Tsunami',
+      name: 'Tsunami Incapacitante',
       description:
-        'Deals medium Ice damage to all enemies. 1 hit. Applies Slow  for 3 turns. Consumes    for greatly increased damage.'
+        'Inflige daño de hielo moderado a todos los enemigos. 1 golpe. Aplica lentitud durante 3 turnos. Consume {Tierra}, {Rayo}, {Fuego} para infligir mucho más daño.'
     }
   },
   {
     id: 'crustal-crush',
     cost: 7,
     characterId: 'lune',
+    stains: ['earth', 'light'],
     en: {
       name: 'Crustal Crush',
-      description: 'Deals High single target Earth and Break damage . 5 hits. Consumes  : Increased Damage.'
+      description: 'Deals high single target Earth and break damage. 5 hits. Consumes {Lightning x2}: Increased damage.'
     },
     es: {
-      name: 'Crustal Crush',
-      description: 'Deals High single target Earth and Break damage . 5 hits. Consumes  : Increased Damage.'
+      name: 'Corteza Aplastante',
+      description:
+        'Inflige mucho daño de tierra y de ruptura a un enemigo. 5 golpes. Consume {Rayo x2}: Aumenta el daño.'
     }
   },
   {
     id: 'earth-rising',
     cost: 3,
     characterId: 'lune',
+    stains: ['earth'],
     en: {
       name: 'Earth Rising',
-      description: 'Deals low Earth damage to all enemies. 1 hit. Consumes  for increased damage.'
+      description: 'Deals low Earth damage to all enemies. 1 hit. Consumes {Lightning} for increased damage.'
     },
     es: {
-      name: 'Earth Rising',
-      description: 'Deals low Earth damage to all enemies. 1 hit. Consumes  for increased damage.'
+      name: 'Alzamiento Terrestre',
+      description: 'Inflige daño de tierra leve a todos los enemigos. 1 golpe. Consume {Rayo} para infligir más daño.'
     }
   },
   {
     id: 'electrify',
     cost: 1,
     characterId: 'lune',
+    stains: ['lightning', 'lightning'],
     en: {
       name: 'Electrify',
       description:
-        'Deals low single target Lightning damage. 3 hits. Critical Hits  trigger an additional hit. Consumes   to generate one Light Stain'
+        'Deals low single target Lightning damage. 3 hits. Critical Hits trigger an additional hit. Consumes {Fire} to generate one Light Stain.'
     },
     es: {
-      name: 'Electrify',
+      name: 'Electrocución',
       description:
-        'Deals low single target Lightning damage. 3 hits. Critical Hits  trigger an additional hit. Consumes   to generate one Light Stain'
+        'Inflige daño de rayo leve a un objetivo. 3 golpes. Los golpes críticos propinan un golpe adicional. Consume {Fuego} para generar un borrón de luz.'
     }
   },
   {
     id: 'elemental-genesis',
     cost: 4,
     characterId: 'lune',
+    stains: [],
     en: {
       name: 'Elemental Genesis',
       description:
-        'Deals extreme damage to all enemies. 8 hits. Each hit deals damage in a random element. Can only be cast with'
+        'Deals extreme damage to all enemies. 8 hits. Each hit deals damage in a random element. Can only be cast with {Lightning}, {Earth}, {Fire}, {Ice}.'
     },
     es: {
-      name: 'Elemental Genesis',
+      name: 'Génesis Elemental',
       description:
-        'Deals extreme damage to all enemies. 8 hits. Each hit deals damage in a random element. Can only be cast with'
+        'Inflige daño extremo a todos los enemigos. 8 golpes. Cada golpe inflige daño de un elemento al azar. Solo se puede lanzar con {Rayo}, {Tierra}, {Fuego}, {Hielo}.'
     }
   },
   {
     id: 'elemental-trick',
     cost: 3,
     characterId: 'lune',
+    stains: [],
     en: {
       name: 'Elemental Trick',
       description:
-        'Deals low single target Ice, Fire, Lightning, and Earth damage. 4 hits. Critical Hits  generate the corresponding Stain.'
+        'Deals low single target Ice, Fire, Lightning, and Earth damage. 4 hits. Critical Hits generate the corresponding Stain.'
     },
     es: {
-      name: 'Elemental Trick',
+      name: 'Truco Elemental',
       description:
-        'Deals low single target Ice, Fire, Lightning, and Earth damage. 4 hits. Critical Hits  generate the corresponding Stain.'
+        'Inflige daño de hielo, fuego, rayo y tierra leve a un objetivo. 4 golpes. Los golpes críticos generan el borrón correspondiente.'
     }
   },
   {
     id: 'fire-rage',
     cost: 5,
     characterId: 'lune',
+    stains: ['fire', 'light'],
     en: {
       name: 'Fire Rage',
       description:
-        'Deals increasingly high Fire damage to all enemies every turn until Lune receives damage. Stuns self if interrupted. Consumes  : Increased Damage'
+        'Deals increasingly high Fire damage to all enemies every turn until Lune receives damage. Stuns self if interrupted. Consumes {Ice x2}: Increased Damage.'
     },
     es: {
-      name: 'Fire Rage',
+      name: 'Furia Ígnea',
       description:
-        'Deals increasingly high Fire damage to all enemies every turn until Lune receives damage. Stuns self if interrupted. Consumes  : Increased Damage'
+        'Inflige daño de fuego creciente cada turno a todos los enemigos hasta que Lune sufra daño. Si se interrumpe, aturde a Lune. Consume {Hielo x2}: Aumenta el daño.'
     }
   },
   {
     id: 'healing-light',
     cost: 3,
     characterId: 'lune',
+    stains: ['light'],
     en: {
       name: 'Healing Light',
-      description: 'Heals  the targeted Ally and dispels Status Effects. Consumes : Costs 0 AP'
+      description: 'Heals the targeted Ally and dispels Status Effects. Consumes {Earth x2}: Costs 0 AP.'
     },
     es: {
-      name: 'Healing Light',
-      description: 'Heals  the targeted Ally and dispels Status Effects. Consumes : Costs 0 AP'
+      name: 'Luz Curativa',
+      description:
+        'Cura al aliado seleccionado entre un 30% y un 50% de la vida y disipa las alteraciones de estado. Consume {Tierra x2}: Consume 0 PA.'
     }
   },
   {
     id: 'hell',
     cost: 9,
     characterId: 'lune',
+    stains: ['fire', 'light'],
     en: {
       name: 'Hell',
       description:
-        'Deals very high Fire damage that applies 5 Burn  per hit to all enemies. 2 hits. Deals self-damage if failed. Consumes   : Greatly increased damage.'
+        'Deals very high Fire damage that applies 5 Burn per hit to all enemies. 2 hits. Deals self-damage if failed. Consumes {Ice}, {Earth}, {Lightning}: Greatly increased damage.'
     },
     es: {
-      name: 'Hell',
+      name: 'Infierno',
       description:
-        'Deals very high Fire damage that applies 5 Burn  per hit to all enemies. 2 hits. Deals self-damage if failed. Consumes   : Greatly increased damage.'
+        'Inflige muchísimo daño de fuego y aplica 5 acumulaciones de quemadura por golpe a todos los enemigos. 2 golpes. Si falla, Lune se daña a sí misma. Consume {Hielo}, {Tierra}, {Rayo}: Aumenta mucho el daño.'
     }
   },
   {
     id: 'ice-lance',
     cost: 4,
     characterId: 'lune',
+    stains: ['ice', 'light'],
     en: {
       name: 'Ice Lance',
       description:
-        'Deals medium single target Ice damage that Slows  the target. 1 Hit. Consumes  to deal increased damage.'
+        'Deals medium single target Ice damage that Slows  the target. 1 Hit. Consumes {Earth} to deal increased damage.'
     },
     es: {
-      name: 'Ice Lance',
+      name: 'Lanza de Hielo',
       description:
-        'Deals medium single target Ice damage that Slows  the target. 1 Hit. Consumes  to deal increased damage.'
+        'Inflige daño de hielo moderado a un objetivo y le causa lentitud. 1 golpe. Consume {Tierra} para infligir más daño.'
     }
   },
   {
     id: 'immolation',
     cost: 2,
     characterId: 'lune',
+    stains: ['fire'],
     en: {
       name: 'Immolation',
       description:
-        'Deals low single target Fire damage and 3 Burn . 1 hit. Applies 2 more Burns  if the target is Marked . Consumes  for increased damage.'
+        'Deals low single target Fire damage and 3 Burn. 1 hit. Applies 2 more Burns if the target is Marked . Consumes {Ice} for increased damage.'
     },
     es: {
-      name: 'Immolation',
+      name: 'Inmolación',
       description:
-        'Deals low single target Fire damage and 3 Burn . 1 hit. Applies 2 more Burns  if the target is Marked . Consumes  for increased damage.'
+        'Inflige daño de fuego leve y 3 acumulaciones de quemadura a un objetivo. 1 golpe. Aplica 2 acumulaciones más de quemadura si el objetivo está marcado. Consume {Hielo} para infligir más daño.'
     }
   },
   {
     id: 'lightning-dance',
     cost: 7,
     characterId: 'lune',
+    stains: ['lightning', 'light'],
     en: {
       name: 'Lightning Dance',
       description:
-        'Deals very high single target Lightning damage. 6 hits. Critical Hits  trigger an additional hit. Consumes   : Greatly increased damage.'
+        'Deals very high single target Lightning damage. 6 hits. Critical Hits trigger an additional hit. Consumes {Earth}, {Ice}, {Fire}: Greatly increased damage.'
     },
     es: {
-      name: 'Lightning Dance',
+      name: 'Danza del Relámpago',
       description:
-        'Deals very high single target Lightning damage. 6 hits. Critical Hits  trigger an additional hit. Consumes   : Greatly increased damage.'
+        'Inflige muchísimo daño de rayo a un objetivo. 6 golpes. Los golpes críticos propinan un golpe adicional. Consume {Tierra}, {Hielo}, {Fire}: Aumenta mucho el daño.'
     }
   },
   {
     id: 'mayhem',
     cost: 3,
     characterId: 'lune',
+    stains: [],
     en: {
       name: 'Mayhem',
       description:
-        'Consumes all Stains to deal high elemental damage to the target. Can Break  if 4 Stains are consumed.'
+        'Consumes all Stains to deal high elemental damage to the target. Can Break if 4 Stains are consumed.'
     },
     es: {
-      name: 'Mayhem',
+      name: 'Caos',
       description:
-        'Consumes all Stains to deal high elemental damage to the target. Can Break  if 4 Stains are consumed.'
+        'Consume todos los borrones para inflingirle mucho daño elemental al objetivo. Si se consume 4 borrones, puede causar ruptura.'
     }
   },
   {
     id: 'rebirth',
     cost: 5,
     characterId: 'lune',
+    stains: ['light'],
     en: {
       name: 'Rebirth',
-      description: 'Revives an ally with 30-70% Health and 2 additional AP. Consumes : Costs 0 AP.'
+      description: 'Revives an ally with 30-70% Health and 2 additional AP. Consumes {Lightning x3}: Costs 0 AP.'
     },
     es: {
-      name: 'Rebirth',
-      description: 'Revives an ally with 30-70% Health and 2 additional AP. Consumes : Costs 0 AP.'
+      name: 'Renacer',
+      description: 'Revive a un aliado con un 30% al 70% de vida y 2 PA adicionales. Consume {Rayo x3}: Consume 0 PA.'
     }
   },
   {
     id: 'revitalization',
     cost: 5,
     characterId: 'lune',
+    stains: ['light'],
     en: {
       name: 'Revitalization',
       description:
-        'Heals  1-3 allies by 40-60% Health. Consumes  to also apply Regen  that heals on turn start for 3 turns.'
+        'Heals 1-3 allies by 40-60% Health. Consumes {Fire x3} to also apply Regen that heals on turn start for 3 turns.'
     },
     es: {
-      name: 'Revitalization',
+      name: 'Revitalización',
       description:
-        'Heals  1-3 allies by 40-60% Health. Consumes  to also apply Regen  that heals on turn start for 3 turns.'
+        'Cura de 1 a 3 aliados entre un 40% y un 60% de vida. Consume {Fuego x3} para aplicar también regeneración, que cura al inicia del turno.'
     }
   },
   {
     id: 'rockslide',
     cost: 5,
     characterId: 'lune',
+    stains: ['earth', 'light'],
     en: {
       name: 'Rockslide',
-      description: 'Deals medium single target Earth damage. 2 hits. Can Break  Consumes  for greatly increased damage.'
+      description:
+        'Deals medium single target Earth damage. 2 hits. Can Break Consumes {Lightning}, {Ice}, {Fuego} for greatly increased damage.'
     },
     es: {
-      name: 'Rockslide',
-      description: 'Deals medium single target Earth damage. 2 hits. Can Break  Consumes  for greatly increased damage.'
+      name: 'Alud',
+      description:
+        'Inflige daño de tierra moderado a un objetivo. 2 golpes. Puede causar ruptura. Consume {Rayo}, {Hielo}, {Fuego} para infligir mucho más daño.'
     }
   },
   {
     id: 'storm-caller',
     cost: 6,
     characterId: 'lune',
+    stains: ['lightning', 'light'],
     en: {
       name: 'Storm Caller',
       description:
-        'All enemies receive medium Lightning damage at the end of their turn, and low Lightning damage when they receive damage. Duration: 3 turns. Consumes   for double thunder strikes on turn end.'
+        'All enemies receive medium Lightning damage at the end of their turn, and low Lightning damage when they receive damage. Duration: 3 turns. Consumes {Fire x2} for double thunder strikes on turn end.'
     },
     es: {
-      name: 'Storm Caller',
+      name: 'Invocación de Tormentas',
       description:
-        'All enemies receive medium Lightning damage at the end of their turn, and low Lightning damage when they receive damage. Duration: 3 turns. Consumes   for double thunder strikes on turn end.'
+        'Todos los enemigos reciben daño de rayo moerado al final de su turno, y daño de rayo leve cuando reciben daño. Duración: 3 turnos. Consume {Fuego x2} para desatar ataques de trueno dobles al finalizar el turno.'
     }
   },
   {
     id: 'terraquake',
     cost: 5,
     characterId: 'lune',
+    stains: ['earth', 'light'],
     en: {
       name: 'Terraquake',
       description:
-        'Deals low Earth damage and Break damage  to all enemies every turn. Also increases all Break damage  received by 50%. Duration: 3 turns. Consumes   to increase the Duration to 5 turns.'
+        'Deals low Earth damage and Break damage to all enemies every turn. Also increases all Break damage received by 50%. Duration: 3 turns. Consumes {Lightning x2} to increase the Duration to 5 turns.'
     },
     es: {
-      name: 'Terraquake',
+      name: 'Terremoto',
       description:
-        'Deals low Earth damage and Break damage  to all enemies every turn. Also increases all Break damage  received by 50%. Duration: 3 turns. Consumes   to increase the Duration to 5 turns.'
+        'Inflige daño de tierra y de ruptura leve a todos los enemigos cada turno. Además, aumenta todo el daño de ruptura recibido un 50%. Duración: 3 turnos. Consume {Rayo x2} para aumentar la duración a 5 turnos.'
     }
   },
   {
     id: 'thermal-transfer',
     cost: 2,
     characterId: 'lune',
+    stains: ['ice'],
     en: {
       name: 'Thermal Transfer',
       description:
-        'Deals low single target Ice damage. 2 hits. Gains 4 AP if target is Burning  Consumes  : Play a second turn.'
+        'Deals low single target Ice damage. 2 hits. Gains 4 AP if target is Burning. Consumes {Earth x2}: Play a second turn.'
     },
     es: {
-      name: 'Thermal Transfer',
+      name: 'Transferencia Térmica',
       description:
-        'Deals low single target Ice damage. 2 hits. Gains 4 AP if target is Burning  Consumes  : Play a second turn.'
+        'Inflige daño de hielo leve a un objetivo. 2 golpes. Obtiene 4 PA si el objetivo sufre quemadura. Consume {Tierra x2}: Actúa una segunda vez.'
     }
   },
   {
     id: 'thunderfall',
     cost: 5,
     characterId: 'lune',
+    stains: ['lightning', 'light'],
     en: {
       name: 'Thunderfall',
       description:
-        'Deals medium Lightning damage to random enemies. 2-6 hits. Critical Hits  trigger an additional hit. Consumes   for increased damage.'
+        'Deals medium Lightning damage to random enemies. 2-6 hits. Critical Hits trigger an additional hit. Consumes {Fire} for increased damage.'
     },
     es: {
-      name: 'Thunderfall',
+      name: 'Tempestad',
       description:
-        'Deals medium Lightning damage to random enemies. 2-6 hits. Critical Hits  trigger an additional hit. Consumes   for increased damage.'
+        'Inflige daño de rayo moderado a enemigos al azar. 2 a 6 golpes. Los golpes críticos propinan un golpe adicional. Consume {Fuego} para infligir más daño.'
     }
   },
   {
     id: 'typhoon',
     cost: 8,
     characterId: 'lune',
+    stains: ['ice', 'light'],
     en: {
       name: 'Typhoon',
       description:
-        'On turn start, deals high Ice damage to all enemies and Heals  allies. Consumes  : Duration increased from 3 to 5 turns.'
+        'On turn start, deals high Ice damage to all enemies and Heals allies. Consumes {Earth x2}: Duration increased from 3 to 5 turns.'
     },
     es: {
-      name: 'Typhoon',
+      name: 'Tifón',
       description:
-        'On turn start, deals high Ice damage to all enemies and Heals  allies. Consumes  : Duration increased from 3 to 5 turns.'
+        'Al inicio del turno, inflige mucho daño de hielo a todos los enemigos y cura a los aliados. Consume {Tierra x2}: Aumenta la duración de 3 a 5 turnos.'
     }
   },
   {
     id: 'wildfire',
     cost: 4,
     characterId: 'lune',
+    stains: ['fire', 'light'],
     en: {
       name: 'Wildfire',
-      description: 'Deals medium Fire damage to all enemies. 1 hit. Applies 3 Burn  Consumes  : Increased Damage'
+      description: 'Deals medium Fire damage to all enemies. 1 hit. Applies 3 Burn Consumes {Ice x2}: Increased Damage'
     },
     es: {
-      name: 'Wildfire',
-      description: 'Deals medium Fire damage to all enemies. 1 hit. Applies 3 Burn  Consumes  : Increased Damage'
+      name: 'Fuego Indómito',
+      description:
+        'Inflige daño de fuego moderado a todos los enemigos. 1 golpe. Aplica 3 acumulaciones de quemadura. Consume {Hielo x2}: Aumenta el daño.'
     }
   }
 ];

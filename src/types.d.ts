@@ -120,10 +120,36 @@ export interface SkillLocale {
   description: string;
 }
 
-export interface Skill {
+export interface SkillBase {
   id: string;
   cost: number;
-  characterId: CharacterId;
   en: SkillLocale;
   es: SkillLocale;
 }
+
+export interface GustaveSkill extends SkillBase {
+  characterId: 'gustave';
+}
+
+export interface LuneSkill extends SkillBase {
+  characterId: 'lune';
+  stains: string[];
+}
+
+export interface MaelleSkill extends SkillBase {
+  characterId: 'maelle';
+}
+
+export interface ScielSkill extends SkillBase {
+  characterId: 'sciel';
+}
+
+export interface VersoSkill extends SkillBase {
+  characterId: 'verso';
+}
+
+export interface MonocoSkill extends SkillBase {
+  characterId: 'monoco';
+}
+
+export type Skill = GustaveSkill | LuneSkill | MaelleSkill | ScielSkill | VersoSkill | MonocoSkill;

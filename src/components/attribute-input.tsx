@@ -37,7 +37,7 @@ const AttributeInput = ({ label, attributeId }: { label: string; attributeId: At
         max={99}
         value={attributes[attributeId]}
         onChange={handleChange}
-        className="flex-1 border border-taupe-700 text-center"
+        className="no-spinners flex-1 border border-taupe-700 text-center"
       />
     </div>
   );

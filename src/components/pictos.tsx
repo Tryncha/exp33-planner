@@ -6,7 +6,7 @@ import { useBuild } from '../context/build-context';
 import PictosSelector from './modals/pictos-selector';
 import { MouseEvent, useState } from 'react';
 import { X } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 const EmptyPictoSlot = ({ onClick }: { onClick: () => void }) => {
   const t = useTranslations('Pictos');
@@ -30,6 +30,8 @@ const PictoSlot = ({
   onClick: () => void;
   removePicto: (e: MouseEvent<HTMLButtonElement>) => void;
 }) => {
+  const locale = useLocale();
+
   return (
     <div
       onClick={onClick}
@@ -37,14 +39,14 @@ const PictoSlot = ({
     >
       <Image
         src={`/pictos/${pictoData.id}.png`}
-        alt={`${pictoData.name} Picto`}
+        alt={`${pictoData[locale].name} Picto`}
         width={54}
         height={54}
       />
       <div className="flex flex-col items-center">
-        <h2 className="text-xl font-semibold">{pictoData.name}</h2>
+        <h2 className="text-xl font-semibold">{pictoData[locale].name}</h2>
         <span className="text-xs">{formatPictoStats(pictoData.stats)}</span>
-        <p className="mt-2 text-center text-sm">{pictoData.effect}</p>
+        <p className="mt-2 text-center text-sm">{pictoData[locale].effect}</p>
       </div>
       <span className="text-2xl font-bold">{pictoData.luminaPoints}</span>
       <button

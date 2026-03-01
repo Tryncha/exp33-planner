@@ -1,12 +1,12 @@
 import Image from 'next/image';
 import { getLuminaData } from '../lib/utils';
-import { PictoData } from '../types';
+import { Picto } from '../types';
 import { useModal } from '../context/modal-context';
 import { useBuild } from '../context/build-context';
 import { Plus, X } from 'lucide-react';
 import LuminasSelector from './modals/luminas-selector';
 
-const LuminaInfo = ({ pictoData }: { pictoData: PictoData }) => {
+const LuminaInfo = ({ pictoData }: { pictoData: Picto }) => {
   const { removeLumina } = useBuild();
 
   return (

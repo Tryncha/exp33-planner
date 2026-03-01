@@ -6,7 +6,7 @@ const WeaponPassive = ({ size = 'base', level, passive }: { size?: 'sm' | 'base'
   switch (size) {
     case 'sm':
       return (
-        <div className="flex h-12 border-t border-taupe-700">
+        <div className="flex h-18 border-t border-taupe-700">
           <div className="flex w-20 items-center justify-center border-r border-taupe-700">
             <span className="text-lg font-semibold text-taupe-400">
               {t('abbrLevel')}. {level}

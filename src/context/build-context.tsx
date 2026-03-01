@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer } from 'react';
-import { Build, CharacterData, AttributeId, Weapon, PictoData, Skill } from '../types';
+import { Build, CharacterData, AttributeId, Weapon, Picto, Skill } from '../types';
 import buildReducer from './build-reducer';
 import { CHARACTER_TEMPLATES } from '../lib/constants';
 
@@ -9,9 +9,9 @@ interface BuildContextType {
   changeStat: (statToChange: AttributeId, newValue: number) => void;
   changeWeapon: (newWeaponId: Weapon['id']) => void;
   changeSkil: (slotToChange: number, newSkillId: Skill['id']) => void;
-  changePicto: (slotToChange: number, newPictoId: PictoData['id']) => void;
-  addLumina: (luminaToAdd: PictoData['id']) => void;
-  removeLumina: (luminaToRemove: PictoData['id']) => void;
+  changePicto: (slotToChange: number, newPictoId: Picto['id']) => void;
+  addLumina: (luminaToAdd: Picto['id']) => void;
+  removeLumina: (luminaToRemove: Picto['id']) => void;
 }
 
 const BuildContext = createContext<BuildContextType | undefined>(undefined);
@@ -45,15 +45,15 @@ export const BuildProvider = ({ children }: { children: React.ReactNode }) => {
     buildDispatch({ type: 'CHANGE_SKILL', payload: { slotToChange, newSkillId } });
   }
 
-  function changePicto(slotToChange: number, newPictoId: PictoData['id']) {
+  function changePicto(slotToChange: number, newPictoId: Picto['id']) {
     buildDispatch({ type: 'CHANGE_PICTO', payload: { slotToChange, newPictoId } });
   }
 
-  function addLumina(luminaToAdd: PictoData['id']) {
+  function addLumina(luminaToAdd: Picto['id']) {
     buildDispatch({ type: 'ADD_LUMINA', payload: { luminaToAdd } });
   }
 
-  function removeLumina(luminaToRemove: PictoData['id']) {
+  function removeLumina(luminaToRemove: Picto['id']) {
     buildDispatch({ type: 'REMOVE_LUMINA', payload: { luminaToRemove } });
   }
 

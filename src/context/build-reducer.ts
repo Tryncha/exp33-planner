@@ -1,5 +1,5 @@
 import { swapElements } from '../lib/utils';
-import { Build, PictoData, Skill, Weapon } from '../types';
+import { Build, Picto, Skill, Weapon } from '../types';
 
 type BuildAction =
   | {
@@ -32,19 +32,19 @@ type BuildAction =
       type: 'CHANGE_PICTO';
       payload: {
         slotToChange: number;
-        newPictoId: PictoData['id'];
+        newPictoId: Picto['id'];
       };
     }
   | {
       type: 'ADD_LUMINA';
       payload: {
-        luminaToAdd: PictoData['id'];
+        luminaToAdd: Picto['id'];
       };
     }
   | {
       type: 'REMOVE_LUMINA';
       payload: {
-        luminaToRemove: PictoData['id'];
+        luminaToRemove: Picto['id'];
       };
     };
 

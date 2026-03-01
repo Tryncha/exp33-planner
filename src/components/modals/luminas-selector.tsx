@@ -2,7 +2,7 @@ import { useBuild } from '@/src/context/build-context';
 import { Modal } from '@/src/context/modal-context';
 import PICTOS from '@/src/data/pictos';
 import { formatPictoStats } from '@/src/lib/utils';
-import { PictoData } from '@/src/types';
+import { Picto } from '@/src/types';
 import Image from 'next/image';
 
 const LuminaOption = ({
@@ -10,7 +10,7 @@ const LuminaOption = ({
   isEquipped,
   onClick
 }: {
-  pictoData: PictoData;
+  pictoData: Picto;
   isEquipped: boolean;
   onClick: () => void;
 }) => {

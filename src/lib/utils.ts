@@ -1,7 +1,7 @@
 import PICTOS from '../data/pictos';
 import SKILLS from '../data/skills';
 import WEAPONS from '../data/weapons';
-import { Attributes, CharacterData, PictoData, PictoStats, Skill, Stats, Weapon } from '../types';
+import { Attributes, CharacterData, Picto, PictoStats, Skill, Stats, Weapon } from '../types';
 import { CHARACTER_DATA, CHARACTER_TEMPLATES } from './constants';
 import {
   ATTACK_POWER_FROM_MIGHT,
@@ -86,7 +86,7 @@ export function getWeaponData(weaponId: Weapon['id']) {
   return weaponData;
 }
 
-export function getPictoData(pictoId: PictoData['id']) {
+export function getPictoData(pictoId: Picto['id']) {
   return PICTOS.find((pic) => pic.id === pictoId);
 }
 
@@ -94,7 +94,7 @@ export function getSkillData(skillId: Skill['id']) {
   return SKILLS.find((pic) => pic.id === skillId);
 }
 
-export function getLuminaData(pictoId: PictoData['id']) {
+export function getLuminaData(pictoId: Picto['id']) {
   const luminaData = PICTOS.find((pic) => pic.id === pictoId);
 
   if (!luminaData) {
@@ -115,7 +115,7 @@ export function formatPictoStats(stats: PictoStats) {
   return parts.join(', ');
 }
 
-export function calcStats(baseStats: Stats, attributes: Attributes, pictos: (PictoData | undefined)[]) {
+export function calcStats(baseStats: Stats, attributes: Attributes, pictos: (Picto | undefined)[]) {
   const { vitality, might, agility, defense: defenseAttr, luck } = attributes;
 
   let attackPower = baseStats.attackPower;

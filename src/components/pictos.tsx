@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { formatPictoStats, getPictoData } from '../lib/utils';
-import { PictoData } from '../types';
+import { Picto } from '../types';
 import { useModal } from '../context/modal-context';
 import { useBuild } from '../context/build-context';
 import PictosSelector from './modals/pictos-selector';
@@ -26,7 +26,7 @@ const PictoSlot = ({
   onClick,
   removePicto
 }: {
-  pictoData: PictoData;
+  pictoData: Picto;
   onClick: () => void;
   removePicto: (e: MouseEvent<HTMLButtonElement>) => void;
 }) => {

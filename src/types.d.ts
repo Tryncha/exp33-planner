@@ -115,6 +115,63 @@ export interface Attributes {
   luck: number;
 }
 
+export type PictoTypeMine =
+  | 'damage'
+  | 'healing'
+  | 'rush'
+  | 'solo'
+  | 'free-aim'
+  | 'tints'
+  | 'revive'
+  | 'shields'
+  | 'immunity'
+  | 'base-attack'
+  | 'lifesteal'
+  | 'counterattack'
+  | 'death'
+  | 'powerful'
+  | 'regen'
+  | 'shell'
+  | 'status-effect'
+  | 'ap'
+  | 'break'
+  | 'burn'
+  | 'slow'
+  | 'mark'
+  | 'gradient'
+  | 'critical'
+  | 'weakness'
+  | 'special'
+  | 'defensive'
+  | 'defenceless'
+  | 'dodge'
+  | 'parry'
+  | 'jump'
+  | 'powerless';
+
+export type PictoType =
+  | 'base-attack'
+  | 'free-aim'
+  | 'critical'
+  | 'defense'
+  | 'speed'
+  | 'damage'
+  | 'ap'
+  | 'heal'
+  | 'shield'
+  | 'burn'
+  | 'mark'
+  | 'buff'
+  | 'debuff'
+  | 'status-effect'
+  | 'parry'
+  | 'counter'
+  | 'break'
+  | 'death'
+  | 'solo'
+  | 'gradient'
+  | 'items';
+
 export interface PictoStats {
   health: number;
   defense: number;
@@ -122,12 +179,18 @@ export interface PictoStats {
   critRate: number;
 }
 
-export interface PictoData {
-  id: string;
+export interface LocalePicto {
   name: string;
   effect: string;
+}
+
+export interface Picto {
+  id: string;
   luminaPoints: number;
+  types: PictoTypeMine[];
   stats: PictoStats;
+  en: LocalePicto;
+  es: LocalePicto;
 }
 
 export interface SkillLocale {

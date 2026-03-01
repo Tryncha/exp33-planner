@@ -2,7 +2,8 @@ import { useBuild } from '@/src/context/build-context';
 import { Modal } from '@/src/context/modal-context';
 import PICTOS from '@/src/data/pictos';
 import { formatPictoStats } from '@/src/lib/utils';
-import { PictoData } from '@/src/types';
+import { Picto } from '@/src/types';
+import { useLocale } from 'next-intl';
 import Image from 'next/image';
 
 const PictoOption = ({
@@ -10,10 +11,12 @@ const PictoOption = ({
   isEquipped,
   onClick
 }: {
-  pictoData: PictoData;
+  pictoData: Picto;
   isEquipped: boolean;
   onClick: () => void;
 }) => {
+  const locale = useLocale();
+
   return (
     <div
       onClick={onClick}
@@ -22,15 +25,15 @@ const PictoOption = ({
       <div className="flex w-8 items-center justify-center">
         <Image
           src={`/pictos/${pictoData.id}.png`}
-          alt={`${pictoData.name} Picto`}
+          alt={`${pictoData[locale].name} Picto`}
           width={54 / 2}
           height={54 / 2}
         />
       </div>
       <div className="flex flex-col items-center">
-        <h2 className="text-lg font-semibold">{pictoData.name}</h2>
+        <h2 className="text-lg font-semibold">{pictoData[locale].name}</h2>
         <span className="text-xs">{formatPictoStats(pictoData.stats)}</span>
-        <p className="mt-2 text-center text-sm">{pictoData.effect}</p>
+        <p className="mt-2 text-center text-sm">{pictoData[locale].effect}</p>
       </div>
       <span className="text-xl font-bold">{pictoData.luminaPoints}</span>
     </div>
@@ -49,7 +52,7 @@ const PictosSelector = ({
   const { build, changePicto } = useBuild();
   const { pictosIds } = build;
 
-  function handleChange(newPictoId: PictoData['id']) {
+  function handleChange(newPictoId: Picto['id']) {
     changePicto(selectedSlot, newPictoId);
     onClose();
   }

@@ -5,15 +5,18 @@ import { useModal } from '../context/modal-context';
 import { useBuild } from '../context/build-context';
 import { Plus, X } from 'lucide-react';
 import LuminasSelector from './modals/luminas-selector';
+import { useLocale } from 'next-intl';
 
 const LuminaInfo = ({ pictoData }: { pictoData: Picto }) => {
+  const locale = useLocale();
+
   const { removeLumina } = useBuild();
 
   return (
     <div className="flex h-16 items-center justify-between gap-2 border-b border-taupe-700 px-4 py-2">
       <div className="flex flex-1 flex-col">
-        <h2 className="font-semibold">{pictoData.name}</h2>
-        <p className="text-xs">{pictoData.effect}</p>
+        <h2 className="font-semibold">{pictoData[locale].name}</h2>
+        <p className="text-xs">{pictoData[locale].effect}</p>
       </div>
       <span className="px-2 text-2xl font-bold">{pictoData.luminaPoints}</span>
       <button onClick={() => removeLumina(pictoData.id)}>

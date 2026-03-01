@@ -825,7 +825,7 @@ const LUNE: Weapon[] = [
       name: 'Benisim',
       passives: [
         'Healing Skills cost 1 less AP.',
-        'Generate one Earth Stain at the beginning of each turn.',
+        'Generate one Stain at the beginning of each turn.',
         'Replay instantly on consuming Stains with a Healing Skill.'
       ]
     },
@@ -833,7 +833,7 @@ const LUNE: Weapon[] = [
       name: 'Benisim',
       passives: [
         'Healing Skills cost 1 less AP.',
-        'Generate one Earth Stain at the beginning of each turn.',
+        'Generate one Stain at the beginning of each turn.',
         'Replay instantly on consuming Stains with a Healing Skill.'
       ]
     },
@@ -841,7 +841,7 @@ const LUNE: Weapon[] = [
       name: 'Benisim',
       passives: [
         'Healing Skills cost 1 less AP.',
-        'Generate one Earth Stain at the beginning of each turn.',
+        'Generate one Stain at the beginning of each turn.',
         'Replay instantly on consuming Stains with a Healing Skill.'
       ]
     }
@@ -920,25 +920,25 @@ const LUNE: Weapon[] = [
     en: {
       name: 'Chapelim',
       passives: [
-        '30% increased Break damage per Earth Stain.',
+        '30% increased Break damage per Stain.',
         'Gain 9 AP on Breaking an enemy.',
-        'Generate one Earth Stain at the beginning of each turn.'
+        'Generate one Stain at the beginning of each turn.'
       ]
     },
     es: {
       name: 'Chapelim',
       passives: [
-        '30% increased Break damage per Earth Stain.',
+        '30% increased Break damage per Stain.',
         'Gain 9 AP on Breaking an enemy.',
-        'Generate one Earth Stain at the beginning of each turn.'
+        'Generate one Stain at the beginning of each turn.'
       ]
     },
     fr: {
       name: 'Chapelim',
       passives: [
-        '30% increased Break damage per Earth Stain.',
+        '30% increased Break damage per Stain.',
         'Gain 9 AP on Breaking an enemy.',
-        'Generate one Earth Stain at the beginning of each turn.'
+        'Generate one Stain at the beginning of each turn.'
       ]
     }
   },
@@ -1015,27 +1015,15 @@ const LUNE: Weapon[] = [
     scaling: { vitality: 'A', defense: 'S' },
     en: {
       name: 'Coralim',
-      passives: [
-        'Ice Skills cost 1 less AP.',
-        '20% increased Ice damage with Skills.',
-        'Start battle with 1 Earth Stain.'
-      ]
+      passives: ['Ice Skills cost 1 less AP.', '20% increased Ice damage with Skills.', 'Start battle with 1 Stain.']
     },
     es: {
       name: 'Coralim',
-      passives: [
-        'Ice Skills cost 1 less AP.',
-        '20% increased Ice damage with Skills.',
-        'Start battle with 1 Earth Stain.'
-      ]
+      passives: ['Ice Skills cost 1 less AP.', '20% increased Ice damage with Skills.', 'Start battle with 1 Stain.']
     },
     fr: {
       name: 'Coralim',
-      passives: [
-        'Ice Skills cost 1 less AP.',
-        '20% increased Ice damage with Skills.',
-        'Start battle with 1 Earth Stain.'
-      ]
+      passives: ['Ice Skills cost 1 less AP.', '20% increased Ice damage with Skills.', 'Start battle with 1 Stain.']
     }
   },
   {
@@ -1080,25 +1068,25 @@ const LUNE: Weapon[] = [
     en: {
       name: 'Elerim',
       passives: [
-        'Consuming an Earth Stain applies 1 Shield to self.',
-        '20% increased Earth damage with Skills.',
-        'Base Attack generates an Earth Stain.'
+        'Consuming an Stain applies 1 Shield to self.',
+        '20% increased damage with Skills.',
+        'Base Attack generates an Stain.'
       ]
     },
     es: {
       name: 'Elerim',
       passives: [
-        'Consuming an Earth Stain applies 1 Shield to self.',
-        '20% increased Earth damage with Skills.',
-        'Base Attack generates an Earth Stain.'
+        'Consuming an Stain applies 1 Shield to self.',
+        '20% increased damage with Skills.',
+        'Base Attack generates an Stain.'
       ]
     },
     fr: {
       name: 'Elerim',
       passives: [
-        'Consuming an Earth Stain applies 1 Shield to self.',
-        '20% increased Earth damage with Skills.',
-        'Base Attack generates an Earth Stain.'
+        'Consuming an Stain applies 1 Shield to self.',
+        '20% increased damage with Skills.',
+        'Base Attack generates an Stain.'
       ]
     }
   },
@@ -1220,7 +1208,7 @@ const LUNE: Weapon[] = [
       name: 'Painerim',
       passives: [
         'Earth Skills cost 1 less AP.',
-        '20% increased Earth damage with Skills.',
+        '20% increased damage with Skills.',
         'Start battle with 1 Lightning Stain.'
       ]
     },
@@ -1228,7 +1216,7 @@ const LUNE: Weapon[] = [
       name: 'Painerim',
       passives: [
         'Earth Skills cost 1 less AP.',
-        '20% increased Earth damage with Skills.',
+        '20% increased damage with Skills.',
         'Start battle with 1 Lightning Stain.'
       ]
     },
@@ -1236,7 +1224,7 @@ const LUNE: Weapon[] = [
       name: 'Painerim',
       passives: [
         'Earth Skills cost 1 less AP.',
-        '20% increased Earth damage with Skills.',
+        '20% increased damage with Skills.',
         'Start battle with 1 Lightning Stain.'
       ]
     }
@@ -1509,7 +1497,7 @@ const LUNE: Weapon[] = [
       passives: [
         "Damage can't be reduced, blocked, or absorbed by Elemental Affinities.",
         'An ethereal Sword deals Light damage on any damage dealt with Skills.',
-        'Starting a turn with 1 Earth, 1 Fire, 1 Ice, and 1 Lightning Stain doubles damage dealt this turn'
+        'Starting a turn with 1, 1 Fire, 1 Ice, and 1 Lightning Stain doubles damage dealt this turn'
       ]
     },
     es: {
@@ -1517,7 +1505,7 @@ const LUNE: Weapon[] = [
       passives: [
         "Damage can't be reduced, blocked, or absorbed by Elemental Affinities.",
         'An ethereal Sword deals Light damage on any damage dealt with Skills.',
-        'Starting a turn with 1 Earth, 1 Fire, 1 Ice, and 1 Lightning Stain doubles damage dealt this turn'
+        'Starting a turn with 1, 1 Fire, 1 Ice, and 1 Lightning Stain doubles damage dealt this turn'
       ]
     },
     fr: {
@@ -1525,7 +1513,7 @@ const LUNE: Weapon[] = [
       passives: [
         "Damage can't be reduced, blocked, or absorbed by Elemental Affinities.",
         'An ethereal Sword deals Light damage on any damage dealt with Skills.',
-        'Starting a turn with 1 Earth, 1 Fire, 1 Ice, and 1 Lightning Stain doubles damage dealt this turn'
+        'Starting a turn with 1, 1 Fire, 1 Ice, and 1 Lightning Stain doubles damage dealt this turn'
       ]
     }
   },
@@ -2151,7 +2139,7 @@ const MAELLE: Weapon[] = [
       passives: [
         'In Defensive Stance, double Break damage.',
         'Gain 9 AP on Breaking an enemy.',
-        'Breaking an enemy deals 3 high amount of Earth damage.'
+        'Breaking an enemy deals 3 high amount of damage.'
       ]
     },
     es: {
@@ -2159,7 +2147,7 @@ const MAELLE: Weapon[] = [
       passives: [
         'In Defensive Stance, double Break damage.',
         'Gain 9 AP on Breaking an enemy.',
-        'Breaking an enemy deals 3 high amount of Earth damage.'
+        'Breaking an enemy deals 3 high amount of damage.'
       ]
     },
     fr: {
@@ -2167,7 +2155,7 @@ const MAELLE: Weapon[] = [
       passives: [
         'In Defensive Stance, double Break damage.',
         'Gain 9 AP on Breaking an enemy.',
-        'Breaking an enemy deals 3 high amount of Earth damage.'
+        'Breaking an enemy deals 3 high amount of damage.'
       ]
     }
   },
@@ -3036,11 +3024,11 @@ const MONOCO: Weapon[] = [
       ]
     },
     es: {
-      name: 'Ballaro',
+      name: 'Bailaro',
       passives: [
-        'Reverse Bestial Wheel Order.',
-        'Using an Upgraded Skill gives 1 AP to all other allies.',
-        'Almighty Mask gives 2 AP to all allies.'
+        'Invierte el orden de la rueda bestial.',
+        'Tras usar una habilidad mejorada, los aliados reciben 1 PA.',
+        'Máscara omnipotente otorga 2 PA a todos los aliados.'
       ]
     },
     fr: {
@@ -3070,9 +3058,9 @@ const MONOCO: Weapon[] = [
     es: {
       name: 'Boucharo',
       passives: [
-        'Start battle in Agile Mask.',
-        'Agile Mask applies Rush for 3 turns.',
-        '+50% Critical Chance while in Agile Mask.'
+        'Inicias el combato con Máscara ágil.',
+        'Máscara ágil aplica prisa durante 3 turnos.',
+        'Porbabilidad de crítico +50% al usar Máscara ágil.'
       ]
     },
     fr: {
@@ -3132,11 +3120,11 @@ const MONOCO: Weapon[] = [
       ]
     },
     es: {
-      name: 'Chromaro',
+      name: 'Cromaro',
       passives: [
-        'Start battle in Caster Mask.',
-        'Caster Mask applies Regen for 3 turns.',
-        'Skills cost 1 less AP while in Caster Mask.'
+        'Inicias el combato con máscara conjuradora.',
+        'Máscara conjuradora aplica regeneración durante 3 turnos.',
+        'Las habilidades consumen 1 PA menos al usar Máscara conjuradora.'
       ]
     },
     fr: {
@@ -3166,9 +3154,9 @@ const MONOCO: Weapon[] = [
     es: {
       name: 'Fragaro',
       passives: [
-        'Free Aim shots spin the Bestial Wheel to a random value.',
-        'Free Aim shots deal 100% more damage with all Masks except Almighty.',
-        '100% Critical Chance while in Almighty Mask.'
+        'Los disparos con apuntado libre giran la rueda bestial a un valor al azar.',
+        'Daño de disparos con apuntado libre +100% con todas las máscaras, excepto Máscara omnipotente.',
+        'Probabilidad de crítico del 100% al usar Máscara omnipotente.'
       ]
     },
     fr: {
@@ -3193,7 +3181,11 @@ const MONOCO: Weapon[] = [
     },
     es: {
       name: 'Grandaro',
-      passives: ['Start battle in Heavy Mask.', 'Heavy Mask applies Shell for 3 turns.', '+1 AP per hit taken.']
+      passives: [
+        'Inicias el combate con Máscara pesada.',
+        'Máscara pesada aplica coraza durante 3 turnos.',
+        '+1 PA por golpe recibido.'
+      ]
     },
     fr: {
       name: 'Grandaro',
@@ -3216,11 +3208,11 @@ const MONOCO: Weapon[] = [
       ]
     },
     es: {
-      name: 'Joyaro',
+      name: 'Dicharo',
       passives: [
-        'Start battle in Almighty Mask.',
-        '20% increased damage for each consecutive turn without taking damage. Can stack up to 5 times.',
-        'Break damage is doubled while in Almighty Mask.'
+        'Inicias el combate con Máscara omnipotente.',
+        'Daño +20% por cada turno consecutivo sin recibir daño. Se acumula hasta 5 veces.',
+        'El daño de ruptura se duplica al usar Máscara omnipotente.'
       ]
     },
     fr: {
@@ -3250,9 +3242,9 @@ const MONOCO: Weapon[] = [
     es: {
       name: 'Monocaro',
       passives: [
-        'Start battle in Balanced Mask.',
-        'Balanced Mask applies Powerful for 3 turns.',
-        'Critical hits deal 30% more damage while in Balanced Mask.'
+        'Inicias el combate con Máscara equilibrada.',
+        'Máscara equilibrada aplica fortalecimiento durante 3 turnos.',
+        'Daño de golpes críticos +30% al usar Máscara equilibrada.'
       ]
     },
     fr: {
@@ -3282,9 +3274,9 @@ const MONOCO: Weapon[] = [
     es: {
       name: 'Nusaro',
       passives: [
-        'Parries increase the Bestial Wheel by 1. Taking damage resets the Bestial Wheel.',
-        'Upgraded Skills deal 30% more damage.',
-        '+1 AP on Mask change.'
+        'Los bloqueos aumentan la rueda bestial en 1. Si recibes daño, la rueda bestial se restablece.',
+        'Daño de habilidades mejorada +30%.',
+        '+1 PA al cambiar de máscara.'
       ]
     },
     fr: {
@@ -3346,9 +3338,9 @@ const MONOCO: Weapon[] = [
     es: {
       name: 'Urnaro',
       passives: [
-        'Switch to Almighty Mask on Breaking an enemy.',
-        'Almighty Mask gives 2 AP to all Allies.',
-        '50% increased Break damage.'
+        'Cambias a Máscara omnipotente al causar ruptura a un enemigo.',
+        'Máscara omnipotente otorga 2 PA a todos los aliados.',
+        'Daño de ruptura +50%.'
       ]
     },
     fr: {
@@ -3396,7 +3388,7 @@ const MONOCO: Weapon[] = [
     id: 'esquiaro',
     imgData: { width: 54, height: 54, classRotation: 'rotate-45' },
     characterIds: ['monoco'],
-    element: ' earth',
+    element: 'earth',
     basePower: 3745,
     scaling: { vitality: 'A', defense: 'B' },
     en: {
@@ -3432,7 +3424,7 @@ const MONOCO: Weapon[] = [
     basePower: 3648,
     scaling: { agility: 'A', luck: 'B' },
     en: {
-      name: ' Cannaro ',
+      name: 'Cannaro',
       passives: [
         'Free Aim Shots move the Bestial Wheel 1 step forward.',
         '25% increased damage per Mask change this turn.',
@@ -3440,7 +3432,7 @@ const MONOCO: Weapon[] = [
       ]
     },
     es: {
-      name: ' Cannaro ',
+      name: 'Cannaro',
       passives: [
         'Free Aim Shots move the Bestial Wheel 1 step forward.',
         '25% increased damage per Mask change this turn.',
@@ -3448,7 +3440,7 @@ const MONOCO: Weapon[] = [
       ]
     },
     fr: {
-      name: ' Cannaro ',
+      name: 'Cannaro',
       passives: [
         'Free Aim Shots move the Bestial Wheel 1 step forward.',
         '25% increased damage per Mask change this turn.',

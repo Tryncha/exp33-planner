@@ -41,5 +41,15 @@
     "critRate": "Probabilidad de crítico",
     "health": "Vida",
     "defense": "Defensa"
+  },
+  "Pictos": {
+    "selectPicto": "Selecciona un Picto"
+  },
+  "WeaponInfo": {
+    "power": "Poder",
+    "element": "Elemento"
+  },
+  "WeaponPassive": {
+    "abbrLevel": "Nv"
   }
 }

@@ -6,14 +6,17 @@ import { useBuild } from '../context/build-context';
 import PictosSelector from './modals/pictos-selector';
 import { MouseEvent, useState } from 'react';
 import { X } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 const EmptyPictoSlot = ({ onClick }: { onClick: () => void }) => {
+  const t = useTranslations('Pictos');
+
   return (
     <div
       onClick={onClick}
-      className="flex flex-1 items-center justify-center rounded-xs border-b border-taupe-700 px-4 py-2 text-taupe-500 italic last:border-0 hover:cursor-pointer"
+      className="flex flex-1 items-center justify-center rounded-xs border-b border-taupe-700 px-4 py-2 text-sm text-taupe-500 italic last:border-0 hover:cursor-pointer"
     >
-      Select a Picto
+      {t('selectPicto')}
     </div>
   );
 };

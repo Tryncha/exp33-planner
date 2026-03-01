@@ -4,9 +4,12 @@ import { useModal } from '../context/modal-context';
 import { useBuild } from '../context/build-context';
 import WeaponPassive from './weapon-passive';
 import WeaponSelector from './modals/weapon-selector';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
+import ElementIcon from './element-icon';
+import ATTRIBUTES from '../data/attributes';
 
-const WeaponSlot = () => {
+const WeaponInfo = () => {
+  const t = useTranslations('WeaponInfo');
   const locale = useLocale();
 
   const { build } = useBuild();
@@ -23,8 +26,9 @@ const WeaponSlot = () => {
         onClose={closeAll}
       />
 
-      {/* Weapon info */}
-      <div className="flex items-center p-2">
+      {/* Weapon Info */}
+      <section className="flex items-center p-2">
+        {/* Weapon Image */}
         <div
           onClick={() => openModal('weapons')}
           className="flex size-28 items-center justify-center hover:cursor-pointer"
@@ -38,34 +42,34 @@ const WeaponSlot = () => {
           />
         </div>
 
-        <div className="flex flex-1 flex-col gap-2 p-4">
-          <div className="flex items-center justify-between gap-2">
-            <h2 className="text-2xl font-semibold">{weaponData[locale].name}</h2>
-            <span>Level 33</span>
-          </div>
-          <div className="flex justify-between">
+        {/* Weapon Stats */}
+        <section className="flex flex-1 flex-col gap-2 px-4">
+          <h2 className="text-2xl font-bold tracking-wide">{weaponData[locale].name}</h2>
+          <div className="flex gap-6">
             <div className="flex flex-1 flex-col items-center">
-              <span className="text-sm text-taupe-400">Power</span>
-              <span className="text-xl">{calcWeaponPower(weaponData.basePower, weaponData.scaling, attributes)}</span>
+              <span className="text-sm font-semibold text-taupe-400">{t('power')}</span>
+              <span className="text-xl font-bold">
+                {calcWeaponPower(weaponData.basePower, weaponData.scaling, attributes)}
+              </span>
             </div>
-            <div className="flex flex-1 flex-col items-center">
-              <span className="text-sm text-taupe-400">Element</span>
-              <span className="text-xl">{weaponData.element}</span>
+            <div className="flex flex-1 flex-col items-center gap-1">
+              <span className="text-sm font-semibold text-taupe-400">{t('element')}</span>
+              <ElementIcon element={weaponData.element} />
             </div>
-            <div className="flex flex-1">
-              {Object.entries(weaponData.scaling).map(([key, value]) => (
-                <div
-                  key={key}
-                  className="flex flex-1 flex-col items-center px-2"
-                >
-                  <span className="text-sm text-taupe-400 capitalize">{key}</span>
-                  <span className="text-xl">{value}</span>
-                </div>
-              ))}
-            </div>
+            {Object.entries(weaponData.scaling).map(([key, value]) => (
+              <div
+                key={key}
+                className="flex flex-1 flex-col items-center"
+              >
+                <span className="text-sm font-semibold text-taupe-400 capitalize">
+                  {ATTRIBUTES[key as keyof typeof ATTRIBUTES][locale].name}
+                </span>
+                <span className="text-xl font-bold">{value}</span>
+              </div>
+            ))}
           </div>
-        </div>
-      </div>
+        </section>
+      </section>
 
       {/* Passives */}
       {characterId === 'gustave' ? (
@@ -91,4 +95,4 @@ const WeaponSlot = () => {
   );
 };
 
-export default WeaponSlot;
+export default WeaponInfo;

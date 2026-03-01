@@ -41,5 +41,15 @@
     "critRate": "Critical Rate",
     "health": "Health",
     "defense": "Defense"
+  },
+  "Pictos": {
+    "selectPicto": "Select a Picto"
+  },
+  "WeaponInfo": {
+    "power": "Power",
+    "element": "Element"
+  },
+  "WeaponPassive": {
+    "abbrLevel": "Lvl"
   }
 }

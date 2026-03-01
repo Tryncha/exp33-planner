@@ -3,28 +3,11 @@ import { Modal } from '@/src/context/modal-context';
 import WEAPONS from '@/src/data/weapons';
 import { calcWeaponPower } from '@/src/lib/utils';
 import { Weapon } from '@/src/types';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
-
-const weaponImagesData: Record<
-  Weapon['id'],
-  {
-    width: number;
-    height: number;
-    classRotation: string;
-  }
-> = {
-  abysseram: {
-    width: 32,
-    height: 32,
-    classRotation: '-rotate-135'
-  },
-  blodam: {
-    width: 32,
-    height: 32,
-    classRotation: 'rotate-45'
-  }
-};
+import ElementIcon from '../element-icon';
+import ATTRIBUTES from '@/src/data/attributes';
+import WeaponPassive from '../weapon-passive';
 
 const WeaponOption = ({
   weaponData,
@@ -35,6 +18,7 @@ const WeaponOption = ({
   isEquipped: boolean;
   onClick: () => void;
 }) => {
+  const t = useTranslations('WeaponInfo');
   const locale = useLocale();
 
   const { build } = useBuild();
@@ -43,7 +27,7 @@ const WeaponOption = ({
   return (
     <div
       onClick={onClick}
-      className={`${isEquipped ? 'bg-taupe-700 hover:bg-taupe-600' : 'hover:bg-taupe-800'} flex w-110 flex-col border border-taupe-700 hover:cursor-pointer`}
+      className={`${isEquipped ? 'bg-taupe-700 hover:bg-taupe-600' : 'hover:bg-taupe-800'} flex w-113.5 flex-col border border-taupe-700 hover:cursor-pointer`}
     >
       {/* Weapon Info */}
       <div className="flex items-center p-2">
@@ -59,30 +43,32 @@ const WeaponOption = ({
         </div>
 
         {/* Stats */}
-        <div className="flex flex-1 flex-col gap-2 px-2">
-          <h2 className="text-2xl font-semibold">{weaponData[locale].name}</h2>
-          <div className="flex justify-between">
+        <section className="flex flex-1 flex-col gap-2 px-4">
+          <h2 className="text-2xl font-bold tracking-wide">{weaponData[locale].name}</h2>
+          <div className="flex gap-6">
             <div className="flex flex-1 flex-col items-center">
-              <span className="text-sm text-taupe-400">Power</span>
-              <span className="text-xl">{calcWeaponPower(weaponData.basePower, weaponData.scaling, attributes)}</span>
+              <span className="text-sm font-semibold text-taupe-400">{t('power')}</span>
+              <span className="text-xl font-bold">
+                {calcWeaponPower(weaponData.basePower, weaponData.scaling, attributes)}
+              </span>
             </div>
-            <div className="flex flex-1 flex-col items-center">
-              <span className="text-sm text-taupe-400">Element</span>
-              <span className="text-xl">{weaponData.element}</span>
+            <div className="flex flex-1 flex-col items-center gap-1">
+              <span className="text-sm font-semibold text-taupe-400">{t('element')}</span>
+              <ElementIcon element={weaponData.element} />
             </div>
-            <div className="flex flex-1">
-              {Object.entries(weaponData.scaling).map(([key, value]) => (
-                <div
-                  key={key}
-                  className="flex flex-1 flex-col items-center px-2"
-                >
-                  <span className="text-sm text-taupe-400 capitalize">{key}</span>
-                  <span className="text-xl">{value}</span>
-                </div>
-              ))}
-            </div>
+            {Object.entries(weaponData.scaling).map(([key, value]) => (
+              <div
+                key={key}
+                className="flex flex-1 flex-col items-center"
+              >
+                <span className="text-sm font-semibold text-taupe-400 capitalize">
+                  {ATTRIBUTES[key as keyof typeof ATTRIBUTES][locale].name}
+                </span>
+                <span className="text-xl font-bold">{value}</span>
+              </div>
+            ))}
           </div>
-        </div>
+        </section>
       </div>
 
       {/* Passives */}
@@ -92,15 +78,14 @@ const WeaponOption = ({
             This weapon has not passives
           </div>
         ) : (
-          <div className="flex flex-col">
+          <div className="flex flex-1 flex-col">
             {weaponData[locale].passives.map((pss, i) => (
-              <p
+              <WeaponPassive
                 key={`${weaponData.id}-passive-${i}`}
-                className=""
-              >
-                <strong className="text-sm font-semibold text-taupe-500">Level {[4, 10, 20][i]}: </strong>
-                <span className="text-sm">{pss}</span>
-              </p>
+                size="sm"
+                level={[4, 10, 20][i]}
+                passive={pss}
+              />
             ))}
           </div>
         ))}
@@ -123,7 +108,7 @@ const WeaponSelector = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
     <Modal
       isOpen={isOpen}
       onClose={onClose}
-      className="scrollbar-thumb-taupe-600 scrollbar-track-taupe-800 scrollbar-thin flex h-180 w-342 flex-wrap gap-2 overflow-y-auto rounded-xs bg-taupe-900 p-2"
+      className="scrollbar-thumb-taupe-600 scrollbar-track-taupe-800 scrollbar-thin flex h-192 w-356 flex-wrap gap-2 overflow-y-auto rounded-xs bg-taupe-900 p-4"
     >
       {filteredWeapons.map((wpn) => (
         <WeaponOption

@@ -1,9 +1,8 @@
 import { useBuild } from '@/src/context/build-context';
 import { Modal } from '@/src/context/modal-context';
 import PICTOS from '@/src/data/pictos';
-import { formatPictoStats } from '@/src/lib/utils';
 import { Picto } from '@/src/types';
-import Image from 'next/image';
+import { useLocale } from 'next-intl';
 
 const LuminaOption = ({
   pictoData,
@@ -14,16 +13,18 @@ const LuminaOption = ({
   isEquipped: boolean;
   onClick: () => void;
 }) => {
+  const locale = useLocale();
+
   return (
     <div
       onClick={onClick}
       className={`${isEquipped ? 'bg-taupe-700 hover:bg-taupe-600' : 'hover:bg-taupe-800'} flex w-84 flex-col gap-1 border border-taupe-700 px-4 py-2 hover:cursor-pointer`}
     >
       <div className="flex items-center justify-between">
-        <h2 className="font-semibold">{pictoData.name}</h2>
+        <h2 className="font-semibold">{pictoData[locale].name}</h2>
         <span className="font-bold">{pictoData.luminaPoints}</span>
       </div>
-      <p className="text-xs">{pictoData.effect}</p>
+      <p className="text-xs">{pictoData[locale].effect}</p>
     </div>
   );
 };

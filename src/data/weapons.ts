@@ -3,6 +3,7 @@ import { Weapon } from '../types';
 const GUSTAVE_VERSO: Weapon[] = [
   {
     id: 'abysseram',
+    imgData: { width: 32, height: 32, classRotation: '-rotate-135' },
     characterIds: ['gustave', 'verso'],
     element: 'physical',
     basePower: 3228,
@@ -34,6 +35,7 @@ const GUSTAVE_VERSO: Weapon[] = [
   },
   {
     id: 'blodam',
+    imgData: { width: 32, height: 32, classRotation: 'rotate-45' },
     characterIds: ['gustave', 'verso'],
     element: 'light',
     basePower: 3487,
@@ -65,6 +67,7 @@ const GUSTAVE_VERSO: Weapon[] = [
   },
   {
     id: 'chevalam',
+    imgData: { width: 32, height: 32, classRotation: 'rotate-45' },
     characterIds: ['gustave', 'verso'],
     element: 'physical',
     basePower: 3067,
@@ -96,6 +99,7 @@ const GUSTAVE_VERSO: Weapon[] = [
   },
   {
     id: 'confuso',
+    imgData: { width: 32, height: 32, classRotation: '-rotate-135' },
     characterIds: ['gustave', 'verso'],
     element: 'light',
     basePower: 3067,
@@ -127,6 +131,7 @@ const GUSTAVE_VERSO: Weapon[] = [
   },
   {
     id: 'contorso',
+    imgData: { width: 32, height: 32, classRotation: '-rotate-135' },
     characterIds: ['gustave', 'verso'],
     element: 'lightning',
     basePower: 2841,
@@ -158,6 +163,7 @@ const GUSTAVE_VERSO: Weapon[] = [
   },
   {
     id: 'corpeso',
+    imgData: { width: 32, height: 32, classRotation: '-rotate-135' },
     characterIds: ['gustave', 'verso'],
     element: 'fire',
     basePower: 3648,
@@ -189,6 +195,7 @@ const GUSTAVE_VERSO: Weapon[] = [
   },
   {
     id: 'cruleram',
+    imgData: { width: 32, height: 32, classRotation: '-rotate-135' },
     characterIds: ['gustave', 'verso'],
     element: 'ice',
     basePower: 3454,
@@ -220,6 +227,7 @@ const GUSTAVE_VERSO: Weapon[] = [
   },
   {
     id: 'cultam',
+    imgData: { width: 32, height: 32, classRotation: '-rotate-135' },
     characterIds: ['gustave', 'verso'],
     element: 'dark',
     basePower: 3132,
@@ -251,6 +259,7 @@ const GUSTAVE_VERSO: Weapon[] = [
   },
   {
     id: 'danseso',
+    imgData: { width: 32, height: 32, classRotation: 'rotate-45' },
     characterIds: ['gustave', 'verso'],
     element: 'fire',
     basePower: 2970,
@@ -282,6 +291,7 @@ const GUSTAVE_VERSO: Weapon[] = [
   },
   {
     id: 'delaram',
+    imgData: { width: 32, height: 32, classRotation: '-rotate-135' },
     characterIds: ['gustave', 'verso'],
     element: 'light',
     basePower: 3390,
@@ -313,6 +323,7 @@ const GUSTAVE_VERSO: Weapon[] = [
   },
   {
     id: 'demonam',
+    imgData: { width: 32, height: 32, classRotation: 'rotate-45' },
     characterIds: ['gustave', 'verso'],
     element: 'light',
     basePower: 2809,
@@ -344,6 +355,7 @@ const GUSTAVE_VERSO: Weapon[] = [
   },
   {
     id: 'dreameso',
+    imgData: { width: 32, height: 32, classRotation: '-rotate-135' },
     characterIds: ['gustave', 'verso'],
     element: 'physical',
     basePower: 3067,
@@ -363,6 +375,7 @@ const GUSTAVE_VERSO: Weapon[] = [
   },
   {
     id: 'dualiso',
+    imgData: { width: 32, height: 32, classRotation: '-rotate-135' },
     characterIds: ['gustave', 'verso'],
     element: 'lightning',
     basePower: 1776,
@@ -394,6 +407,7 @@ const GUSTAVE_VERSO: Weapon[] = [
   },
   {
     id: 'gaulteram',
+    imgData: { width: 28, height: 28, classRotation: 'rotate-45' },
     characterIds: ['gustave', 'verso'],
     element: 'earth',
     basePower: 3261,
@@ -425,6 +439,7 @@ const GUSTAVE_VERSO: Weapon[] = [
   },
   {
     id: 'glaceso',
+    imgData: { width: 48, height: 48, classRotation: 'rotate-45' },
     characterIds: ['gustave', 'verso'],
     element: 'ice',
     basePower: 2873,
@@ -456,6 +471,7 @@ const GUSTAVE_VERSO: Weapon[] = [
   },
   {
     id: 'lanceram',
+    imgData: { width: 32, height: 32, classRotation: '-rotate-135' },
     characterIds: ['gustave', 'verso'],
     element: 'physical',
     basePower: 3713,
@@ -487,6 +503,7 @@ const GUSTAVE_VERSO: Weapon[] = [
   },
   {
     id: 'liteso',
+    imgData: { width: 32, height: 32, classRotation: '-rotate-135' },
     characterIds: ['gustave', 'verso'],
     element: 'physical',
     basePower: 3551,
@@ -518,6 +535,7 @@ const GUSTAVE_VERSO: Weapon[] = [
   },
   {
     id: 'noahram',
+    imgData: { width: 32, height: 32, classRotation: '-rotate-135' },
     characterIds: ['gustave', 'verso'],
     element: 'physical',
     basePower: 2260,
@@ -528,6 +546,7 @@ const GUSTAVE_VERSO: Weapon[] = [
   },
   {
     id: 'nosaram',
+    imgData: { width: 32, height: 32, classRotation: '-rotate-135' },
     characterIds: ['gustave', 'verso'],
     element: 'physical',
     basePower: 3551,
@@ -559,6 +578,7 @@ const GUSTAVE_VERSO: Weapon[] = [
   },
   {
     id: 'sakaram',
+    imgData: { width: 32, height: 32, classRotation: '-rotate-135' },
     characterIds: ['gustave', 'verso'],
     element: 'physical',
     basePower: 2938,
@@ -590,6 +610,7 @@ const GUSTAVE_VERSO: Weapon[] = [
   },
   {
     id: 'seeram',
+    imgData: { width: 32, height: 32, classRotation: '-rotate-135' },
     characterIds: ['gustave', 'verso'],
     element: 'light',
     basePower: 3713,
@@ -621,6 +642,7 @@ const GUSTAVE_VERSO: Weapon[] = [
   },
   {
     id: 'simoso',
+    imgData: { width: 32, height: 32, classRotation: '-rotate-135' },
     characterIds: ['gustave', 'verso'],
     element: 'light',
     basePower: 3228,
@@ -652,6 +674,7 @@ const GUSTAVE_VERSO: Weapon[] = [
   },
   {
     id: 'sireso',
+    imgData: { width: 32, height: 32, classRotation: '-rotate-135' },
     characterIds: ['gustave', 'verso'],
     element: 'physical',
     basePower: 2583,
@@ -683,6 +706,7 @@ const GUSTAVE_VERSO: Weapon[] = [
   },
   {
     id: 'tireso',
+    imgData: { width: 32, height: 32, classRotation: 'rotate-45' },
     characterIds: ['gustave', 'verso'],
     element: 'earth',
     basePower: 3713,
@@ -714,6 +738,7 @@ const GUSTAVE_VERSO: Weapon[] = [
   },
   {
     id: 'verleso',
+    imgData: { width: 32, height: 32, classRotation: '-rotate-135' },
     characterIds: ['gustave', 'verso'],
     element: 'physical',
     basePower: 3454,
@@ -724,6 +749,7 @@ const GUSTAVE_VERSO: Weapon[] = [
   },
   {
     id: 'sucreso',
+    imgData: { width: 32, height: 32, classRotation: 'rotate-45' },
     characterIds: ['gustave', 'verso'],
     element: 'earth',
     basePower: 3713,
@@ -758,6 +784,7 @@ const GUSTAVE_VERSO: Weapon[] = [
 const LUNE: Weapon[] = [
   {
     id: 'angerim',
+    imgData: { width: 96, height: 96, classRotation: '' },
     characterIds: ['lune'],
     element: 'fire',
     basePower: 3293,
@@ -789,6 +816,7 @@ const LUNE: Weapon[] = [
   },
   {
     id: 'benisim',
+    imgData: { width: 96, height: 96, classRotation: '' },
     characterIds: ['lune'],
     element: 'earth',
     basePower: 2744,
@@ -820,6 +848,7 @@ const LUNE: Weapon[] = [
   },
   {
     id: 'betelim',
+    imgData: { width: 96, height: 96, classRotation: '' },
     characterIds: ['lune'],
     element: 'earth',
     basePower: 3228,
@@ -851,6 +880,7 @@ const LUNE: Weapon[] = [
   },
   {
     id: 'braselim',
+    imgData: { width: 96, height: 96, classRotation: '' },
     characterIds: ['lune'],
     element: 'fire',
     basePower: 3390,
@@ -882,6 +912,7 @@ const LUNE: Weapon[] = [
   },
   {
     id: 'chapelim',
+    imgData: { width: 96, height: 96, classRotation: '' },
     characterIds: ['lune'],
     element: 'earth',
     basePower: 3164,
@@ -913,6 +944,7 @@ const LUNE: Weapon[] = [
   },
   {
     id: 'choralim',
+    imgData: { width: 96, height: 96, classRotation: '' },
     characterIds: ['lune'],
     element: 'fire',
     basePower: 3551,
@@ -944,6 +976,7 @@ const LUNE: Weapon[] = [
   },
   {
     id: 'colim',
+    imgData: { width: 96, height: 96, classRotation: '' },
     characterIds: ['lune'],
     element: 'light',
     basePower: 2583,
@@ -975,6 +1008,7 @@ const LUNE: Weapon[] = [
   },
   {
     id: 'coralim',
+    imgData: { width: 96, height: 96, classRotation: '' },
     characterIds: ['lune'],
     element: 'ice',
     basePower: 2744,
@@ -1006,6 +1040,7 @@ const LUNE: Weapon[] = [
   },
   {
     id: 'deminerim',
+    imgData: { width: 96, height: 96, classRotation: '' },
     characterIds: ['lune'],
     element: 'lightning',
     basePower: 2744,
@@ -1037,6 +1072,7 @@ const LUNE: Weapon[] = [
   },
   {
     id: 'elerim',
+    imgData: { width: 96, height: 96, classRotation: '' },
     characterIds: ['lune'],
     element: 'earth',
     basePower: 3551,
@@ -1068,6 +1104,7 @@ const LUNE: Weapon[] = [
   },
   {
     id: 'kralim',
+    imgData: { width: 96, height: 96, classRotation: '' },
     characterIds: ['lune'],
     element: 'lightning',
     basePower: 3390,
@@ -1099,6 +1136,7 @@ const LUNE: Weapon[] = [
   },
   {
     id: 'lighterim',
+    imgData: { width: 96, height: 96, classRotation: '' },
     characterIds: ['lune'],
     element: 'fire',
     basePower: 2744,
@@ -1130,6 +1168,7 @@ const LUNE: Weapon[] = [
   },
   {
     id: 'lithelim',
+    imgData: { width: 96, height: 96, classRotation: '' },
     characterIds: ['lune'],
     element: 'void',
     basePower: 3099,
@@ -1161,6 +1200,7 @@ const LUNE: Weapon[] = [
   },
   {
     id: 'lunerim',
+    imgData: { width: 96, height: 96, classRotation: '' },
     characterIds: ['lune'],
     element: 'fire',
     basePower: 2421,
@@ -1171,6 +1211,7 @@ const LUNE: Weapon[] = [
   },
   {
     id: 'painerim',
+    imgData: { width: 96, height: 96, classRotation: '' },
     characterIds: ['lune'],
     element: 'earth',
     basePower: 2744,
@@ -1202,6 +1243,7 @@ const LUNE: Weapon[] = [
   },
   {
     id: 'potierim',
+    imgData: { width: 96, height: 96, classRotation: '' },
     characterIds: ['lune'],
     element: 'ice',
     basePower: 2906,
@@ -1233,6 +1275,7 @@ const LUNE: Weapon[] = [
   },
   {
     id: 'redalim',
+    imgData: { width: 96, height: 96, classRotation: '' },
     characterIds: ['lune'],
     element: 'ice',
     basePower: 2583,
@@ -1264,6 +1307,7 @@ const LUNE: Weapon[] = [
   },
   {
     id: 'saperim',
+    imgData: { width: 96, height: 96, classRotation: '' },
     characterIds: ['lune'],
     element: 'lightning',
     basePower: 3067,
@@ -1295,6 +1339,7 @@ const LUNE: Weapon[] = [
   },
   {
     id: 'scaverim',
+    imgData: { width: 96, height: 96, classRotation: '' },
     characterIds: ['lune'],
     element: 'dark',
     basePower: 4197,
@@ -1326,6 +1371,7 @@ const LUNE: Weapon[] = [
   },
   {
     id: 'snowim',
+    imgData: { width: 96, height: 96, classRotation: '' },
     characterIds: ['lune'],
     element: 'ice',
     basePower: 3874,
@@ -1357,6 +1403,7 @@ const LUNE: Weapon[] = [
   },
   {
     id: 'trebuchim',
+    imgData: { width: 96, height: 96, classRotation: '' },
     characterIds: ['lune'],
     element: 'lightning',
     basePower: 3067,
@@ -1388,6 +1435,7 @@ const LUNE: Weapon[] = [
   },
   {
     id: 'troubadim',
+    imgData: { width: 96, height: 96, classRotation: '' },
     characterIds: ['lune'],
     element: 'physical',
     basePower: 3067,
@@ -1419,6 +1467,7 @@ const LUNE: Weapon[] = [
   },
   {
     id: 'bonbim',
+    imgData: { width: 96, height: 96, classRotation: '' },
     characterIds: ['lune'],
     element: 'lightning',
     basePower: 3810,
@@ -1450,6 +1499,7 @@ const LUNE: Weapon[] = [
   },
   {
     id: 'cleim',
+    imgData: { width: 96, height: 96, classRotation: '' },
     characterIds: ['lune'],
     element: 'light',
     basePower: 3551,
@@ -1481,6 +1531,7 @@ const LUNE: Weapon[] = [
   },
   {
     id: 'esquim',
+    imgData: { width: 96, height: 96, classRotation: '' },
     characterIds: ['lune'],
     element: 'dark',
     basePower: 3616,
@@ -1515,6 +1566,7 @@ const LUNE: Weapon[] = [
 const MAELLE: Weapon[] = [
   {
     id: 'barrier-breaker',
+    imgData: { width: 32, height: 32, classRotation: '-rotate-135' },
     characterIds: ['maelle'],
     element: 'void',
     basePower: 3616,
@@ -1546,6 +1598,7 @@ const MAELLE: Weapon[] = [
   },
   {
     id: 'battlum',
+    imgData: { width: 32, height: 32, classRotation: '-rotate-135' },
     characterIds: ['maelle'],
     element: 'physical',
     basePower: 3067,
@@ -1577,6 +1630,7 @@ const MAELLE: Weapon[] = [
   },
   {
     id: 'brulerum',
+    imgData: { width: 32, height: 32, classRotation: '-rotate-135' },
     characterIds: ['maelle'],
     element: 'fire',
     basePower: 2744,
@@ -1596,6 +1650,7 @@ const MAELLE: Weapon[] = [
   },
   {
     id: 'chalium',
+    imgData: { width: 32, height: 32, classRotation: '-rotate-135' },
     characterIds: ['maelle'],
     element: 'light',
     basePower: 3422,
@@ -1627,6 +1682,7 @@ const MAELLE: Weapon[] = [
   },
   {
     id: 'chantenum',
+    imgData: { width: 32, height: 32, classRotation: '-rotate-135' },
     characterIds: ['maelle'],
     element: 'fire',
     basePower: 2841,
@@ -1658,6 +1714,7 @@ const MAELLE: Weapon[] = [
   },
   {
     id: 'clierum',
+    imgData: { width: 32, height: 32, classRotation: '-rotate-135' },
     characterIds: ['maelle'],
     element: 'lightning',
     basePower: 3196,
@@ -1689,6 +1746,7 @@ const MAELLE: Weapon[] = [
   },
   {
     id: 'coldum',
+    imgData: { width: 32, height: 32, classRotation: 'rotate-45' },
     characterIds: ['maelle'],
     element: 'ice',
     basePower: 2583,
@@ -1720,6 +1778,7 @@ const MAELLE: Weapon[] = [
   },
   {
     id: 'duenum',
+    imgData: { width: 32, height: 32, classRotation: '-rotate-135' },
     characterIds: ['maelle'],
     element: 'physical',
     basePower: 2421,
@@ -1751,6 +1810,7 @@ const MAELLE: Weapon[] = [
   },
   {
     id: 'facesum',
+    imgData: { width: 32, height: 32, classRotation: '-rotate-135' },
     characterIds: ['maelle'],
     element: 'physical',
     basePower: 3519,
@@ -1782,6 +1842,7 @@ const MAELLE: Weapon[] = [
   },
   {
     id: 'glaisum',
+    imgData: { width: 32, height: 32, classRotation: 'rotate-45' },
     characterIds: ['maelle'],
     element: 'physical',
     basePower: 3713,
@@ -1813,6 +1874,7 @@ const MAELLE: Weapon[] = [
   },
   {
     id: 'jarum',
+    imgData: { width: 32, height: 32, classRotation: 'rotate-45' },
     characterIds: ['maelle'],
     element: 'physical',
     basePower: 2583,
@@ -1844,6 +1906,7 @@ const MAELLE: Weapon[] = [
   },
   {
     id: 'lithum',
+    imgData: { width: 32, height: 32, classRotation: '-rotate-135' },
     characterIds: ['maelle'],
     element: 'void',
     basePower: 3228,
@@ -1875,6 +1938,7 @@ const MAELLE: Weapon[] = [
   },
   {
     id: 'maellum',
+    imgData: { width: 32, height: 32, classRotation: '-rotate-135' },
     characterIds: ['maelle'],
     element: 'physical',
     basePower: 3228,
@@ -1885,6 +1949,7 @@ const MAELLE: Weapon[] = [
   },
   {
     id: 'medalum',
+    imgData: { width: 32, height: 32, classRotation: '-rotate-135' },
     characterIds: ['maelle'],
     element: 'physical',
     basePower: 2906,
@@ -1916,6 +1981,7 @@ const MAELLE: Weapon[] = [
   },
   {
     id: 'melarum',
+    imgData: { width: 32, height: 32, classRotation: 'rotate-45' },
     characterIds: ['maelle'],
     element: 'physical',
     basePower: 3584,
@@ -1947,6 +2013,7 @@ const MAELLE: Weapon[] = [
   },
   {
     id: 'plenum',
+    imgData: { width: 32, height: 32, classRotation: 'rotate-45' },
     characterIds: ['maelle'],
     element: 'ice',
     basePower: 3035,
@@ -1978,6 +2045,7 @@ const MAELLE: Weapon[] = [
   },
   {
     id: 'seashelum',
+    imgData: { width: 32, height: 32, classRotation: '-rotate-135' },
     characterIds: ['maelle'],
     element: 'fire',
     basePower: 3003,
@@ -2009,6 +2077,7 @@ const MAELLE: Weapon[] = [
   },
   {
     id: 'sekarum',
+    imgData: { width: 32, height: 32, classRotation: '-rotate-135' },
     characterIds: ['maelle'],
     element: 'physical',
     basePower: 3390,
@@ -2040,6 +2109,7 @@ const MAELLE: Weapon[] = [
   },
   {
     id: 'stalum',
+    imgData: { width: 32, height: 32, classRotation: '-rotate-135' },
     characterIds: ['maelle'],
     element: 'fire',
     basePower: 3228,
@@ -2071,6 +2141,7 @@ const MAELLE: Weapon[] = [
   },
   {
     id: 'tissenum',
+    imgData: { width: 32, height: 32, classRotation: '-rotate-135' },
     characterIds: ['maelle'],
     element: 'earth',
     basePower: 3874,
@@ -2102,6 +2173,7 @@ const MAELLE: Weapon[] = [
   },
   {
     id: 'veremum',
+    imgData: { width: 32, height: 32, classRotation: '-rotate-135' },
     characterIds: ['maelle'],
     element: 'physical',
     basePower: 3293,
@@ -2133,6 +2205,7 @@ const MAELLE: Weapon[] = [
   },
   {
     id: 'volesterum',
+    imgData: { width: 32, height: 32, classRotation: '-rotate-135' },
     characterIds: ['maelle'],
     element: 'physical',
     basePower: 3293,
@@ -2164,6 +2237,7 @@ const MAELLE: Weapon[] = [
   },
   {
     id: 'yeverum',
+    imgData: { width: 32, height: 32, classRotation: '-rotate-135' },
     characterIds: ['maelle'],
     element: 'physical',
     basePower: 3358,
@@ -2195,6 +2269,7 @@ const MAELLE: Weapon[] = [
   },
   {
     id: 'esqium',
+    imgData: { width: 32, height: 32, classRotation: 'rotate-45' },
     characterIds: ['maelle'],
     element: 'fire',
     basePower: 3680,
@@ -2226,6 +2301,7 @@ const MAELLE: Weapon[] = [
   },
   {
     id: 'licorum',
+    imgData: { width: 32, height: 32, classRotation: 'rotate-45' },
     characterIds: ['maelle'],
     element: ' physical',
     basePower: 3551,
@@ -2260,6 +2336,7 @@ const MAELLE: Weapon[] = [
 const SCIEL: Weapon[] = [
   {
     id: 'algueron',
+    imgData: { width: 120, height: 120, classRotation: '-rotate-135' },
     characterIds: ['sciel'],
     element: 'ice',
     basePower: 3228,
@@ -2291,6 +2368,7 @@ const SCIEL: Weapon[] = [
   },
   {
     id: 'blizzon',
+    imgData: { width: 56, height: 56, classRotation: '-rotate-135' },
     characterIds: ['sciel'],
     element: 'ice',
     basePower: 4197,
@@ -2322,6 +2400,7 @@ const SCIEL: Weapon[] = [
   },
   {
     id: 'bourgelon',
+    imgData: { width: 120, height: 120, classRotation: '-rotate-135' },
     characterIds: ['sciel'],
     element: 'light',
     basePower: 3099,
@@ -2353,6 +2432,7 @@ const SCIEL: Weapon[] = [
   },
   {
     id: 'charnon',
+    imgData: { width: 100, height: 100, classRotation: '-rotate-135' },
     characterIds: ['sciel'],
     element: 'void',
     basePower: 2970,
@@ -2384,6 +2464,7 @@ const SCIEL: Weapon[] = [
   },
   {
     id: 'chation',
+    imgData: { width: 108, height: 108, classRotation: '-rotate-135' },
     characterIds: ['sciel'],
     element: 'dark',
     basePower: 3551,
@@ -2415,6 +2496,7 @@ const SCIEL: Weapon[] = [
   },
   {
     id: 'corderon',
+    imgData: { width: 44, height: 44, classRotation: '-rotate-135' },
     characterIds: ['sciel'],
     element: 'dark',
     basePower: 2744,
@@ -2446,6 +2528,7 @@ const SCIEL: Weapon[] = [
   },
   {
     id: 'direton',
+    imgData: { width: 120, height: 120, classRotation: '-rotate-135' },
     characterIds: ['sciel'],
     element: 'earth',
     basePower: 4035,
@@ -2477,6 +2560,7 @@ const SCIEL: Weapon[] = [
   },
   {
     id: 'garganon',
+    imgData: { width: 44, height: 44, classRotation: '-rotate-135' },
     characterIds: ['sciel'],
     element: 'fire',
     basePower: 3132,
@@ -2508,6 +2592,7 @@ const SCIEL: Weapon[] = [
   },
   {
     id: 'gobluson',
+    imgData: { width: 72, height: 72, classRotation: '-rotate-135' },
     characterIds: ['sciel'],
     element: 'fire',
     basePower: 3358,
@@ -2539,6 +2624,7 @@ const SCIEL: Weapon[] = [
   },
   {
     id: 'guleson',
+    imgData: { width: 40, height: 40, classRotation: '-rotate-135' },
     characterIds: ['sciel'],
     element: 'lightning',
     basePower: 3132,
@@ -2570,6 +2656,7 @@ const SCIEL: Weapon[] = [
   },
   {
     id: 'hevasson',
+    imgData: { width: 104, height: 104, classRotation: '-rotate-135' },
     characterIds: ['sciel'],
     element: 'physical',
     basePower: 3454,
@@ -2601,6 +2688,7 @@ const SCIEL: Weapon[] = [
   },
   {
     id: 'litheson',
+    imgData: { width: 120, height: 120, classRotation: '-rotate-135' },
     characterIds: ['sciel'],
     element: 'physical',
     basePower: 2809,
@@ -2632,6 +2720,7 @@ const SCIEL: Weapon[] = [
   },
   {
     id: 'lusteson',
+    imgData: { width: 76, height: 76, classRotation: '-rotate-135' },
     characterIds: ['sciel'],
     element: 'dark',
     basePower: 3422,
@@ -2663,6 +2752,7 @@ const SCIEL: Weapon[] = [
   },
   {
     id: 'martenon',
+    imgData: { width: 120, height: 120, classRotation: '-rotate-135' },
     characterIds: ['sciel'],
     element: 'earth',
     basePower: 3874,
@@ -2694,6 +2784,7 @@ const SCIEL: Weapon[] = [
   },
   {
     id: 'minason',
+    imgData: { width: 76, height: 76, classRotation: '-rotate-135' },
     characterIds: ['sciel'],
     element: 'physical',
     basePower: 2809,
@@ -2725,6 +2816,7 @@ const SCIEL: Weapon[] = [
   },
   {
     id: 'moisson',
+    imgData: { width: 96, height: 96, classRotation: '-rotate-135' },
     characterIds: ['sciel'],
     element: 'physical',
     basePower: 3325,
@@ -2756,6 +2848,7 @@ const SCIEL: Weapon[] = [
   },
   {
     id: 'ramasson',
+    imgData: { width: 96, height: 96, classRotation: '-rotate-135' },
     characterIds: ['sciel'],
     element: 'physical',
     basePower: 3519,
@@ -2787,6 +2880,7 @@ const SCIEL: Weapon[] = [
   },
   {
     id: 'rangeson',
+    imgData: { width: 8, height: 8, classRotation: '-rotate-135' },
     characterIds: ['sciel'],
     element: 'dark',
     basePower: 3132,
@@ -2818,6 +2912,7 @@ const SCIEL: Weapon[] = [
   },
   {
     id: 'sadon',
+    imgData: { width: 108, height: 108, classRotation: '-rotate-135' },
     characterIds: ['sciel'],
     element: 'light',
     basePower: 2583,
@@ -2849,6 +2944,7 @@ const SCIEL: Weapon[] = [
   },
   {
     id: 'scieleson',
+    imgData: { width: 96, height: 96, classRotation: '-rotate-135' },
     characterIds: ['sciel'],
     element: 'physical',
     basePower: 3454,
@@ -2859,6 +2955,7 @@ const SCIEL: Weapon[] = [
   },
   {
     id: 'tisseron',
+    imgData: { width: 96, height: 96, classRotation: '-rotate-135' },
     characterIds: ['sciel'],
     element: 'lightning',
     basePower: 3067,
@@ -2890,6 +2987,7 @@ const SCIEL: Weapon[] = [
   },
   {
     id: 'esquion',
+    imgData: { width: 96, height: 96, classRotation: '-rotate-135' },
     characterIds: ['sciel'],
     element: 'physical',
     basePower: 3842,
@@ -2924,6 +3022,7 @@ const SCIEL: Weapon[] = [
 const MONOCO: Weapon[] = [
   {
     id: 'ballaro',
+    imgData: { width: 54, height: 54, classRotation: 'rotate-45' },
     characterIds: ['monoco'],
     element: 'light',
     basePower: 3067,
@@ -2955,6 +3054,7 @@ const MONOCO: Weapon[] = [
   },
   {
     id: 'boucharo',
+    imgData: { width: 54, height: 54, classRotation: 'rotate-45' },
     characterIds: ['monoco'],
     element: 'fire',
     basePower: 3228,
@@ -2986,6 +3086,7 @@ const MONOCO: Weapon[] = [
   },
   {
     id: 'brumaro',
+    imgData: { width: 54, height: 54, classRotation: 'rotate-45' },
     characterIds: ['monoco'],
     element: 'physical',
     basePower: 3390,
@@ -3017,6 +3118,7 @@ const MONOCO: Weapon[] = [
   },
   {
     id: 'chromaro',
+    imgData: { width: 54, height: 54, classRotation: 'rotate-45' },
     characterIds: ['monoco'],
     element: 'ice',
     basePower: 3390,
@@ -3048,6 +3150,7 @@ const MONOCO: Weapon[] = [
   },
   {
     id: 'fragaro',
+    imgData: { width: 54, height: 54, classRotation: 'rotate-45' },
     characterIds: ['monoco'],
     element: 'lightning',
     basePower: 4197,
@@ -3079,6 +3182,7 @@ const MONOCO: Weapon[] = [
   },
   {
     id: 'grandaro',
+    imgData: { width: 54, height: 54, classRotation: 'rotate-45' },
     characterIds: ['monoco'],
     element: 'earth',
     basePower: 3551,
@@ -3098,6 +3202,7 @@ const MONOCO: Weapon[] = [
   },
   {
     id: 'joyaro',
+    imgData: { width: 54, height: 54, classRotation: 'rotate-45' },
     characterIds: ['monoco'],
     element: 'lightning',
     basePower: 3713,
@@ -3129,6 +3234,7 @@ const MONOCO: Weapon[] = [
   },
   {
     id: 'monocaro',
+    imgData: { width: 54, height: 54, classRotation: 'rotate-45' },
     characterIds: ['monoco'],
     element: 'physical',
     basePower: 2744,
@@ -3160,6 +3266,7 @@ const MONOCO: Weapon[] = [
   },
   {
     id: 'nusaro',
+    imgData: { width: 54, height: 54, classRotation: 'rotate-45' },
     characterIds: ['monoco'],
     element: 'dark',
     basePower: 4197,
@@ -3191,6 +3298,7 @@ const MONOCO: Weapon[] = [
   },
   {
     id: 'sidaro',
+    imgData: { width: 54, height: 54, classRotation: 'rotate-45' },
     characterIds: ['monoco'],
     element: 'dark',
     basePower: 3035,
@@ -3222,6 +3330,7 @@ const MONOCO: Weapon[] = [
   },
   {
     id: 'urnaro',
+    imgData: { width: 54, height: 54, classRotation: 'rotate-45' },
     characterIds: ['monoco'],
     element: 'earth',
     basePower: 3422,
@@ -3253,6 +3362,7 @@ const MONOCO: Weapon[] = [
   },
   {
     id: 'baguettaro',
+    imgData: { width: 54, height: 54, classRotation: 'rotate-45' },
     characterIds: ['monoco'],
     element: 'fire',
     basePower: 3745,
@@ -3284,6 +3394,7 @@ const MONOCO: Weapon[] = [
   },
   {
     id: 'esquiaro',
+    imgData: { width: 54, height: 54, classRotation: 'rotate-45' },
     characterIds: ['monoco'],
     element: ' earth',
     basePower: 3745,
@@ -3314,7 +3425,8 @@ const MONOCO: Weapon[] = [
     }
   },
   {
-    id: '-cannaro-',
+    id: 'cannaro',
+    imgData: { width: 54, height: 54, classRotation: 'rotate-45' },
     characterIds: ['monoco'],
     element: 'light',
     basePower: 3648,

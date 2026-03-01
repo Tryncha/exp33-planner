@@ -53,6 +53,12 @@ export interface Scaling {
   luck?: string;
 }
 
+export interface WeaponImageData {
+  width: number;
+  height: number;
+  classRotation: string;
+}
+
 export interface LocaleWeapon {
   name: string;
   passives?: [string, string, string];
@@ -60,6 +66,7 @@ export interface LocaleWeapon {
 
 export interface Weapon {
   id: string;
+  imgData: WeaponImageData;
   characterIds: Array<Character['id']>;
   basePower: number;
   element: string;

@@ -1,5 +1,5 @@
 import { useBuild } from '../context/build-context';
-import Weapon from './weapon';
+import WeaponSlot from './weapon';
 import { useVault } from '../context/vault-context';
 import Pictos from './pictos';
 import Luminas from './luminas';
@@ -41,7 +41,7 @@ const Planner = () => {
           <Stats />
         </div>
         <div className="flex w-md flex-col gap-2">
-          <Weapon />
+          <WeaponSlot />
           <Skills />
         </div>
         <Pictos />

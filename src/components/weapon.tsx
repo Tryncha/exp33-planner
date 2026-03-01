@@ -6,7 +6,7 @@ import WeaponPassive from './weapon-passive';
 import WeaponSelector from './modals/weapon-selector';
 import { useLocale } from 'next-intl';
 
-const Weapon = () => {
+const WeaponSlot = () => {
   const locale = useLocale();
 
   const { build } = useBuild();
@@ -24,17 +24,17 @@ const Weapon = () => {
       />
 
       {/* Weapon info */}
-      <div className="flex items-center">
+      <div className="flex items-center p-2">
         <div
           onClick={() => openModal('weapons')}
-          className="size-32 hover:cursor-pointer"
+          className="flex size-28 items-center justify-center hover:cursor-pointer"
         >
           <Image
             src={`/weapons/${characterId}/${weaponData.id}.png`}
             alt={weaponData[locale].name}
-            width={36}
-            height={36}
-            className="translate-x-12 -rotate-135"
+            width={weaponData.imgData.width}
+            height={weaponData.imgData.height}
+            className={weaponData.imgData.classRotation}
           />
         </div>
 
@@ -91,4 +91,4 @@ const Weapon = () => {
   );
 };
 
-export default Weapon;
+export default WeaponSlot;

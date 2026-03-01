@@ -6,6 +6,26 @@ import { Weapon } from '@/src/types';
 import { useLocale } from 'next-intl';
 import Image from 'next/image';
 
+const weaponImagesData: Record<
+  Weapon['id'],
+  {
+    width: number;
+    height: number;
+    classRotation: string;
+  }
+> = {
+  abysseram: {
+    width: 32,
+    height: 32,
+    classRotation: '-rotate-135'
+  },
+  blodam: {
+    width: 32,
+    height: 32,
+    classRotation: 'rotate-45'
+  }
+};
+
 const WeaponOption = ({
   weaponData,
   isEquipped,
@@ -28,13 +48,13 @@ const WeaponOption = ({
       {/* Weapon Info */}
       <div className="flex items-center p-2">
         {/* Image */}
-        <div className="size-28">
+        <div className="flex size-28 items-center justify-center">
           <Image
             src={`/weapons/${characterId}/${weaponData.id}.png`}
             alt={weaponData[locale].name}
-            width={32}
-            height={32}
-            className="translate-x-12 -rotate-135"
+            width={weaponData.imgData.width}
+            height={weaponData.imgData.height}
+            className={weaponData.imgData.classRotation}
           />
         </div>
 

@@ -1,10 +1,13 @@
 import { useBuild } from '@/src/context/build-context';
 import { Modal } from '@/src/context/modal-context';
 import PICTOS from '@/src/data/pictos';
+import { PICTO_CATEGORIES } from '@/src/lib/constants';
 import { formatPictoStats } from '@/src/lib/utils';
-import { Picto } from '@/src/types';
-import { useLocale } from 'next-intl';
+import { Picto, PictoCategory } from '@/src/types';
+import { ArrowDownUp } from 'lucide-react';
+import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
+import { useState } from 'react';
 
 const PictoOption = ({
   pictoData,
@@ -20,25 +23,27 @@ const PictoOption = ({
   return (
     <div
       onClick={onClick}
-      className={`${isEquipped ? 'bg-taupe-700 hover:bg-taupe-600' : 'hover:bg-taupe-800'} flex w-84 items-center justify-between gap-2 border border-taupe-700 px-4 py-2 hover:cursor-pointer`}
+      className={`${isEquipped ? 'bg-taupe-700 hover:bg-taupe-600' : 'hover:bg-taupe-800'} flex h-30 w-72 flex-col gap-2 border border-taupe-700 px-4 py-2 hover:cursor-pointer`}
     >
-      <div className="flex w-8 items-center justify-center">
+      <div className="flex items-center justify-between">
         <Image
           src={`/pictos/${pictoData.id}.png`}
           alt={`${pictoData[locale].name} Picto`}
-          width={54 / 2}
-          height={54 / 2}
+          width={32}
+          height={32}
         />
+        <div className="flex flex-1 flex-col items-center">
+          <h2 className="text-lg font-semibold">{pictoData[locale].name}</h2>
+          <span className="text-xs">{formatPictoStats(pictoData.stats)}</span>
+        </div>
+        <span className="text-lg font-semibold">{pictoData.luminaPoints}</span>
       </div>
-      <div className="flex flex-col items-center">
-        <h2 className="text-lg font-semibold">{pictoData[locale].name}</h2>
-        <span className="text-xs">{formatPictoStats(pictoData.stats)}</span>
-        <p className="mt-2 text-center text-sm">{pictoData[locale].effect}</p>
-      </div>
-      <span className="text-xl font-bold">{pictoData.luminaPoints}</span>
+      <span className="flex flex-1 items-center justify-center text-xs">{pictoData[locale].effect}</span>
     </div>
   );
 };
+
+const INITIAL_CATEGORIES = PICTO_CATEGORIES.map((cat) => cat.id);
 
 const PictosSelector = ({
   selectedSlot,
@@ -49,28 +54,114 @@ const PictosSelector = ({
   isOpen: boolean;
   onClose: () => void;
 }) => {
+  const t = useTranslations('Pictos');
+  const locale = useLocale();
+
   const { build, changePicto } = useBuild();
   const { pictosIds } = build;
+
+  const [filterByName, setFilterByName] = useState('');
+  const [filterByCategories, setFilterByCategories] = useState<PictoCategory[]>(INITIAL_CATEGORIES);
+
+  const [sortByLumina, setSortByLumina] = useState<'desc' | 'asc' | null>(null);
+
+  function toggleFilterByCategories(newCategory: PictoCategory) {
+    if (!filterByCategories.includes(newCategory)) {
+      setFilterByCategories(filterByCategories.concat(newCategory));
+    } else {
+      setFilterByCategories(filterByCategories.filter((cat) => cat !== newCategory));
+    }
+  }
 
   function handleChange(newPictoId: Picto['id']) {
     changePicto(selectedSlot, newPictoId);
     onClose();
   }
 
+  function toggleSortByLumina() {
+    if (!sortByLumina) {
+      setSortByLumina('desc');
+    } else if (sortByLumina === 'desc') {
+      setSortByLumina('asc');
+    } else {
+      setSortByLumina(null);
+    }
+  }
+
+  function handleClick() {
+    if (filterByCategories.length === PICTO_CATEGORIES.length) {
+      setFilterByCategories([]);
+    } else {
+      setFilterByCategories(INITIAL_CATEGORIES);
+    }
+  }
+
+  const categoriesFilter = (pic: Picto) => pic.categories.some((cat) => filterByCategories.includes(cat));
+  const nameFilter = (pic: Picto) => pic[locale].name.toLowerCase().includes(filterByName.toLowerCase());
+
+  const luminaSort = (a: Picto, b: Picto) =>
+    sortByLumina ? (sortByLumina === 'desc' ? b.luminaPoints - a.luminaPoints : a.luminaPoints - b.luminaPoints) : 0;
+
+  const filteredPictos = PICTOS.filter(categoriesFilter).filter(nameFilter).sort(luminaSort);
+
   return (
     <Modal
       isOpen={isOpen}
       onClose={onClose}
-      className="scrollbar-thumb-taupe-600 scrollbar-track-taupe-800 scrollbar-thin flex h-180 w-348.5 flex-wrap gap-2 overflow-y-auto rounded-xs bg-taupe-900 p-2"
+      className="flex h-180 gap-2 rounded-xs bg-taupe-900 p-4"
     >
-      {PICTOS.map((pic) => (
-        <PictoOption
-          key={pic.id}
-          isEquipped={pictosIds.includes(pic.id)}
-          pictoData={pic}
-          onClick={() => handleChange(pic.id)}
-        />
-      ))}
+      {/* Right column */}
+      <section className="flex flex-col">
+        <button
+          onClick={handleClick}
+          className="w-40 border border-taupe-700 px-2 text-sm hover:cursor-pointer"
+        >
+          {filterByCategories.length === PICTO_CATEGORIES.length ? t('unselectAll') : t('selectAll')}
+        </button>
+        <hr className="my-2 border border-taupe-700" />
+        <div className="scrollbar-thumb-taupe-600 scrollbar-track-taupe-800 scrollbar-thin flex flex-col gap-1 overflow-y-scroll">
+          {PICTO_CATEGORIES.map((cat) => (
+            <button
+              key={cat.id}
+              onClick={() => toggleFilterByCategories(cat.id)}
+              className={`${filterByCategories.includes(cat.id) ? 'bg-taupe-700' : ''} w-36 border border-taupe-700 px-2 text-sm hover:cursor-pointer`}
+            >
+              {cat[locale].name}
+            </button>
+          ))}
+        </div>
+      </section>
+
+      {/* Left column */}
+      <section className="flex flex-col gap-2">
+        <div className="flex gap-2">
+          <input
+            type="text"
+            value={filterByName}
+            onChange={(e) => setFilterByName(e.target.value)}
+            placeholder={t('searchByName')}
+            className="flex-1 border border-taupe-700 px-2 text-sm placeholder:italic"
+          />
+          <button
+            onClick={toggleSortByLumina}
+            className="flex w-6 cursor-pointer items-center justify-center border border-taupe-700"
+          >
+            <ArrowDownUp size={18} />
+          </button>
+        </div>
+
+        {/* Pictos */}
+        <section className="scrollbar-thumb-taupe-600 scrollbar-track-taupe-800 scrollbar-thin flex h-164.5 w-301 flex-wrap content-start gap-2 overflow-y-scroll border border-taupe-700 p-2">
+          {filteredPictos.map((pic) => (
+            <PictoOption
+              key={pic.id}
+              isEquipped={pictosIds.includes(pic.id)}
+              pictoData={pic}
+              onClick={() => handleChange(pic.id)}
+            />
+          ))}
+        </section>
+      </section>
     </Modal>
   );
 };

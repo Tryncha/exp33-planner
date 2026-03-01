@@ -43,7 +43,10 @@
     "defense": "Defense"
   },
   "Pictos": {
-    "selectPicto": "Select a Picto"
+    "selectPicto": "Select a Picto",
+    "searchByName": "Search by name...",
+    "unselectAll": "Unselect All",
+    "selectAll": "Select all"
   },
   "WeaponInfo": {
     "power": "Power",

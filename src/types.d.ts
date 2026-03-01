@@ -1,4 +1,4 @@
-import { GUSTAVE_BASE } from './lib/constants';
+import { GUSTAVE_BASE, PICTO_CATEGORIES, PICTO_CATEGORIES_FROM_GAME } from './lib/constants';
 
 export type CharacterId = 'gustave' | 'lune' | 'maelle' | 'sciel' | 'verso' | 'monoco';
 export type AttributeId = 'vitality' | 'might' | 'agility' | 'defense' | 'luck';
@@ -115,62 +115,8 @@ export interface Attributes {
   luck: number;
 }
 
-export type PictoTypeMine =
-  | 'damage'
-  | 'healing'
-  | 'rush'
-  | 'solo'
-  | 'free-aim'
-  | 'tints'
-  | 'revive'
-  | 'shields'
-  | 'immunity'
-  | 'base-attack'
-  | 'lifesteal'
-  | 'counterattack'
-  | 'death'
-  | 'powerful'
-  | 'regen'
-  | 'shell'
-  | 'status-effect'
-  | 'ap'
-  | 'break'
-  | 'burn'
-  | 'slow'
-  | 'mark'
-  | 'gradient'
-  | 'critical'
-  | 'weakness'
-  | 'special'
-  | 'defensive'
-  | 'defenceless'
-  | 'dodge'
-  | 'parry'
-  | 'jump'
-  | 'powerless';
-
-export type PictoType =
-  | 'base-attack'
-  | 'free-aim'
-  | 'critical'
-  | 'defense'
-  | 'speed'
-  | 'damage'
-  | 'ap'
-  | 'heal'
-  | 'shield'
-  | 'burn'
-  | 'mark'
-  | 'buff'
-  | 'debuff'
-  | 'status-effect'
-  | 'parry'
-  | 'counter'
-  | 'break'
-  | 'death'
-  | 'solo'
-  | 'gradient'
-  | 'items';
+export type PictoCategoryFromGame = (typeof PICTO_CATEGORIES_FROM_GAME)[number];
+export type PictoCategory = (typeof PICTO_CATEGORIES)[number]['id'];
 
 export interface PictoStats {
   health: number;
@@ -187,7 +133,7 @@ export interface LocalePicto {
 export interface Picto {
   id: string;
   luminaPoints: number;
-  types: PictoTypeMine[];
+  categories: PictoCategory[];
   stats: PictoStats;
   en: LocalePicto;
   es: LocalePicto;

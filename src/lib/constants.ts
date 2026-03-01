@@ -235,19 +235,14 @@ export const PICTO_CATEGORIES = [
     es: { name: 'Daño' }
   },
   {
+    id: 'defensive',
+    en: { name: 'Defensive' },
+    es: { name: 'Defensivo' }
+  },
+  {
     id: 'healing',
     en: { name: 'Healing' },
     es: { name: 'Curación' }
-  },
-  {
-    id: 'rush',
-    en: { name: 'Rush' },
-    es: { name: 'Prisa' }
-  },
-  {
-    id: 'solo',
-    en: { name: 'Solo' },
-    es: { name: 'En solitario' }
   },
   {
     id: 'free-aim',
@@ -255,9 +250,44 @@ export const PICTO_CATEGORIES = [
     es: { name: 'Disparo libre' }
   },
   {
+    id: 'burn',
+    en: { name: 'Burn' },
+    es: { name: 'Quemadura' }
+  },
+  {
+    id: 'mark',
+    en: { name: 'Mark' },
+    es: { name: 'Marca' }
+  },
+  {
+    id: 'ap',
+    en: { name: 'AP' },
+    es: { name: 'PA' }
+  },
+  {
+    id: 'base-attack',
+    en: { name: 'Base Attack' },
+    es: { name: 'Ataque básico' }
+  },
+  {
+    id: 'parry',
+    en: { name: 'Parry' },
+    es: { name: 'Bloqueo' }
+  },
+  {
+    id: 'solo',
+    en: { name: 'Solo' },
+    es: { name: 'En solitario' }
+  },
+  {
     id: 'tints',
     en: { name: 'Tints' },
     es: { name: 'Tintes' }
+  },
+  {
+    id: 'death',
+    en: { name: 'Death' },
+    es: { name: 'Muerte' }
   },
   {
     id: 'revive',
@@ -275,59 +305,14 @@ export const PICTO_CATEGORIES = [
     es: { name: 'Inmunidad' }
   },
   {
-    id: 'base-attack',
-    en: { name: 'Base Attack' },
-    es: { name: 'Ataque básico' }
-  },
-  {
-    id: 'counterattack',
-    en: { name: 'Counterattack' },
-    es: { name: 'Contraataque' }
-  },
-  {
-    id: 'death',
-    en: { name: 'Death' },
-    es: { name: 'Muerte' }
-  },
-  {
-    id: 'powerful',
-    en: { name: 'Powerful' },
-    es: { name: 'Fortalecimiento' }
-  },
-  {
-    id: 'shell',
-    en: { name: 'Shell' },
-    es: { name: 'Coraza' }
-  },
-  {
     id: 'status-effect',
     en: { name: 'Status Effect' },
     es: { name: 'Efectos de estado' }
   },
   {
-    id: 'ap',
-    en: { name: 'AP' },
-    es: { name: 'PA' }
-  },
-  {
     id: 'break',
     en: { name: 'Break' },
     es: { name: 'Ruptura' }
-  },
-  {
-    id: 'burn',
-    en: { name: 'Burn' },
-    es: { name: 'Quemadura' }
-  },
-  {
-    id: 'slow',
-    en: { name: 'Slow' },
-    es: { name: 'Lentitud' }
-  },
-  {
-    id: 'mark',
-    en: { name: 'Mark' },
-    es: { name: 'Marca' }
   },
   {
     id: 'gradient',
@@ -340,24 +325,9 @@ export const PICTO_CATEGORIES = [
     es: { name: 'Golpes críticos' }
   },
   {
-    id: 'weakness',
-    en: { name: 'Weakness' },
-    es: { name: 'Debilidad' }
-  },
-  {
-    id: 'special',
-    en: { name: 'Special' },
-    es: { name: 'Especial' }
-  },
-  {
-    id: 'defensive',
-    en: { name: 'Defensive' },
-    es: { name: 'Defensivo' }
-  },
-  {
-    id: 'defenceless',
-    en: { name: 'Defenceless' },
-    es: { name: 'Indefensión' }
+    id: 'slow',
+    en: { name: 'Slow' },
+    es: { name: 'Lentitud' }
   },
   {
     id: 'dodge',
@@ -365,18 +335,38 @@ export const PICTO_CATEGORIES = [
     es: { name: 'Esquiva' }
   },
   {
-    id: 'parry',
-    en: { name: 'Parry' },
-    es: { name: 'Bloqueo' }
+    id: 'rush',
+    en: { name: 'Rush' },
+    es: { name: 'Prisa' }
   },
   {
-    id: 'jump',
-    en: { name: 'Jump' },
-    es: { name: 'Salto' }
+    id: 'powerful',
+    en: { name: 'Powerful' },
+    es: { name: 'Fortalecimiento' }
+  },
+  {
+    id: 'shell',
+    en: { name: 'Shell' },
+    es: { name: 'Coraza' }
+  },
+  {
+    id: 'weakness',
+    en: { name: 'Weakness' },
+    es: { name: 'Debilidad' }
   },
   {
     id: 'powerless',
     en: { name: 'Powerless' },
     es: { name: 'Debilitamiento' }
+  },
+  {
+    id: 'defenceless',
+    en: { name: 'Defenceless' },
+    es: { name: 'Indefensión' }
+  },
+  {
+    id: 'special',
+    en: { name: 'Special' },
+    es: { name: 'Especial' }
   }
 ] as const;

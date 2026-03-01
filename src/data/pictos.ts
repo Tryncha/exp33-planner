@@ -92,8 +92,8 @@ const PICTOS: Picto[] = [
       effect: '+1 Shield on being revived.'
     },
     es: {
-      name: 'Aegis Revival',
-      effect: '+1 Shield on being revived.'
+      name: 'Resurgimiento protector',
+      effect: '+1 escudo al revivir.'
     }
   },
   {
@@ -111,8 +111,8 @@ const PICTOS: Picto[] = [
       effect: 'Immune to Blight.'
     },
     es: {
-      name: 'Anti-Blight',
-      effect: 'Immune to Blight.'
+      name: 'Antipeste',
+      effect: 'Inmunidad a la peste.'
     }
   },
   {
@@ -130,8 +130,8 @@ const PICTOS: Picto[] = [
       effect: 'Immune to Burn.'
     },
     es: {
-      name: 'Anti-Burn',
-      effect: 'Immune to Burn.'
+      name: 'Antiquemadura',
+      effect: 'Inmunidad a la quemadura.'
     }
   },
   {
@@ -168,8 +168,8 @@ const PICTOS: Picto[] = [
       effect: 'Immune to Freeze.'
     },
     es: {
-      name: 'Anti-Freeze',
-      effect: 'Immune to Freeze.'
+      name: 'Anticongelación',
+      effect: 'Inmunidad a la congelación.'
     }
   },
   {
@@ -187,8 +187,8 @@ const PICTOS: Picto[] = [
       effect: 'Immune to Stun.'
     },
     es: {
-      name: 'Anti-Stun',
-      effect: 'Immune to Stun.'
+      name: 'Antiaturdimiento',
+      effect: 'Inmune al aturdimiento.'
     }
   },
   {
@@ -206,8 +206,8 @@ const PICTOS: Picto[] = [
       effect: 'Deal 50% more damage if Health is below 10%.'
     },
     es: {
-      name: "At Death's Door",
-      effect: 'Deal 50% more damage if Health is below 10%.'
+      name: 'A las puertas de la muerte',
+      effect: 'Daño +50% si tienes menos del 10% de vida.'
     }
   },
   {
@@ -270,7 +270,7 @@ const PICTOS: Picto[] = [
   {
     id: 'augmented-counter-i',
     luminaPoints: 3,
-    categories: ['counterattack'],
+    categories: ['parry'],
     stats: {
       health: 95,
       defense: 0,
@@ -289,7 +289,7 @@ const PICTOS: Picto[] = [
   {
     id: 'augmented-counter-ii',
     luminaPoints: 5,
-    categories: ['counterattack'],
+    categories: ['parry'],
     stats: {
       health: 0,
       defense: 208,
@@ -308,7 +308,7 @@ const PICTOS: Picto[] = [
   {
     id: 'augmented-counter-iii',
     luminaPoints: 7,
-    categories: ['counterattack'],
+    categories: ['parry'],
     stats: {
       health: 0,
       defense: 733,
@@ -339,8 +339,8 @@ const PICTOS: Picto[] = [
       effect: '50% increased damage on the first hit. Once per battle.'
     },
     es: {
-      name: 'Augmented First Strike',
-      effect: '50% increased damage on the first hit. Once per battle.'
+      name: 'Primer ataque reforzado',
+      effect: 'Daño en el primer impacto +50%. Una vez por combate.'
     }
   },
   {
@@ -555,7 +555,7 @@ const PICTOS: Picto[] = [
   {
     id: 'breaking-counter',
     luminaPoints: 3,
-    categories: ['break', 'counterattack'],
+    categories: ['break', 'parry'],
     stats: {
       health: 0,
       defense: 0,
@@ -643,8 +643,8 @@ const PICTOS: Picto[] = [
       effect: '25% increased damage on Burning targets.'
     },
     es: {
-      name: 'Burn Affinity',
-      effect: '25% increased damage on Burning targets.'
+      name: 'Afinidad con quemadura',
+      effect: 'Daño +25% a objetivos que sufren quemadura.'
     }
   },
   {
@@ -738,8 +738,8 @@ const PICTOS: Picto[] = [
       effect: '+10% of a Gradient Charge on applying a Buff. Once per turn.'
     },
     es: {
-      name: 'Charging Alteration',
-      effect: '+10% of a Gradient Charge on applying a Buff. Once per turn.'
+      name: 'Alteración de carga',
+      effect: '+10% de una carga de gradiente al aplicar un potenciador. Una vez por turno.'
     }
   },
   {
@@ -757,8 +757,8 @@ const PICTOS: Picto[] = [
       effect: '+15% of a Gradient Charge on Base Attack.'
     },
     es: {
-      name: 'Charging Attack',
-      effect: '+15% of a Gradient Charge on Base Attack.'
+      name: 'Ataque de carga',
+      effect: '+15% de una carga de gradiente al efectuar un ataque básico.'
     }
   },
   {
@@ -783,7 +783,7 @@ const PICTOS: Picto[] = [
   {
     id: 'charging-counter',
     luminaPoints: 10,
-    categories: ['gradient', 'counterattack'],
+    categories: ['gradient', 'parry'],
     stats: {
       health: 1333,
       defense: 647,
@@ -814,8 +814,8 @@ const PICTOS: Picto[] = [
       effect: '+20% of a Gradient Charge on hitting a Critical Hit. Once per turn.'
     },
     es: {
-      name: 'Charging Critical',
-      effect: '+20% of a Gradient Charge on hitting a Critical Hit. Once per turn.'
+      name: 'Carga crítica',
+      effect: '+20% de una carga de gradiente al asestar un golpe crítico. Una vez por turno.'
     }
   },
   {
@@ -928,8 +928,8 @@ const PICTOS: Picto[] = [
       effect: 'On turn start, if no damage taken since last turn, recover 100% Health.'
     },
     es: {
-      name: "Clea's Life",
-      effect: 'On turn start, if no damage taken since last turn, recover 100% Health.'
+      name: 'Vida de Clea',
+      effect: 'Al inicio del turno, si no recibiste daño desde el turno anterior, recuperas un 100% de vida.'
     }
   },
   {
@@ -966,8 +966,8 @@ const PICTOS: Picto[] = [
       effect: 'Base Attack has 1 extra hit.'
     },
     es: {
-      name: 'Combo Attack I',
-      effect: 'Base Attack has 1 extra hit.'
+      name: 'Ataque combinado I',
+      effect: 'El ataque básico golpea una vez más.'
     }
   },
   {
@@ -985,8 +985,8 @@ const PICTOS: Picto[] = [
       effect: 'Base Attack has 1 extra hit.'
     },
     es: {
-      name: 'Combo Attack II',
-      effect: 'Base Attack has 1 extra hit.'
+      name: 'Ataque combinado II',
+      effect: 'El ataque básico golpea una vez más.'
     }
   },
   {
@@ -1004,8 +1004,8 @@ const PICTOS: Picto[] = [
       effect: 'Base Attack has 1 extra hit.'
     },
     es: {
-      name: 'Combo Attack III',
-      effect: 'Base Attack has 1 extra hit.'
+      name: 'Ataque combinado III',
+      effect: 'El ataque básico golpea una vez más.'
     }
   },
   {
@@ -1500,8 +1500,8 @@ const PICTOS: Picto[] = [
       effect: '+1 AP on Base Attack.'
     },
     es: {
-      name: 'Energising Attack I',
-      effect: '+1 AP on Base Attack.'
+      name: 'Ataque energizante I',
+      effect: '+1 PA al efectuar un ataque básico.'
     }
   },
   {
@@ -1519,8 +1519,8 @@ const PICTOS: Picto[] = [
       effect: '+1 AP on Base Attack.'
     },
     es: {
-      name: 'Energising Attack II',
-      effect: '+1 AP on Base Attack.'
+      name: 'Ataque energizante II',
+      effect: '+1 PA al efectuar un ataque básico.'
     }
   },
   {
@@ -1640,7 +1640,7 @@ const PICTOS: Picto[] = [
   {
     id: 'energising-jump',
     luminaPoints: 5,
-    categories: ['ap', 'jump'],
+    categories: ['ap'],
     stats: {
       health: 44,
       defense: 0,
@@ -1899,8 +1899,8 @@ const PICTOS: Picto[] = [
       effect: '+1 AP on turn start.'
     },
     es: {
-      name: 'Energising Turn',
-      effect: '+1 AP on turn start.'
+      name: 'Turno energizante',
+      effect: '+1 PA al inicio del turno.'
     }
   },
   {
@@ -1918,8 +1918,8 @@ const PICTOS: Picto[] = [
       effect: 'Every AP gain is increased by 1.'
     },
     es: {
-      name: 'Energy Master',
-      effect: 'Every AP gain is increased by 1.'
+      name: 'Dominio de la energía',
+      effect: 'Cada obtención de PA aumenta en 1.'
     }
   },
   {
@@ -1937,8 +1937,8 @@ const PICTOS: Picto[] = [
       effect: 'Base Attack applies Powerless for 1 turn.'
     },
     es: {
-      name: 'Enfeebling Attack',
-      effect: 'Base Attack applies Powerless for 1 turn.'
+      name: 'Ataque debilitante',
+      effect: 'El ataque básico aplica debilitamiento durante 1 turno.'
     }
   },
   {
@@ -1985,17 +1985,17 @@ const PICTOS: Picto[] = [
     categories: ['base-attack', 'defenceless'],
     stats: {
       health: 0,
-      defense: 20,
-      speed: 4,
-      critRate: 0
+      defense: 0,
+      speed: 20,
+      critRate: 4
     },
     en: {
       name: 'Exposing Attack',
       effect: 'Base Attack applies Defenceless for 1 turn.'
     },
     es: {
-      name: 'Exposing Attack',
-      effect: 'Base Attack applies Defenceless for 1 turn.'
+      name: 'Ataque expositor',
+      effect: 'El ataque básico aplica fragilidad durante 1 turno.'
     }
   },
   {
@@ -2241,8 +2241,8 @@ const PICTOS: Picto[] = [
       effect: '+15% to Powerless damage reduction.'
     },
     es: {
-      name: 'Greater Powerless',
-      effect: '+15% to Powerless damage reduction.'
+      name: 'Debilitamiento mayor',
+      effect: 'Reducción de daño de debilitamiento +15%.'
     }
   },
   {
@@ -2324,7 +2324,7 @@ const PICTOS: Picto[] = [
   {
     id: 'healing-counter',
     luminaPoints: 10,
-    categories: ['healing', 'counterattack'],
+    categories: ['healing', 'parry'],
     stats: {
       health: 751,
       defense: 0,
@@ -2518,16 +2518,16 @@ const PICTOS: Picto[] = [
     stats: {
       health: 270,
       defense: 0,
-      speed: 11,
-      critRate: 0
+      speed: 0,
+      critRate: 11
     },
     en: {
       name: 'Inverted Affinity',
       effect: 'Apply Inverted on self for 3 turns on battle start. 50% increased damage while Inverted.'
     },
     es: {
-      name: 'Inverted Affinity',
-      effect: 'Apply Inverted on self for 3 turns on battle start. 50% increased damage while Inverted.'
+      name: 'Afinidad invertida',
+      effect: 'Te aplicas inversión durante 3 turnos al inicio del combate. Daño +50% bajo el efecto de inversión.'
     }
   },
   {
@@ -2689,16 +2689,16 @@ const PICTOS: Picto[] = [
     stats: {
       health: 0,
       defense: 519,
-      speed: 31,
-      critRate: 0
+      speed: 0,
+      critRate: 31
     },
     en: {
       name: 'Painter',
       effect: 'Converts all Physical damage to Void damage.'
     },
     es: {
-      name: 'Painter',
-      effect: 'Converts all Physical damage to Void damage.'
+      name: 'Acuarelista',
+      effect: 'Convierte todo el daño físico en daño de vacío.'
     }
   },
   {
@@ -3012,16 +3012,16 @@ const PICTOS: Picto[] = [
     stats: {
       health: 0,
       defense: 672,
-      speed: 36,
-      critRate: 0
+      speed: 0,
+      critRate: 36
     },
     en: {
       name: 'Quick Break',
       effect: 'Play again on Breaking a target.'
     },
     es: {
-      name: 'Quick Break',
-      effect: 'Play again on Breaking a target.'
+      name: 'Ruptura rápida',
+      effect: 'Al causar ruptura a un objetivo, vuelves a actuar.'
     }
   },
   {
@@ -3164,16 +3164,16 @@ const PICTOS: Picto[] = [
     stats: {
       health: 0,
       defense: 639,
-      speed: 35,
-      critRate: 0
+      speed: 0,
+      critRate: 35
     },
     en: {
       name: 'Rush On Powerful',
       effect: 'Apply Rush on applying Powerful.'
     },
     es: {
-      name: 'Rush On Powerful',
-      effect: 'Apply Rush on applying Powerful.'
+      name: 'Prisa en fortalecimiento',
+      effect: 'Al aplicar fortalecimiento, aplicas prisa.'
     }
   },
   {
@@ -3235,21 +3235,21 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'second-chance',
-    luminaPoints: 0,
+    luminaPoints: 40,
     categories: ['revive'],
     stats: {
-      health: 1107,
+      health: 3981,
       defense: 0,
-      speed: 8,
-      critRate: 0
+      speed: 0,
+      critRate: 15
     },
     en: {
       name: 'Second Chance',
       effect: 'Revive with 100% Health. Once per battle.'
     },
     es: {
-      name: 'Second Chance',
-      effect: 'Revive with 100% Health. Once per battle.'
+      name: 'Segunda oportunidad',
+      effect: 'Revive con el 100% de la vida. Una vez por combate.'
     }
   },
   {
@@ -3297,16 +3297,16 @@ const PICTOS: Picto[] = [
     stats: {
       health: 0,
       defense: 266,
-      speed: 22,
-      critRate: 0
+      speed: 0,
+      critRate: 22
     },
     en: {
       name: 'Shield Affinity',
       effect: '30% increased damage while having Shields, but receiving any damage always removes all Shields.'
     },
     es: {
-      name: 'Shield Affinity',
-      effect: '30% increased damage while having Shields, but receiving any damage always removes all Shields.'
+      name: 'Afinidad con escudo',
+      effect: 'Daño +30% si tienes escudos, pero los pierdes todos si recibes cualquier daño.'
     }
   },
   {
@@ -3349,21 +3349,21 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'shortcut',
-    luminaPoints: 0,
+    luminaPoints: 5,
     categories: ['special'],
     stats: {
       health: 0,
       defense: 672,
-      speed: 36,
-      critRate: 0
+      speed: 0,
+      critRate: 36
     },
     en: {
       name: 'Shortcut',
       effect: 'Immediately play when falling below 30% Health. Once per battle.'
     },
     es: {
-      name: 'Shortcut',
-      effect: 'Immediately play when falling below 30% Health. Once per battle.'
+      name: 'Atajo',
+      effect: 'Si tu vida cae por debajo del 30% actúas de inmediato. Una vez por combate.'
     }
   },
   {
@@ -3467,17 +3467,17 @@ const PICTOS: Picto[] = [
     categories: ['break', 'base-attack'],
     stats: {
       health: 0,
-      defense: 21,
-      speed: 4,
-      critRate: 0
+      defense: 0,
+      speed: 21,
+      critRate: 4
     },
     en: {
       name: 'Staggering Attack',
       effect: '50% increased Break damage on Base Attack.'
     },
     es: {
-      name: 'Staggering Attack',
-      effect: '50% increased Break damage on Base Attack.'
+      name: 'Ataque abrumador',
+      effect: 'Daño de ruptura +50% al efectuar un ataque básico.'
     }
   },
   {
@@ -3601,16 +3601,16 @@ const PICTOS: Picto[] = [
     stats: {
       health: 0,
       defense: 0,
-      speed: 106,
-      critRate: 0
+      speed: 0,
+      critRate: 108
     },
     en: {
       name: 'The One',
       effect: 'Max Health reduced to 1.'
     },
     es: {
-      name: 'The One',
-      effect: 'Max Health reduced to 1.'
+      name: 'El único',
+      effect: 'La vida máxima se reduce en 1.'
     }
   },
   {

@@ -25,7 +25,7 @@ const PictoOption = ({
       onClick={onClick}
       className={`${isEquipped ? 'bg-taupe-700 hover:bg-taupe-600' : 'hover:bg-taupe-800'} flex h-30 w-72 flex-col gap-2 border border-taupe-700 px-4 py-2 hover:cursor-pointer`}
     >
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between gap-2">
         <Image
           src={`/pictos/${pictoData.id}.png`}
           alt={`${pictoData[locale].name} Picto`}
@@ -33,7 +33,7 @@ const PictoOption = ({
           height={32}
         />
         <div className="flex flex-1 flex-col items-center">
-          <h2 className="text-lg font-semibold">{pictoData[locale].name}</h2>
+          <h2 className="font-semibold">{pictoData[locale].name}</h2>
           <span className="text-xs">{formatPictoStats(pictoData.stats)}</span>
         </div>
         <span className="text-lg font-semibold">{pictoData.luminaPoints}</span>
@@ -96,13 +96,16 @@ const PictosSelector = ({
     }
   }
 
+  const alphabeticallySort = (a: Picto, b: Picto) =>
+    a[locale].name.localeCompare(b[locale].name, locale, { sensitivity: 'base' });
+
   const categoriesFilter = (pic: Picto) => pic.categories.some((cat) => filterByCategories.includes(cat));
   const nameFilter = (pic: Picto) => pic[locale].name.toLowerCase().includes(filterByName.toLowerCase());
 
   const luminaSort = (a: Picto, b: Picto) =>
     sortByLumina ? (sortByLumina === 'desc' ? b.luminaPoints - a.luminaPoints : a.luminaPoints - b.luminaPoints) : 0;
 
-  const filteredPictos = PICTOS.filter(categoriesFilter).filter(nameFilter).sort(luminaSort);
+  const filteredPictos = PICTOS.filter(categoriesFilter).filter(nameFilter).sort(alphabeticallySort).sort(luminaSort);
 
   return (
     <Modal
@@ -114,7 +117,7 @@ const PictosSelector = ({
       <section className="flex flex-col">
         <button
           onClick={handleClick}
-          className="w-40 border border-taupe-700 px-2 text-sm hover:cursor-pointer"
+          className="border border-taupe-700 px-2 text-sm hover:cursor-pointer"
         >
           {filterByCategories.length === PICTO_CATEGORIES.length ? t('unselectAll') : t('selectAll')}
         </button>
@@ -124,7 +127,7 @@ const PictosSelector = ({
             <button
               key={cat.id}
               onClick={() => toggleFilterByCategories(cat.id)}
-              className={`${filterByCategories.includes(cat.id) ? 'bg-taupe-700' : ''} w-36 border border-taupe-700 px-2 text-sm hover:cursor-pointer`}
+              className={`${filterByCategories.includes(cat.id) ? 'bg-taupe-700' : ''} w-42 border border-taupe-700 px-2 text-sm hover:cursor-pointer`}
             >
               {cat[locale].name}
             </button>

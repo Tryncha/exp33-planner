@@ -73,11 +73,11 @@ const WeaponInfo = () => {
 
       {/* Passives */}
       {characterId === 'gustave' ? (
-        <div className="flex h-60 items-center justify-center border-t border-taupe-700 text-taupe-500 italic">
+        <div className="flex h-60 items-center justify-center border-t border-taupe-700 text-sm text-taupe-500">
           {t('gustaveNotPassive')}
         </div>
       ) : !weaponData[locale].passives ? (
-        <div className="flex h-60 items-center justify-center border-t border-taupe-700 text-taupe-500 italic">
+        <div className="flex h-60 items-center justify-center border-t border-taupe-700 text-sm text-taupe-500">
           {t('notPassives')}
         </div>
       ) : (

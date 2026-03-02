@@ -14,7 +14,7 @@ const EmptySkillSlot = ({ onClick }: { onClick: () => void }) => {
   return (
     <div
       onClick={onClick}
-      className="flex h-18 items-center justify-center border border-taupe-700 text-sm text-taupe-500 italic hover:cursor-pointer hover:bg-taupe-900"
+      className="flex h-18 items-center justify-center border border-taupe-700 text-sm text-taupe-500 hover:cursor-pointer hover:bg-taupe-900"
     >
       {t('selectSkill')}
     </div>

@@ -5,7 +5,7 @@ const Attributes = () => {
   const t = useTranslations('Attributes');
 
   return (
-    <div className="flex flex-col gap-1 border border-taupe-700 p-2">
+    <section className="flex flex-col gap-1 border border-taupe-700 p-2">
       {/* <h2 className="text-center font-semibold">{t('title')}</h2> */}
       <AttributeInput
         label={t('vitality')}
@@ -27,10 +27,10 @@ const Attributes = () => {
         label={t('luck')}
         attributeId="luck"
       />
-      <span className="text-center text-xs tracking-wide">
+      <span className="mt-0.5 text-center text-xs tracking-wide">
         {t.rich('amountHint', { strong: (chunks) => <strong>{chunks}</strong> })}
       </span>
-    </div>
+    </section>
   );
 };
 

@@ -7,6 +7,7 @@ import Providers from '../../components/providers';
 import { routing } from '@/src/i18n/routing';
 import { notFound } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
+import { imFeelDoublePica, sourceSans3 } from '@/src/lib/fonts';
 import '../globals.css';
 
 export function generateStaticParams() {
@@ -30,7 +31,7 @@ const RootLocaleLayout = async ({
 
   return (
     <html lang={locale}>
-      <body className="bg-taupe-950 text-taupe-100">
+      <body className={`${sourceSans3.className} bg-taupe-950 text-taupe-100`}>
         <NextIntlClientProvider>
           <Providers>{children}</Providers>
         </NextIntlClientProvider>

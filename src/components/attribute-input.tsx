@@ -2,6 +2,7 @@ import { MouseEvent, useId } from 'react';
 import { useBuild } from '../context/build-context';
 import { AttributeId } from '../types';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { bebasNeue, imFeelDoublePica, sourceSans3 } from '../lib/fonts';
 
 const AttributeInput = ({ label, attributeId }: { label: string; attributeId: AttributeId }) => {
   const inputId = useId();
@@ -41,7 +42,7 @@ const AttributeInput = ({ label, attributeId }: { label: string; attributeId: At
         </button>
         <output
           id={inputId}
-          className="flex-1 border border-taupe-700 text-center"
+          className="flex-1 border border-taupe-700 text-center font-bold"
         >
           {attrValue}
         </output>

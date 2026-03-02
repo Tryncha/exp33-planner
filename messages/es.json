@@ -32,7 +32,8 @@
     "might": "Fuerza",
     "agility": "Agilidad",
     "defense": "Defensa",
-    "luck": "Suerte"
+    "luck": "Suerte",
+    "amountHint": "Presiona <strong>Ctrl/Shift</strong> para <strong>+5/+10</strong>"
   },
   "Stats": {
     "title": "Estadísticas",

@@ -71,11 +71,17 @@ function buildReducer(buildState: Build, action: BuildAction) {
 
     case 'CHANGE_STAT': {
       const { attributeToChange, newValue } = action.payload;
+
+      let validatedValue = newValue;
+
+      if (validatedValue < 0) validatedValue = 0;
+      if (validatedValue > 99) validatedValue = 99;
+
       return {
         ...buildState,
         attributes: {
           ...buildState.attributes,
-          [attributeToChange]: newValue
+          [attributeToChange]: validatedValue
         }
       };
     }

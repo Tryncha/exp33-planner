@@ -27,6 +27,9 @@ const Attributes = () => {
         label={t('luck')}
         attributeId="luck"
       />
+      <span className="text-center text-xs tracking-wide">
+        {t.rich('amountHint', { strong: (chunks) => <strong>{chunks}</strong> })}
+      </span>
     </div>
   );
 };

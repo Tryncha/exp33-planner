@@ -32,7 +32,8 @@
     "might": "Might",
     "agility": "Agility",
     "defense": "Defense",
-    "luck": "Luck"
+    "luck": "Luck",
+    "amountHint": "Hold <strong>Ctrl/Shift</strong> for <strong>+5/+10</strong>"
   },
   "Stats": {
     "title": "Stats",

@@ -1,6 +1,7 @@
-import { ChangeEvent, useId } from 'react';
+import { MouseEvent, useId } from 'react';
 import { useBuild } from '../context/build-context';
 import { AttributeId } from '../types';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const AttributeInput = ({ label, attributeId }: { label: string; attributeId: AttributeId }) => {
   const inputId = useId();
@@ -8,18 +9,16 @@ const AttributeInput = ({ label, attributeId }: { label: string; attributeId: At
   const { build, changeStat } = useBuild();
   const { attributes } = build;
 
-  function handleChange(event: ChangeEvent<HTMLInputElement>) {
-    let newValue = Number(event.target.value);
+  const attrValue = attributes[attributeId];
 
-    if (newValue < 0) {
-      newValue = 0;
-    }
+  function decreaseStat(event: MouseEvent) {
+    const amount = event.shiftKey ? 10 : event.ctrlKey ? 5 : 1;
+    changeStat(attributeId, attributes[attributeId] - amount);
+  }
 
-    if (newValue > 99) {
-      newValue = 99;
-    }
-
-    changeStat(attributeId, newValue);
+  function increaseStat(event: MouseEvent) {
+    const amount = event.shiftKey ? 10 : event.ctrlKey ? 5 : 1;
+    changeStat(attributeId, attributes[attributeId] + amount);
   }
 
   return (
@@ -30,15 +29,26 @@ const AttributeInput = ({ label, attributeId }: { label: string; attributeId: At
       >
         {label}
       </label>
-      <input
-        id={inputId}
-        type="number"
-        min={0}
-        max={99}
-        value={attributes[attributeId]}
-        onChange={handleChange}
-        className="no-spinners flex-1 border border-taupe-700 text-center"
-      />
+      <div className="flex flex-1">
+        <button
+          onClick={decreaseStat}
+          className="hover:cursor-pointer"
+        >
+          <ChevronLeft />
+        </button>
+        <output
+          id={inputId}
+          className="flex-1 border border-taupe-700 text-center"
+        >
+          {attrValue}
+        </output>
+        <button
+          onClick={increaseStat}
+          className="hover:cursor-pointer"
+        >
+          <ChevronRight />
+        </button>
+      </div>
     </div>
   );
 };

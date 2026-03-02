@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 import { useBuild } from '../context/build-context';
-import { calcStats, getPictoData, getTemplateData } from '../lib/utils';
+import { calcStats, getCharacterData, getPictoData } from '../lib/utils';
 import StatOutput from './stat-output';
 
 const Stats = () => {
@@ -11,7 +11,7 @@ const Stats = () => {
 
   const pictosData = pictosIds.map((pId) => getPictoData(pId));
 
-  const baseStats = getTemplateData(characterId).baseStats;
+  const baseStats = getCharacterData(characterId).baseStats;
   const stats = calcStats(baseStats, attributes, pictosData);
 
   return (

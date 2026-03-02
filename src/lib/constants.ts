@@ -1,4 +1,4 @@
-import { CharacterData, CharacterTemplate, PictoCategory } from '../types';
+import { Build, CharacterData } from '../types';
 
 export const CHARACTER_DATA: CharacterData[] = [
   {
@@ -9,6 +9,13 @@ export const CHARACTER_DATA: CharacterData[] = [
       alt: 'Gustave Portrait',
       width: 40,
       height: 40
+    },
+    baseStats: {
+      attackPower: 49,
+      speed: 212,
+      criticalRate: 8,
+      health: 150,
+      defense: 0
     }
   },
   {
@@ -19,6 +26,13 @@ export const CHARACTER_DATA: CharacterData[] = [
       alt: 'Lune Portrait',
       width: 40,
       height: 40
+    },
+    baseStats: {
+      attackPower: 51,
+      speed: 200,
+      criticalRate: 5,
+      health: 150,
+      defense: 0
     }
   },
   {
@@ -29,6 +43,13 @@ export const CHARACTER_DATA: CharacterData[] = [
       alt: 'Maelle Portrait',
       width: 40,
       height: 40
+    },
+    baseStats: {
+      attackPower: 105,
+      speed: 212,
+      criticalRate: 5,
+      health: 195,
+      defense: 0
     }
   },
   {
@@ -39,6 +60,13 @@ export const CHARACTER_DATA: CharacterData[] = [
       alt: 'Sciel Portrait',
       width: 40,
       height: 40
+    },
+    baseStats: {
+      attackPower: 279,
+      speed: 251,
+      criticalRate: 5,
+      health: 318,
+      defense: 0
     }
   },
   {
@@ -49,6 +77,13 @@ export const CHARACTER_DATA: CharacterData[] = [
       alt: 'Verso Portrait',
       width: 40,
       height: 40
+    },
+    baseStats: {
+      attackPower: 666,
+      speed: 374,
+      criticalRate: 14,
+      health: 763,
+      defense: 71
     }
   },
   {
@@ -59,11 +94,18 @@ export const CHARACTER_DATA: CharacterData[] = [
       alt: 'Monoco Portrait',
       width: 40,
       height: 40
+    },
+    baseStats: {
+      attackPower: 491,
+      speed: 304,
+      criticalRate: 5,
+      health: 509,
+      defense: 0
     }
   }
 ];
 
-export const CHARACTER_TEMPLATES: CharacterTemplate[] = [
+export const CHARACTER_TEMPLATES: Build[] = [
   {
     id: 'gustave-template',
     buildName: 'Gustave',
@@ -74,13 +116,6 @@ export const CHARACTER_TEMPLATES: CharacterTemplate[] = [
       agility: 0,
       defense: 0,
       luck: 0
-    },
-    baseStats: {
-      attackPower: 49,
-      speed: 212,
-      criticalRate: 8,
-      health: 150,
-      defense: 0
     },
     weaponId: 'noahram',
     skillIds: ['lumiere-assault', '', 'overcharge', '', '', ''],
@@ -98,13 +133,6 @@ export const CHARACTER_TEMPLATES: CharacterTemplate[] = [
       defense: 0,
       luck: 0
     },
-    baseStats: {
-      attackPower: 51,
-      speed: 200,
-      criticalRate: 5,
-      health: 150,
-      defense: 0
-    },
     weaponId: 'lunerim',
     skillIds: ['immolation', '', 'ice-lance', '', '', ''],
     pictosIds: ['', '', ''],
@@ -120,13 +148,6 @@ export const CHARACTER_TEMPLATES: CharacterTemplate[] = [
       agility: 0,
       defense: 0,
       luck: 0
-    },
-    baseStats: {
-      attackPower: 105,
-      speed: 212,
-      criticalRate: 5,
-      health: 195,
-      defense: 0
     },
     weaponId: 'maellum',
     skillIds: ['offensive-switch', '', 'percee', '', 'spark', ''],
@@ -144,13 +165,6 @@ export const CHARACTER_TEMPLATES: CharacterTemplate[] = [
       defense: 0,
       luck: 0
     },
-    baseStats: {
-      attackPower: 279,
-      speed: 251,
-      criticalRate: 5,
-      health: 318,
-      defense: 0
-    },
     weaponId: 'scieleson',
     skillIds: ['focused-foretell', '', 'twilight-slash', '', '', ''],
     pictosIds: ['', '', ''],
@@ -167,13 +181,6 @@ export const CHARACTER_TEMPLATES: CharacterTemplate[] = [
       defense: 0,
       luck: 0
     },
-    baseStats: {
-      attackPower: 666,
-      speed: 374,
-      criticalRate: 14,
-      health: 763,
-      defense: 71
-    },
     weaponId: 'verleso',
     skillIds: ['assault-zero', '', 'from-fire', '', '', ''],
     pictosIds: ['', '', ''],
@@ -189,13 +196,6 @@ export const CHARACTER_TEMPLATES: CharacterTemplate[] = [
       agility: 0,
       defense: 0,
       luck: 0
-    },
-    baseStats: {
-      attackPower: 491,
-      speed: 304,
-      criticalRate: 5,
-      health: 509,
-      defense: 0
     },
     weaponId: 'monocaro',
     skillIds: ['chalier-combo', '', 'stalact-punches', '', '', ''],

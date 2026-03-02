@@ -37,12 +37,8 @@ export interface Character {
 export interface CharacterData {
   id: CharacterId;
   name: string;
-  imgData: {
-    src: string;
-    alt: string;
-    width: number;
-    height: number;
-  };
+  imgData: ImageData;
+  baseStats: Stats;
 }
 
 export interface Scaling {
@@ -93,18 +89,6 @@ export interface Stats {
   criticalRate: number;
   health: number;
   defense: number;
-}
-
-export interface CharacterTemplate {
-  id: string;
-  buildName: string;
-  characterId: CharacterId;
-  attributes: Attributes;
-  baseStats: Stats;
-  weaponId: string;
-  skillIds: [string, string, string, string, string, string];
-  pictosIds: [string, string, string];
-  luminasIds: string[];
 }
 
 export interface Attributes {

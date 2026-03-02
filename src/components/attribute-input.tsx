@@ -9,6 +9,9 @@ const AttributeInput = ({ label, attributeId }: { label: string; attributeId: At
   const { build, changeStat } = useBuild();
   const { attributes } = build;
 
+  const totalValues = Object.values(attributes).reduce((acc, sum) => acc + sum, 0);
+  const isLimitReached = totalValues >= 99 * 3;
+
   const attrValue = attributes[attributeId];
 
   function decreaseStat(event: MouseEvent) {
@@ -44,6 +47,7 @@ const AttributeInput = ({ label, attributeId }: { label: string; attributeId: At
         </output>
         <button
           onClick={increaseStat}
+          disabled={isLimitReached}
           className="hover:cursor-pointer"
         >
           <ChevronRight />

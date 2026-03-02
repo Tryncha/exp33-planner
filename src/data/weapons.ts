@@ -3058,7 +3058,7 @@ const MONOCO: Weapon[] = [
     es: {
       name: 'Boucharo',
       passives: [
-        'Inicias el combato con Máscara ágil.',
+        'Inicias el combate con Máscara ágil.',
         'Máscara ágil aplica prisa durante 3 turnos.',
         'Porbabilidad de crítico +50% al usar Máscara ágil.'
       ]

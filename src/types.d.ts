@@ -1,4 +1,4 @@
-import { GUSTAVE_BASE, PICTO_CATEGORIES, PICTO_CATEGORIES_FROM_GAME } from './lib/constants';
+import { GUSTAVE_BASE, PICTO_CATEGORIES, PICTO_CATEGORIES_FROM_GAME, PICTO_STATS } from './lib/constants';
 
 export type CharacterId = 'gustave' | 'lune' | 'maelle' | 'sciel' | 'verso' | 'monoco';
 export type AttributeId = 'vitality' | 'might' | 'agility' | 'defense' | 'luck';
@@ -115,14 +115,15 @@ export interface Attributes {
   luck: number;
 }
 
+export type PictoStat = 'speed' | 'critRate' | 'health' | 'defense';
 export type PictoCategoryFromGame = (typeof PICTO_CATEGORIES_FROM_GAME)[number];
 export type PictoCategory = (typeof PICTO_CATEGORIES)[number];
 
 export interface PictoStats {
-  health: number;
-  defense: number;
   speed: number;
   critRate: number;
+  health: number;
+  defense: number;
 }
 
 export interface LocalePicto {

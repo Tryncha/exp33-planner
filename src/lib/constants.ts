@@ -204,6 +204,8 @@ export const CHARACTER_TEMPLATES: CharacterTemplate[] = [
   }
 ];
 
+export const PICTO_STATS = ['speed', 'critRate', 'health', 'defense'] as const;
+
 export const PICTO_CATEGORIES_FROM_GAME = [
   'base-attack',
   'free-aim',

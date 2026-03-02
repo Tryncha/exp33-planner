@@ -1,9 +1,9 @@
 import { useBuild } from '@/src/context/build-context';
 import { Modal } from '@/src/context/modal-context';
 import PICTOS from '@/src/data/pictos';
-import { PICTO_CATEGORIES } from '@/src/lib/constants';
+import { PICTO_CATEGORIES, PICTO_STATS } from '@/src/lib/constants';
 import { formatPictoStats } from '@/src/lib/utils';
-import { Picto, PictoCategory } from '@/src/types';
+import { Picto, PictoCategory, PictoStat } from '@/src/types';
 import { ArrowDownUp } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
@@ -60,16 +60,26 @@ const PictosSelector = ({
   isOpen: boolean;
   onClose: () => void;
 }) => {
-  const t = useTranslations('Pictos');
+  const tStats = useTranslations('Stats');
+  const tPictos = useTranslations('Pictos');
   const locale = useLocale();
 
   const { build, changePicto } = useBuild();
   const { pictosIds } = build;
 
   const [filterByName, setFilterByName] = useState('');
+  const [filterByStats, setFilterByStats] = useState<PictoStat[]>([]);
   const [filterByCategories, setFilterByCategories] = useState<PictoCategory[]>([]);
 
   const [sortByLumina, setSortByLumina] = useState<'desc' | 'asc' | null>(null);
+
+  function toggleFilterByStat(newStat: PictoStat) {
+    if (!filterByStats.includes(newStat)) {
+      setFilterByStats(filterByStats.concat(newStat));
+    } else {
+      setFilterByStats(filterByStats.filter((stat) => stat !== newStat));
+    }
+  }
 
   function toggleFilterByCategories(newCategory: PictoCategory) {
     if (!filterByCategories.includes(newCategory)) {
@@ -94,6 +104,7 @@ const PictosSelector = ({
     }
   }
 
+  const statsFilter = (pic: Picto) => (!filterByStats.length ? pic : filterByStats.every((stat) => pic.stats[stat]));
   const categoriesFilter = (pic: Picto) =>
     !filterByCategories.length ? pic : pic.categories.some((cat) => filterByCategories.includes(cat));
   const nameFilter = (pic: Picto) => pic[locale].name.toLowerCase().includes(filterByName.toLowerCase());
@@ -103,56 +114,72 @@ const PictosSelector = ({
   const luminaSort = (a: Picto, b: Picto) =>
     sortByLumina ? (sortByLumina === 'desc' ? b.luminaPoints - a.luminaPoints : a.luminaPoints - b.luminaPoints) : 0;
 
-  const filteredPictos = PICTOS.filter(categoriesFilter).filter(nameFilter).sort(alphabeticallySort).sort(luminaSort);
+  const filteredPictos = PICTOS.filter(statsFilter)
+    .filter(categoriesFilter)
+    .filter(nameFilter)
+    .sort(alphabeticallySort)
+    .sort(luminaSort);
 
   return (
     <Modal
       isOpen={isOpen}
       onClose={onClose}
-      className="flex h-190 gap-2 rounded-xs bg-taupe-900 p-4"
+      className="flex gap-2 rounded-xs bg-taupe-900 p-4"
     >
-      {/* Right column */}
-      <section className="flex flex-col justify-between">
-        {PICTO_CATEGORIES.map((cat) => (
-          <button
-            key={cat}
-            onClick={() => toggleFilterByCategories(cat)}
-            className={`${filterByCategories.includes(cat) ? 'bg-taupe-700 hover:bg-taupe-600' : 'hover:bg-taupe-800'} w-42 border border-taupe-700 px-2 text-sm hover:cursor-pointer`}
-          >
-            {t(`category.${cat}`)}
-          </button>
-        ))}
-      </section>
-
       {/* Left column */}
-      <section className="flex flex-col gap-2">
-        <div className="flex gap-2">
+      <section className="3xl:w-73 flex h-fit w-61 flex-col gap-2">
+        <div className="flex gap-1">
           <input
             type="text"
             value={filterByName}
             onChange={(e) => setFilterByName(e.target.value)}
-            placeholder={t('searchByName')}
-            className="flex-1 border border-taupe-700 px-2 text-sm placeholder:italic"
+            placeholder={tPictos('searchByName')}
+            className="h-7 flex-1 border border-taupe-700 px-2 text-sm placeholder:italic"
           />
           <button
             onClick={toggleSortByLumina}
-            className="flex w-6 cursor-pointer items-center justify-center border border-taupe-700"
+            className="flex w-7 cursor-pointer items-center justify-center border border-taupe-700"
           >
             <ArrowDownUp size={18} />
           </button>
         </div>
-
-        {/* Pictos */}
-        <section className="scrollbar-thumb-taupe-600 scrollbar-track-taupe-800 scrollbar-thin flex h-190 w-301 flex-wrap content-start gap-2 overflow-y-scroll border border-taupe-700 p-2">
-          {filteredPictos.map((pic) => (
-            <PictoOption
-              key={pic.id}
-              isEquipped={pictosIds.includes(pic.id)}
-              pictoData={pic}
-              onClick={() => handleChange(pic.id)}
-            />
+        <hr className="border border-taupe-700" />
+        <div className="flex flex-wrap gap-1">
+          {PICTO_STATS.map((stat) => (
+            <button
+              key={stat}
+              onClick={() => toggleFilterByStat(stat)}
+              className={`${filterByStats.includes(stat) ? 'bg-taupe-700 hover:bg-taupe-600' : 'hover:bg-taupe-800'} 3xl:w-36 h-7 w-30 border border-taupe-700 px-2 text-sm hover:cursor-pointer`}
+            >
+              {tStats(stat)}
+            </button>
           ))}
-        </section>
+        </div>
+        <hr className="border border-taupe-700" />
+        <div className="flex flex-wrap gap-1">
+          {PICTO_CATEGORIES.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => toggleFilterByCategories(cat)}
+              className={`${filterByCategories.includes(cat) ? 'bg-taupe-700 hover:bg-taupe-600' : 'hover:bg-taupe-800'} 3xl:w-36 h-7 w-30 border border-taupe-700 px-2 text-sm hover:cursor-pointer`}
+            >
+              {tPictos(`category.${cat}`)}
+            </button>
+          ))}
+        </div>
+      </section>
+
+      {/* Left column */}
+      {/* Pictos */}
+      <section className="scrollbar-thumb-taupe-600 scrollbar-track-taupe-800 scrollbar-thin flex h-182 w-301 flex-wrap content-start gap-2 overflow-y-scroll border border-taupe-700 p-2">
+        {filteredPictos.map((pic) => (
+          <PictoOption
+            key={pic.id}
+            isEquipped={pictosIds.includes(pic.id)}
+            pictoData={pic}
+            onClick={() => handleChange(pic.id)}
+          />
+        ))}
       </section>
     </Modal>
   );

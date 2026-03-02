@@ -47,7 +47,6 @@ const PictoSlot = ({
       <div className="flex flex-col items-center">
         <h2 className="text-xl font-semibold">{pictoData[locale].name}</h2>
         <span className="text-xs">
-          {' '}
           {formatPictoStats(pictoData.stats, {
             speed: t('speed'),
             critRate: t('critRate'),

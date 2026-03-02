@@ -1,12 +1,12 @@
 import Image from 'next/image';
 
-export const ElementIcon = ({ element }: { element: string }) => {
+export const ElementIcon = ({ element, size = 24 }: { element: string; size?: number }) => {
   return (
     <Image
       src={`/elements/${element}.png`}
       alt={`${element} icon`}
-      width={24}
-      height={24}
+      width={size}
+      height={size}
     />
   );
 };

@@ -204,31 +204,35 @@ export const CHARACTER_TEMPLATES: Build[] = [
   }
 ];
 
+export const ATTRIBUTES = ['vitality', 'might', 'agility', 'defense', 'luck'] as const;
+
+export const ELEMENTS = ['physical', 'light', 'dark', 'void', 'fire', 'ice', 'earth', 'lightning'] as const;
+
 export const PICTO_STATS = ['speed', 'critRate', 'health', 'defense'] as const;
 
-export const PICTO_CATEGORIES_FROM_GAME = [
-  'base-attack',
-  'free-aim',
-  'critical',
-  'defense',
-  'speed',
-  'damage',
-  'ap',
-  'heal',
-  'shield',
-  'burn',
-  'mark',
-  'buff',
-  'debuff',
-  'status-effect',
-  'parry',
-  'counter',
-  'break',
-  'death',
-  'solo',
-  'gradient',
-  'items'
-] as const;
+// export const PICTO_CATEGORIES_FROM_GAME = [
+//   'base-attack',
+//   'free-aim',
+//   'critical',
+//   'defense',
+//   'speed',
+//   'damage',
+//   'ap',
+//   'heal',
+//   'shield',
+//   'burn',
+//   'mark',
+//   'buff',
+//   'debuff',
+//   'status-effect',
+//   'parry',
+//   'counter',
+//   'break',
+//   'death',
+//   'solo',
+//   'gradient',
+//   'items'
+// ] as const;
 
 export const PICTO_CATEGORIES = [
   'damage',

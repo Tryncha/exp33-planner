@@ -6,10 +6,9 @@ import WeaponPassive from './weapon-passive';
 import WeaponSelector from './modals/weapon-selector';
 import { useLocale, useTranslations } from 'next-intl';
 import { ElementIcon } from './icons';
-import ATTRIBUTES from '../data/attributes';
 
 const WeaponInfo = () => {
-  const t = useTranslations('WeaponInfo');
+  const t = useTranslations();
   const locale = useLocale();
 
   const { build } = useBuild();
@@ -47,13 +46,13 @@ const WeaponInfo = () => {
           <h2 className="text-2xl font-bold tracking-wide">{weaponData[locale].name}</h2>
           <div className="flex gap-6">
             <div className="flex flex-1 flex-col items-center">
-              <span className="text-sm font-semibold text-taupe-400">{t('power')}</span>
+              <span className="text-sm font-semibold text-taupe-400">{t('WeaponInfo.power')}</span>
               <span className="text-xl font-bold">
                 {calcWeaponPower(weaponData.basePower, weaponData.scaling, attributes)}
               </span>
             </div>
             <div className="flex flex-1 flex-col items-center gap-1">
-              <span className="text-sm font-semibold text-taupe-400">{t('element')}</span>
+              <span className="text-sm font-semibold text-taupe-400">{t('WeaponInfo.element')}</span>
               <ElementIcon element={weaponData.element} />
             </div>
             {Object.entries(weaponData.scaling).map(([key, value]) => (
@@ -61,9 +60,7 @@ const WeaponInfo = () => {
                 key={key}
                 className="flex flex-1 flex-col items-center"
               >
-                <span className="text-sm font-semibold text-taupe-400 capitalize">
-                  {ATTRIBUTES[key as keyof typeof ATTRIBUTES][locale].name}
-                </span>
+                <span className="text-sm font-semibold text-taupe-400 capitalize">{t(`Attributes.${key}`)}</span>
                 <span className="text-xl font-bold">{value}</span>
               </div>
             ))}
@@ -74,11 +71,11 @@ const WeaponInfo = () => {
       {/* Passives */}
       {characterId === 'gustave' ? (
         <div className="flex h-60 items-center justify-center border-t border-taupe-700 text-sm text-taupe-500">
-          {t('gustaveNotPassive')}
+          {t('WeaponInfo.gustaveNotPassive')}
         </div>
       ) : !weaponData[locale].passives ? (
         <div className="flex h-60 items-center justify-center border-t border-taupe-700 text-sm text-taupe-500">
-          {t('notPassives')}
+          {t('WeaponInfo.notPassives')}
         </div>
       ) : (
         <div className="flex flex-col">

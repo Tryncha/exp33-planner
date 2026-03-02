@@ -33,7 +33,14 @@
     "agility": "Agilidad",
     "defense": "Defensa",
     "luck": "Suerte",
-    "amountHint": "Presiona <strong>Ctrl/Shift</strong> para <strong>+5/+10</strong>"
+    "amountHint": "Presiona <strong>Ctrl/Shift</strong> para <strong>+5/+10</strong>",
+    "hints": {
+      "vitality": "Incrementa Vida y Poder de ataque",
+      "might": "Incrementa Poder de ataque",
+      "agility": "Incrementa Velocidad y Defensa",
+      "defense": "Incrementa Defensa y Prob. de crítico",
+      "luck": "Incrementa Velocidad y Prob. de crítico"
+    }
   },
   "Stats": {
     "title": "Estadísticas",

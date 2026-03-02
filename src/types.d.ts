@@ -1,7 +1,17 @@
-import { GUSTAVE_BASE, PICTO_CATEGORIES, PICTO_CATEGORIES_FROM_GAME, PICTO_STATS } from './lib/constants';
+import {
+  ATTRIBUTES,
+  ELEMENTS,
+  GUSTAVE_BASE,
+  PICTO_CATEGORIES,
+  PICTO_CATEGORIES_FROM_GAME,
+  PICTO_STATS
+} from './lib/constants';
 
 export type CharacterId = 'gustave' | 'lune' | 'maelle' | 'sciel' | 'verso' | 'monoco';
-export type AttributeId = 'vitality' | 'might' | 'agility' | 'defense' | 'luck';
+export type AttributeId = (typeof ATTRIBUTES)[number];
+
+export type Element = (typeof ELEMENTS)[number];
+
 export type CharacterStatId = 'attack-power' | 'speed' | 'critical-rate' | 'health' | 'defense';
 
 export interface ImageData {

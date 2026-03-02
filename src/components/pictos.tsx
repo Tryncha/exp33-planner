@@ -14,7 +14,7 @@ const EmptyPictoSlot = ({ onClick }: { onClick: () => void }) => {
   return (
     <div
       onClick={onClick}
-      className="flex flex-1 items-center justify-center rounded-xs border-b border-taupe-700 px-4 py-2 text-sm text-taupe-500 italic last:border-0 hover:cursor-pointer"
+      className="flex flex-1 items-center justify-center rounded-xs border-b border-taupe-700 px-4 py-2 text-sm text-taupe-500 italic last:border-0 hover:cursor-pointer hover:bg-taupe-900"
     >
       {t('selectPicto')}
     </div>
@@ -85,7 +85,7 @@ const Pictos = () => {
         isOpen={isModalOpen.pictos}
         onClose={closeAll}
       />
-      <h2 className="border-b border-taupe-700 py-1 text-center text-xl font-semibold">Pictos</h2>
+      {/* <h2 className="border-b border-taupe-700 py-1 text-center text-xl font-semibold">Pictos</h2> */}
       {pictosData.map((pic, indexSlot) =>
         !pic ? (
           <EmptyPictoSlot

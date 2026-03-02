@@ -8,11 +8,13 @@ import Skills from './skills';
 import CharacterInfo from './character-info';
 import { useTranslations } from 'next-intl';
 import Attributes from './attributes';
+import { useState } from 'react';
+import { PencilLine } from 'lucide-react';
 
 const Planner = () => {
   const t = useTranslations('Planner');
 
-  const { build } = useBuild();
+  const { build, changeName } = useBuild();
   const { vault, addBuild, updateBuild } = useVault();
 
   const buildExists = vault.map((b) => b.id).includes(build.id);
@@ -32,8 +34,43 @@ const Planner = () => {
     location.reload();
   }
 
+  const [isEditingName, setIsEditingName] = useState(false);
+
   return (
-    <section>
+    <section className="flex flex-col gap-2">
+      <div className="flex gap-2">
+        {isEditingName ? (
+          <input
+            type="text"
+            value={build.buildName}
+            onChange={(e) => changeName(e.target.value)}
+            className="flex-1 border border-taupe-700 px-2 pb-1 text-2xl font-bold tracking-wide"
+          />
+        ) : (
+          <div
+            onClick={() => setIsEditingName(true)}
+            className="flex flex-1 items-center border border-taupe-700 hover:cursor-pointer hover:bg-taupe-800"
+          >
+            <h2 className="px-2 pb-1 text-2xl font-bold tracking-wide">{build.buildName}</h2>
+            <PencilLine />
+          </div>
+        )}
+        {!buildExists ? (
+          <button
+            className="border border-taupe-700 px-2 text-xl font-bold hover:cursor-pointer hover:bg-taupe-800"
+            onClick={saveBuildAndClose}
+          >
+            {t('saveButton')}
+          </button>
+        ) : (
+          <button
+            className="border border-taupe-700 px-2 text-xl font-bold hover:cursor-pointer hover:bg-taupe-800"
+            onClick={saveBuildAndClose}
+          >
+            {t('confirm')}
+          </button>
+        )}
+      </div>
       <div className="flex gap-2">
         <div className="flex flex-col gap-2">
           <CharacterInfo />
@@ -46,23 +83,6 @@ const Planner = () => {
         </div>
         <Pictos />
         <Luminas />
-      </div>
-      <div>
-        {!buildExists ? (
-          <button
-            className="border px-2"
-            onClick={saveBuildAndClose}
-          >
-            {t('saveButton')}
-          </button>
-        ) : (
-          <button
-            className="border px-2"
-            onClick={saveBuildAndClose}
-          >
-            {t('confirm')}
-          </button>
-        )}
       </div>
     </section>
   );

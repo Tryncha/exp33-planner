@@ -29,7 +29,7 @@ const RootLocaleLayout = async ({
   setRequestLocale(locale as Locale);
 
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body className="bg-taupe-950 text-taupe-100">
         <NextIntlClientProvider>
           <Providers>{children}</Providers>

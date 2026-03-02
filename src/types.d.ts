@@ -147,6 +147,7 @@ export interface SkillLocale {
 export interface SkillBase {
   id: string;
   cost: number;
+  canBreak: boolean;
   en: SkillLocale;
   es: SkillLocale;
 }
@@ -174,6 +175,7 @@ export interface VersoSkill extends SkillBase {
 
 export interface MonocoSkill extends SkillBase {
   characterId: 'monoco';
+  roulettePositions: number;
 }
 
 export type Skill = GustaveSkill | LuneSkill | MaelleSkill | ScielSkill | VersoSkill | MonocoSkill;

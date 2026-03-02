@@ -14,7 +14,7 @@ const EmptySkillSlot = ({ onClick }: { onClick: () => void }) => {
   return (
     <div
       onClick={onClick}
-      className="flex h-18 items-center justify-center border border-taupe-700 text-sm text-taupe-500 italic hover:cursor-pointer"
+      className="flex h-18 items-center justify-center border border-taupe-700 text-sm text-taupe-500 italic hover:cursor-pointer hover:bg-taupe-900"
     >
       {t('selectSkill')}
     </div>
@@ -44,17 +44,15 @@ const SkillSlot = ({
         width={48}
         height={48}
       />
-      <div className="flex flex-1 flex-col">
-        <span className="text-center font-semibold">{skillData[locale].name}</span>
-        <span className="text-center text-xs">
-          {t('cost')}: {skillData.cost}
-        </span>
-      </div>
+      <span className="flex-1 text-center text-base/5 font-semibold">{skillData[locale].name}</span>
       <button
         onClick={removeSkill}
         className="absolute top-2 right-2 rounded-xs text-red-300 transition-colors hover:cursor-pointer hover:bg-red-950 active:bg-red-800"
       >
-        <X strokeWidth={3} />
+        <X
+          strokeWidth={3}
+          size={16}
+        />
       </button>
     </div>
   );
@@ -88,7 +86,7 @@ const Skills = () => {
         isOpen={isModalOpen.skills}
         onClose={closeAll}
       />
-      <h2 className="text-center font-semibold">{t('title')}</h2>
+      {/* <h2 className="text-center font-semibold">{t('title')}</h2> */}
       <div className="grid grid-cols-2 grid-rows-2 gap-2">
         {skillsData.map((skill, indexSlot) =>
           !skill ? (

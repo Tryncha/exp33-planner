@@ -6,6 +6,7 @@ import { CHARACTER_TEMPLATES } from '../lib/constants';
 interface BuildContextType {
   build: Build;
   setBaseBuild: (newBaseBuild: Build) => void;
+  changeName: (newName: string) => void;
   changeStat: (statToChange: AttributeId, newValue: number) => void;
   changeWeapon: (newWeaponId: Weapon['id']) => void;
   changeSkil: (slotToChange: number, newSkillId: Skill['id']) => void;
@@ -31,6 +32,10 @@ export const BuildProvider = ({ children }: { children: React.ReactNode }) => {
 
   function setBaseBuild(newBaseBuild: Build) {
     buildDispatch({ type: 'SET_BASE_BUILD', payload: { newBaseBuild } });
+  }
+
+  function changeName(newName: string) {
+    buildDispatch({ type: 'CHANGE_NAME', payload: { newName } });
   }
 
   function changeStat(statToChange: AttributeId, newValue: number) {
@@ -60,6 +65,7 @@ export const BuildProvider = ({ children }: { children: React.ReactNode }) => {
   const charactersValue = {
     build,
     setBaseBuild,
+    changeName,
     changeStat,
     changeWeapon,
     changeSkil,

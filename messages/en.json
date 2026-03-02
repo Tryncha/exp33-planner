@@ -50,9 +50,15 @@
   },
   "WeaponInfo": {
     "power": "Power",
-    "element": "Element"
+    "element": "Element",
+    "gustaveNotPassive": "Gustave's weapons doesn't have passives",
+    "notPassives": "This weapon has not passives"
   },
   "WeaponPassive": {
     "abbrLevel": "Lvl"
+  },
+  "BuildResume": {
+    "deleteButton": "Delete",
+    "level": "Level"
   }
 }

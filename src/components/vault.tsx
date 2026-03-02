@@ -9,7 +9,6 @@ const Vault = ({ openPlanner }: { openPlanner: () => void }) => {
 
   return (
     <section className="border border-taupe-700 p-2">
-      <h2>{t('savedBuilds')}</h2>
       {vault.length === 0 ? (
         <div className="text-xs">{t('empty')}</div>
       ) : (

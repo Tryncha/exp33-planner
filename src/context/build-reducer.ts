@@ -9,6 +9,12 @@ type BuildAction =
       };
     }
   | {
+      type: 'CHANGE_NAME';
+      payload: {
+        newName: string;
+      };
+    }
+  | {
       type: 'CHANGE_STAT';
       payload: {
         attributeToChange: string;
@@ -53,6 +59,14 @@ function buildReducer(buildState: Build, action: BuildAction) {
     case 'SET_BASE_BUILD': {
       const { newBaseBuild } = action.payload;
       return { ...newBaseBuild };
+    }
+
+    case 'CHANGE_NAME': {
+      const { newName } = action.payload;
+      return {
+        ...buildState,
+        buildName: newName
+      };
     }
 
     case 'CHANGE_STAT': {

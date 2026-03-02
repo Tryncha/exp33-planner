@@ -50,9 +50,15 @@
   },
   "WeaponInfo": {
     "power": "Poder",
-    "element": "Elemento"
+    "element": "Elemento",
+    "gustaveNotPassive": "Las armas de Gustave no tienen habilidades pasivas",
+    "notPassives": "Esta arma no tiene habilidades pasivas"
   },
   "WeaponPassive": {
     "abbrLevel": "Nv"
+  },
+  "BuildResume": {
+    "deleteButton": "Borrar",
+    "level": "Nivel"
   }
 }

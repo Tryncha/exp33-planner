@@ -5,7 +5,7 @@ import { calcWeaponPower } from '@/src/lib/utils';
 import { Weapon } from '@/src/types';
 import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
-import ElementIcon from '../element-icon';
+import { ElementIcon } from '../icons';
 import ATTRIBUTES from '@/src/data/attributes';
 import WeaponPassive from '../weapon-passive';
 

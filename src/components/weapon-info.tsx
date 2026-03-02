@@ -5,7 +5,7 @@ import { useBuild } from '../context/build-context';
 import WeaponPassive from './weapon-passive';
 import WeaponSelector from './modals/weapon-selector';
 import { useLocale, useTranslations } from 'next-intl';
-import ElementIcon from './element-icon';
+import { ElementIcon } from './icons';
 import ATTRIBUTES from '../data/attributes';
 
 const WeaponInfo = () => {
@@ -27,12 +27,12 @@ const WeaponInfo = () => {
       />
 
       {/* Weapon Info */}
-      <section className="flex items-center p-2">
+      <section
+        onClick={() => openModal('weapons')}
+        className="flex items-center p-2 hover:cursor-pointer hover:bg-taupe-900"
+      >
         {/* Weapon Image */}
-        <div
-          onClick={() => openModal('weapons')}
-          className="flex size-28 items-center justify-center hover:cursor-pointer"
-        >
+        <div className="flex size-28 items-center justify-center">
           <Image
             src={`/weapons/${characterId}/${weaponData.id}.png`}
             alt={weaponData[locale].name}
@@ -74,11 +74,11 @@ const WeaponInfo = () => {
       {/* Passives */}
       {characterId === 'gustave' ? (
         <div className="flex h-60 items-center justify-center border-t border-taupe-700 text-taupe-500 italic">
-          Gustave doesn't have weapon passives
+          {t('gustaveNotPassive')}
         </div>
       ) : !weaponData[locale].passives ? (
         <div className="flex h-60 items-center justify-center border-t border-taupe-700 text-taupe-500 italic">
-          This weapon has not passives
+          {t('notPassives')}
         </div>
       ) : (
         <div className="flex flex-col">

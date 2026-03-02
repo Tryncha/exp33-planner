@@ -30,6 +30,7 @@ const PictoSlot = ({
   onClick: () => void;
   removePicto: (e: MouseEvent<HTMLButtonElement>) => void;
 }) => {
+  const t = useTranslations('Stats');
   const locale = useLocale();
 
   return (
@@ -45,7 +46,15 @@ const PictoSlot = ({
       />
       <div className="flex flex-col items-center">
         <h2 className="text-xl font-semibold">{pictoData[locale].name}</h2>
-        <span className="text-xs">{formatPictoStats(pictoData.stats)}</span>
+        <span className="text-xs">
+          {' '}
+          {formatPictoStats(pictoData.stats, {
+            speed: t('speed'),
+            critRate: t('critRate'),
+            health: t('health'),
+            defense: t('defense')
+          })}
+        </span>
         <p className="mt-2 text-center text-sm">{pictoData[locale].effect}</p>
       </div>
       <span className="text-2xl font-bold">{pictoData.luminaPoints}</span>

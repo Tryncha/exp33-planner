@@ -18,6 +18,7 @@ const PictoOption = ({
   isEquipped: boolean;
   onClick: () => void;
 }) => {
+  const t = useTranslations('Stats');
   const locale = useLocale();
 
   return (
@@ -34,7 +35,14 @@ const PictoOption = ({
         />
         <div className="flex flex-1 flex-col items-center">
           <h2 className="font-semibold">{pictoData[locale].name}</h2>
-          <span className="text-xs">{formatPictoStats(pictoData.stats)}</span>
+          <span className="text-xs">
+            {formatPictoStats(pictoData.stats, {
+              speed: t('speed'),
+              critRate: t('critRate'),
+              health: t('health'),
+              defense: t('defense')
+            })}
+          </span>
         </div>
         <span className="text-lg font-semibold">{pictoData.luminaPoints}</span>
       </div>
@@ -42,8 +50,6 @@ const PictoOption = ({
     </div>
   );
 };
-
-const INITIAL_CATEGORIES = PICTO_CATEGORIES.map((cat) => cat.id);
 
 const PictosSelector = ({
   selectedSlot,
@@ -61,7 +67,7 @@ const PictosSelector = ({
   const { pictosIds } = build;
 
   const [filterByName, setFilterByName] = useState('');
-  const [filterByCategories, setFilterByCategories] = useState<PictoCategory[]>(INITIAL_CATEGORIES);
+  const [filterByCategories, setFilterByCategories] = useState<PictoCategory[]>([]);
 
   const [sortByLumina, setSortByLumina] = useState<'desc' | 'asc' | null>(null);
 
@@ -88,20 +94,12 @@ const PictosSelector = ({
     }
   }
 
-  function handleClick() {
-    if (filterByCategories.length === PICTO_CATEGORIES.length) {
-      setFilterByCategories([]);
-    } else {
-      setFilterByCategories(INITIAL_CATEGORIES);
-    }
-  }
+  const categoriesFilter = (pic: Picto) =>
+    !filterByCategories.length ? pic : pic.categories.some((cat) => filterByCategories.includes(cat));
+  const nameFilter = (pic: Picto) => pic[locale].name.toLowerCase().includes(filterByName.toLowerCase());
 
   const alphabeticallySort = (a: Picto, b: Picto) =>
     a[locale].name.localeCompare(b[locale].name, locale, { sensitivity: 'base' });
-
-  const categoriesFilter = (pic: Picto) => pic.categories.some((cat) => filterByCategories.includes(cat));
-  const nameFilter = (pic: Picto) => pic[locale].name.toLowerCase().includes(filterByName.toLowerCase());
-
   const luminaSort = (a: Picto, b: Picto) =>
     sortByLumina ? (sortByLumina === 'desc' ? b.luminaPoints - a.luminaPoints : a.luminaPoints - b.luminaPoints) : 0;
 
@@ -111,28 +109,19 @@ const PictosSelector = ({
     <Modal
       isOpen={isOpen}
       onClose={onClose}
-      className="flex h-180 gap-2 rounded-xs bg-taupe-900 p-4"
+      className="flex h-190 gap-2 rounded-xs bg-taupe-900 p-4"
     >
       {/* Right column */}
-      <section className="flex flex-col">
-        <button
-          onClick={handleClick}
-          className="border border-taupe-700 px-2 text-sm hover:cursor-pointer"
-        >
-          {filterByCategories.length === PICTO_CATEGORIES.length ? t('unselectAll') : t('selectAll')}
-        </button>
-        <hr className="my-2 border border-taupe-700" />
-        <div className="scrollbar-thumb-taupe-600 scrollbar-track-taupe-800 scrollbar-thin flex flex-col gap-1 overflow-y-scroll">
-          {PICTO_CATEGORIES.map((cat) => (
-            <button
-              key={cat.id}
-              onClick={() => toggleFilterByCategories(cat.id)}
-              className={`${filterByCategories.includes(cat.id) ? 'bg-taupe-700' : ''} w-42 border border-taupe-700 px-2 text-sm hover:cursor-pointer`}
-            >
-              {cat[locale].name}
-            </button>
-          ))}
-        </div>
+      <section className="flex flex-col justify-between">
+        {PICTO_CATEGORIES.map((cat) => (
+          <button
+            key={cat}
+            onClick={() => toggleFilterByCategories(cat)}
+            className={`${filterByCategories.includes(cat) ? 'bg-taupe-700 hover:bg-taupe-600' : 'hover:bg-taupe-800'} w-42 border border-taupe-700 px-2 text-sm hover:cursor-pointer`}
+          >
+            {t(`category.${cat}`)}
+          </button>
+        ))}
       </section>
 
       {/* Left column */}
@@ -154,7 +143,7 @@ const PictosSelector = ({
         </div>
 
         {/* Pictos */}
-        <section className="scrollbar-thumb-taupe-600 scrollbar-track-taupe-800 scrollbar-thin flex h-164.5 w-301 flex-wrap content-start gap-2 overflow-y-scroll border border-taupe-700 p-2">
+        <section className="scrollbar-thumb-taupe-600 scrollbar-track-taupe-800 scrollbar-thin flex h-190 w-301 flex-wrap content-start gap-2 overflow-y-scroll border border-taupe-700 p-2">
           {filteredPictos.map((pic) => (
             <PictoOption
               key={pic.id}

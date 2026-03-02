@@ -42,7 +42,7 @@ const PICTOS: Picto[] = [
   {
     id: 'accelerating-shots',
     luminaPoints: 3,
-    categories: ['free-aim', 'rush'],
+    categories: ['freeAim', 'rush'],
     stats: {
       health: 4869,
       defense: 301,
@@ -213,7 +213,7 @@ const PICTOS: Picto[] = [
   {
     id: 'attack-lifesteal',
     luminaPoints: 15,
-    categories: ['base-attack', 'healing'],
+    categories: ['baseAttack', 'healing'],
     stats: {
       health: 88,
       defense: 0,
@@ -232,7 +232,7 @@ const PICTOS: Picto[] = [
   {
     id: 'augmented-aim',
     luminaPoints: 3,
-    categories: ['free-aim'],
+    categories: ['freeAim'],
     stats: {
       health: 0,
       defense: 0,
@@ -251,7 +251,7 @@ const PICTOS: Picto[] = [
   {
     id: 'augmented-attack',
     luminaPoints: 7,
-    categories: ['base-attack'],
+    categories: ['baseAttack'],
     stats: {
       health: 0,
       defense: 8,
@@ -460,7 +460,7 @@ const PICTOS: Picto[] = [
   {
     id: 'beneficial-contamination',
     luminaPoints: 15,
-    categories: ['status-effect', 'ap'],
+    categories: ['statusEffect', 'ap'],
     stats: {
       health: 0,
       defense: 274,
@@ -517,7 +517,7 @@ const PICTOS: Picto[] = [
   {
     id: 'breaking-attack',
     luminaPoints: 10,
-    categories: ['base-attack', 'break'],
+    categories: ['baseAttack', 'break'],
     stats: {
       health: 0,
       defense: 0,
@@ -593,7 +593,7 @@ const PICTOS: Picto[] = [
   {
     id: 'breaking-shots',
     luminaPoints: 1,
-    categories: ['break', 'free-aim'],
+    categories: ['break', 'freeAim'],
     stats: {
       health: 0,
       defense: 0,
@@ -707,7 +707,7 @@ const PICTOS: Picto[] = [
   {
     id: 'burning-shots',
     luminaPoints: 3,
-    categories: ['burn', 'free-aim'],
+    categories: ['burn', 'freeAim'],
     stats: {
       health: 0,
       defense: 0,
@@ -745,7 +745,7 @@ const PICTOS: Picto[] = [
   {
     id: 'charging-attack',
     luminaPoints: 7,
-    categories: ['base-attack', 'gradient'],
+    categories: ['baseAttack', 'gradient'],
     stats: {
       health: 0,
       defense: 0,
@@ -802,7 +802,7 @@ const PICTOS: Picto[] = [
   {
     id: 'charging-critical',
     luminaPoints: 10,
-    categories: ['gradient', 'critical-hits'],
+    categories: ['gradient', 'criticalHits'],
     stats: {
       health: 0,
       defense: 1891,
@@ -935,7 +935,7 @@ const PICTOS: Picto[] = [
   {
     id: 'cleansing-tint',
     luminaPoints: 5,
-    categories: ['tints', 'status-effect'],
+    categories: ['tints', 'statusEffect'],
     stats: {
       health: 778,
       defense: 319,
@@ -954,7 +954,7 @@ const PICTOS: Picto[] = [
   {
     id: 'combo-attack-i',
     luminaPoints: 10,
-    categories: ['base-attack'],
+    categories: ['baseAttack'],
     stats: {
       health: 0,
       defense: 0,
@@ -973,7 +973,7 @@ const PICTOS: Picto[] = [
   {
     id: 'combo-attack-ii',
     luminaPoints: 20,
-    categories: ['base-attack'],
+    categories: ['baseAttack'],
     stats: {
       health: 0,
       defense: 0,
@@ -992,7 +992,7 @@ const PICTOS: Picto[] = [
   {
     id: 'combo-attack-iii',
     luminaPoints: 30,
-    categories: ['base-attack'],
+    categories: ['baseAttack'],
     stats: {
       health: 0,
       defense: 0,
@@ -1049,7 +1049,7 @@ const PICTOS: Picto[] = [
   {
     id: 'critical-break',
     luminaPoints: 5,
-    categories: ['break', 'critical-hits'],
+    categories: ['break', 'criticalHits'],
     stats: {
       health: 0,
       defense: 0,
@@ -1068,7 +1068,7 @@ const PICTOS: Picto[] = [
   {
     id: 'critical-burn',
     luminaPoints: 5,
-    categories: ['critical-hits', 'burn'],
+    categories: ['criticalHits', 'burn'],
     stats: {
       health: 0,
       defense: 0,
@@ -1087,7 +1087,7 @@ const PICTOS: Picto[] = [
   {
     id: 'critical-moment',
     luminaPoints: 5,
-    categories: ['critical-hits'],
+    categories: ['criticalHits'],
     stats: {
       health: 0,
       defense: 0,
@@ -1106,7 +1106,7 @@ const PICTOS: Picto[] = [
   {
     id: 'critical-stun',
     luminaPoints: 5,
-    categories: ['critical-hits', 'break'],
+    categories: ['criticalHits', 'break'],
     stats: {
       health: 0,
       defense: 681,
@@ -1125,7 +1125,7 @@ const PICTOS: Picto[] = [
   {
     id: 'critical-vulnerability',
     luminaPoints: 5,
-    categories: ['critical-hits', 'defenceless'],
+    categories: ['criticalHits', 'defenceless'],
     stats: {
       health: 0,
       defense: 116,
@@ -1144,7 +1144,7 @@ const PICTOS: Picto[] = [
   {
     id: 'critical-weakness',
     luminaPoints: 5,
-    categories: ['critical-hits', 'weakness'],
+    categories: ['criticalHits', 'weakness'],
     stats: {
       health: 0,
       defense: 0,
@@ -1296,7 +1296,7 @@ const PICTOS: Picto[] = [
   {
     id: 'draining-cleanse',
     luminaPoints: 15,
-    categories: ['status-effect'],
+    categories: ['statusEffect'],
     stats: {
       health: 2000,
       defense: 324,
@@ -1353,7 +1353,7 @@ const PICTOS: Picto[] = [
   {
     id: 'empowering-attack',
     luminaPoints: 10,
-    categories: ['powerful', 'base-attack'],
+    categories: ['powerful', 'baseAttack'],
     stats: {
       health: 0,
       defense: 0,
@@ -1488,7 +1488,7 @@ const PICTOS: Picto[] = [
   {
     id: 'energising-attack-i',
     luminaPoints: 10,
-    categories: ['ap', 'base-attack'],
+    categories: ['ap', 'baseAttack'],
     stats: {
       health: 0,
       defense: 0,
@@ -1507,7 +1507,7 @@ const PICTOS: Picto[] = [
   {
     id: 'energising-attack-ii',
     luminaPoints: 15,
-    categories: ['ap', 'base-attack'],
+    categories: ['ap', 'baseAttack'],
     stats: {
       health: 0,
       defense: 120,
@@ -1564,7 +1564,7 @@ const PICTOS: Picto[] = [
   {
     id: 'energising-cleanse',
     luminaPoints: 10,
-    categories: ['status-effect', 'ap'],
+    categories: ['statusEffect', 'ap'],
     stats: {
       health: 1166,
       defense: 160,
@@ -1773,7 +1773,7 @@ const PICTOS: Picto[] = [
   {
     id: 'energising-shots',
     luminaPoints: 0,
-    categories: ['ap', 'free-aim'],
+    categories: ['ap', 'freeAim'],
     stats: {
       health: 0,
       defense: 0,
@@ -1925,7 +1925,7 @@ const PICTOS: Picto[] = [
   {
     id: 'enfeebling-attack',
     luminaPoints: 10,
-    categories: ['base-attack', 'powerless'],
+    categories: ['baseAttack', 'powerless'],
     stats: {
       health: 389,
       defense: 478,
@@ -1982,7 +1982,7 @@ const PICTOS: Picto[] = [
   {
     id: 'exposing-attack',
     luminaPoints: 10,
-    categories: ['base-attack', 'defenceless'],
+    categories: ['baseAttack', 'defenceless'],
     stats: {
       health: 0,
       defense: 0,
@@ -2514,7 +2514,7 @@ const PICTOS: Picto[] = [
   {
     id: 'inverted-affinity',
     luminaPoints: 5,
-    categories: ['status-effect', 'damage'],
+    categories: ['statusEffect', 'damage'],
     stats: {
       health: 270,
       defense: 0,
@@ -2533,7 +2533,7 @@ const PICTOS: Picto[] = [
   {
     id: 'last-stand-critical',
     luminaPoints: 3,
-    categories: ['critical-hits', 'solo'],
+    categories: ['criticalHits', 'solo'],
     stats: {
       health: 168,
       defense: 50,
@@ -2647,7 +2647,7 @@ const PICTOS: Picto[] = [
   {
     id: 'marking-shots',
     luminaPoints: 3,
-    categories: ['mark', 'free-aim'],
+    categories: ['mark', 'freeAim'],
     stats: {
       health: 0,
       defense: 26,
@@ -2723,7 +2723,7 @@ const PICTOS: Picto[] = [
   {
     id: 'piercing-shot',
     luminaPoints: 2,
-    categories: ['free-aim'],
+    categories: ['freeAim'],
     stats: {
       health: 546,
       defense: 0,
@@ -2856,7 +2856,7 @@ const PICTOS: Picto[] = [
   {
     id: 'powerful-shots',
     luminaPoints: 3,
-    categories: ['powerful', 'free-aim'],
+    categories: ['powerful', 'freeAim'],
     stats: {
       health: 983,
       defense: 44,
@@ -2894,7 +2894,7 @@ const PICTOS: Picto[] = [
   {
     id: 'protecting-attack',
     luminaPoints: 10,
-    categories: ['shell', 'base-attack'],
+    categories: ['shell', 'baseAttack'],
     stats: {
       health: 3081,
       defense: 524,
@@ -2970,7 +2970,7 @@ const PICTOS: Picto[] = [
   {
     id: 'protecting-shots',
     luminaPoints: 3,
-    categories: ['shell', 'free-aim'],
+    categories: ['shell', 'freeAim'],
     stats: {
       health: 4869,
       defense: 301,
@@ -3369,7 +3369,7 @@ const PICTOS: Picto[] = [
   {
     id: 'slowing-attack',
     luminaPoints: 10,
-    categories: ['slow', 'base-attack'],
+    categories: ['slow', 'baseAttack'],
     stats: {
       health: 2757,
       defense: 0,
@@ -3407,7 +3407,7 @@ const PICTOS: Picto[] = [
   {
     id: 'sniper',
     luminaPoints: 15,
-    categories: ['free-aim'],
+    categories: ['freeAim'],
     stats: {
       health: 0,
       defense: 552,
@@ -3464,7 +3464,7 @@ const PICTOS: Picto[] = [
   {
     id: 'staggering-attack',
     luminaPoints: 1,
-    categories: ['break', 'base-attack'],
+    categories: ['break', 'baseAttack'],
     stats: {
       health: 0,
       defense: 0,
@@ -3559,7 +3559,7 @@ const PICTOS: Picto[] = [
   {
     id: 'tainted',
     luminaPoints: 0,
-    categories: ['damage', 'status-effect'],
+    categories: ['damage', 'statusEffect'],
     stats: {
       health: 0,
       defense: 1022,
@@ -3635,7 +3635,7 @@ const PICTOS: Picto[] = [
   {
     id: 'versatile',
     luminaPoints: 5,
-    categories: ['free-aim', 'base-attack'],
+    categories: ['freeAim', 'baseAttack'],
     stats: {
       health: 0,
       defense: 21,

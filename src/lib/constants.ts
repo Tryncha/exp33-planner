@@ -1,4 +1,4 @@
-import { CharacterData, CharacterTemplate } from '../types';
+import { CharacterData, CharacterTemplate, PictoCategory } from '../types';
 
 export const CHARACTER_DATA: CharacterData[] = [
   {
@@ -229,144 +229,32 @@ export const PICTO_CATEGORIES_FROM_GAME = [
 ] as const;
 
 export const PICTO_CATEGORIES = [
-  {
-    id: 'damage',
-    en: { name: 'Damage' },
-    es: { name: 'Daño' }
-  },
-  {
-    id: 'defensive',
-    en: { name: 'Defensive' },
-    es: { name: 'Defensivo' }
-  },
-  {
-    id: 'healing',
-    en: { name: 'Healing' },
-    es: { name: 'Curación' }
-  },
-  {
-    id: 'free-aim',
-    en: { name: 'Free Aim' },
-    es: { name: 'Disparo libre' }
-  },
-  {
-    id: 'burn',
-    en: { name: 'Burn' },
-    es: { name: 'Quemadura' }
-  },
-  {
-    id: 'mark',
-    en: { name: 'Mark' },
-    es: { name: 'Marca' }
-  },
-  {
-    id: 'ap',
-    en: { name: 'AP' },
-    es: { name: 'PA' }
-  },
-  {
-    id: 'base-attack',
-    en: { name: 'Base Attack' },
-    es: { name: 'Ataque básico' }
-  },
-  {
-    id: 'parry',
-    en: { name: 'Parry' },
-    es: { name: 'Bloqueo' }
-  },
-  {
-    id: 'solo',
-    en: { name: 'Solo' },
-    es: { name: 'En solitario' }
-  },
-  {
-    id: 'tints',
-    en: { name: 'Tints' },
-    es: { name: 'Tintes' }
-  },
-  {
-    id: 'death',
-    en: { name: 'Death' },
-    es: { name: 'Muerte' }
-  },
-  {
-    id: 'revive',
-    en: { name: 'Revive' },
-    es: { name: 'Resurección' }
-  },
-  {
-    id: 'shields',
-    en: { name: 'Shields' },
-    es: { name: 'Escudos' }
-  },
-  {
-    id: 'immunity',
-    en: { name: 'Immunity' },
-    es: { name: 'Inmunidad' }
-  },
-  {
-    id: 'status-effect',
-    en: { name: 'Status Effect' },
-    es: { name: 'Efectos de estado' }
-  },
-  {
-    id: 'break',
-    en: { name: 'Break' },
-    es: { name: 'Ruptura' }
-  },
-  {
-    id: 'gradient',
-    en: { name: 'Gradient' },
-    es: { name: 'Gradiente' }
-  },
-  {
-    id: 'critical-hits',
-    en: { name: 'Critical Hits' },
-    es: { name: 'Golpes críticos' }
-  },
-  {
-    id: 'slow',
-    en: { name: 'Slow' },
-    es: { name: 'Lentitud' }
-  },
-  {
-    id: 'dodge',
-    en: { name: 'Dodge' },
-    es: { name: 'Esquiva' }
-  },
-  {
-    id: 'rush',
-    en: { name: 'Rush' },
-    es: { name: 'Prisa' }
-  },
-  {
-    id: 'powerful',
-    en: { name: 'Powerful' },
-    es: { name: 'Fortalecimiento' }
-  },
-  {
-    id: 'shell',
-    en: { name: 'Shell' },
-    es: { name: 'Coraza' }
-  },
-  {
-    id: 'weakness',
-    en: { name: 'Weakness' },
-    es: { name: 'Debilidad' }
-  },
-  {
-    id: 'powerless',
-    en: { name: 'Powerless' },
-    es: { name: 'Debilitamiento' }
-  },
-  {
-    id: 'defenceless',
-    en: { name: 'Defenceless' },
-    es: { name: 'Indefensión' }
-  },
-  {
-    id: 'special',
-    en: { name: 'Special' },
-    es: { name: 'Especial' }
-  }
+  'damage',
+  'defensive',
+  'healing',
+  'freeAim',
+  'burn',
+  'mark',
+  'ap',
+  'baseAttack',
+  'parry',
+  'solo',
+  'tints',
+  'death',
+  'revive',
+  'shields',
+  'immunity',
+  'statusEffect',
+  'break',
+  'gradient',
+  'criticalHits',
+  'slow',
+  'dodge',
+  'rush',
+  'powerful',
+  'shell',
+  'weakness',
+  'powerless',
+  'defenceless',
+  'special'
 ] as const;

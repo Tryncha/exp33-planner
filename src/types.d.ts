@@ -116,7 +116,7 @@ export interface Attributes {
 }
 
 export type PictoCategoryFromGame = (typeof PICTO_CATEGORIES_FROM_GAME)[number];
-export type PictoCategory = (typeof PICTO_CATEGORIES)[number]['id'];
+export type PictoCategory = (typeof PICTO_CATEGORIES)[number];
 
 export interface PictoStats {
   health: number;

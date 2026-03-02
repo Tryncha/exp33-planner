@@ -2,6 +2,7 @@ import { use } from 'react';
 import { Locale, useTranslations } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Placeholder from '@/src/components/page-placeholder';
+import { PICTO_CATEGORIES } from '@/src/lib/constants';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

@@ -30,7 +30,7 @@ const LuminaOption = ({
 };
 
 const LuminasSelector = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
-  const { build, addLumina } = useBuild();
+  const { build, addLumina, removeLumina } = useBuild();
   const { luminasIds } = build;
 
   return (
@@ -44,7 +44,7 @@ const LuminasSelector = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => 
           key={pic.id}
           isEquipped={luminasIds.includes(pic.id)}
           pictoData={pic}
-          onClick={() => addLumina(pic.id)}
+          onClick={() => (!luminasIds.includes(pic.id) ? addLumina(pic.id) : removeLumina(pic.id))}
         />
       ))}
     </Modal>

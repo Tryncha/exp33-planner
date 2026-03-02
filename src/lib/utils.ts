@@ -1,3 +1,4 @@
+import { _Translator, Locale } from 'next-intl';
 import PICTOS from '../data/pictos';
 import SKILLS from '../data/skills';
 import WEAPONS from '../data/weapons';
@@ -104,13 +105,16 @@ export function getLuminaData(pictoId: Picto['id']) {
   return luminaData;
 }
 
-export function formatPictoStats(stats: PictoStats) {
+export function formatPictoStats(
+  stats: PictoStats,
+  labels: { speed: string; critRate: string; health: string; defense: string }
+) {
   const parts = [];
 
-  if (stats.health) parts.push(`${stats.health} Health`);
-  if (stats.defense) parts.push(`${stats.defense} Defense`);
-  if (stats.speed) parts.push(`${stats.speed} Speed`);
-  if (stats.critRate) parts.push(`${stats.critRate}% Crit. Rate`);
+  if (stats.speed) parts.push(`${stats.speed} ${labels.speed}`);
+  if (stats.critRate) parts.push(`${stats.critRate}% ${labels.critRate}`);
+  if (stats.health) parts.push(`${stats.health} ${labels.health}`);
+  if (stats.defense) parts.push(`${stats.defense} ${labels.defense}`);
 
   return parts.join(', ');
 }

@@ -59,9 +59,7 @@ const SkillSlot = ({
 };
 
 const Skills = () => {
-  const t = useTranslations('Skills');
-
-  const { build, changeSkil } = useBuild();
+  const { build, changeSkill } = useBuild();
   const { skillIds } = build;
 
   const { openModal, isModalOpen, closeAll } = useModal();
@@ -76,7 +74,7 @@ const Skills = () => {
 
   function removeSkill(e: MouseEvent<HTMLButtonElement>, indexSlot: number) {
     e.stopPropagation();
-    changeSkil(indexSlot, '');
+    changeSkill(indexSlot, '');
   }
 
   return (

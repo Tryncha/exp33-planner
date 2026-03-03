@@ -171,7 +171,7 @@ const PictosSelector = ({
 
       {/* Left column */}
       {/* Pictos */}
-      <section className="scrollbar-thumb-taupe-600 scrollbar-track-taupe-800 scrollbar-thin flex h-182 w-301 flex-wrap content-start gap-2 overflow-y-scroll border border-taupe-700 p-2">
+      <section className="scrollbar-thumb-taupe-600 scrollbar-track-taupe-800 scrollbar-thin flex h-182 w-298 flex-wrap content-start gap-2 overflow-y-scroll">
         {filteredPictos.map((pic) => (
           <PictoOption
             key={pic.id}

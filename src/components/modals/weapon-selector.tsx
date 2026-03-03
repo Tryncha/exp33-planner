@@ -139,7 +139,7 @@ const WeaponSelector = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
       className="flex flex-col gap-2 rounded-xs bg-taupe-900 p-4"
     >
       {/* Filters */}
-      <section className="flex justify-between gap-4">
+      <section className="flex justify-between gap-2">
         <input
           type="text"
           value={filterByName}

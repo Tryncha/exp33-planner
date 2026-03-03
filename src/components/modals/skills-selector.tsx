@@ -1,11 +1,14 @@
 import { useBuild } from '@/src/context/build-context';
 import { Modal } from '@/src/context/modal-context';
 import SKILLS from '@/src/data/skills';
-import { Skill } from '@/src/types';
+import { MonocoMask, MonocoSkill, Skill, SkillFiltersType } from '@/src/types';
 import Image from 'next/image';
 import Diamond from '../diamond';
-import { useLocale } from 'next-intl';
-import { BreakIcon } from '../icons';
+import { useLocale, useTranslations } from 'next-intl';
+import { BreakIcon, MonocoMaskIcon } from '../icons';
+import { useState } from 'react';
+import { MONOCO_MASKS } from '@/src/lib/constants';
+import SkillFilters from '../skill-filters';
 
 const SkillOption = ({
   skillData,
@@ -60,37 +63,58 @@ const SkillsSelector = ({
 }) => {
   const locale = useLocale();
 
-  const { build, changeSkil } = useBuild();
+  const { build, changeSkill } = useBuild();
   const { characterId, skillIds } = build;
 
+  const [filters, setFilters] = useState<SkillFiltersType>({
+    byName: '',
+    canBreak: false,
+    byMask: ''
+  });
+
   function handleChange(newSkillId: Skill['id']) {
-    changeSkil(selectedSlot, newSkillId);
+    changeSkill(selectedSlot, newSkillId);
     onClose();
   }
 
-  const alphabeticallySort = (a: Skill, b: Skill) =>
-    a[locale].name.localeCompare(b[locale].name, locale, { sensitivity: 'base' });
+  const filteredSkills = SKILLS
+    // Filter by Character Skills
+    .filter((sk: Skill) => sk.characterId === characterId)
+    // Filter by Name
+    .filter((sk: Skill) => sk[locale].name.toLowerCase().includes(filters.byName.toLowerCase()))
+    // Filter by Can Break
+    .filter((sk: Skill) => (!filters.canBreak ? sk : sk.canBreak))
 
-  const filteredSkills = SKILLS.filter((sk) => sk.characterId === characterId).sort(alphabeticallySort);
+    // filter by Mask
+    .filter((sk: Skill) => (!filters.byMask ? sk : filters.byMask === (sk as MonocoSkill).buffedMask))
+
+    // Sort alphabetically
+    .sort((a: Skill, b: Skill) => a[locale].name.localeCompare(b[locale].name, locale, { sensitivity: 'base' }));
 
   return (
     <Modal
       isOpen={isOpen}
       onClose={onClose}
-      className="flex gap-2 rounded-xs bg-taupe-900 p-4"
+      className="flex flex-col gap-2 rounded-xs bg-taupe-900 p-4"
     >
-      <div className="flex border border-taupe-700 p-2">
-        <div className="scrollbar-thumb-taupe-600 scrollbar-track-taupe-800 scrollbar-thin flex h-160 w-314 flex-wrap content-start gap-2 overflow-y-auto">
-          {filteredSkills.map((skill) => (
-            <SkillOption
-              key={skill.id}
-              skillData={skill}
-              isEquipped={skillIds.includes(skill.id)}
-              onClick={() => handleChange(skill.id)}
-            />
-          ))}
-        </div>
-      </div>
+      {/* Filters */}
+      <SkillFilters
+        character={characterId}
+        filters={filters}
+        setFilters={setFilters}
+      />
+
+      {/* Skills */}
+      <section className="scrollbar-thumb-taupe-600 scrollbar-track-taupe-800 scrollbar-thin flex h-160 w-314 flex-wrap content-start gap-2 overflow-y-scroll">
+        {filteredSkills.map((skill) => (
+          <SkillOption
+            key={skill.id}
+            skillData={skill}
+            isEquipped={skillIds.includes(skill.id)}
+            onClick={() => handleChange(skill.id)}
+          />
+        ))}
+      </section>
     </Modal>
   );
 };

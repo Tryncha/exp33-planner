@@ -9,7 +9,7 @@ interface BuildContextType {
   changeName: (newName: string) => void;
   changeStat: (statToChange: AttributeId, newValue: number) => void;
   changeWeapon: (newWeaponId: Weapon['id']) => void;
-  changeSkil: (slotToChange: number, newSkillId: Skill['id']) => void;
+  changeSkill: (slotToChange: number, newSkillId: Skill['id']) => void;
   changePicto: (slotToChange: number, newPictoId: Picto['id']) => void;
   addLumina: (luminaToAdd: Picto['id']) => void;
   removeLumina: (luminaToRemove: Picto['id']) => void;
@@ -46,7 +46,7 @@ export const BuildProvider = ({ children }: { children: React.ReactNode }) => {
     buildDispatch({ type: 'CHANGE_WEAPON', payload: { newWeaponId } });
   }
 
-  function changeSkil(slotToChange: number, newSkillId: Skill['id']) {
+  function changeSkill(slotToChange: number, newSkillId: Skill['id']) {
     buildDispatch({ type: 'CHANGE_SKILL', payload: { slotToChange, newSkillId } });
   }
 
@@ -68,7 +68,7 @@ export const BuildProvider = ({ children }: { children: React.ReactNode }) => {
     changeName,
     changeStat,
     changeWeapon,
-    changeSkil,
+    changeSkill,
     changePicto,
     addLumina,
     removeLumina

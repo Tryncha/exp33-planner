@@ -1517,6 +1517,7 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 2,
     characterId: 'monoco',
     canBreak: false,
+    buffedMask: 'agile',
     roulettePositions: 2,
     en: {
       name: 'Abbest Wind',
@@ -1533,6 +1534,7 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 7,
     characterId: 'monoco',
     canBreak: false,
+    buffedMask: 'agile',
     roulettePositions: 4,
     en: {
       name: 'Aberration Light',
@@ -1550,6 +1552,7 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 2,
     characterId: 'monoco',
     canBreak: false,
+    buffedMask: 'caster',
     roulettePositions: 3,
     en: {
       name: 'Ballet Charm',
@@ -1567,6 +1570,7 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 5,
     characterId: 'monoco',
     canBreak: false,
+    buffedMask: 'caster',
     roulettePositions: 6,
     en: {
       name: 'Benisseur Mortar',
@@ -1584,6 +1588,7 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 4,
     characterId: 'monoco',
     canBreak: false,
+    buffedMask: 'balanced',
     roulettePositions: 2,
     en: {
       name: 'Braseleur Smash',
@@ -1601,6 +1606,7 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 3,
     characterId: 'monoco',
     canBreak: false,
+    buffedMask: 'heavy',
     roulettePositions: 5,
     en: {
       name: 'Boucheclier Fortify',
@@ -1616,6 +1622,7 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 4,
     characterId: 'monoco',
     canBreak: true,
+    buffedMask: 'caster',
     roulettePositions: 4,
     en: {
       name: 'Bruler Bash',
@@ -1632,6 +1639,7 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 7,
     characterId: 'monoco',
     canBreak: false,
+    buffedMask: 'balanced',
     roulettePositions: 3,
     en: {
       name: 'Chalier Combo',
@@ -1649,10 +1657,11 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 7,
     characterId: 'monoco',
     canBreak: false,
+    buffedMask: 'agile',
     roulettePositions: 4,
     en: {
       name: 'Chapelier Slash',
-      description: 'Deals high Physical damage to all enemies. 3 hits. Applies Mark   Agile Mask: Increased damage.'
+      description: 'Deals high Physical damage to all enemies. 3 hits. Applies Mark. Agile Mask: Increased damage.'
     },
     es: {
       name: 'Corte de Chapelier',
@@ -1665,11 +1674,12 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 6,
     characterId: 'monoco',
     canBreak: false,
+    buffedMask: 'balanced',
     roulettePositions: 2,
     en: {
       name: 'Chevaliere Ice',
       description:
-        'Deals high Ice damage to all enemies. 3 hits. Applies Slow  to the targets for 3 turns.  Balanced Mask: Increased damage.'
+        'Deals high Ice damage to all enemies. 3 hits. Applies Slow to the targets for 3 turns. Balanced Mask: Increased damage.'
     },
     es: {
       name: 'Hielo de Chevalière',
@@ -1682,11 +1692,12 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 3,
     characterId: 'monoco',
     canBreak: false,
+    buffedMask: 'agile',
     roulettePositions: 3,
     en: {
       name: 'Chevaliere Piercing',
       description:
-        'Deals single target Physical damage through Shields . 6 hits. Damage increased for each Shield  on the target.  Agile Mask: Increased damage.'
+        'Deals single target Physical damage through Shields. 6 hits. Damage increased for each Shield on the target. Agile Mask: Increased damage.'
     },
     es: {
       name: 'Perforación de Chevalière',
@@ -1699,6 +1710,7 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 7,
     characterId: 'monoco',
     canBreak: false,
+    buffedMask: 'heavy',
     roulettePositions: 3,
     en: {
       name: 'Chevaliere Thrusts',
@@ -1716,11 +1728,12 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 5,
     characterId: 'monoco',
     canBreak: false,
+    buffedMask: 'balanced',
     roulettePositions: 3,
     en: {
       name: 'Clair Enfeeble',
       description:
-        'Deals medium Light damage to all enemies. 1 hit. Applies Powerless  for 3 turns.  Balanced Mask: Increased damage.'
+        'Deals medium Light damage to all enemies. 1 hit. Applies Powerless for 3 turns. Balanced Mask: Increased damage.'
     },
     es: {
       name: 'Debilitamiento de Clair',
@@ -1733,6 +1746,7 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 6,
     characterId: 'monoco',
     canBreak: false,
+    buffedMask: 'balanced',
     roulettePositions: 2,
     en: {
       name: 'Contorsionniste Blast',
@@ -1750,11 +1764,12 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 9,
     characterId: 'monoco',
     canBreak: false,
+    buffedMask: 'caster',
     roulettePositions: 4,
     en: {
       name: 'Creation Void',
       description:
-        'Deals extreme Void damage to random targets. 3 hits. More damage if the same target is hit multiple times.  Caster Mask: Increased damage'
+        'Deals extreme Void damage to random targets. 3 hits. More damage if the same target is hit multiple times. Caster Mask: Increased damage'
     },
     es: {
       name: 'Vacío de Creación',
@@ -1767,6 +1782,7 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 4,
     characterId: 'monoco',
     canBreak: false,
+    buffedMask: 'heavy',
     roulettePositions: 4,
     en: {
       name: 'Cruler Barrier',
@@ -1782,6 +1798,7 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 3,
     characterId: 'monoco',
     roulettePositions: 5,
+    buffedMask: 'heavy',
     canBreak: false,
     en: {
       name: 'Cultist Blood',
@@ -1799,6 +1816,7 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 5,
     characterId: 'monoco',
     canBreak: false,
+    buffedMask: 'agile',
     roulettePositions: 3,
     en: {
       name: 'Cultist Slashes',
@@ -1816,11 +1834,12 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 8,
     characterId: 'monoco',
     canBreak: false,
+    buffedMask: 'balanced',
     roulettePositions: 3,
     en: {
       name: 'Danseuse Waltz',
       description:
-        'Deals high single target Fire damage. 3 hits. Deals more damage against Burning  targets.  Balanced Mask: Increased damage.'
+        'Deals high single target Fire damage. 3 hits. Deals more damage against Burning targets. Balanced Mask: Increased damage.'
     },
     es: {
       name: 'Vals de Danseuse',
@@ -1833,6 +1852,7 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 2,
     characterId: 'monoco',
     canBreak: false,
+    buffedMask: 'caster',
     roulettePositions: 5,
     en: {
       name: 'Demineur Thunder',
@@ -1850,6 +1870,7 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 8,
     characterId: 'monoco',
     canBreak: true,
+    buffedMask: 'almighty',
     roulettePositions: 1,
     en: {
       name: 'Duallist Storm',
@@ -1866,11 +1887,12 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 4,
     characterId: 'monoco',
     canBreak: false,
+    buffedMask: 'agile',
     roulettePositions: 4,
     en: {
       name: 'Echassier Stabs',
       description:
-        'Deals medium single target Physical damage. 2 hits. Second hit applies Mark  to the target.  Agile Mask: Increased damage.'
+        'Deals medium single target Physical damage. 2 hits. Second hit applies Mark to the target. Agile Mask: Increased damage.'
     },
     es: {
       name: 'Puñaladas de Échassier',
@@ -1883,6 +1905,7 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 6,
     characterId: 'monoco',
     canBreak: false,
+    buffedMask: 'heavy',
     roulettePositions: 5,
     en: {
       name: 'Eveque Spear',
@@ -1900,6 +1923,7 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 3,
     characterId: 'monoco',
     canBreak: false,
+    buffedMask: 'balanced',
     roulettePositions: 2,
     en: {
       name: 'Gault Fury',
@@ -1916,11 +1940,12 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 4,
     characterId: 'monoco',
     canBreak: false,
+    buffedMask: 'heavy',
     roulettePositions: 6,
     en: {
       name: 'Glaise Earthquakes',
       description:
-        'Deals medium Earth damage to all enemies. 3 hits. Applies Powerful  to self.  Heavy Mask: applies Powerful  to all allies.'
+        'Deals medium Earth damage to all enemies. 3 hits. Applies Powerful to self. Heavy Mask: applies Powerful  to all allies.'
     },
     es: {
       name: 'Terremotos de Glaise',
@@ -1933,11 +1958,12 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 6,
     characterId: 'monoco',
     canBreak: false,
+    buffedMask: 'heavy',
     roulettePositions: 4,
     en: {
       name: 'Grosse Tete Whack',
       description:
-        'Deals high single target Physical damage. 5 hits. Applies Defenceless  for 3 turns.  Heavy Mask: Increased damage.'
+        'Deals high single target Physical damage. 5 hits. Applies Defenceless for 3 turns. Heavy Mask: Increased damage.'
     },
     es: {
       name: 'Porrazo de Grosse Tète',
@@ -1950,6 +1976,7 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 5,
     characterId: 'monoco',
     canBreak: false,
+    buffedMask: 'heavy',
     roulettePositions: 6,
     en: {
       name: 'Hexga Crush',
@@ -1967,10 +1994,11 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 5,
     characterId: 'monoco',
     canBreak: false,
+    buffedMask: 'heavy',
     roulettePositions: 6,
     en: {
       name: 'Jar Lampstorm',
-      description: 'Deals medium Physical damage to all enemies. 4 hits.  Heavy Mask: Increased damage.'
+      description: 'Deals medium Physical damage to all enemies. 4 hits. Heavy Mask: Increased damage.'
     },
     es: {
       name: 'Tormenta de Faroles de Jarrón',
@@ -1982,6 +2010,7 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 5,
     characterId: 'monoco',
     canBreak: false,
+    buffedMask: 'almighty',
     roulettePositions: 1,
     en: {
       name: 'Lampmaster Light',
@@ -1998,8 +2027,9 @@ const MONOCO_SKILLS: Skill[] = [
     id: 'lancelier-impale',
     cost: 2,
     characterId: 'monoco',
-    roulettePositions: 4,
     canBreak: false,
+    buffedMask: 'agile',
+    roulettePositions: 4,
     en: {
       name: 'Lancelier Impale',
       description:
@@ -2016,11 +2046,12 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 3,
     characterId: 'monoco',
     canBreak: false,
+    buffedMask: 'agile',
     roulettePositions: 3,
     en: {
       name: 'Luster Slices',
       description:
-        'Deals low single target Physical damage. 3 hits. Applies Rush  to self for 3 turns.  Agile Mask: Increased damage.'
+        'Deals low single target Physical damage. 3 hits. Applies Rush to self for 3 turns. Agile Mask: Increased damage.'
     },
     es: {
       name: 'Tajaduras de Luster',
@@ -2033,6 +2064,7 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 5,
     characterId: 'monoco',
     canBreak: true,
+    buffedMask: 'balanced',
     roulettePositions: 2,
     en: {
       name: 'Moissonneuse Vendange',
@@ -2049,11 +2081,12 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 6,
     characterId: 'monoco',
     canBreak: false,
+    buffedMask: 'heavy',
     roulettePositions: 3,
     en: {
       name: 'Obscur Sword',
       description:
-        'Deals high single target Dark damage. 5 hits. Deals more damage against Powerless  targets.  Heavy Mask: Increased damage.'
+        'Deals high single target Dark damage. 5 hits. Deals more damage against Powerless targets. Heavy Mask: Increased damage.'
     },
     es: {
       name: 'Espada de Obscur',
@@ -2066,6 +2099,7 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 3,
     characterId: 'monoco',
     canBreak: false,
+    buffedMask: 'caster',
     roulettePositions: 3,
     en: {
       name: 'Orphelin Cheers',
@@ -2082,10 +2116,11 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 5,
     characterId: 'monoco',
     canBreak: false,
+    buffedMask: 'caster',
     roulettePositions: 3,
     en: {
       name: 'Pelerin Heal',
-      description: 'Applies Regen  to all allies.  Caster Mask: also Heals  40% Health.'
+      description: 'Applies Regen to all allies. Caster Mask: also Heals 40% Health.'
     },
     es: {
       name: 'Curación de Pèlerin',
@@ -2097,6 +2132,7 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 8,
     characterId: 'monoco',
     canBreak: true,
+    buffedMask: 'heavy',
     roulettePositions: 5,
     en: {
       name: 'Portier Crash',
@@ -2113,10 +2149,11 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 4,
     characterId: 'monoco',
     canBreak: false,
+    buffedMask: 'caster',
     roulettePositions: 6,
     en: {
       name: 'Potier Energy',
-      description: 'Gives 1-3 AP  to all allies.  Caster Mask: Gives 1 additional AP'
+      description: 'Gives 1-3 AP to all allies. Caster Mask: Gives 1 additional AP'
     },
     es: {
       name: 'Energía de Potier',
@@ -2128,11 +2165,12 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 2,
     characterId: 'monoco',
     canBreak: true,
+    buffedMask: 'agile',
     roulettePositions: 4,
     en: {
       name: 'Ramasseur Bonk',
       description:
-        "Deals low single target Dark damage. 1 hit. Can Break   Agile Mask: fills 20% of the target's Break Bar."
+        "Deals low single target Dark damage. 1 hit. Can Break. Agile Mask: fills 20% of the target's Break Bar."
     },
     es: {
       name: 'Coscorrón de Ramasseur',
@@ -2145,6 +2183,7 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 3,
     characterId: 'monoco',
     canBreak: true,
+    buffedMask: 'heavy',
     roulettePositions: 3,
     en: {
       name: 'Rocher Hammering',
@@ -2161,6 +2200,7 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 3,
     characterId: 'monoco',
     canBreak: false,
+    buffedMask: 'balanced',
     roulettePositions: 3,
     en: {
       name: 'Sakapatate Estoc',
@@ -2178,6 +2218,7 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 4,
     characterId: 'monoco',
     canBreak: false,
+    buffedMask: 'caster',
     roulettePositions: 6,
     en: {
       name: 'Sakapatate Explosion',
@@ -2195,6 +2236,7 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 9,
     characterId: 'monoco',
     canBreak: false,
+    buffedMask: 'almighty',
     roulettePositions: 1,
     en: {
       name: 'Sakapatate Fire',
@@ -2211,6 +2253,7 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 7,
     characterId: 'monoco',
     canBreak: false,
+    buffedMask: 'heavy',
     roulettePositions: 5,
     en: {
       name: 'Sakapatate Slam',
@@ -2228,6 +2271,7 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 6,
     characterId: 'monoco',
     canBreak: false,
+    buffedMask: 'caster',
     roulettePositions: 5,
     en: {
       name: 'Sapling Absorption',
@@ -2244,8 +2288,9 @@ const MONOCO_SKILLS: Skill[] = [
     id: 'stalact-punches',
     cost: 4,
     characterId: 'monoco',
-    roulettePositions: 4,
     canBreak: false,
+    buffedMask: 'heavy',
+    roulettePositions: 4,
     en: {
       name: 'Stalact Punches',
       description: 'Deals medium single target Ice damage. 4 hits. High Break damage. Heavy Mask: Increased damage.'
@@ -2261,6 +2306,7 @@ const MONOCO_SKILLS: Skill[] = [
     cost: 3,
     characterId: 'monoco',
     canBreak: false,
+    buffedMask: 'caster',
     roulettePositions: 4,
     en: {
       name: 'Troubadour Trumpet',

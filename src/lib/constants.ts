@@ -210,6 +210,8 @@ export const ELEMENTS = ['physical', 'light', 'dark', 'void', 'fire', 'ice', 'ea
 
 export const PICTO_STATS = ['speed', 'critRate', 'health', 'defense'] as const;
 
+export const MONOCO_MASKS = ['caster', 'agile', 'balanced', 'heavy', 'almighty'] as const;
+
 // export const PICTO_CATEGORIES_FROM_GAME = [
 //   'base-attack',
 //   'free-aim',

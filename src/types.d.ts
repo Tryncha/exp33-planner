@@ -2,6 +2,7 @@ import {
   ATTRIBUTES,
   ELEMENTS,
   GUSTAVE_BASE,
+  MONOCO_MASKS,
   PICTO_CATEGORIES,
   PICTO_CATEGORIES_FROM_GAME,
   PICTO_STATS
@@ -20,6 +21,8 @@ export interface ImageData {
   width: number;
   height: number;
 }
+
+export type MonocoMask = (typeof MONOCO_MASKS)[number];
 
 export interface Character {
   id: CharacterId;
@@ -170,7 +173,14 @@ export interface VersoSkill extends SkillBase {
 
 export interface MonocoSkill extends SkillBase {
   characterId: 'monoco';
+  buffedMask: MonocoMask;
   roulettePositions: number;
 }
 
 export type Skill = GustaveSkill | LuneSkill | MaelleSkill | ScielSkill | VersoSkill | MonocoSkill;
+
+export interface SkillFiltersType {
+  byName: string;
+  canBreak: boolean;
+  byMask: MonocoMask | '';
+}

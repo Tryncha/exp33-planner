@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { MonocoMask } from '../types';
 
 export const ElementIcon = ({ element, size = 24 }: { element: string; size?: number }) => {
   return (
@@ -18,6 +19,17 @@ export const BreakIcon = () => {
       alt={`Break icon`}
       width={16}
       height={16}
+    />
+  );
+};
+
+export const MonocoMaskIcon = ({ mask }: { mask: MonocoMask }) => {
+  return (
+    <Image
+      src={`/ui/${mask}-mask.png`}
+      alt={`${mask} mask icon`}
+      width={20}
+      height={20}
     />
   );
 };

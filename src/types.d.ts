@@ -129,6 +129,7 @@ export interface LocalePicto {
 }
 
 export interface Picto {
+  level?: number;
   id: string;
   luminaPoints: number;
   categories: PictoCategory[];

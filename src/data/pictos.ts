@@ -16,8 +16,8 @@ const PICTOS: Picto[] = [
       effect: 'Healing an ally also applies Rush for 1 turn.'
     },
     es: {
-      name: 'Accelerating Heal',
-      effect: 'Healing an ally also applies Rush for 1 turn.'
+      name: 'Curación acelerante',
+      effect: 'Al curar a un aliado, aplica prisa durante 1 turno.'
     }
   },
   {
@@ -54,12 +54,13 @@ const PICTOS: Picto[] = [
       effect: '20% chance to gain Rush on Free Aim shot.'
     },
     es: {
-      name: 'Accelerating Shots',
-      effect: '20% chance to gain Rush on Free Aim shot.'
+      name: 'Disparos aceleradores',
+      effect: 'Probabilidad de 20% de obetener prisa al disparar con apuntado libre.'
     }
   },
   {
     id: 'accelerating-tint',
+    level: 25,
     luminaPoints: 5,
     categories: ['rush', 'tints'],
     stats: {
@@ -73,8 +74,8 @@ const PICTOS: Picto[] = [
       effect: 'Healing Tints also apply Rush.'
     },
     es: {
-      name: 'Accelerating Tint',
-      effect: 'Healing Tints also apply Rush.'
+      name: 'Tinte acelerador',
+      effect: 'Los tintes curativos también aplican prisa.'
     }
   },
   {
@@ -263,8 +264,8 @@ const PICTOS: Picto[] = [
       effect: '50% increased Base Attack damage.'
     },
     es: {
-      name: 'Augmented Attack',
-      effect: '50% increased Base Attack damage.'
+      name: 'Ataque reforzado',
+      effect: 'Daño de ataque básico +50%.'
     }
   },
   {
@@ -282,8 +283,8 @@ const PICTOS: Picto[] = [
       effect: '25% increased Counterattack damage.'
     },
     es: {
-      name: 'Augmented Counter I',
-      effect: '25% increased Counterattack damage.'
+      name: 'Contraataque reforzado I',
+      effect: 'Daño de contraataque +25%'
     }
   },
   {
@@ -301,8 +302,8 @@ const PICTOS: Picto[] = [
       effect: '50% increased Counterattack damage.'
     },
     es: {
-      name: 'Augmented Counter II',
-      effect: '50% increased Counterattack damage.'
+      name: 'Contraataque reforzado II',
+      effect: 'Daño de contraataque +50%'
     }
   },
   {
@@ -320,8 +321,8 @@ const PICTOS: Picto[] = [
       effect: '75% increased Counterattack damage.'
     },
     es: {
-      name: 'Augmented Counter III',
-      effect: '75% increased Counterattack damage.'
+      name: 'Contraataque reforzado III',
+      effect: 'Daño de contraataque +75%'
     }
   },
   {
@@ -453,8 +454,8 @@ const PICTOS: Picto[] = [
       effect: '+1 Shield if not affected by any Shield on turn start.'
     },
     es: {
-      name: 'Base Shield',
-      effect: '+1 Shield if not affected by any Shield on turn start.'
+      name: 'Escudo básico',
+      effect: '+1 escudo si no tienes ningún escudo al inicio del turno.'
     }
   },
   {
@@ -472,8 +473,8 @@ const PICTOS: Picto[] = [
       effect: '+2 AP on applying a Status Effect. Once per turn.'
     },
     es: {
-      name: 'Beneficial Contamination',
-      effect: '+2 AP on applying a Status Effect. Once per turn.'
+      name: 'Contaminación beneficiosa',
+      effect: '+2 PA al aplicar una alteración de estado. Una vez por turno.'
     }
   },
   {
@@ -510,8 +511,8 @@ const PICTOS: Picto[] = [
       effect: '25% increased Break damage.'
     },
     es: {
-      name: 'Breaker',
-      effect: '25% increased Break damage.'
+      name: 'Rupturador',
+      effect: 'Daño de ruptura +25%.'
     }
   },
   {
@@ -529,8 +530,8 @@ const PICTOS: Picto[] = [
       effect: 'Base Attack can Break.'
     },
     es: {
-      name: 'Breaking Attack',
-      effect: 'Base Attack can Break.'
+      name: 'Ataque rupturista',
+      effect: 'El ataque básico puede causar ruptura.'
     }
   },
   {
@@ -567,8 +568,8 @@ const PICTOS: Picto[] = [
       effect: '50% increased Break damage on Counterattack.'
     },
     es: {
-      name: 'Breaking Counter',
-      effect: '50% increased Break damage on Counterattack.'
+      name: 'Contraataque rupturista',
+      effect: 'Daño de ruptura +50% al contraatacar.'
     }
   },
   {
@@ -605,8 +606,8 @@ const PICTOS: Picto[] = [
       effect: '50% increased Break damage with Free Aim shots.'
     },
     es: {
-      name: 'Breaking Shots',
-      effect: '50% increased Break damage with Free Aim shots.'
+      name: 'Disparos rupturistas',
+      effect: 'Daño de ruptura +50% con disparos de apuntado libre.'
     }
   },
   {
@@ -649,6 +650,7 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'burning-break',
+    level: 21,
     luminaPoints: 3,
     categories: ['break', 'burn'],
     stats: {
@@ -662,8 +664,8 @@ const PICTOS: Picto[] = [
       effect: 'Apply 3 Burn stacks on Breaking a target.'
     },
     es: {
-      name: 'Burning Break',
-      effect: 'Apply 3 Burn stacks on Breaking a target.'
+      name: 'Ruptura ardiente',
+      effect: 'Aplicas 3 acumulaciones de quemadura al causar ruptura a un objetivo.'
     }
   },
   {
@@ -719,8 +721,8 @@ const PICTOS: Picto[] = [
       effect: '20% chance to Burn on Free Aim shot.'
     },
     es: {
-      name: 'Burning Shots',
-      effect: '20% chance to Burn on Free Aim shot.'
+      name: 'Disparos ardientes',
+      effect: 'Probabilidad el 20% de aplicar quemadura al disparar con apuntado libre.'
     }
   },
   {
@@ -795,8 +797,8 @@ const PICTOS: Picto[] = [
       effect: '+10% of a Gradient Charge on Counterattack.'
     },
     es: {
-      name: 'Charging Counter',
-      effect: '+10% of a Gradient Charge on Counterattack.'
+      name: 'Contraataque de carga',
+      effect: '+10% de una carga de gradiente al contraatacar.'
     }
   },
   {
@@ -852,8 +854,8 @@ const PICTOS: Picto[] = [
       effect: '+5% of a Gradient Charge on hitting a Stunned enemy.'
     },
     es: {
-      name: 'Charging Stun',
-      effect: '+5% of a Gradient Charge on hitting a Stunned enemy.'
+      name: 'Aturdimiento de carga',
+      effect: '+5% de una carga de gradiente al golpear a un enemigo aturdido.'
     }
   },
   {
@@ -871,8 +873,8 @@ const PICTOS: Picto[] = [
       effect: '+5% of a Gradient Charge on using an item.'
     },
     es: {
-      name: 'Charging Tint',
-      effect: '+5% of a Gradient Charge on using an item.'
+      name: 'Tinte de carga',
+      effect: '+5% de una carga de gradiente al usar un objeto.'
     }
   },
   {
@@ -890,8 +892,8 @@ const PICTOS: Picto[] = [
       effect: '+15% of a Gradient Charge on hitting a Weakness. Once per turn.'
     },
     es: {
-      name: 'Charging Weakness',
-      effect: '+15% of a Gradient Charge on hitting a Weakness. Once per turn.'
+      name: 'Debilidad de carga',
+      effect: '+15% de una carga de gradiente al golpear una debilidad. Una vez por turno.'
     }
   },
   {
@@ -909,8 +911,8 @@ const PICTOS: Picto[] = [
       effect: 'Always play twice in a row.'
     },
     es: {
-      name: 'Cheater',
-      effect: 'Always play twice in a row.'
+      name: 'Trampas',
+      effect: 'Siempre actúas 2 veces seguidas.'
     }
   },
   {
@@ -947,8 +949,8 @@ const PICTOS: Picto[] = [
       effect: 'Healing Tints also remove all Status Effects from the target.'
     },
     es: {
-      name: 'Cleansing Tint',
-      effect: 'Healing Tints also remove all Status Effects from the target.'
+      name: 'Tinte purificador',
+      effect: 'Los tintes curativos también disipan todas las alteraciones de estado del objetivo.'
     }
   },
   {
@@ -1023,8 +1025,8 @@ const PICTOS: Picto[] = [
       effect: "Take 50% less damage, but can't be healed."
     },
     es: {
-      name: 'Confident',
-      effect: "Take 50% less damage, but can't be healed."
+      name: 'Confianza',
+      effect: 'Daño recibido -50%, pero no se puede curar.'
     }
   },
   {
@@ -1061,8 +1063,8 @@ const PICTOS: Picto[] = [
       effect: '25% increased Break damage on Critical hits.'
     },
     es: {
-      name: 'Critical Break',
-      effect: '25% increased Break damage on Critical hits.'
+      name: 'Ruptura crítica',
+      effect: 'Daño de ruptura +25% al efectuar golpes críticos.'
     }
   },
   {
@@ -1137,8 +1139,8 @@ const PICTOS: Picto[] = [
       effect: '25% increased Critical Chance on Defenceless enemies.'
     },
     es: {
-      name: 'Critical Vulnerability',
-      effect: '25% increased Critical Chance on Defenceless enemies.'
+      name: 'Vulnerabilidad crítica',
+      effect: 'Probabilidad de crítico +25% contra enemigos afectados por fragilidad.'
     }
   },
   {
@@ -1156,8 +1158,8 @@ const PICTOS: Picto[] = [
       effect: '25% increased Critical Chance on Weakness.'
     },
     es: {
-      name: 'Critical Weakness',
-      effect: '25% increased Critical Chance on Weakness.'
+      name: 'Debilidad crítica',
+      effect: 'Probabilidad de crítico +25% contra debilidades.'
     }
   },
   {
@@ -1175,8 +1177,8 @@ const PICTOS: Picto[] = [
       effect: '+3 AP on killing an enemy.'
     },
     es: {
-      name: 'Dead Energy I',
-      effect: '+3 AP on killing an enemy.'
+      name: 'Energía muerta I',
+      effect: '+3 PA al matar a un enemigo.'
     }
   },
   {
@@ -1194,8 +1196,8 @@ const PICTOS: Picto[] = [
       effect: '+3 AP on killing an enemy.'
     },
     es: {
-      name: 'Dead Energy II',
-      effect: '+3 AP on killing an enemy.'
+      name: 'Energía muerta II',
+      effect: '+3 PA al matar a un enemigo.'
     }
   },
   {
@@ -1213,8 +1215,8 @@ const PICTOS: Picto[] = [
       effect: 'On Death, deal damage to all enemies.'
     },
     es: {
-      name: 'Death Bomb',
-      effect: 'On Death, deal damage to all enemies.'
+      name: 'Bomba mortal',
+      effect: 'Al morir, dañas a todos los enemigos.'
     }
   },
   {
@@ -1327,8 +1329,8 @@ const PICTOS: Picto[] = [
       effect: 'Double all Heals received.'
     },
     es: {
-      name: 'Effective Heal',
-      effect: 'Double all Heals received.'
+      name: 'Curación eficaz',
+      effect: 'Toda curación recibida se duplica.'
     }
   },
   {
@@ -1365,12 +1367,13 @@ const PICTOS: Picto[] = [
       effect: 'Gain Powerful for 1 turn on Base Attack.'
     },
     es: {
-      name: 'Empowering Attack',
-      effect: 'Gain Powerful for 1 turn on Base Attack.'
+      name: 'Ataque potenciador',
+      effect: 'Obtienes fortalecimiento durante 1 turno al efectuar un ataque básico.'
     }
   },
   {
     id: 'empowering-break',
+    level: 28,
     luminaPoints: 3,
     categories: ['powerful', 'break'],
     stats: {
@@ -1384,8 +1387,8 @@ const PICTOS: Picto[] = [
       effect: 'Gain Powerful on Breaking a target.'
     },
     es: {
-      name: 'Empowering Break',
-      effect: 'Gain Powerful on Breaking a target.'
+      name: 'Ruptura potenciadora',
+      effect: 'Obtienes fortalecimiento al causar ruptura a un objetivo.'
     }
   },
   {
@@ -1442,9 +1445,9 @@ const PICTOS: Picto[] = [
         'Each successful Parry increases damage by 5% until end of the following turn. Taking any damage removes this buff.'
     },
     es: {
-      name: 'Empowering Parry',
+      name: 'Bloqueo potenciador',
       effect:
-        'Each successful Parry increases damage by 5% until end of the following turn. Taking any damage removes this buff.'
+        'Cada bloqueo exitoso aumenta el daño un 5% hasta que termine el turno siguiente. Este potenciador se pierde al recibir daño.'
     }
   },
   {
@@ -1462,8 +1465,8 @@ const PICTOS: Picto[] = [
       effect: 'Healing Tints also apply Powerful.'
     },
     es: {
-      name: 'Empowering Tint',
-      effect: 'Healing Tints also apply Powerful.'
+      name: 'Tinte potenciador',
+      effect: 'Los tintes curativos también aplican fortalecimiento.'
     }
   },
   {
@@ -1481,8 +1484,8 @@ const PICTOS: Picto[] = [
       effect: '+2 AP on Healing an ally. Once per turn.'
     },
     es: {
-      name: 'Energetic Healer',
-      effect: '+2 AP on Healing an ally. Once per turn.'
+      name: 'Curación energética',
+      effect: '+2 PA al curar a un aliado. Una vez por turno.'
     }
   },
   {
@@ -1525,6 +1528,7 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'energising-break',
+    level: 3,
     luminaPoints: 3,
     categories: ['ap', 'break'],
     stats: {
@@ -1538,8 +1542,8 @@ const PICTOS: Picto[] = [
       effect: '+3 AP on Breaking a target.'
     },
     es: {
-      name: 'Energising Break',
-      effect: '+3 AP on Breaking a target.'
+      name: 'Ruptura energizante',
+      effect: '+3 PA al causar ruptura a un objetivo.'
     }
   },
   {
@@ -1633,8 +1637,8 @@ const PICTOS: Picto[] = [
       effect: 'On Healing an ally, also give 2 AP.'
     },
     es: {
-      name: 'Energising Heal',
-      effect: 'On Healing an ally, also give 2 AP.'
+      name: 'Curación energizante',
+      effect: 'Al curar a un aliado, también le otorgas 2 PA.'
     }
   },
   {
@@ -1652,8 +1656,8 @@ const PICTOS: Picto[] = [
       effect: '+1 AP on Jump Counterattack.'
     },
     es: {
-      name: 'Energising Jump',
-      effect: '+1 AP on Jump Counterattack.'
+      name: 'Salto energizante',
+      effect: '+1 PA al contraatacar con salto.'
     }
   },
   {
@@ -1671,8 +1675,8 @@ const PICTOS: Picto[] = [
       effect: 'No longer gain AP on Parry. +1 AP on getting hit.'
     },
     es: {
-      name: 'Energising Pain',
-      effect: 'No longer gain AP on Parry. +1 AP on getting hit.'
+      name: 'Dolor energizante',
+      effect: 'Ya no recibes PA al efectuar bloqueos. +1 PA al recibir golpes.'
     }
   },
   {
@@ -1690,8 +1694,8 @@ const PICTOS: Picto[] = [
       effect: '+1 AP on successful Parry.'
     },
     es: {
-      name: 'Energising Parry',
-      effect: '+1 AP on successful Parry.'
+      name: 'Bloqueo energizante',
+      effect: '+1 PA al efectuar un bloqueo.'
     }
   },
   {
@@ -1766,8 +1770,8 @@ const PICTOS: Picto[] = [
       effect: 'Give 2 AP on applying Shell.'
     },
     es: {
-      name: 'Energising Shell',
-      effect: 'Give 2 AP on applying Shell.'
+      name: 'Coraza energizante.',
+      effect: 'Otorgas 2 PA al aplicar coraza.'
     }
   },
   {
@@ -1785,8 +1789,8 @@ const PICTOS: Picto[] = [
       effect: '20% chance to gain 1 AP on Free Aim shot.'
     },
     es: {
-      name: 'Energising Shots',
-      effect: '20% chance to gain 1 AP on Free Aim shot.'
+      name: 'Disparos energizantes',
+      effect: 'Probabilidad del 20% de obtener 1 PA al disparar con apuntado libre.'
     }
   },
   {
@@ -1872,16 +1876,16 @@ const PICTOS: Picto[] = [
     stats: {
       health: 0,
       defense: 519,
-      speed: 31,
-      critRate: 0
+      speed: 0,
+      critRate: 31
     },
     en: {
       name: 'Energising Stun',
       effect: '+1 AP on hitting a Stunned target with a Skill.'
     },
     es: {
-      name: 'Energising Stun',
-      effect: '+1 AP on hitting a Stunned target with a Skill.'
+      name: 'Aturdimiento energizante',
+      effect: '+1 PA al golpear a un objetivo aturdido con una habilidad.'
     }
   },
   {
@@ -1890,8 +1894,8 @@ const PICTOS: Picto[] = [
     categories: ['ap'],
     stats: {
       health: 0,
-      defense: 1277,
-      speed: 0,
+      defense: 0,
+      speed: 1277,
       critRate: 0
     },
     en: {
@@ -2000,6 +2004,7 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'exposing-break',
+    level: 20,
     luminaPoints: 5,
     categories: ['defenceless', 'break'],
     stats: {
@@ -2013,8 +2018,8 @@ const PICTOS: Picto[] = [
       effect: 'Apply Defenceless on Break.'
     },
     es: {
-      name: 'Exposing Break',
-      effect: 'Apply Defenceless on Break.'
+      name: 'Ruptura expositora',
+      effect: 'Aplicas fragilidad al causar ruptura.'
     }
   },
   {
@@ -2076,21 +2081,22 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'fueling-break',
+    level: 27,
     luminaPoints: 5,
     categories: ['break', 'burn'],
     stats: {
       health: 0,
-      defense: 507,
-      speed: 31,
-      critRate: 0
+      defense: 0,
+      speed: 507,
+      critRate: 31
     },
     en: {
       name: 'Fueling Break',
       effect: 'Breaking a target also doubles its Burn amount.'
     },
     es: {
-      name: 'Fueling Break',
-      effect: 'Breaking a target also doubles its Burn amount.'
+      name: 'Ruptura estimulante',
+      effect: 'Al causarle ruptura a un objetivo, se duplican sus acumulaciones de quemadura.'
     }
   },
   {
@@ -2118,8 +2124,8 @@ const PICTOS: Picto[] = [
     categories: ['damage'],
     stats: {
       health: 0,
-      defense: 532,
-      speed: 0,
+      defense: 0,
+      speed: 532,
       critRate: 0
     },
     en: {
@@ -2127,27 +2133,28 @@ const PICTOS: Picto[] = [
       effect: 'Deal 25% more damage, but take 25% more damage.'
     },
     es: {
-      name: 'Glass Canon',
-      effect: 'Deal 25% more damage, but take 25% more damage.'
+      name: 'Cañón de cristal',
+      effect: 'Infliges un 25% más de daño, pero recibes un 25% más de daño.'
     }
   },
   {
     id: 'gradient-break',
+    level: 25,
     luminaPoints: 0,
     categories: ['gradient', 'break'],
     stats: {
       health: 0,
-      defense: 434,
-      speed: 28,
-      critRate: 0
+      defense: 0,
+      speed: 434,
+      critRate: 28
     },
     en: {
       name: 'Gradient Break',
       effect: '+50% of a Gradient Charge on Breaking a target.'
     },
     es: {
-      name: 'Gradient Break',
-      effect: '+50% of a Gradient Charge on Breaking a target.'
+      name: 'Ruptura de gradiente',
+      effect: '+50% de una carga de gradiente al causar ruptura a un objetivo.'
     }
   },
   {
@@ -2279,8 +2286,8 @@ const PICTOS: Picto[] = [
       effect: '+10% to Shell damage reduction.'
     },
     es: {
-      name: 'Greater Shell',
-      effect: '+10% to Shell damage reduction.'
+      name: 'Coraza mayor',
+      effect: 'Reducción de daño de coraza +10%.'
     }
   },
   {
@@ -2317,8 +2324,8 @@ const PICTOS: Picto[] = [
       effect: 'Heal 15% HP on applying buff.'
     },
     es: {
-      name: 'Healing Boon',
-      effect: 'Heal 15% HP on applying buff.'
+      name: 'Bendición curativa',
+      effect: 'Te curas un 15% de tus PV al aplicar un potenciador.'
     }
   },
   {
@@ -2336,8 +2343,8 @@ const PICTOS: Picto[] = [
       effect: 'Recover 25% Health on Counterattack.'
     },
     es: {
-      name: 'Healing Counter',
-      effect: 'Recover 25% Health on Counterattack.'
+      name: 'Contraataque curativo',
+      effect: 'Recuperas un 25% de vida al contraatacar.'
     }
   },
   {
@@ -2412,8 +2419,8 @@ const PICTOS: Picto[] = [
       effect: 'Recover 3% Health on Parry.'
     },
     es: {
-      name: 'Healing Parry',
-      effect: 'Recover 3% Health on Parry.'
+      name: 'Bloqueo curativo',
+      effect: 'Recuperas un 3% de vida al bloquear.'
     }
   },
   {
@@ -2423,16 +2430,16 @@ const PICTOS: Picto[] = [
     stats: {
       health: 467,
       defense: 0,
-      speed: 14,
-      critRate: 0
+      speed: 0,
+      critRate: 14
     },
     en: {
       name: 'Healing Share',
       effect: 'Receive 15% of all Heals affecting other characters.'
     },
     es: {
-      name: 'Healing Share',
-      effect: 'Receive 15% of all Heals affecting other characters.'
+      name: 'Curación compartida',
+      effect: 'Recibes el 15% de la curación aplicada a otros personajes.'
     }
   },
   {
@@ -2450,8 +2457,8 @@ const PICTOS: Picto[] = [
       effect: 'Recover 5% Health on hitting a Stunned target.'
     },
     es: {
-      name: 'Healing Stun',
-      effect: 'Recover 5% Health on hitting a Stunned target.'
+      name: 'Aturdimiento curativo',
+      effect: 'Recuperas un 5% de vida al golpear a un objetivo aturdido.'
     }
   },
   {
@@ -2469,8 +2476,8 @@ const PICTOS: Picto[] = [
       effect: 'Healing Tints also give 1 AP.'
     },
     es: {
-      name: 'Healing Tint Energy',
-      effect: 'Healing Tints also give 1 AP.'
+      name: 'Tinte curativo energizante',
+      effect: 'Los tintes curativos también otorgan 1 PA.'
     }
   },
   {
@@ -2621,27 +2628,28 @@ const PICTOS: Picto[] = [
       effect: 'On applying Shell, its duration is increased by 2.'
     },
     es: {
-      name: 'Longer Shell',
-      effect: 'On applying Shell, its duration is increased by 2.'
+      name: 'Coraza prolongada',
+      effect: 'Al aplicar coraza, su duración aumenta en 2.'
     }
   },
   {
     id: 'marking-break',
+    level: 25,
     luminaPoints: 5,
     categories: ['mark', 'break'],
     stats: {
       health: 0,
-      defense: 434,
-      speed: 28,
-      critRate: 0
+      defense: 0,
+      speed: 434,
+      critRate: 28
     },
     en: {
       name: 'Marking Break',
       effect: 'Apply Mark on Break.'
     },
     es: {
-      name: 'Marking Break',
-      effect: 'Apply Mark on Break.'
+      name: 'Ruptura marcadora',
+      effect: 'Aplicas marca al causar ruptura.'
     }
   },
   {
@@ -2650,17 +2658,17 @@ const PICTOS: Picto[] = [
     categories: ['mark', 'freeAim'],
     stats: {
       health: 0,
-      defense: 26,
-      speed: 2,
-      critRate: 0
+      defense: 0,
+      speed: 26,
+      critRate: 2
     },
     en: {
       name: 'Marking Shots',
       effect: '20% chance to apply Mark on Free Aim shot.'
     },
     es: {
-      name: 'Marking Shots',
-      effect: '20% chance to apply Mark on Free Aim shot.'
+      name: 'Disparos marcadores',
+      effect: 'Probabilidad del 20% de aplicar marca al disparar con apuntado libre.'
     }
   },
   {
@@ -2707,17 +2715,17 @@ const PICTOS: Picto[] = [
     categories: ['ap', 'parry'],
     stats: {
       health: 0,
-      defense: 586,
-      speed: 33,
-      critRate: 0
+      defense: 0,
+      speed: 586,
+      critRate: 33
     },
     en: {
       name: 'Perilous Parry',
       effect: '+1 AP on Parry, but damage received is doubled.'
     },
     es: {
-      name: 'Perilous Parry',
-      effect: '+1 AP on Parry, but damage received is doubled.'
+      name: 'Bloqueo peligroso',
+      effect: '+1 PA al bloquear, pero recibes daño doble.'
     }
   },
   {
@@ -2745,17 +2753,17 @@ const PICTOS: Picto[] = [
     categories: ['damage'],
     stats: {
       health: 0,
-      defense: 132,
-      speed: 7,
-      critRate: 0
+      defense: 0,
+      speed: 132,
+      critRate: 7
     },
     en: {
       name: 'Powered Attack',
       effect: 'On every damage dealt, try to consume 1 AP. If succesful, increase damage by 20%.'
     },
     es: {
-      name: 'Powered Attack',
-      effect: 'On every damage dealt, try to consume 1 AP. If succesful, increase damage by 20%.'
+      name: 'Ataque potenciado',
+      effect: 'Cada vez que infliges daño, intentas consumir 1 PA. Si ocurre, daño +20%.'
     }
   },
   {
@@ -2773,8 +2781,8 @@ const PICTOS: Picto[] = [
       effect: 'Healing an ally also applies Powerful for 1 turn.'
     },
     es: {
-      name: 'Powerful Heal',
-      effect: 'Healing an ally also applies Powerful for 1 turn.'
+      name: 'Curación poderosa',
+      effect: 'Al curar a un aliado, aplica fortalecimiento durante 1 turno.'
     }
   },
   {
@@ -2868,8 +2876,8 @@ const PICTOS: Picto[] = [
       effect: '20% chance to gain Powerful on Free Aim shot.'
     },
     es: {
-      name: 'Powerful Shots',
-      effect: '20% chance to gain Powerful on Free Aim shot.'
+      name: 'Disparos potentes',
+      effect: 'Probabilidad del 20% de obtener fortalecimiento al disparar con apuntado libre.'
     }
   },
   {
@@ -2906,8 +2914,8 @@ const PICTOS: Picto[] = [
       effect: 'Gain Shell for 1 turn on Base Attack.'
     },
     es: {
-      name: 'Protecting Attack',
-      effect: 'Gain Shell for 1 turn on Base Attack.'
+      name: 'Ataque protector',
+      effect: 'Obtienes coraza durante 1 turno al efectuar un ataque básico.'
     }
   },
   {
@@ -2944,8 +2952,8 @@ const PICTOS: Picto[] = [
       effect: 'Healing an ally also applies Shell for 1 turn.'
     },
     es: {
-      name: 'Protecting Heal',
-      effect: 'Healing an ally also applies Shell for 1 turn.'
+      name: 'Curación protectora',
+      effect: 'Al curar a un aliado, aplica coraza durante 1 turno.'
     }
   },
   {
@@ -2982,8 +2990,8 @@ const PICTOS: Picto[] = [
       effect: '20% chance to gain Shell on Free Aim shot.'
     },
     es: {
-      name: 'Protecting Shots',
-      effect: '20% chance to gain Shell on Free Aim shot.'
+      name: 'Disparos protectores',
+      effect: 'Probabilidad del 20% de obtener coraza al disparar con apuntado libre.'
     }
   },
   {
@@ -3001,12 +3009,13 @@ const PICTOS: Picto[] = [
       effect: 'Healing Tints also apply Shell.'
     },
     es: {
-      name: 'Protecting Tint',
-      effect: 'Healing Tints also apply Shell.'
+      name: 'Tinte protector',
+      effect: 'Los tintes curativos también aplican coraza.'
     }
   },
   {
     id: 'quick-break',
+    level: 31,
     luminaPoints: 3,
     categories: ['break'],
     stats: {
@@ -3031,16 +3040,16 @@ const PICTOS: Picto[] = [
     stats: {
       health: 0,
       defense: 0,
-      speed: 34,
-      critRate: 0
+      speed: 0,
+      critRate: 34
     },
     en: {
       name: 'Random Defense',
       effect: 'Damage taken is randomly multiplied by a value between 50% and 200%.'
     },
     es: {
-      name: 'Random Defense',
-      effect: 'Damage taken is randomly multiplied by a value between 50% and 200%.'
+      name: 'Defensa al azar',
+      effect: 'El daño recibido se multiplica al azar por un valor entre 50% y 200%.'
     }
   },
   {
@@ -3115,8 +3124,8 @@ const PICTOS: Picto[] = [
       effect: 'Revive Tints also give 3 AP.'
     },
     es: {
-      name: 'Revive Tint Energy',
-      effect: 'Revive Tints also give 3 AP.'
+      name: 'Tinte revitalizante energizante',
+      effect: 'Los tintes revitalizantes también otorgan 3 PA.'
     }
   },
   {
@@ -3229,12 +3238,13 @@ const PICTOS: Picto[] = [
       effect: 'Apply Shell when falling below 50% Health.'
     },
     es: {
-      name: 'SOS Shell',
-      effect: 'Apply Shell when falling below 50% Health.'
+      name: 'Coraza de emergencia',
+      effect: 'Aplica coraza si tu vida cae por debajo del 50%.'
     }
   },
   {
     id: 'second-chance',
+    level: 31,
     luminaPoints: 40,
     categories: ['revive'],
     stats: {
@@ -3267,8 +3277,8 @@ const PICTOS: Picto[] = [
       effect: 'When Healing an ally, also Heal self for 50% of that value.'
     },
     es: {
-      name: 'Shared Care',
-      effect: 'When Healing an ally, also Heal self for 50% of that value.'
+      name: 'Cuidados compartidos',
+      effect: 'Al curar un aliado, también te curas un 50% del valor.'
     }
   },
   {
@@ -3286,8 +3296,8 @@ const PICTOS: Picto[] = [
       effect: 'Apply Shell on applying Rush.'
     },
     es: {
-      name: 'Shell On Rush',
-      effect: 'Apply Shell on applying Rush.'
+      name: 'Coraza en prisa',
+      effect: 'Al aplicar prisa, aplicas coraza.'
     }
   },
   {
@@ -3343,8 +3353,8 @@ const PICTOS: Picto[] = [
       effect: 'Healing Tints also add 2 Shields.'
     },
     es: {
-      name: 'Shielding Tint',
-      effect: 'Healing Tints also add 2 Shields.'
+      name: 'Tinte defensor',
+      effect: 'Los tintes curativos también otorgan 2 escudos.'
     }
   },
   {
@@ -3387,6 +3397,7 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'slowing-break',
+    level: 28,
     luminaPoints: 5,
     categories: ['slow', 'break'],
     stats: {
@@ -3400,8 +3411,8 @@ const PICTOS: Picto[] = [
       effect: 'Apply Slow on Break.'
     },
     es: {
-      name: 'Slowing Break',
-      effect: 'Apply Slow on Break.'
+      name: 'Ruptura ralentizadora',
+      effect: 'Aplicas lentitud al causar ruptura.'
     }
   },
   {
@@ -3425,6 +3436,7 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'solidifying',
+    level: 9,
     luminaPoints: 10,
     categories: ['shields'],
     stats: {
@@ -3438,8 +3450,8 @@ const PICTOS: Picto[] = [
       effect: "+2 Shields when the character's Health falls below 50%. Once per battle."
     },
     es: {
-      name: 'Solidifying',
-      effect: "+2 Shields when the character's Health falls below 50%. Once per battle."
+      name: 'Solidificación',
+      effect: '+2 escudos cuando la vida del personaje cae por debajo del 50%. Una vez por combate.'
     }
   },
   {
@@ -3506,20 +3518,21 @@ const PICTOS: Picto[] = [
     stats: {
       health: 0,
       defense: 35,
-      speed: 2,
-      critRate: 0
+      speed: 0,
+      critRate: 2
     },
     en: {
       name: 'Stun Boost',
       effect: '30% increased damage on Stunned targets.'
     },
     es: {
-      name: 'Stun Boost',
-      effect: '30% increased damage on Stunned targets.'
+      name: 'Aturdimiento potenciado',
+      effect: 'Daño +30% a objetivos aturdidos.'
     }
   },
   {
     id: 'survivor',
+    level: 21,
     luminaPoints: 20,
     categories: ['defensive'],
     stats: {
@@ -3533,8 +3546,8 @@ const PICTOS: Picto[] = [
       effect: 'Survive fatal damage with 1 Health. Once per battle.'
     },
     es: {
-      name: 'Survivor',
-      effect: 'Survive fatal damage with 1 Health. Once per battle.'
+      name: 'Sobreviviente',
+      effect: 'Sobrevive al daño letal con 1 PV. Una vez por combate.'
     }
   },
   {
@@ -3543,17 +3556,17 @@ const PICTOS: Picto[] = [
     categories: ['healing'],
     stats: {
       health: 0,
-      defense: 54,
-      speed: 11,
-      critRate: 0
+      defense: 0,
+      speed: 54,
+      critRate: 11
     },
     en: {
       name: 'Sweet Kill',
       effect: 'Recover 50% Health on killing an enemy.'
     },
     es: {
-      name: 'Sweet Kill',
-      effect: 'Recover 50% Health on killing an enemy.'
+      name: 'Dulzor de la muerte',
+      effect: 'Recuperas un 50% de la vida al matar a un enemigo.'
     }
   },
   {
@@ -3590,8 +3603,8 @@ const PICTOS: Picto[] = [
       effect: '10% increased damage while all allies are alive.'
     },
     es: {
-      name: 'Teamwork',
-      effect: '10% increased damage while all allies are alive.'
+      name: 'Trabajo en equipo',
+      effect: 'Daño +10% si todos los aliados están vivos.'
     }
   },
   {
@@ -3628,8 +3641,8 @@ const PICTOS: Picto[] = [
       effect: 'Energy Tints also apply Rush.'
     },
     es: {
-      name: 'Time Tint',
-      effect: 'Energy Tints also apply Rush.'
+      name: 'Tinte temporal',
+      effect: 'Los tintes energéticos también aplican prisa.'
     }
   },
   {
@@ -3638,17 +3651,17 @@ const PICTOS: Picto[] = [
     categories: ['freeAim', 'baseAttack'],
     stats: {
       health: 0,
-      defense: 21,
-      speed: 4,
-      critRate: 0
+      defense: 0,
+      speed: 651,
+      critRate: 14
     },
     en: {
       name: 'Versatile',
       effect: 'After a Free Aim hit, Base Attack damage is increased by 50% for 1 turn.'
     },
     es: {
-      name: 'Versatile',
-      effect: 'After a Free Aim hit, Base Attack damage is increased by 50% for 1 turn.'
+      name: 'Versátil',
+      effect: 'Tras impactar con apuntado libre, daño de ataque básico +50% durante 1 turno.'
     }
   },
   {
@@ -3676,17 +3689,17 @@ const PICTOS: Picto[] = [
     categories: ['ap', 'weakness'],
     stats: {
       health: 0,
-      defense: 162,
-      speed: 17,
-      critRate: 0
+      defense: 0,
+      speed: 162,
+      critRate: 17
     },
     en: {
       name: 'Weakness Gain',
       effect: "+1 AP on hitting an enemy's Weakness. Once per turn."
     },
     es: {
-      name: 'Weakness Gain',
-      effect: "+1 AP on hitting an enemy's Weakness. Once per turn."
+      name: 'Debilidad con premio',
+      effect: '+1 PA al impactar la debilidad de un enemigo. Una vez por turno.'
     }
   }
 ];

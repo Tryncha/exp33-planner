@@ -10,6 +10,7 @@ import { useTranslations } from 'next-intl';
 import Attributes from './attributes';
 import { useState } from 'react';
 import { PencilLine } from 'lucide-react';
+import { v4 as uuidv4 } from 'uuid';
 
 const Planner = () => {
   const t = useTranslations('Planner');
@@ -23,8 +24,7 @@ const Planner = () => {
     if (!buildExists) {
       const buildToSave = { ...build };
 
-      const buildCode = String(vault.length).padStart(2, '0');
-      buildToSave.id = `${buildToSave.characterId}-${buildCode}`;
+      buildToSave.id = uuidv4();
 
       addBuild(buildToSave);
     } else {

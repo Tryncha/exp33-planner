@@ -1,10 +1,9 @@
-import Image from 'next/image';
 import { getLuminaData } from '../lib/utils';
 import { Picto } from '../types';
 import { useModal } from '../context/modal-context';
 import { useBuild } from '../context/build-context';
 import { Plus, X } from 'lucide-react';
-import LuminasSelector from './modals/luminas-selector';
+import LuminasSelector from './luminas-selector/luminas-selector';
 import { useLocale } from 'next-intl';
 
 const LuminaInfo = ({ pictoData }: { pictoData: Picto }) => {

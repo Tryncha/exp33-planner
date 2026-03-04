@@ -1,14 +1,13 @@
 import { useBuild } from '@/src/context/build-context';
 import { Modal } from '@/src/context/modal-context';
 import SKILLS from '@/src/data/skills';
-import { MonocoMask, MonocoSkill, Skill, SkillFiltersType } from '@/src/types';
+import { MonocoSkill, Skill, SkillFiltersType } from '@/src/types';
 import Image from 'next/image';
 import Diamond from '../diamond';
-import { useLocale, useTranslations } from 'next-intl';
-import { BreakIcon, MonocoMaskIcon } from '../icons';
+import { useLocale } from 'next-intl';
+import { BreakIcon } from '../icons';
 import { useState } from 'react';
-import { MONOCO_MASKS } from '@/src/lib/constants';
-import SkillFilters from '../skill-filters';
+import SkillFilters from './skill-filters';
 
 const SkillOption = ({
   skillData,

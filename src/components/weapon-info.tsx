@@ -3,7 +3,7 @@ import { calcWeaponPower, getWeaponData } from '../lib/utils';
 import { useModal } from '../context/modal-context';
 import { useBuild } from '../context/build-context';
 import WeaponPassive from './weapon-passive';
-import WeaponSelector from './modals/weapon-selector';
+import WeaponSelector from './weapon-selector/weapon-selector';
 import { useLocale, useTranslations } from 'next-intl';
 import { ElementIcon } from './icons';
 

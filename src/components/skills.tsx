@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { useBuild } from '../context/build-context';
 import { getSkillData } from '../lib/utils';
 import { Skill } from '../types';
-import SkillsSelector from './modals/skills-selector';
+import SkillsSelector from './skills-selector/skills-selector';
 import { MouseEvent, useState } from 'react';
 import { useModal } from '../context/modal-context';
 import { X } from 'lucide-react';

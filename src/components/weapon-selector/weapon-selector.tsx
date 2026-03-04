@@ -2,7 +2,7 @@ import { useBuild } from '@/src/context/build-context';
 import { Modal } from '@/src/context/modal-context';
 import WEAPONS from '@/src/data/weapons';
 import { calcWeaponPower } from '@/src/lib/utils';
-import { AttributeId, Attributes, Weapon } from '@/src/types';
+import { AttributeId, Weapon } from '@/src/types';
 import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { ElementIcon } from '../icons';

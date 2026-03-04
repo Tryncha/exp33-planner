@@ -3,7 +3,7 @@ import { formatPictoStats, getPictoData } from '../lib/utils';
 import { Picto } from '../types';
 import { useModal } from '../context/modal-context';
 import { useBuild } from '../context/build-context';
-import PictosSelector from './modals/pictos-selector';
+import PictosSelector from './pictos-selector/pictos-selector';
 import { MouseEvent, useState } from 'react';
 import { X } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';

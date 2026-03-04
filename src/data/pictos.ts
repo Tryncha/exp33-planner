@@ -21,7 +21,8 @@ const PICTOS: Picto[] = [
     }
   },
   {
-    id: 'accelerating-last-stance',
+    id: 'accelerating-last-stand',
+    level: 6,
     luminaPoints: 3,
     categories: ['rush', 'solo'],
     stats: {
@@ -31,12 +32,12 @@ const PICTOS: Picto[] = [
       critRate: 0
     },
     en: {
-      name: 'Accelerating Last Stance',
+      name: 'Accelerating Last Stand',
       effect: 'Gain Rush if fighting alone.'
     },
     es: {
-      name: 'Accelerating Last Stance',
-      effect: 'Gain Rush if fighting alone.'
+      name: 'Resistencia final aceleradora',
+      effect: 'Obtienes prisa si peleas en solitario.'
     }
   },
   {
@@ -150,8 +151,8 @@ const PICTOS: Picto[] = [
       effect: 'Immune to Charm.'
     },
     es: {
-      name: 'Anti-Charm',
-      effect: 'Immune to Charm.'
+      name: 'Antidominación',
+      effect: 'Imnunidad a la dominación.'
     }
   },
   {
@@ -213,40 +214,42 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'attack-lifesteal',
+    level: 4,
     luminaPoints: 15,
     categories: ['baseAttack', 'healing'],
     stats: {
       health: 88,
       defense: 0,
       speed: 0,
-      critRate: 4
+      critRate: 8
     },
     en: {
       name: 'Attack Lifesteal',
       effect: 'Recover 15% Health on Base Attack.'
     },
     es: {
-      name: 'Attack Lifesteal',
-      effect: 'Recover 15% Health on Base Attack.'
+      name: 'Robo de vida agresivo',
+      effect: 'Recuperas un 15% de vida al efectuar un ataque básico.'
     }
   },
   {
     id: 'augmented-aim',
+    level: 5,
     luminaPoints: 3,
     categories: ['freeAim'],
     stats: {
       health: 0,
       defense: 0,
-      speed: 21,
-      critRate: 4
+      speed: 39,
+      critRate: 5
     },
     en: {
       name: 'Augmented Aim',
       effect: '50% increased Free Aim damage.'
     },
     es: {
-      name: 'Augmented Aim',
-      effect: '50% increased Free Aim damage.'
+      name: 'Puntería reforzada',
+      effect: 'Daño del apuntado libre +50%.'
     }
   },
   {
@@ -327,6 +330,7 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'augmented-first-strike',
+    level: 31,
     luminaPoints: 5,
     categories: ['damage'],
     stats: {
@@ -346,6 +350,7 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'auto-death',
+    level: 7,
     luminaPoints: 1,
     categories: ['death'],
     stats: {
@@ -359,8 +364,8 @@ const PICTOS: Picto[] = [
       effect: 'Kill self on battle start.'
     },
     es: {
-      name: 'Auto Death',
-      effect: 'Kill self on battle start.'
+      name: 'Muerte súbita',
+      effect: 'Mueres al inicio del combate.'
     }
   },
   {
@@ -384,6 +389,7 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'auto-regen',
+    level: 13,
     luminaPoints: 10,
     categories: ['healing'],
     stats: {
@@ -397,12 +403,13 @@ const PICTOS: Picto[] = [
       effect: 'Apply Regen for 3 turns on battle start.'
     },
     es: {
-      name: 'Auto Regen',
-      effect: 'Apply Regen for 3 turns on battle start.'
+      name: 'Regeneración automática',
+      effect: 'Aplica regeneración durante 3 turnos al inicio del combate.'
     }
   },
   {
     id: 'auto-rush',
+    level: 10,
     luminaPoints: 10,
     categories: ['rush'],
     stats: {
@@ -416,8 +423,8 @@ const PICTOS: Picto[] = [
       effect: 'Apply Rush for 3 turns on battle start.'
     },
     es: {
-      name: 'Auto Rush',
-      effect: 'Apply Rush for 3 turns on battle start.'
+      name: 'Prisa automática',
+      effect: 'Aplica prisa durante 3 turnos al inicio del combate.'
     }
   },
   {
@@ -479,6 +486,7 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'break-specialist',
+    level: 28,
     luminaPoints: 1,
     categories: ['break'],
     stats: {
@@ -492,8 +500,8 @@ const PICTOS: Picto[] = [
       effect: 'Break damage is increased by 50%, but base damage is reduced by 20%.'
     },
     es: {
-      name: 'Break Specialist',
-      effect: 'Break damage is increased by 50%, but base damage is reduced by 20%.'
+      name: 'Especialista en rupturas',
+      effect: 'Daño de ruptura +50%, pero daño básico -20%.'
     }
   },
   {
@@ -536,6 +544,7 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'breaking-burn',
+    level: 15,
     luminaPoints: 5,
     categories: ['break', 'burn'],
     stats: {
@@ -549,8 +558,8 @@ const PICTOS: Picto[] = [
       effect: '25% increased Break damage on Burning enemies.'
     },
     es: {
-      name: 'Breaking Burn',
-      effect: '25% increased Break damage on Burning enemies.'
+      name: 'Quemadura rupturista',
+      effect: 'Daño de ruptura +25% a enemigos que sufren quemadura.'
     }
   },
   {
@@ -574,7 +583,8 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'breaking-death',
-    luminaPoints: 0,
+    level: 29,
+    luminaPoints: 5,
     categories: ['break', 'death'],
     stats: {
       health: 0,
@@ -587,8 +597,8 @@ const PICTOS: Picto[] = [
       effect: "Fully charge enemy's Break Bar on death."
     },
     es: {
-      name: 'Breaking Death',
-      effect: "Fully charge enemy's Break Bar on death."
+      name: 'Muerte rupturista',
+      effect: 'Al morir, la barra de ruptura del enemigo se carga por completo.'
     }
   },
   {
@@ -612,6 +622,7 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'breaking-slow',
+    level: 15,
     luminaPoints: 5,
     categories: ['break', 'slow'],
     stats: {
@@ -625,8 +636,8 @@ const PICTOS: Picto[] = [
       effect: '25% increased Break damage against Slowed enemies.'
     },
     es: {
-      name: 'Breaking Slow',
-      effect: '25% increased Break damage against Slowed enemies.'
+      name: 'Lentitud rupturista',
+      effect: 'Daño de ruptura +15% contra enemigos afectados por lentitud.'
     }
   },
   {
@@ -670,6 +681,7 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'burning-death',
+    level: 28,
     luminaPoints: 5,
     categories: ['burn', 'death'],
     stats: {
@@ -683,12 +695,13 @@ const PICTOS: Picto[] = [
       effect: 'Apply 3 Burn to all enemies on Death.'
     },
     es: {
-      name: 'Burning Death',
-      effect: 'Apply 3 Burn to all enemies on Death.'
+      name: 'Muerte ardiente',
+      effect: 'Al morir, aplicas 3 acumulaciones de quemadura a todos los enemigos.'
     }
   },
   {
     id: 'burning-mark',
+    level: 4,
     luminaPoints: 15,
     categories: ['burn', 'mark'],
     stats: {
@@ -702,8 +715,8 @@ const PICTOS: Picto[] = [
       effect: 'Apply Burn on hitting a Marked enemy.'
     },
     es: {
-      name: 'Burning Mark',
-      effect: 'Apply Burn on hitting a Marked enemy.'
+      name: 'Marca ardiente',
+      effect: 'Aplicas quemadura al golpear a un enemigo marcado.'
     }
   },
   {
@@ -822,6 +835,7 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'charging-mark',
+    level: 25,
     luminaPoints: 10,
     categories: ['gradient', 'mark'],
     stats: {
@@ -835,8 +849,8 @@ const PICTOS: Picto[] = [
       effect: '+20% of a Gradient Charge on hitting a Marked target. Once per turn.'
     },
     es: {
-      name: 'Charging Mark',
-      effect: '+20% of a Gradient Charge on hitting a Marked target. Once per turn.'
+      name: 'Marca de carga',
+      effect: '+20% de una carga de gradiente al golpear un objetivo marcado. Una vez por turno.'
     }
   },
   {
@@ -1031,6 +1045,7 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'confident-fighter',
+    level: 15,
     luminaPoints: 15,
     categories: ['damage'],
     stats: {
@@ -1044,8 +1059,8 @@ const PICTOS: Picto[] = [
       effect: "Deal 30% more damage, but can't be healed."
     },
     es: {
-      name: 'Confident Fighter',
-      effect: "Deal 30% more damage, but can't be healed."
+      name: 'Lucha con confianza',
+      effect: 'Daño +30%, pero no puedes curarte.'
     }
   },
   {
@@ -1069,40 +1084,42 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'critical-burn',
+    level: 25,
     luminaPoints: 5,
     categories: ['criticalHits', 'burn'],
     stats: {
       health: 0,
       defense: 0,
-      speed: 413,
-      critRate: 27
+      speed: 434,
+      critRate: 28
     },
     en: {
       name: 'Critical Burn',
       effect: '25% increased Critical Chance on Burning enemies.'
     },
     es: {
-      name: 'Critical Burn',
-      effect: '25% increased Critical Chance on Burning enemies.'
+      name: 'Quemadura crítica',
+      effect: 'Probabilidad de crítico +25% contra enemigos que sufren quemadura.'
     }
   },
   {
     id: 'critical-moment',
+    level: 5,
     luminaPoints: 5,
     categories: ['criticalHits'],
     stats: {
       health: 0,
       defense: 0,
       speed: 26,
-      critRate: 7
+      critRate: 9
     },
     en: {
       name: 'Critical Moment',
       effect: '50% increased Critical Chance if Health is below 30%.'
     },
     es: {
-      name: 'Critical Moment',
-      effect: '50% increased Critical Chance if Health is below 30%.'
+      name: 'Momento crítico',
+      effect: 'Probabilidad de crítico +50% si tu vida está por debajo del 30%.'
     }
   },
   {
@@ -1221,6 +1238,7 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'defensive-mode',
+    level: 7,
     luminaPoints: 1,
     categories: ['defensive'],
     stats: {
@@ -1234,12 +1252,13 @@ const PICTOS: Picto[] = [
       effect: 'On receiving damage, consume 1 AP to take 30% less damage, if possible.'
     },
     es: {
-      name: 'Defensive Mode',
-      effect: 'On receiving damage, consume 1 AP to take 30% less damage, if possible.'
+      name: 'Modo defensivo',
+      effect: 'Al recibir daño, consumes 1 PA para recibir un 30% menos de daño, de ser posible.'
     }
   },
   {
     id: 'dodger',
+    level: 1,
     luminaPoints: 1,
     categories: ['ap', 'dodge'],
     stats: {
@@ -1253,8 +1272,8 @@ const PICTOS: Picto[] = [
       effect: 'Gain 1 AP on Perfect Dodge. Once per turn.'
     },
     es: {
-      name: 'Dodger',
-      effect: 'Gain 1 AP on Perfect Dodge. Once per turn.'
+      name: 'Evasión experta',
+      effect: 'Obtienes 1 PA al hacer una evasión perfecta. Una vez por turno.'
     }
   },
   {
@@ -1272,12 +1291,13 @@ const PICTOS: Picto[] = [
       effect: 'On applying a Burn stack, apply a second one.'
     },
     es: {
-      name: 'Double Burn',
-      effect: 'On applying a Burn stack, apply a second one.'
+      name: 'Quemadura doble.',
+      effect: 'Al aplicar una acumulación de qeumadura, aplicas una segunda.'
     }
   },
   {
     id: 'double-mark',
+    level: 13,
     luminaPoints: 20,
     categories: ['mark'],
     stats: {
@@ -1291,12 +1311,13 @@ const PICTOS: Picto[] = [
       effect: 'Mark requires 1 more hit to be removed.'
     },
     es: {
-      name: 'Double Mark',
-      effect: 'Mark requires 1 more hit to be removed.'
+      name: 'Marca doble',
+      effect: 'Se requiere 1 golpe más para eliminar una marca.'
     }
   },
   {
     id: 'draining-cleanse',
+    level: 20,
     luminaPoints: 15,
     categories: ['statusEffect'],
     stats: {
@@ -1310,8 +1331,8 @@ const PICTOS: Picto[] = [
       effect: 'Consume 1 AP to prevent Status Effects application, if possible.'
     },
     es: {
-      name: 'Draining Cleanse',
-      effect: 'Consume 1 AP to prevent Status Effects application, if possible.'
+      name: 'Purificación drenadora',
+      effect: 'Si es posible, consumes 1 PA para impredir la aplicación de alteraciones de estado.'
     }
   },
   {
@@ -1393,6 +1414,7 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'empowering-dodge',
+    level: 15,
     luminaPoints: 5,
     categories: ['damage', 'dodge'],
     stats: {
@@ -1406,12 +1428,13 @@ const PICTOS: Picto[] = [
       effect: '5% increased damage for each consecutive successful Dodge. Can stack up to 10 times.'
     },
     es: {
-      name: 'Empowering Dodge',
-      effect: '5% increased damage for each consecutive successful Dodge. Can stack up to 10 times.'
+      name: 'Evasión potenciadora',
+      effect: 'Daño +5% por cada evasión consecutiva. Se acumula hasta 10 veces.'
     }
   },
   {
     id: 'empowering-last-stand',
+    level: 6,
     luminaPoints: 3,
     categories: ['powerful', 'solo'],
     stats: {
@@ -1425,8 +1448,8 @@ const PICTOS: Picto[] = [
       effect: 'Gain Powerful if fighting alone.'
     },
     es: {
-      name: 'Empowering Last Stand',
-      effect: 'Gain Powerful if fighting alone.'
+      name: 'Resistencia final potenciadora',
+      effect: 'Obtienes fortalecimiento si peleas en solitario.'
     }
   },
   {
@@ -1548,6 +1571,7 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'energising-burn',
+    level: 22,
     luminaPoints: 10,
     categories: ['ap', 'burn'],
     stats: {
@@ -1561,12 +1585,13 @@ const PICTOS: Picto[] = [
       effect: '+1 AP on applying Burn. Once per turn.'
     },
     es: {
-      name: 'Energising Burn',
-      effect: '+1 AP on applying Burn. Once per turn.'
+      name: 'Quemadura energizante',
+      effect: '+1 PA al aplicar quemadura. Una vez por turno.'
     }
   },
   {
     id: 'energising-cleanse',
+    level: 15,
     luminaPoints: 10,
     categories: ['statusEffect', 'ap'],
     stats: {
@@ -1580,12 +1605,13 @@ const PICTOS: Picto[] = [
       effect: 'Dispel the first negative Status Effect received and gain 2 AP.'
     },
     es: {
-      name: 'Energising Cleanse',
-      effect: 'Dispel the first negative Status Effect received and gain 2 AP.'
+      name: 'Purificación energizante',
+      effect: 'Disipa la primera alteración de estado negativa recibida y obtienes 2 PA.'
     }
   },
   {
     id: 'energising-death',
+    level: 21,
     luminaPoints: 5,
     categories: ['death', 'ap'],
     stats: {
@@ -1599,12 +1625,13 @@ const PICTOS: Picto[] = [
       effect: 'On death, +4 AP to allies.'
     },
     es: {
-      name: 'Energising Death',
-      effect: 'On death, +4 AP to allies.'
+      name: 'Muerte energizante',
+      effect: 'Al morir, los aliados obtienen +4 PA.'
     }
   },
   {
     id: 'energising-gradient',
+    level: 17,
     luminaPoints: 10,
     categories: ['ap', 'gradient'],
     stats: {
@@ -1618,8 +1645,8 @@ const PICTOS: Picto[] = [
       effect: '+1 AP per Gradient Charge consumed.'
     },
     es: {
-      name: 'Energising Gradient',
-      effect: '+1 AP per Gradient Charge consumed.'
+      name: 'Gradiente energizante',
+      effect: '+1 PA por carga de gradiente consumida.'
     }
   },
   {
@@ -1700,6 +1727,7 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'energising-powerful',
+    level: 16,
     luminaPoints: 10,
     categories: ['ap', 'powerful'],
     stats: {
@@ -1713,12 +1741,13 @@ const PICTOS: Picto[] = [
       effect: 'Give 2 AP on applying Powerful.'
     },
     es: {
-      name: 'Energising Powerful',
-      effect: 'Give 2 AP on applying Powerful.'
+      name: 'Fortalecimiento energizante',
+      effect: 'Otorgas 2 PA al aplicar fortalecimiento.'
     }
   },
   {
     id: 'energising-revive',
+    level: 8,
     luminaPoints: 5,
     categories: ['ap', 'revive'],
     stats: {
@@ -1732,12 +1761,13 @@ const PICTOS: Picto[] = [
       effect: '+3 AP to all allies when revived.'
     },
     es: {
-      name: 'Energising Revive',
-      effect: '+3 AP to all allies when revived.'
+      name: 'Revitalización energizante',
+      effect: '+3 PA a todos los aliados tras revivir.'
     }
   },
   {
     id: 'energising-rush',
+    level: 22,
     luminaPoints: 10,
     categories: ['ap', 'rush'],
     stats: {
@@ -1751,8 +1781,8 @@ const PICTOS: Picto[] = [
       effect: 'Give 2 AP on applying Rush.'
     },
     es: {
-      name: 'Energising Rush',
-      effect: 'Give 2 AP on applying Rush.'
+      name: 'Prisa energizante',
+      effect: 'Otorgas 2 PA al aplicar prisa.'
     }
   },
   {
@@ -1776,7 +1806,7 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'energising-shots',
-    luminaPoints: 0,
+    luminaPoints: 10,
     categories: ['ap', 'freeAim'],
     stats: {
       health: 0,
@@ -1795,6 +1825,7 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'energising-start-i',
+    level: 6,
     luminaPoints: 5,
     categories: ['ap'],
     stats: {
@@ -1808,12 +1839,13 @@ const PICTOS: Picto[] = [
       effect: '+1 AP on battle start.'
     },
     es: {
-      name: 'Energising Start I',
-      effect: '+1 AP on battle start.'
+      name: 'Inicio energizante I',
+      effect: '+1 PA al inicio del combate.'
     }
   },
   {
     id: 'energising-start-ii',
+    level: 4,
     luminaPoints: 10,
     categories: ['ap'],
     stats: {
@@ -1827,12 +1859,13 @@ const PICTOS: Picto[] = [
       effect: '+1 AP on battle start.'
     },
     es: {
-      name: 'Energising Start II',
-      effect: '+1 AP on battle start.'
+      name: 'Inicio energizante II',
+      effect: '+1 PA al inicio del combate.'
     }
   },
   {
     id: 'energising-start-iii',
+    level: 6,
     luminaPoints: 15,
     categories: ['ap'],
     stats: {
@@ -1846,12 +1879,13 @@ const PICTOS: Picto[] = [
       effect: '+1 AP on battle start.'
     },
     es: {
-      name: 'Energising Start III',
-      effect: '+1 AP on battle start.'
+      name: 'Inicio energizante III',
+      effect: '+1 PA al inicio del combate.'
     }
   },
   {
     id: 'energising-start-iv',
+    level: 8,
     luminaPoints: 20,
     categories: ['ap'],
     stats: {
@@ -1865,8 +1899,8 @@ const PICTOS: Picto[] = [
       effect: '+1 AP on battle start.'
     },
     es: {
-      name: 'Energising Start IV',
-      effect: '+1 AP on battle start.'
+      name: 'Inicio energizante IV',
+      effect: '+1 PA al inicio del combate.'
     }
   },
   {
@@ -1947,6 +1981,7 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'enfeebling-mark',
+    level: 7,
     luminaPoints: 10,
     categories: ['mark'],
     stats: {
@@ -1960,12 +1995,13 @@ const PICTOS: Picto[] = [
       effect: 'Marked targets deal 30% less damage.'
     },
     es: {
-      name: 'Enfeebling Mark',
-      effect: 'Marked targets deal 30% less damage.'
+      name: 'Marca debilitante',
+      effect: 'Los objetivos marcados infligen 30% menos de daño.'
     }
   },
   {
     id: 'exhausting-power',
+    level: 8,
     luminaPoints: 2,
     categories: ['damage'],
     stats: {
@@ -1979,8 +2015,8 @@ const PICTOS: Picto[] = [
       effect: '50% increased damage when Exhausted.'
     },
     es: {
-      name: 'Exhausting Power',
-      effect: '50% increased damage when Exhausted.'
+      name: 'Poder agotador',
+      effect: '+50% de daño si se sufre agotamiento.'
     }
   },
   {
@@ -2024,6 +2060,7 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'faster-than-strong',
+    level: 16,
     luminaPoints: 10,
     categories: ['special'],
     stats: {
@@ -2037,46 +2074,48 @@ const PICTOS: Picto[] = [
       effect: 'Always play twice in a row, but deal 50% less damage.'
     },
     es: {
-      name: 'Faster Than Strong',
-      effect: 'Always play twice in a row, but deal 50% less damage.'
+      name: 'Más veloz que fuerte',
+      effect: 'Siempre actúas 2 veces seguidas, pero infliges la mitad del daño.'
     }
   },
   {
     id: 'first-offensive',
+    level: 10,
     luminaPoints: 5,
     categories: ['damage'],
     stats: {
       health: 0,
-      defense: 75,
-      speed: 13,
-      critRate: 0
+      defense: 0,
+      speed: 78,
+      critRate: 13
     },
     en: {
       name: 'First Offensive',
       effect: 'First hit dealt and taken deals 50% more damage.'
     },
     es: {
-      name: 'First Offensive',
-      effect: 'First hit dealt and taken deals 50% more damage.'
+      name: 'Primera ofensiva',
+      effect: 'El primer golpe asestado y recibido inflige un 50% más de daño.'
     }
   },
   {
     id: 'first-strike',
+    level: 7,
     luminaPoints: 10,
     categories: ['special'],
     stats: {
       health: 0,
-      defense: 41,
-      speed: 10,
-      critRate: 0
+      defense: 0,
+      speed: 41,
+      critRate: 10
     },
     en: {
       name: 'First Strike',
       effect: 'Play first.'
     },
     es: {
-      name: 'First Strike',
-      effect: 'Play first.'
+      name: 'Primer ataque',
+      effect: 'Actúa primero.'
     }
   },
   {
@@ -2101,6 +2140,7 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'full-strength',
+    level: 16,
     luminaPoints: 15,
     categories: ['damage'],
     stats: {
@@ -2114,8 +2154,8 @@ const PICTOS: Picto[] = [
       effect: '25% increased damage on full Health.'
     },
     es: {
-      name: 'Full Strength',
-      effect: '25% increased damage on full Health.'
+      name: 'Fuerza total',
+      effect: 'Daño +25% si tienes la vida al máximo.'
     }
   },
   {
@@ -2140,7 +2180,7 @@ const PICTOS: Picto[] = [
   {
     id: 'gradient-break',
     level: 25,
-    luminaPoints: 0,
+    luminaPoints: 5,
     categories: ['gradient', 'break'],
     stats: {
       health: 0,
@@ -2159,25 +2199,27 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'gradient-breaker',
+    level: 28,
     luminaPoints: 5,
     categories: ['break', 'gradient'],
     stats: {
       health: 0,
-      defense: 546,
-      speed: 32,
-      critRate: 0
+      defense: 0,
+      speed: 546,
+      critRate: 32
     },
     en: {
       name: 'Gradient Breaker',
       effect: '50% increased Break damage with Gradient Attacks.'
     },
     es: {
-      name: 'Gradient Breaker',
-      effect: '50% increased Break damage with Gradient Attacks.'
+      name: 'Rompegradientes',
+      effect: 'Daño de ruptura +50% con ataques de gradiente.'
     }
   },
   {
     id: 'gradient-fighter',
+    level: 16,
     luminaPoints: 5,
     categories: ['damage', 'gradient'],
     stats: {
@@ -2191,12 +2233,13 @@ const PICTOS: Picto[] = [
       effect: '25% increased damage with Gradient Attacks.'
     },
     es: {
-      name: 'Gradient Fighter',
-      effect: '25% increased damage with Gradient Attacks.'
+      name: 'Guerrero de gradiente',
+      effect: 'Daño con ataques de gradiente +25%.'
     }
   },
   {
     id: 'greater-defenceless',
+    level: 21,
     luminaPoints: 15,
     categories: ['defenceless'],
     stats: {
@@ -2210,8 +2253,8 @@ const PICTOS: Picto[] = [
       effect: '+15% to Defenceless damage amplification.'
     },
     es: {
-      name: 'Greater Defenceless',
-      effect: '+15% to Defenceless damage amplification.'
+      name: 'Fragilidad mayor',
+      effect: 'Amplificación de daño de fragilidad +15%.'
     }
   },
   {
@@ -2221,16 +2264,16 @@ const PICTOS: Picto[] = [
     stats: {
       health: 0,
       defense: 59,
-      speed: 13,
-      critRate: 0
+      speed: 0,
+      critRate: 13
     },
     en: {
       name: 'Greater Powerful',
       effect: '+15% to Powerful damage increase.'
     },
     es: {
-      name: 'Greater Powerful',
-      effect: '+15% to Powerful damage increase.'
+      name: 'Fortalecimiento mayor',
+      effect: 'Daño fortalecido +15%.'
     }
   },
   {
@@ -2254,21 +2297,22 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'greater-rush',
+    level: 21,
     luminaPoints: 10,
     categories: ['rush'],
     stats: {
       health: 0,
-      defense: 439,
-      speed: 12,
-      critRate: 0
+      defense: 0,
+      speed: 439,
+      critRate: 12
     },
     en: {
       name: 'Greater Rush',
       effect: '+25% to Rush Speed increase.'
     },
     es: {
-      name: 'Greater Rush',
-      effect: '+25% to Rush Speed increase.'
+      name: 'Prisa mayor',
+      effect: 'Velocidad de prisa +25%.'
     }
   },
   {
@@ -2292,6 +2336,7 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'greater-slow',
+    level: 20,
     luminaPoints: 15,
     categories: ['slow'],
     stats: {
@@ -2305,8 +2350,8 @@ const PICTOS: Picto[] = [
       effect: '+10% to Slow Speed reduction.'
     },
     es: {
-      name: 'Greater Slow',
-      effect: '+10% to Slow Speed reduction.'
+      name: 'Lentitud mayor',
+      effect: 'Reducción de velocidad de lentitud +15%.'
     }
   },
   {
@@ -2349,25 +2394,27 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'healing-death',
+    level: 10,
     luminaPoints: 5,
     categories: ['death', 'healing'],
     stats: {
       health: 0,
-      defense: 78,
-      speed: 13,
-      critRate: 0
+      defense: 0,
+      speed: 78,
+      critRate: 13
     },
     en: {
       name: 'Healing Death',
       effect: 'On death, the rest of the Expedition recover all Health.'
     },
     es: {
-      name: 'Healing Death',
-      effect: 'On death, the rest of the Expedition recover all Health.'
+      name: 'Muerte curativa',
+      effect: 'Al morir, el resto de la expedición recupera toda la vida.'
     }
   },
   {
     id: 'healing-fire',
+    level: 13,
     luminaPoints: 10,
     categories: ['healing', 'burn'],
     stats: {
@@ -2381,12 +2428,13 @@ const PICTOS: Picto[] = [
       effect: 'Recover 25% Health when attacking a Burning target. Once per turn.'
     },
     es: {
-      name: 'Healing Fire',
-      effect: 'Recover 25% Health when attacking a Burning target. Once per turn.'
+      name: 'Fuega curativo',
+      effect: 'Recuperas un 25% de vida al atacar un objetivo con quemadura. Una vez por turno.'
     }
   },
   {
     id: 'healing-mark',
+    level: 5,
     luminaPoints: 20,
     categories: ['healing', 'mark'],
     stats: {
@@ -2400,8 +2448,8 @@ const PICTOS: Picto[] = [
       effect: 'Recover 25% Health on hitting a Marked enemy. Once per turn.'
     },
     es: {
-      name: 'Healing Mark',
-      effect: 'Recover 25% Health on hitting a Marked enemy. Once per turn.'
+      name: 'Marca curativa',
+      effect: 'Recuperas un 25% de la vida al golpear a un enemigo marcado. Una vez por turno.'
     }
   },
   {
@@ -2482,40 +2530,42 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'immaculate',
+    level: 12,
     luminaPoints: 10,
     categories: ['damage'],
     stats: {
       health: 0,
-      defense: 103,
-      speed: 15,
-      critRate: 0
+      defense: 0,
+      speed: 103,
+      critRate: 15
     },
     en: {
       name: 'Immaculate',
       effect: '30% increased damage until a hit is received.'
     },
     es: {
-      name: 'Immaculate',
-      effect: '30% increased damage until a hit is received.'
+      name: 'Impecable',
+      effect: 'Daño +30% hasta que recibas un golpe.'
     }
   },
   {
     id: 'in-medias-res',
+    level: 23,
     luminaPoints: 10,
     categories: ['shields'],
     stats: {
       health: 0,
       defense: 1310,
-      speed: 13,
-      critRate: 0
+      speed: 0,
+      critRate: 13
     },
     en: {
       name: 'In Medias Res',
       effect: '+3 Shields on Battle Start, but max Health is halved.'
     },
     es: {
-      name: 'In Medias Res',
-      effect: '+3 Shields on Battle Start, but max Health is halved.'
+      name: 'In medias res',
+      effect: '+3 escudos al inicio del combate, pero tu vida máxima se reduce a la mitad.'
     }
   },
   {
@@ -2539,6 +2589,7 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'last-stand-critical',
+    level: 6,
     luminaPoints: 3,
     categories: ['criticalHits', 'solo'],
     stats: {
@@ -2552,12 +2603,13 @@ const PICTOS: Picto[] = [
       effect: '100% Critical Chance while fighting alone.'
     },
     es: {
-      name: 'Last Stand Critical',
-      effect: '100% Critical Chance while fighting alone.'
+      name: 'Resistencia final crítica',
+      effect: 'Probabilidad de crítico del 100% si peleas en solitario.'
     }
   },
   {
     id: 'longer-burn',
+    level: 28,
     luminaPoints: 15,
     categories: ['burn'],
     stats: {
@@ -2571,8 +2623,8 @@ const PICTOS: Picto[] = [
       effect: 'Burn duration is increased by 2.'
     },
     es: {
-      name: 'Longer Burn',
-      effect: 'Burn duration is increased by 2.'
+      name: 'Quemadura prolongada',
+      effect: 'La duración de quemadura aumenta en 2 turnos.'
     }
   },
   {
@@ -2590,12 +2642,13 @@ const PICTOS: Picto[] = [
       effect: 'On applying Powerful, its duration is increased by 2.'
     },
     es: {
-      name: 'Longer Powerful',
-      effect: 'On applying Powerful, its duration is increased by 2.'
+      name: 'Fortalecimiento prolongado',
+      effect: 'Al aplicar fortalecimiento, su duración aumenta en 2.'
     }
   },
   {
     id: 'longer-rush',
+    level: 15,
     luminaPoints: 10,
     categories: ['rush'],
     stats: {
@@ -2609,8 +2662,8 @@ const PICTOS: Picto[] = [
       effect: 'On applying Rush, its duration is increased by 2.'
     },
     es: {
-      name: 'Longer Rush',
-      effect: 'On applying Rush, its duration is increased by 2.'
+      name: 'Prisa prolongada',
+      effect: 'Al aplicar prisa, su duración aumenta en 2.'
     }
   },
   {
@@ -2673,6 +2726,7 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'painted-power',
+    level: 16,
     luminaPoints: 5,
     categories: ['special'],
     stats: {
@@ -2686,8 +2740,8 @@ const PICTOS: Picto[] = [
       effect: 'Damage can exceed 9,999.'
     },
     es: {
-      name: 'Painted Power',
-      effect: 'Damage can exceed 9,999.'
+      name: 'Poder de la pintura',
+      effect: 'El daño puede exceder 9999.'
     }
   },
   {
@@ -2819,27 +2873,28 @@ const PICTOS: Picto[] = [
       effect: 'Apply Powerful on applying Shell.'
     },
     es: {
-      name: 'Powerful On Shell',
-      effect: 'Apply Powerful on applying Shell.'
+      name: 'Fortalecimiento en coraza',
+      effect: 'Al aplicar coraza, aplicas fortalecimiento.'
     }
   },
   {
     id: 'powerful-revive',
+    level: 28,
     luminaPoints: 3,
     categories: ['powerful', 'revive'],
     stats: {
       health: 0,
-      defense: 546,
-      speed: 32,
-      critRate: 0
+      defense: 0,
+      speed: 546,
+      critRate: 32
     },
     en: {
       name: 'Powerful Revive',
       effect: 'Apply Powerful for 3 turns when revived.'
     },
     es: {
-      name: 'Powerful Revive',
-      effect: 'Apply Powerful for 3 turns when revived.'
+      name: 'Revitalización potente',
+      effect: 'Aplica fortalecimiento durante 3 turnos tras revivir.'
     }
   },
   {
@@ -2920,12 +2975,13 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'protecting-death',
+    level: 13,
     luminaPoints: 5,
     categories: ['death', 'shell'],
     stats: {
-      health: 599,
+      health: 630,
       defense: 0,
-      speed: 118,
+      speed: 124,
       critRate: 0
     },
     en: {
@@ -2933,8 +2989,8 @@ const PICTOS: Picto[] = [
       effect: 'On death, allies gain Shell.'
     },
     es: {
-      name: 'Protecting Death',
-      effect: 'On death, allies gain Shell.'
+      name: 'Muerte protectora',
+      effect: 'Al morir, los aliados obtienen coraza.'
     }
   },
   {
@@ -2958,6 +3014,7 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'protecting-last-stand',
+    level: 6,
     luminaPoints: 3,
     categories: ['shell', 'solo'],
     stats: {
@@ -2971,8 +3028,8 @@ const PICTOS: Picto[] = [
       effect: 'Gain Shell if fighting alone.'
     },
     es: {
-      name: 'Protecting Last Stand',
-      effect: 'Gain Shell if fighting alone.'
+      name: 'Resistencia final protectora',
+      effect: 'Obtienes coraza si peleas en solitario.'
     }
   },
   {
@@ -3092,21 +3149,22 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'revive-paradox',
+    level: 11,
     luminaPoints: 5,
     categories: ['revive'],
     stats: {
       health: 0,
-      defense: 92,
-      speed: 14,
-      critRate: 0
+      defense: 0,
+      speed: 92,
+      critRate: 14
     },
     en: {
       name: 'Revive Paradox',
       effect: 'Play immediately when revived.'
     },
     es: {
-      name: 'Revive Paradox',
-      effect: 'Play immediately when revived.'
+      name: 'Paradoja de revitalización',
+      effect: 'Actúas de inmediato tras revivir.'
     }
   },
   {
@@ -3130,6 +3188,7 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'rewarding-mark',
+    level: 3,
     luminaPoints: 5,
     categories: ['ap', 'mark'],
     stats: {
@@ -3143,31 +3202,33 @@ const PICTOS: Picto[] = [
       effect: '+2 AP on dealing damage to a Marked target. Once per turn.'
     },
     es: {
-      name: 'Rewarding Mark',
-      effect: '+2 AP on dealing damage to a Marked target. Once per turn.'
+      name: 'Marca gratificante',
+      effect: '+2 PA al dañar a un objetivo marcado. Una vez por turno.'
     }
   },
   {
     id: 'roulette',
+    level: 28,
     luminaPoints: 5,
     categories: ['damage'],
     stats: {
       health: 0,
-      defense: 34,
-      speed: 9,
-      critRate: 0
+      defense: 1501,
+      speed: 0,
+      critRate: 32
     },
     en: {
       name: 'Roulette',
       effect: 'Every hit has a 50% chance to deal either 50% or 200% of its damage.'
     },
     es: {
-      name: 'Roulette',
-      effect: 'Every hit has a 50% chance to deal either 50% or 200% of its damage.'
+      name: 'Ruleta',
+      effect: 'Cada golpe tiene una probabilidad del 50% de infligir un 50% o un 200% de daño.'
     }
   },
   {
     id: 'rush-on-powerful',
+    level: 31,
     luminaPoints: 10,
     categories: ['rush', 'powerful'],
     stats: {
@@ -3187,31 +3248,33 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'sos-power',
+    level: 7,
     luminaPoints: 5,
     categories: ['powerful'],
     stats: {
       health: 0,
-      defense: 43,
-      speed: 10,
-      critRate: 0
+      defense: 0,
+      speed: 43,
+      critRate: 10
     },
     en: {
       name: 'SOS Power',
       effect: 'Apply Powerful when falling below 50% Health.'
     },
     es: {
-      name: 'SOS Power',
-      effect: 'Apply Powerful when falling below 50% Health.'
+      name: 'Poder de emergencia',
+      effect: 'Aplica fortalecimiento si tu vida cae por debajo del 50%'
     }
   },
   {
     id: 'sos-rush',
+    level: 14,
     luminaPoints: 5,
     categories: ['rush'],
     stats: {
-      health: 288,
-      defense: 142,
-      speed: 0,
+      health: 0,
+      defense: 288,
+      speed: 142,
       critRate: 0
     },
     en: {
@@ -3219,8 +3282,8 @@ const PICTOS: Picto[] = [
       effect: 'Apply Rush when falling below 50% Health.'
     },
     es: {
-      name: 'SOS Rush',
-      effect: 'Apply Rush when falling below 50% Health.'
+      name: 'Prisa de emergencia',
+      effect: 'Aplica prisa si tu vida cae por debajo del 50%'
     }
   },
   {
@@ -3321,6 +3384,7 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'shielding-death',
+    level: 22,
     luminaPoints: 10,
     categories: ['death', 'shields'],
     stats: {
@@ -3334,8 +3398,8 @@ const PICTOS: Picto[] = [
       effect: 'On death, allies gain 3 Shield points.'
     },
     es: {
-      name: 'Shielding Death',
-      effect: 'On death, allies gain 3 Shield points.'
+      name: 'Muerte defensora',
+      effect: 'Al morir, los aliados obtienen 3 escudos.'
     }
   },
   {
@@ -3421,17 +3485,17 @@ const PICTOS: Picto[] = [
     categories: ['freeAim'],
     stats: {
       health: 0,
-      defense: 552,
-      speed: 13,
-      critRate: 0
+      defense: 0,
+      speed: 552,
+      critRate: 13
     },
     en: {
       name: 'Sniper',
       effect: 'First Free Aim shot each turn deals 200% increased damage and can Break.'
     },
     es: {
-      name: 'Sniper',
-      effect: 'First Free Aim shot each turn deals 200% increased damage and can Break.'
+      name: 'Francotirador',
+      effect: 'El primer disparo con apuntado libre en cada turno inflige +200% de daño y puede causar ruptura.'
     }
   },
   {
@@ -3456,6 +3520,7 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'solo-fighter',
+    level: 6,
     luminaPoints: 1,
     categories: ['damage', 'solo'],
     stats: {
@@ -3469,8 +3534,8 @@ const PICTOS: Picto[] = [
       effect: 'Deal 50% more damage if fighting alone.'
     },
     es: {
-      name: 'Solo Fighter',
-      effect: 'Deal 50% more damage if fighting alone.'
+      name: 'Lucha en solitario',
+      effect: 'Daño +50% si peleas en solitario.'
     }
   },
   {
@@ -3494,21 +3559,22 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'stay-marked',
+    level: 28,
     luminaPoints: 10,
     categories: ['mark'],
     stats: {
       health: 0,
-      defense: 201,
-      speed: 12,
-      critRate: 0
+      defense: 0,
+      speed: 675,
+      critRate: 22
     },
     en: {
       name: 'Stay Marked',
       effect: '50% chance to apply Mark when attacking a Marked target.'
     },
     es: {
-      name: 'Stay Marked',
-      effect: '50% chance to apply Mark when attacking a Marked target.'
+      name: 'Marca permanente',
+      effect: 'Probabilidad del 50% de aplicar marca al atacar a un objetivo marcado.'
     }
   },
   {
@@ -3571,21 +3637,22 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'tainted',
-    luminaPoints: 0,
+    level: 20,
+    luminaPoints: 3,
     categories: ['damage', 'statusEffect'],
     stats: {
       health: 0,
       defense: 1022,
-      speed: 12,
-      critRate: 0
+      speed: 0,
+      critRate: 12
     },
     en: {
       name: 'Tainted',
       effect: '15% increased damage for each Status Effect on self.'
     },
     es: {
-      name: 'Tainted',
-      effect: '15% increased damage for each Status Effect on self.'
+      name: 'Impureza',
+      effect: 'Daño +15% por cada alteración de estado que tengas.'
     }
   },
   {
@@ -3666,21 +3733,22 @@ const PICTOS: Picto[] = [
   },
   {
     id: 'warming-up',
+    level: 15,
     luminaPoints: 15,
     categories: ['damage'],
     stats: {
       health: 1166,
       defense: 0,
-      speed: 9,
-      critRate: 0
+      speed: 0,
+      critRate: 9
     },
     en: {
       name: 'Warming Up',
       effect: '5% increased damage per turn. Can stack up to 5 turns.'
     },
     es: {
-      name: 'Warming Up',
-      effect: '5% increased damage per turn. Can stack up to 5 turns.'
+      name: 'Precalentamiento',
+      effect: 'Daño +5% por turno. Se acumula hasta 5 veces.'
     }
   },
   {

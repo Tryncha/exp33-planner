@@ -24,18 +24,18 @@ const PictoOption = ({
   return (
     <div
       onClick={onClick}
-      className={`${isEquipped ? 'bg-taupe-700 hover:bg-taupe-600' : 'hover:bg-taupe-800'} flex h-30 w-72 flex-col gap-2 border border-taupe-700 px-4 py-2 hover:cursor-pointer`}
+      className={`${isEquipped ? 'bg-taupe-700 hover:bg-taupe-600' : 'hover:bg-taupe-800'} flex h-30 w-72 flex-col justify-around gap-2 border border-taupe-700 px-4 py-2 hover:cursor-pointer`}
     >
       <div className="flex items-center justify-between gap-2">
         <Image
           src={`/pictos/${pictoData.id}.png`}
           alt={`${pictoData[locale].name} Picto`}
-          width={32}
-          height={32}
+          width={28}
+          height={28}
         />
         <div className="flex flex-1 flex-col items-center">
-          <h2 className="font-semibold">{pictoData[locale].name}</h2>
-          <span className="text-xs">
+          <h2 className="text-center text-base/5 font-semibold">{pictoData[locale].name}</h2>
+          <span className="mt-0.5 text-center text-xs">
             {formatPictoStats(pictoData.stats, {
               speed: t('speed'),
               critRate: t('critRate'),
@@ -44,9 +44,9 @@ const PictoOption = ({
             })}
           </span>
         </div>
-        <span className="text-lg font-semibold">{pictoData.luminaPoints}</span>
+        <span className="w-7 text-center text-lg font-semibold">{pictoData.luminaPoints}</span>
       </div>
-      <span className="flex flex-1 items-center justify-center text-xs">{pictoData[locale].effect}</span>
+      <p className="text-center text-xs">{pictoData[locale].effect}</p>
     </div>
   );
 };
@@ -127,7 +127,7 @@ const PictosSelector = ({
       className="flex gap-2 rounded-xs bg-taupe-900 p-4"
     >
       {/* Left column */}
-      <section className="3xl:w-73 flex h-fit w-61 flex-col gap-2">
+      <section className="3xl:w-73 flex h-fit w-57 flex-col gap-2">
         <div className="flex gap-1">
           <input
             type="text"
@@ -149,7 +149,7 @@ const PictosSelector = ({
             <button
               key={stat}
               onClick={() => toggleFilterByStat(stat)}
-              className={`${filterByStats.includes(stat) ? 'bg-taupe-700 hover:bg-taupe-600' : 'hover:bg-taupe-800'} 3xl:w-36 h-7 w-30 border border-taupe-700 px-2 text-sm hover:cursor-pointer`}
+              className={`${filterByStats.includes(stat) ? 'bg-taupe-700 hover:bg-taupe-600' : 'hover:bg-taupe-800'} 3xl:w-36 h-7 w-28 border border-taupe-700 px-2 text-sm hover:cursor-pointer`}
             >
               {tStats(stat)}
             </button>
@@ -161,7 +161,7 @@ const PictosSelector = ({
             <button
               key={cat}
               onClick={() => toggleFilterByCategories(cat)}
-              className={`${filterByCategories.includes(cat) ? 'bg-taupe-700 hover:bg-taupe-600' : 'hover:bg-taupe-800'} 3xl:w-36 h-7 w-30 border border-taupe-700 px-2 text-sm hover:cursor-pointer`}
+              className={`${filterByCategories.includes(cat) ? 'bg-taupe-700 hover:bg-taupe-600' : 'hover:bg-taupe-800'} 3xl:w-36 h-7 w-28 border border-taupe-700 px-2 text-sm hover:cursor-pointer`}
             >
               {tPictos(`category.${cat}`)}
             </button>

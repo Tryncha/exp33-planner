@@ -1,8 +1,8 @@
 import { useTranslations } from 'next-intl';
-import { BreakIcon, MonocoMaskIcon } from './icons';
-import { CharacterId, MonocoMask, SkillFiltersType } from '../types';
+import { BreakIcon, MonocoMaskIcon } from '../icons';
+import { CharacterId, MonocoMask, SkillFiltersType } from '../../types';
 import { Dispatch, SetStateAction } from 'react';
-import { MONOCO_MASKS } from '../lib/constants';
+import { MONOCO_MASKS } from '../../lib/constants';
 
 const SkillFilters = ({
   character,

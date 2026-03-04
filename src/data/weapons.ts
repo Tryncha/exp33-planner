@@ -1015,15 +1015,27 @@ const LUNE: Weapon[] = [
     scaling: { vitality: 'A', defense: 'S' },
     en: {
       name: 'Coralim',
-      passives: ['Ice Skills cost 1 less AP.', '20% increased Ice damage with Skills.', 'Start battle with 1 Stain.']
+      passives: [
+        'Ice Skills cost 1 less AP.',
+        '20% increased Ice damage with Skills.',
+        'Start battle with 1 Earth Stain.'
+      ]
     },
     es: {
       name: 'Coralim',
-      passives: ['Ice Skills cost 1 less AP.', '20% increased Ice damage with Skills.', 'Start battle with 1 Stain.']
+      passives: [
+        'Ice Skills cost 1 less AP.',
+        '20% increased Ice damage with Skills.',
+        'Start battle with 1 Earth Stain.'
+      ]
     },
     fr: {
       name: 'Coralim',
-      passives: ['Ice Skills cost 1 less AP.', '20% increased Ice damage with Skills.', 'Start battle with 1 Stain.']
+      passives: [
+        'Ice Skills cost 1 less AP.',
+        '20% increased Ice damage with Skills.',
+        'Start battle with 1 Earth Stain.'
+      ]
     }
   },
   {
@@ -2041,7 +2053,7 @@ const MAELLE: Weapon[] = [
     en: {
       name: 'Seashelum',
       passives: [
-        '+1 Shield on switching to Offesnive Stance.',
+        '+1 Shield on switching to Offensive Stance.',
         'If Stanceless, Base Attack switches to Offensive Stance.',
         '+50% Critical Chance while in Offensive Stance.'
       ]
@@ -2291,7 +2303,7 @@ const MAELLE: Weapon[] = [
     id: 'licorum',
     imgData: { width: 32, height: 32, classRotation: 'rotate-45' },
     characterIds: ['maelle'],
-    element: ' physical',
+    element: 'physical',
     basePower: 3551,
     scaling: { agility: 'B', luck: 'A' },
     en: {

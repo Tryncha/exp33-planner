@@ -573,7 +573,7 @@ const MAELLE_SKILLS: Skill[] = [
     }
   },
   {
-    id: "fencer's-flurry",
+    id: 'fencers-flurry',
     cost: 4,
     characterId: 'maelle',
     canBreak: false,
@@ -622,7 +622,7 @@ const MAELLE_SKILLS: Skill[] = [
     es: { name: 'Guard Up', description: 'Applies Shell , reducing damage taken, to up to 3 allies for 3 turns.' }
   },
   {
-    id: "gustave's-homage",
+    id: 'gustaves-homage',
     cost: 8,
     characterId: 'maelle',
     canBreak: false,

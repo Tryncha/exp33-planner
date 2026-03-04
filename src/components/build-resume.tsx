@@ -19,7 +19,7 @@ const BuildResume = ({ buildResume, openPlanner }: { buildResume: Build; openPla
   }
 
   return (
-    <div className="flex w-90 flex-col gap-2">
+    <div className="flex w-154 flex-col gap-2">
       <div
         onClick={editBuild}
         className="flex items-center gap-4 border border-taupe-700 p-4 hover:cursor-pointer hover:bg-taupe-900"

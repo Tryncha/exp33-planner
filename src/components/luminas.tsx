@@ -26,13 +26,20 @@ const LuminaInfo = ({ pictoData }: { pictoData: Picto }) => {
 };
 
 const Luminas = () => {
+  const locale = useLocale();
+
   const { build } = useBuild();
   const { luminasIds } = build;
 
-  const pictosData = luminasIds.map((lumId) => getLuminaData(lumId));
-  const totalLumina = pictosData.reduce((acc, pic) => acc + pic.luminaPoints, 0);
-
   const { isModalOpen, openModal, closeAll } = useModal();
+
+  const luminasData = luminasIds.map((lumId) => getLuminaData(lumId));
+  const totalLumina = luminasData.reduce((acc, pic) => acc + pic.luminaPoints, 0);
+
+  const alphabeticallySort = (a: Picto, b: Picto) =>
+    a[locale].name.localeCompare(b[locale].name, locale, { sensitivity: 'base' });
+
+  const sortedLuminas = luminasData.sort(alphabeticallySort);
 
   return (
     <div className="flex w-md flex-col border border-taupe-700">
@@ -50,7 +57,7 @@ const Luminas = () => {
         </button>
       </div>
       <div className="scrollbar-thumb-taupe-600 scrollbar-track-taupe-800 scrollbar-thin flex h-140 flex-col overflow-y-auto">
-        {pictosData.map((pic) => (
+        {sortedLuminas.map((pic) => (
           <LuminaInfo
             key={pic.id}
             pictoData={pic}

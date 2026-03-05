@@ -966,7 +966,7 @@ const SCIEL_SKILLS: Skill[] = [
     }
   },
   {
-    id: "fortune's-fury",
+    id: 'fortunes-fury',
     cost: 5,
     characterId: 'sciel',
     canBreak: false,

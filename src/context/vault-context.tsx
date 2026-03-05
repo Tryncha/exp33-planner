@@ -54,6 +54,8 @@ export const VaultProvider = ({ children }: { children: React.ReactNode }) => {
     setVault(vault.filter((bld) => bld.id !== buildId));
   }
 
+  console.log(vault);
+
   return (
     <VaultContext.Provider value={{ vault, addBuild, updateBuild, removeBuild }}>{children}</VaultContext.Provider>
   );

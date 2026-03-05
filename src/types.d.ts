@@ -77,6 +77,7 @@ export interface Weapon {
   id: string;
   imgData: WeaponImageData;
   characterIds: Array<Character['id']>;
+  act?: 1 | 2 | 3;
   basePower: number;
   element: string;
   scaling: Scaling;

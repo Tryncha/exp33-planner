@@ -2,9 +2,10 @@ import { getLuminaData } from '../lib/utils';
 import { Picto } from '../types';
 import { useModal } from '../context/modal-context';
 import { useBuild } from '../context/build-context';
-import { Plus, X } from 'lucide-react';
+import { ArrowDownUp, Plus, X } from 'lucide-react';
 import LuminasSelector from './luminas-selector/luminas-selector';
 import { useLocale } from 'next-intl';
+import { useState } from 'react';
 
 const LuminaInfo = ({ pictoData }: { pictoData: Picto }) => {
   const locale = useLocale();
@@ -33,22 +34,49 @@ const Luminas = () => {
 
   const { isModalOpen, openModal, closeAll } = useModal();
 
+  const [sorts, setSorts] = useState<{ byLumina: 'desc' | 'asc' | null }>({
+    byLumina: null
+  });
+
+  function toggleSortByLumina() {
+    if (!sorts.byLumina) {
+      setSorts({ ...sorts, byLumina: 'desc' });
+    } else if (sorts.byLumina === 'desc') {
+      setSorts({ ...sorts, byLumina: 'asc' });
+    } else {
+      setSorts({ ...sorts, byLumina: null });
+    }
+  }
+
   const luminasData = luminasIds.map((lumId) => getLuminaData(lumId));
   const totalLumina = luminasData.reduce((acc, pic) => acc + pic.luminaPoints, 0);
 
   const alphabeticallySort = (a: Picto, b: Picto) =>
     a[locale].name.localeCompare(b[locale].name, locale, { sensitivity: 'base' });
 
-  const sortedLuminas = luminasData.sort(alphabeticallySort);
+  const luminaSort = (a: Picto, b: Picto) =>
+    sorts.byLumina
+      ? sorts.byLumina === 'desc'
+        ? b.luminaPoints - a.luminaPoints
+        : a.luminaPoints - b.luminaPoints
+      : 0;
+
+  const sortedLuminas = luminasData.sort(alphabeticallySort).sort(luminaSort);
 
   return (
-    <div className="flex w-md flex-col border border-taupe-700">
+    <div className="flex flex-1 flex-col border border-taupe-700">
       <LuminasSelector
         isOpen={isModalOpen.luminas}
         onClose={closeAll}
       />
       <div className="flex justify-between border-b border-taupe-700">
         <h2 className="flex-1 py-1 text-center text-xl font-semibold">Luminas ({totalLumina})</h2>
+        <button
+          onClick={toggleSortByLumina}
+          className="border-l border-taupe-700 px-2 hover:cursor-pointer hover:bg-taupe-900"
+        >
+          <ArrowDownUp />
+        </button>
         <button
           onClick={() => openModal('luminas')}
           className="border-l border-taupe-700 px-2 hover:cursor-pointer hover:bg-taupe-900"

@@ -186,3 +186,9 @@ export interface SkillFiltersType {
   canBreak: boolean;
   byMask: MonocoMask | '';
 }
+
+export interface Team {
+  id: string;
+  name: string;
+  builds: [Build, Build, Build];
+}

@@ -12,7 +12,7 @@ const Vault = ({ openPlanner }: { openPlanner: () => void }) => {
       {vault.length === 0 ? (
         <div className="text-xs">{t('empty')}</div>
       ) : (
-        <div className="flex flex-wrap gap-2">
+        <div className="grid grid-cols-3 gap-2">
           {vault.map((bld) => (
             <BuildResume
               key={bld.id}

@@ -7,9 +7,22 @@ import { MouseEvent, useState } from 'react';
 import { useModal } from '../context/modal-context';
 import { X } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
+import Diamond from './diamond';
 
 const EmptySkillSlot = ({ onClick }: { onClick: () => void }) => {
   const t = useTranslations('Skills');
+
+  return (
+    <div
+      onClick={onClick}
+      className="relative flex h-18 items-center gap-2 p-2 hover:cursor-pointer hover:bg-taupe-900"
+    >
+      <Diamond className="absolute left-3.5 size-9 border border-taupe-700 bg-taupe-900" />
+      <div className="mr-2 ml-6 flex flex-1 justify-between border border-taupe-700 p-1">
+        <span className="pl-7 text-center text-sm/5 text-taupe-400">{t('selectSkill')}</span>
+      </div>
+    </div>
+  );
 
   return (
     <div
@@ -31,29 +44,40 @@ const SkillSlot = ({
   removeSkill: (e: MouseEvent<HTMLButtonElement>) => void;
 }) => {
   const locale = useLocale();
-  const t = useTranslations('Skills');
+
+  const [isHovering, setIsHovering] = useState(false);
 
   return (
     <div
       onClick={onClick}
-      className="relative flex h-18 items-center gap-2 border border-taupe-700 p-2 hover:cursor-pointer hover:bg-taupe-900"
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
+      className="relative flex h-18 items-center gap-2 px-2 hover:cursor-pointer hover:bg-taupe-900"
     >
       <Image
         src={`/skills/${skillData.characterId}/${skillData.id}.png`}
         alt={skillData[locale].name}
         width={48}
         height={48}
+        className="absolute"
       />
-      <span className="flex-1 text-center text-base/5 font-semibold">{skillData[locale].name}</span>
-      <button
-        onClick={removeSkill}
-        className="absolute top-2 right-2 rounded-xs text-red-300 transition-colors hover:cursor-pointer hover:bg-red-950 active:bg-red-800"
-      >
-        <X
-          strokeWidth={3}
-          size={16}
-        />
-      </button>
+      <div className="mr-2 ml-6 flex flex-1 items-center justify-between border border-taupe-700 p-1">
+        <span className="pr-4 pl-6 text-center text-sm/5 font-semibold">{skillData[locale].name}</span>
+        <Diamond className="absolute right-0 mx-2 flex size-5 rotate-45 items-center justify-center border border-blue-300 bg-blue-950 text-sm font-semibold text-blue-300">
+          {skillData.cost}
+        </Diamond>
+      </div>
+      {isHovering && (
+        <button
+          onClick={removeSkill}
+          className="absolute top-1 right-2.5 rounded-xs text-red-300 transition-colors hover:cursor-pointer hover:bg-red-950 active:bg-red-800"
+        >
+          <X
+            strokeWidth={3}
+            size={16}
+          />
+        </button>
+      )}
     </div>
   );
 };
@@ -84,8 +108,7 @@ const Skills = () => {
         isOpen={isModalOpen.skills}
         onClose={closeAll}
       />
-      {/* <h2 className="text-center font-semibold">{t('title')}</h2> */}
-      <div className="grid grid-cols-2 grid-rows-2 gap-2">
+      <div className="grid grid-cols-2 grid-rows-2">
         {skillsData.map((skill, indexSlot) =>
           !skill ? (
             <EmptySkillSlot

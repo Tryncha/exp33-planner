@@ -12,19 +12,22 @@ import {
 import { useBuild } from '../context/build-context';
 import { useVault } from '../context/vault-context';
 import { useLocale, useTranslations } from 'next-intl';
+import Diamond from './diamond';
 
 const BuildResume = ({ buildResume, openPlanner }: { buildResume: Build; openPlanner: () => void }) => {
-  const t = useTranslations('BuildResume');
+  const t = useTranslations();
   const locale = useLocale();
 
   const { setBaseBuild } = useBuild();
   const { removeBuild } = useVault();
 
-  const characterData = getCharacterData(buildResume.characterId);
-  const weaponData = getWeaponData(buildResume.weaponId);
-  const skillsData = buildResume.skillIds.map((skId) => getSkillData(skId));
-  const pictosData = buildResume.pictosIds.map((pId) => getPictoData(pId));
-  const luminasData = buildResume.luminasIds.map((lumId) => getLuminaData(lumId));
+  const { characterId, weaponId, skillIds, pictosIds, luminasIds } = buildResume;
+
+  const characterData = getCharacterData(characterId);
+  const weaponData = getWeaponData(weaponId);
+  const skillsData = skillIds.map((skId) => getSkillData(skId));
+  const pictosData = pictosIds.map((pId) => getPictoData(pId));
+  const luminasData = luminasIds.map((lumId) => getLuminaData(lumId));
 
   function editBuild() {
     setBaseBuild(buildResume);
@@ -35,62 +38,103 @@ const BuildResume = ({ buildResume, openPlanner }: { buildResume: Build; openPla
     <div className="flex flex-col border border-taupe-700">
       <div
         onClick={editBuild}
-        className="flex items-center gap-4 p-4 hover:cursor-pointer hover:bg-taupe-900"
+        className="flex flex-col items-center hover:cursor-pointer hover:bg-taupe-900"
       >
-        <div className="flex flex-col items-center">
+        {/* Title & Character Image */}
+        <div className="flex items-center gap-2 p-2">
           <Image
             src={characterData.imgData.src}
             alt={characterData.imgData.alt}
-            width={80}
-            height={80}
+            width={48}
+            height={48}
             loading="eager"
           />
-          <span className="mt-1 text-xs capitalize">
-            {buildResume.characterId}, {t('level')} {calcLevel(buildResume.attributes)}
-          </span>
+          <div className="flex flex-col items-center">
+            <h2 className="font-semibold">{buildResume.buildName}</h2>
+            <span className="text-xs capitalize">
+              {buildResume.characterId}, {t('BuildResume.level')} {calcLevel(buildResume.attributes)}
+            </span>
+          </div>
         </div>
-        <div className="flex flex-1 flex-col justify-center gap-2">
-          <h2 className="text-center text-base/5 font-semibold">{buildResume.buildName}</h2>
-          <div className="flex justify-between gap-1">
-            <div className="flex size-16 items-center justify-center">
+
+        {/* Build Info */}
+        <div className="flex items-center gap-8 border-t border-taupe-700 p-2">
+          {/* Weapon Info */}
+          <div className="flex flex-col items-center gap-1">
+            <div className="flex size-20 items-center justify-center">
               <Image
                 src={`/weapons/${characterData.id}/${weaponData.id}.png`}
                 alt={weaponData[locale].name}
-                width={weaponData.imgData.width * 0.65}
-                height={weaponData.imgData.height * 0.65}
+                width={weaponData.imgData.width * 0.75}
+                height={weaponData.imgData.height * 0.75}
                 className={weaponData.imgData.classRotation}
                 loading="eager"
               />
             </div>
-            <div className="grid grid-cols-2">
-              {skillsData.map((sk, i) => (
-                <span
+            <span className="text-sm/2 font-semibold">{weaponData[locale].name}</span>
+            <span className="text-xs">Luminas ({calcTotalLumina(luminasData)})</span>
+          </div>
+
+          {/* Skills Info */}
+          <div className="grid grid-cols-2 gap-1">
+            {skillsData.map((sk, i) =>
+              sk ? (
+                <Image
                   key={`resume-${buildResume.id}-skill-${i}`}
-                  className="flex items-center justify-center text-xs"
-                >
-                  {sk ? sk[locale].name : '-'}
-                </span>
-              ))}
-            </div>
-            <div className="flex flex-col">
-              {pictosData.map((pic, i) => (
-                <span
+                  src={`/skills/${characterData.id}/${sk.id}.png`}
+                  alt={weaponData[locale].name}
+                  width={36}
+                  height={36}
+                  loading="eager"
+                />
+              ) : (
+                <div
+                  key={`resume-${buildResume.id}-skill-${i}`}
+                  className="relative top-1.5 left-1.5 size-6 rotate-45 border border-taupe-700 bg-taupe-950"
+                />
+              )
+            )}
+          </div>
+
+          {/* Pictos & Lumina Info */}
+          <div className="flex flex-col items-center justify-center gap-4">
+            {pictosData.map((pic, i) =>
+              pic ? (
+                <div
                   key={`resume-${buildResume.id}-picto-${i}`}
-                  className="text-xs"
+                  className="relative flex items-center"
                 >
-                  {pic ? pic[locale].name : ''}
-                </span>
-              ))}
-              <span className="text-xs font-semibold">Luminas ({calcTotalLumina(luminasData)})</span>
-            </div>
+                  <Diamond className="absolute flex size-6 items-center justify-center border border-taupe-700 bg-taupe-900">
+                    <Image
+                      src={`/pictos/${pic.id}.png`}
+                      alt={weaponData[locale].name}
+                      width={18}
+                      height={18}
+                      loading="eager"
+                    />
+                  </Diamond>
+                  <span className="ml-2 flex h-6 w-40 flex-1 items-center justify-center border border-taupe-700 pr-2 pl-4 text-xs">
+                    {pic ? pic[locale].name : ''}
+                  </span>
+                </div>
+              ) : (
+                <div key={`resume-${buildResume.id}-picto-${i}`}>
+                  <Diamond className="absolute size-6 border border-taupe-700 bg-taupe-950" />
+                  <span className="ml-2 flex h-6 w-40 flex-1 items-center justify-center border border-taupe-700 text-xs">
+                    -
+                  </span>
+                </div>
+              )
+            )}
           </div>
         </div>
       </div>
+
       <button
         onClick={() => removeBuild(buildResume.id)}
         className="border-t border-taupe-700 py-1 text-xs hover:cursor-pointer hover:bg-red-950"
       >
-        {t('deleteButton')}
+        {t('BuildResume.deleteButton')}
       </button>
     </div>
   );

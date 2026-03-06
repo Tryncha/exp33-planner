@@ -163,3 +163,7 @@ export function swapElements<T>(arr: T[], indexA: number, indexB: number) {
   arr[indexA] = arr[indexB];
   arr[indexB] = temp;
 }
+
+export function calcTotalLumina(luminasData: Picto[]) {
+  return luminasData.reduce((acc, pic) => acc + pic.luminaPoints, 0);
+}

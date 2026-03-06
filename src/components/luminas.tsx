@@ -1,4 +1,4 @@
-import { getLuminaData } from '../lib/utils';
+import { calcTotalLumina, getLuminaData } from '../lib/utils';
 import { Picto } from '../types';
 import { useModal } from '../context/modal-context';
 import { useBuild } from '../context/build-context';
@@ -49,7 +49,7 @@ const Luminas = () => {
   }
 
   const luminasData = luminasIds.map((lumId) => getLuminaData(lumId));
-  const totalLumina = luminasData.reduce((acc, pic) => acc + pic.luminaPoints, 0);
+  const totalLumina = calcTotalLumina(luminasData);
 
   const alphabeticallySort = (a: Picto, b: Picto) =>
     a[locale].name.localeCompare(b[locale].name, locale, { sensitivity: 'base' });

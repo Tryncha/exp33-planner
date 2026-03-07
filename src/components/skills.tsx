@@ -8,6 +8,7 @@ import { useModal } from '../context/modal-context';
 import { X } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
 import Diamond from './diamond';
+import GRADIENT_SKILLS from '../data/gradient-skills';
 
 const EmptySkillSlot = ({ onClick }: { onClick: () => void }) => {
   const t = useTranslations('Skills');
@@ -45,14 +46,10 @@ const SkillSlot = ({
 }) => {
   const locale = useLocale();
 
-  const [isHovering, setIsHovering] = useState(false);
-
   return (
     <div
       onClick={onClick}
-      onMouseEnter={() => setIsHovering(true)}
-      onMouseLeave={() => setIsHovering(false)}
-      className="relative flex h-18 items-center gap-2 px-2 hover:cursor-pointer hover:bg-taupe-900"
+      className="relative flex h-18 items-center gap-4 px-2 hover:cursor-pointer hover:bg-taupe-900"
     >
       <Image
         src={`/skills/${skillData.characterId}/${skillData.id}.png`}
@@ -61,35 +58,56 @@ const SkillSlot = ({
         height={48}
         className="absolute"
       />
-      <div className="mr-2 ml-6 flex flex-1 items-center justify-between border border-taupe-700 p-1">
+      <div className="relative mr-2 ml-6 flex flex-1 items-center justify-between border border-taupe-700 p-1">
         <span className="pr-4 pl-6 text-center text-sm/5 font-semibold">{skillData[locale].name}</span>
-        <Diamond className="absolute right-0 mx-2 flex size-5 rotate-45 items-center justify-center border border-blue-300 bg-blue-950 text-sm font-semibold text-blue-300">
+        <Diamond className="absolute -right-2.5 flex size-5 rotate-45 items-center justify-center border border-blue-300 bg-blue-950 text-sm font-semibold text-blue-300">
           {skillData.cost}
         </Diamond>
       </div>
-      {isHovering && (
-        <button
-          onClick={removeSkill}
-          className="absolute top-1 right-2.5 rounded-xs text-red-300 transition-colors hover:cursor-pointer hover:bg-red-950 active:bg-red-800"
-        >
-          <X
-            strokeWidth={3}
-            size={16}
-          />
-        </button>
-      )}
+      <button
+        onClick={removeSkill}
+        className="rounded-xs text-red-300 transition-colors hover:cursor-pointer hover:bg-red-950 active:bg-red-800"
+      >
+        <X
+          strokeWidth={3}
+          size={20}
+        />
+      </button>
+    </div>
+  );
+};
+
+const GradientSkill = ({ gradientSkillData }: { gradientSkillData: Skill }) => {
+  const locale = useLocale();
+
+  return (
+    <div className="relative flex h-18 items-center gap-4 px-2 hover:bg-taupe-900">
+      <Image
+        src={`/gradient-skills/${gradientSkillData.characterId}/${gradientSkillData.id}.png`}
+        alt={gradientSkillData[locale].name}
+        width={48}
+        height={48}
+        className="absolute"
+      />
+      <div className="relative mr-2 ml-6 flex flex-1 items-center justify-between border border-taupe-700 p-1">
+        <span className="pr-4 pl-6 text-center text-sm/5 font-semibold">{gradientSkillData[locale].name}</span>
+        <Diamond className="absolute -right-2.5 flex size-5 rotate-45 items-center justify-center border border-gray-300 bg-gray-950 text-sm font-semibold text-gray-300">
+          {gradientSkillData.cost}
+        </Diamond>
+      </div>
     </div>
   );
 };
 
 const Skills = () => {
   const { build, changeSkill } = useBuild();
-  const { skillIds } = build;
+  const { characterId, skillIds } = build;
 
   const { openModal, isModalOpen, closeAll } = useModal();
   const [selectedSlot, setSelectedSlot] = useState(0);
 
   const skillsData = skillIds.map((skId) => getSkillData(skId));
+  const gradientSkillsData = GRADIENT_SKILLS.filter((grSk) => grSk.characterId === characterId);
 
   function openModalAndSetSlot(indexSlot: number) {
     openModal('skills');
@@ -102,13 +120,15 @@ const Skills = () => {
   }
 
   return (
-    <div className="flex w-md flex-col gap-2 border border-taupe-700 p-2">
+    <div className="flex gap-2 border border-taupe-700 p-2">
       <SkillsSelector
         selectedSlot={selectedSlot}
         isOpen={isModalOpen.skills}
         onClose={closeAll}
       />
-      <div className="grid grid-cols-2 grid-rows-2">
+
+      {/* Basic Skills */}
+      <div className="grid flex-1 grid-cols-2 grid-rows-2">
         {skillsData.map((skill, indexSlot) =>
           !skill ? (
             <EmptySkillSlot
@@ -125,6 +145,18 @@ const Skills = () => {
           )
         )}
       </div>
+
+      {/* Gradient Skills */}
+      {characterId !== 'gustave' && (
+        <div className="flex w-56 flex-col justify-between border-l border-taupe-700 pl-2">
+          {gradientSkillsData.map((grSk) => (
+            <GradientSkill
+              key={grSk.id}
+              gradientSkillData={grSk}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

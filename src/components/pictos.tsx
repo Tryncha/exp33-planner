@@ -87,7 +87,7 @@ const Pictos = () => {
   }
 
   return (
-    <div className="flex flex-1 flex-col rounded-xs border border-taupe-700">
+    <div className="flex w-md flex-1 flex-col rounded-xs border border-taupe-700">
       <PictosSelector
         selectedSlot={selectedSlot}
         isOpen={isModalOpen.pictos}

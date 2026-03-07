@@ -78,10 +78,12 @@ const Planner = () => {
           <Stats />
         </div>
         <div className="flex flex-col gap-2">
-          <WeaponInfo />
+          <div className="flex gap-2">
+            <WeaponInfo />
+            <Pictos />
+          </div>
           <Skills />
         </div>
-        <Pictos />
         <Luminas />
       </div>
     </section>

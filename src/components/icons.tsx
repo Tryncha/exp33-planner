@@ -23,6 +23,17 @@ export const BreakIcon = () => {
   );
 };
 
+export const StainIcon = ({ element }: { element: string }) => {
+  return (
+    <Image
+      src={`/ui/stains/${element}.png`}
+      alt={`${element} icon`}
+      width={20}
+      height={20}
+    />
+  );
+};
+
 export const MonocoMaskIcon = ({ mask }: { mask: MonocoMask }) => {
   return (
     <Image

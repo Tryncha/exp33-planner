@@ -546,9 +546,9 @@ const GUSTAVE_VERSO: Weapon[] = [
     element: 'physical',
     basePower: 2260,
     scaling: { vitality: 'S' },
-    en: { name: 'Noahram', passives: ['N/A', 'N/A', 'N/A'] },
-    es: { name: 'Noahram', passives: ['N/A', 'N/A', 'N/A'] },
-    fr: { name: 'Noahram', passives: ['N/A', 'N/A', 'N/A'] }
+    en: { name: 'Noahram' },
+    es: { name: 'Noahram' },
+    fr: { name: 'Noahram' }
   },
   {
     id: 'nosaram',
@@ -750,9 +750,9 @@ const GUSTAVE_VERSO: Weapon[] = [
     element: 'physical',
     basePower: 3454,
     scaling: { vitality: 'S' },
-    en: { name: 'Verleso', passives: ['N/A', 'N/A', 'N/A'] },
-    es: { name: 'Verleso', passives: ['N/A', 'N/A', 'N/A'] },
-    fr: { name: 'Verleso', passives: ['N/A', 'N/A', 'N/A'] }
+    en: { name: 'Verleso' },
+    es: { name: 'Verleso' },
+    fr: { name: 'Verleso' }
   },
   {
     id: 'sucreso',
@@ -1212,9 +1212,9 @@ const LUNE: Weapon[] = [
     element: 'fire',
     basePower: 2421,
     scaling: { vitality: 'A', luck: 'S' },
-    en: { name: 'Lunerim', passives: ['N/A', 'N/A', 'N/A'] },
-    es: { name: 'Lunerim', passives: ['N/A', 'N/A', 'N/A'] },
-    fr: { name: 'Lunerim', passives: ['N/A', 'N/A', 'N/A'] }
+    en: { name: 'Lunerim' },
+    es: { name: 'Lunerim' },
+    fr: { name: 'Lunerim' }
   },
   {
     id: 'painerim',
@@ -1950,9 +1950,9 @@ const MAELLE: Weapon[] = [
     element: 'physical',
     basePower: 3228,
     scaling: { vitality: 'S' },
-    en: { name: 'Maellum', passives: ['N/A', 'N/A', 'N/A'] },
-    es: { name: 'Maellum', passives: ['N/A', 'N/A', 'N/A'] },
-    fr: { name: 'Maellum', passives: ['N/A', 'N/A', 'N/A'] }
+    en: { name: 'Maellum' },
+    es: { name: 'Maellum' },
+    fr: { name: 'Maellum' }
   },
   {
     id: 'medalum',
@@ -2956,9 +2956,9 @@ const SCIEL: Weapon[] = [
     element: 'physical',
     basePower: 3454,
     scaling: { agility: 'S', luck: 'A' },
-    en: { name: 'Scieleson', passives: ['N/A', 'N/A', 'N/A'] },
-    es: { name: 'Scieleson', passives: ['N/A', 'N/A', 'N/A'] },
-    fr: { name: 'Scieleson', passives: ['N/A', 'N/A', 'N/A'] }
+    en: { name: 'Scieleson' },
+    es: { name: 'Scieleson' },
+    fr: { name: 'Scieleson' }
   },
   {
     id: 'tisseron',

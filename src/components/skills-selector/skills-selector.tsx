@@ -1,13 +1,14 @@
 import { useBuild } from '@/src/context/build-context';
 import { Modal } from '@/src/context/modal-context';
 import SKILLS from '@/src/data/skills';
-import { MonocoSkill, Skill, SkillFiltersType } from '@/src/types';
+import { LuneSkill, MonocoSkill, Skill, SkillFiltersType } from '@/src/types';
 import Image from 'next/image';
 import Diamond from '../diamond';
 import { useLocale } from 'next-intl';
-import { BreakIcon } from '../icons';
+import { BreakIcon, ElementIcon, StainIcon } from '../icons';
 import { useState } from 'react';
 import SkillFilters from './skill-filters';
+import ParsedDescription from '../parsed-description';
 
 const SkillOption = ({
   skillData,
@@ -23,7 +24,7 @@ const SkillOption = ({
   return (
     <div
       onClick={onClick}
-      className={`${isEquipped ? 'bg-taupe-700 hover:bg-taupe-600' : 'hover:bg-taupe-800'} flex h-40 w-76 flex-col gap-2 border border-taupe-700 p-2 hover:cursor-pointer`}
+      className={`${isEquipped ? 'bg-taupe-700 hover:bg-taupe-600' : 'hover:bg-taupe-800'} flex h-40 w-104 flex-col gap-2 border border-taupe-700 p-2 hover:cursor-pointer`}
     >
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
@@ -33,9 +34,20 @@ const SkillOption = ({
             width={48}
             height={48}
           />
-          <h2 className="text-lg/6 font-semibold">{skillData[locale].name}</h2>
+          <h2 className="font-semibold">{skillData[locale].name}</h2>
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center gap-1">
+          {skillData.characterId === 'lune' && skillData.stains.length > 0 && (
+            <div className="flex items-center gap-1">
+              <span className="text-xl"> + </span>
+              {skillData.stains.map((stn, i) => (
+                <StainIcon
+                  key={`${skillData.id}-stain-${i}`}
+                  element={stn}
+                />
+              ))}
+            </div>
+          )}
           {skillData.canBreak && (
             <Diamond className="mx-2 flex size-4 rotate-45 items-center justify-center border border-taupe-300 font-semibold">
               <BreakIcon />
@@ -46,7 +58,7 @@ const SkillOption = ({
           </Diamond>
         </div>
       </div>
-      <p className="text-sm">{skillData[locale].description}</p>
+      <ParsedDescription description={skillData[locale].description} />
     </div>
   );
 };
@@ -68,6 +80,7 @@ const SkillsSelector = ({
   const [filters, setFilters] = useState<SkillFiltersType>({
     byName: '',
     canBreak: false,
+    byLuneElement: '',
     byMask: ''
   });
 
@@ -84,6 +97,11 @@ const SkillsSelector = ({
     // Filter by Can Break
     .filter((sk: Skill) => (!filters.canBreak ? sk : sk.canBreak))
 
+    // Lune
+    // filter by Element
+    .filter((sk: Skill) => (!filters.byLuneElement ? sk : (sk as LuneSkill).stains.includes(filters.byLuneElement)))
+
+    // Monoco
     // filter by Mask
     .filter((sk: Skill) => (!filters.byMask ? sk : filters.byMask === (sk as MonocoSkill).buffedMask))
 
@@ -104,7 +122,7 @@ const SkillsSelector = ({
       />
 
       {/* Skills */}
-      <section className="scrollbar-thumb-taupe-600 scrollbar-track-taupe-800 scrollbar-thin flex h-160 w-314 flex-wrap content-start gap-2 overflow-y-scroll">
+      <section className="scrollbar-thumb-taupe-600 scrollbar-track-taupe-800 scrollbar-thin flex h-160 w-7xl flex-wrap content-start gap-2 overflow-y-scroll">
         {filteredSkills.map((skill) => (
           <SkillOption
             key={skill.id}

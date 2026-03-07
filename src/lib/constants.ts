@@ -208,6 +208,8 @@ export const ATTRIBUTES = ['vitality', 'might', 'agility', 'defense', 'luck'] as
 
 export const ELEMENTS = ['physical', 'light', 'dark', 'void', 'fire', 'ice', 'earth', 'lightning'] as const;
 
+export const STAINS = ['fire', 'ice', 'earth', 'lightning', 'light'] as const;
+
 export const PICTO_STATS = ['speed', 'critRate', 'health', 'defense'] as const;
 
 export const MONOCO_MASKS = ['caster', 'agile', 'balanced', 'heavy', 'almighty'] as const;

@@ -2,6 +2,7 @@ import {
   ATTRIBUTES,
   ELEMENTS,
   GUSTAVE_BASE,
+  STAINS,
   MONOCO_MASKS,
   PICTO_CATEGORIES,
   PICTO_CATEGORIES_FROM_GAME,
@@ -12,6 +13,7 @@ export type CharacterId = 'gustave' | 'lune' | 'maelle' | 'sciel' | 'verso' | 'm
 export type AttributeId = (typeof ATTRIBUTES)[number];
 
 export type Element = (typeof ELEMENTS)[number];
+export type LuneStain = (typeof STAINS)[number];
 
 export type CharacterStatId = 'attack-power' | 'speed' | 'critical-rate' | 'health' | 'defense';
 
@@ -158,7 +160,7 @@ export interface GustaveSkill extends SkillBase {
 
 export interface LuneSkill extends SkillBase {
   characterId: 'lune';
-  stains: string[];
+  stains: LuneStain[];
 }
 
 export interface MaelleSkill extends SkillBase {
@@ -184,6 +186,7 @@ export type Skill = GustaveSkill | LuneSkill | MaelleSkill | ScielSkill | VersoS
 export interface SkillFiltersType {
   byName: string;
   canBreak: boolean;
+  byLuneElement: LuneStain | '';
   byMask: MonocoMask | '';
 }
 

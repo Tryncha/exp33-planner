@@ -9,6 +9,8 @@ import { X } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
 import Diamond from './diamond';
 import GRADIENT_SKILLS from '../data/gradient-skills';
+import Tooltip from './tooltip';
+import ParsedDescription from './parsed-description';
 
 const EmptySkillSlot = ({ onClick }: { onClick: () => void }) => {
   const t = useTranslations('Skills');
@@ -45,12 +47,21 @@ const SkillSlot = ({
   removeSkill: (e: MouseEvent<HTMLButtonElement>) => void;
 }) => {
   const locale = useLocale();
+  const [isHovering, setIsHovering] = useState(false);
 
   return (
     <div
       onClick={onClick}
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
       className="relative flex h-18 items-center gap-4 px-2 hover:cursor-pointer hover:bg-taupe-900"
     >
+      <Tooltip
+        isHovering={isHovering}
+        className="w-md border border-taupe-700 bg-taupe-800 p-2"
+      >
+        <ParsedDescription description={skillData[locale].description} />
+      </Tooltip>
       <Image
         src={`/skills/${skillData.characterId}/${skillData.id}.png`}
         alt={skillData[locale].name}
@@ -79,9 +90,20 @@ const SkillSlot = ({
 
 const GradientSkill = ({ gradientSkillData }: { gradientSkillData: Skill }) => {
   const locale = useLocale();
+  const [isHovering, setIsHovering] = useState(false);
 
   return (
-    <div className="relative flex h-18 items-center gap-4 px-2 hover:bg-taupe-900">
+    <div
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
+      className="relative flex h-18 items-center gap-4 px-2 hover:bg-taupe-900"
+    >
+      <Tooltip
+        isHovering={isHovering}
+        className="w-md border border-taupe-700 bg-taupe-800 p-2"
+      >
+        <ParsedDescription description={gradientSkillData[locale].description} />
+      </Tooltip>
       <Image
         src={`/gradient-skills/${gradientSkillData.characterId}/${gradientSkillData.id}.png`}
         alt={gradientSkillData[locale].name}

@@ -1,4 +1,4 @@
-import { Skill } from '../types';
+import { LuneSkill, Skill } from '../types';
 
 const GUSTAVE_SKILLS: Skill[] = [
   {
@@ -125,7 +125,7 @@ const GUSTAVE_SKILLS: Skill[] = [
   }
 ];
 
-const LUNE_SKILLS: Skill[] = [
+const LUNE_SKILLS: LuneSkill[] = [
   {
     id: 'crippling-tsunami',
     cost: 5,
@@ -135,12 +135,12 @@ const LUNE_SKILLS: Skill[] = [
     en: {
       name: 'Crippling Tsunami',
       description:
-        'Deals medium Ice damage to all enemies. 1 hit. Applies Slow for 3 turns. Consumes {Earth}, {Lightning}, {Fire} for greatly increased damage.'
+        'Deals medium <span class="text-blue-300 font-semibold">Ice</span> damage to all enemies. 1 hit. Applies <span class="text-red-600 font-semibold">Slow</span> <img src="/ui/status-effect/slow.png" alt="Slow Icon" /> for 3 turns.\nConsumes <img src="/ui/stains/earth.png" alt="Earth Stain Icon" /><img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" /><img src="/ui/stains/fire.png" alt="Fire Stain Icon" /> for greatly increased damage.'
     },
     es: {
       name: 'Tsunami Incapacitante',
       description:
-        'Inflige daño de hielo moderado a todos los enemigos. 1 golpe. Aplica lentitud durante 3 turnos. Consume {Tierra}, {Rayo}, {Fuego} para infligir mucho más daño.'
+        'Inflige daño de <span class="text-blue-300 font-semibold">hielo</span> moderado a todos los enemigos. 1 golpe. Aplica <span class="text-red-600 font-semibold">lentitud</span> <img src="/ui/status-effect/slow.png" alt="Slow Icon" /> durante 3 turnos.\nConsume <img src="/ui/stains/earth.png" alt="Earth Stain Icon" /><img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" /><img src="/ui/stains/fire.png" alt="Fire Stain Icon" /> para infligir mucho más daño.'
     }
   },
   {
@@ -151,12 +151,13 @@ const LUNE_SKILLS: Skill[] = [
     stains: ['earth', 'light'],
     en: {
       name: 'Crustal Crush',
-      description: 'Deals high single target Earth and break damage. 5 hits. Consumes {Lightning x2}: Increased damage.'
+      description:
+        'Deals high single target <span class="text-lime-500 font-semibold">Earth</span> and <span class="text-yellow-600 font-semibold">break damage</span> <img src="/ui/status-effect/break.png" alt="Break Icon" />. 5 hits.\nConsumes <img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" /><img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" />: Increased damage.'
     },
     es: {
       name: 'Corteza Aplastante',
       description:
-        'Inflige mucho daño de tierra y de ruptura a un enemigo. 5 golpes. Consume {Rayo x2}: Aumenta el daño.'
+        'Inflige mucho daño de <span class="text-lime-500 font-semibold">tierra</span> y de <span class="text-yellow-600 font-semibold">ruptura</span> <img src="/ui/status-effect/break.png" alt="Break Icon" /> a un enemigo. 5 golpes.\nConsume <img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" /><img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" />: Aumenta el daño.'
     }
   },
   {
@@ -167,11 +168,13 @@ const LUNE_SKILLS: Skill[] = [
     stains: ['earth'],
     en: {
       name: 'Earth Rising',
-      description: 'Deals low Earth damage to all enemies. 1 hit. Consumes {Lightning} for increased damage.'
+      description:
+        'Deals low <span class="text-lime-500 font-semibold">Earth</span> damage to all enemies. 1 hit.\nConsumes <img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" /> for increased damage.'
     },
     es: {
       name: 'Alzamiento Terrestre',
-      description: 'Inflige daño de tierra leve a todos los enemigos. 1 golpe. Consume {Rayo} para infligir más daño.'
+      description:
+        'Inflige daño de <span class="text-lime-500 font-semibold">tierra</span> leve a todos los enemigos. 1 golpe.\nConsume <img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" /> para infligir más daño.'
     }
   },
   {
@@ -183,12 +186,12 @@ const LUNE_SKILLS: Skill[] = [
     en: {
       name: 'Electrify',
       description:
-        'Deals low single target Lightning damage. 3 hits. Critical Hits trigger an additional hit. Consumes {Fire} to generate one Light Stain.'
+        'Deals low single target <span class="text-yellow-500 font-semibold">Lightning</span> damage. 3 hits. <span class="text-red-600 font-semibold">Critical Hits</span> <img src="/ui/status-effect/crit.png" alt="Critical Hit Icon" /> trigger an additional hit.\nConsumes <img src="/ui/stains/fire.png" alt="Fire Stain Icon" /> to generate one Light Stain <img src="/ui/stains/light.png" alt="Light Stain Icon" />.'
     },
     es: {
       name: 'Electrocución',
       description:
-        'Inflige daño de rayo leve a un objetivo. 3 golpes. Los golpes críticos propinan un golpe adicional. Consume {Fuego} para generar un borrón de luz.'
+        'Inflige daño de <span class="text-yellow-500 font-semibold">rayo</span> leve a un objetivo. 3 golpes. Los <span class="text-red-600 font-semibold">golpes críticos</span> <img src="/ui/status-effect/crit.png" alt="Critical Hit Icon" /> propinan un golpe adicional.\nConsume <img src="/ui/stains/fire.png" alt="Fire Stain Icon" /> para generar un borrón de luz <img src="/ui/stains/light.png" alt="Light Stain Icon" />.'
     }
   },
   {
@@ -200,12 +203,12 @@ const LUNE_SKILLS: Skill[] = [
     en: {
       name: 'Elemental Genesis',
       description:
-        'Deals extreme damage to all enemies. 8 hits. Each hit deals damage in a random element. Can only be cast with {Lightning}, {Earth}, {Fire}, {Ice}.'
+        'Deals extreme damage to all enemies. 8 hits. Each hit deals damage in a random element.\nCan only be cast with <img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" /><img src="/ui/stains/earth.png" alt="Earth Stain Icon" /><img src="/ui/stains/fire.png" alt="Fire Stain Icon" /><img src="/ui/stains/ice.png" alt="Ice Stain Icon" />.'
     },
     es: {
       name: 'Génesis Elemental',
       description:
-        'Inflige daño extremo a todos los enemigos. 8 golpes. Cada golpe inflige daño de un elemento al azar. Solo se puede lanzar con {Rayo}, {Tierra}, {Fuego}, {Hielo}.'
+        'Inflige daño extremo a todos los enemigos. 8 golpes. Cada golpe inflige daño de un elemento al azar.\nSolo se puede lanzar con <img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" /><img src="/ui/stains/earth.png" alt="Earth Stain Icon" /><img src="/ui/stains/fire.png" alt="Fire Stain Icon" /><img src="/ui/stains/ice.png" alt="Ice Stain Icon" />.'
     }
   },
   {
@@ -217,12 +220,12 @@ const LUNE_SKILLS: Skill[] = [
     en: {
       name: 'Elemental Trick',
       description:
-        'Deals low single target Ice, Fire, Lightning, and Earth damage. 4 hits. Critical Hits generate the corresponding Stain.'
+        'Deals low single target <span class="text-blue-300 font-semibold">Ice</span>, <span class="text-red-400 font-semibold">Fire</span>, <span class="text-yellow-500 font-semibold">Lightning</span>, and <span class="text-lime-500 font-semibold">Earth</span> damage. 4 hits.\n<span class="text-red-600 font-semibold">Critical Hits</span> <img src="/ui/status-effect/crit.png" alt="Critical Hit Icon" /> generate the corresponding Stain.'
     },
     es: {
       name: 'Truco Elemental',
       description:
-        'Inflige daño de hielo, fuego, rayo y tierra leve a un objetivo. 4 golpes. Los golpes críticos generan el borrón correspondiente.'
+        'Inflige daño de <span class="text-blue-300 font-semibold">hielo</span>, <span class="text-red-400 font-semibold">fuego</span>, <span class="text-yellow-500 font-semibold">rayo</span> y <span class="text-lime-500 font-semibold">tierra</span> leve a un objetivo. 4 golpes.\nLos <span class="text-red-600 font-semibold">golpes críticos</span> <img src="/ui/status-effect/crit.png" alt="Critical Hit Icon" /> generan el borrón correspondiente.'
     }
   },
   {
@@ -234,12 +237,12 @@ const LUNE_SKILLS: Skill[] = [
     en: {
       name: 'Fire Rage',
       description:
-        'Deals increasingly high Fire damage to all enemies every turn until Lune receives damage. Stuns self if interrupted. Consumes {Ice x2}: Increased Damage.'
+        'Deals increasingly high <span class="text-red-400 font-semibold">Fire</span> damage to all enemies every turn until Lune receives damage. Stuns self if interrupted.\nConsumes <img src="/ui/stains/ice.png" alt="Ice Stain Icon" /><img src="/ui/stains/ice.png" alt="Ice Stain Icon" />: Increased Damage.'
     },
     es: {
       name: 'Furia Ígnea',
       description:
-        'Inflige daño de fuego creciente cada turno a todos los enemigos hasta que Lune sufra daño. Si se interrumpe, aturde a Lune. Consume {Hielo x2}: Aumenta el daño.'
+        'Inflige daño de <span class="text-red-400 font-semibold">fuego</span> creciente cada turno a todos los enemigos hasta que Lune sufra daño. Si se interrumpe, aturde a Lune.\nConsume <img src="/ui/stains/ice.png" alt="Ice Stain Icon" /><img src="/ui/stains/ice.png" alt="Ice Stain Icon" />: Aumenta el daño.'
     }
   },
   {
@@ -250,12 +253,13 @@ const LUNE_SKILLS: Skill[] = [
     stains: ['light'],
     en: {
       name: 'Healing Light',
-      description: 'Heals the targeted Ally and dispels Status Effects. Consumes {Earth x2}: Costs 0 AP.'
+      description:
+        '<span class="text-lime-600 font-semibold">Heals</span> <img src="/ui/status-effect/heal.png" alt="Heal Icon" /> the targeted Ally and dispels Status Effects.\nConsumes <img src="/ui/stains/earth.png" alt="Earth Stain Icon" /><img src="/ui/stains/earth.png" alt="Earth Stain Icon" />: Costs 0 <span class="text-blue-400 font-semibold">AP</span>.'
     },
     es: {
       name: 'Luz Curativa',
       description:
-        'Cura al aliado seleccionado entre un 30% y un 50% de la vida y disipa las alteraciones de estado. Consume {Tierra x2}: Consume 0 PA.'
+        '<span class="text-lime-600 font-semibold">Cura</span> <img src="/ui/status-effect/heal.png" alt="Heal Icon" /> al aliado seleccionado entre un 30% y un 50% de la vida y disipa las alteraciones de estado.\nConsume <img src="/ui/stains/earth.png" alt="Earth Stain Icon" /><img src="/ui/stains/earth.png" alt="Earth Stain Icon" />: Consume 0 <span class="text-blue-400 font-semibold">PA</span>.'
     }
   },
   {
@@ -267,12 +271,12 @@ const LUNE_SKILLS: Skill[] = [
     en: {
       name: 'Hell',
       description:
-        'Deals very high Fire damage that applies 5 Burn per hit to all enemies. 2 hits. Deals self-damage if failed. Consumes {Ice}, {Earth}, {Lightning}: Greatly increased damage.'
+        'Deals very high <span class="text-red-400 font-semibold">Fire</span> damage that applies 5 <span class="text-orange-400 font-semibold">Burn</span> <img src="/ui/status-effect/burn.png" alt="Burn Icon" /> per hit to all enemies. 2 hits. Deals self-damage if failed.\nConsumes <img src="/ui/stains/ice.png" alt="Ice Stain Icon" /><img src="/ui/stains/earth.png" alt="Earth Stain Icon" /><img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" />: Greatly increased damage.'
     },
     es: {
       name: 'Infierno',
       description:
-        'Inflige muchísimo daño de fuego y aplica 5 acumulaciones de quemadura por golpe a todos los enemigos. 2 golpes. Si falla, Lune se daña a sí misma. Consume {Hielo}, {Tierra}, {Rayo}: Aumenta mucho el daño.'
+        'Inflige muchísimo daño de <span class="text-red-400 font-semibold">fuego</span> y aplica 5 acumulaciones de <span class="text-orange-400 font-semibold">quemadura</span> <img src="/ui/status-effect/burn.png" alt="Burn Icon" /> por golpe a todos los enemigos. 2 golpes. Si falla, Lune se daña a sí misma.\nConsume <img src="/ui/stains/ice.png" alt="Ice Stain Icon" /><img src="/ui/stains/earth.png" alt="Earth Stain Icon" /><img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" />: Aumenta mucho el daño.'
     }
   },
   {
@@ -284,12 +288,12 @@ const LUNE_SKILLS: Skill[] = [
     en: {
       name: 'Ice Lance',
       description:
-        'Deals medium single target Ice damage that Slows  the target. 1 Hit. Consumes {Earth} to deal increased damage.'
+        'Deals medium single target <span class="text-blue-300 font-semibold">Ice</span> damage that <span class="text-red-600 font-semibold">Slows</span> <img src="/ui/status-effect/slow.png" alt="Slow Icon" /> the target. 1 Hit.\nConsumes <img src="/ui/stains/earth.png" alt="Earth Stain Icon" /> to deal increased damage.'
     },
     es: {
       name: 'Lanza de Hielo',
       description:
-        'Inflige daño de hielo moderado a un objetivo y le causa lentitud. 1 golpe. Consume {Tierra} para infligir más daño.'
+        'Inflige daño de <span class="text-blue-300 font-semibold">hielo</span> moderado a un objetivo y le causa <span class="text-red-600 font-semibold">lentitud</span> <img src="/ui/status-effect/slow.png" alt="Slow Icon" />. 1 golpe.\nConsume <img src="/ui/stains/earth.png" alt="Earth Stain Icon" /> para infligir más daño.'
     }
   },
   {
@@ -301,12 +305,12 @@ const LUNE_SKILLS: Skill[] = [
     en: {
       name: 'Immolation',
       description:
-        'Deals low single target Fire damage and 3 Burn. 1 hit. Applies 2 more Burns if the target is Marked . Consumes {Ice} for increased damage.'
+        'Deals low single target <span class="text-red-400 font-semibold">Fire</span> damage and 3 <span class="text-orange-400 font-semibold">Burn</span> <img src="/ui/status-effect/burn.png" alt="Burn Icon" />. 1 hit. Applies 2 more <span class="text-orange-400 font-semibold">Burns</span> <img src="/ui/status-effect/burn.png" alt="Burn Icon" /> if the target is <span class="text-red-600 font-semibold">Marked</span> <img src="/ui/status-effect/mark.png" alt="Mark Icon" />.\nConsumes <img src="/ui/stains/ice.png" alt="Ice Stain Icon" /> for increased damage.'
     },
     es: {
       name: 'Inmolación',
       description:
-        'Inflige daño de fuego leve y 3 acumulaciones de quemadura a un objetivo. 1 golpe. Aplica 2 acumulaciones más de quemadura si el objetivo está marcado. Consume {Hielo} para infligir más daño.'
+        'Inflige daño de <span class="text-red-400 font-semibold">fuego</span> leve y 3 acumulaciones de <span class="text-orange-400 font-semibold">quemadura</span> <img src="/ui/status-effect/burn.png" alt="Burn Icon" /> a un objetivo. 1 golpe. Aplica 2 acumulaciones más de <span class="text-orange-400 font-semibold">quemadura</span> <img src="/ui/status-effect/burn.png" alt="Burn Icon" /> si el objetivo está <span class="text-red-600 font-semibold">marcado</span> <img src="/ui/status-effect/mark.png" alt="Mark Icon" />.\nConsume <img src="/ui/stains/ice.png" alt="Ice Stain Icon" /> para infligir más daño.'
     }
   },
   {
@@ -318,29 +322,29 @@ const LUNE_SKILLS: Skill[] = [
     en: {
       name: 'Lightning Dance',
       description:
-        'Deals very high single target Lightning damage. 6 hits. Critical Hits trigger an additional hit. Consumes {Earth}, {Ice}, {Fire}: Greatly increased damage.'
+        'Deals very high single target <span class="text-yellow-500 font-semibold">Lightning</span> damage. 6 hits. <span class="text-red-600 font-semibold">Critical Hits</span> <img src="/ui/status-effect/crit.png" alt="Critical Hit Icon" /> trigger an additional hit.\nConsumes <img src="/ui/stains/earth.png" alt="Earth Stain Icon" /><img src="/ui/stains/ice.png" alt="Ice Stain Icon" /><img src="/ui/stains/fire.png" alt="Fire Stain Icon" />: Greatly increased damage.'
     },
     es: {
       name: 'Danza del Relámpago',
       description:
-        'Inflige muchísimo daño de rayo a un objetivo. 6 golpes. Los golpes críticos propinan un golpe adicional. Consume {Tierra}, {Hielo}, {Fire}: Aumenta mucho el daño.'
+        'Inflige muchísimo daño de <span class="text-yellow-500 font-semibold">rayo</span> a un objetivo. 6 golpes. Los <span class="text-red-600 font-semibold">golpes críticos</span> <img src="/ui/status-effect/crit.png" alt="Critical Hit Icon" /> propinan un golpe adicional.\nConsume <img src="/ui/stains/earth.png" alt="Earth Stain Icon" /><img src="/ui/stains/ice.png" alt="Ice Stain Icon" /><img src="/ui/stains/fire.png" alt="Fire Stain Icon" />: Aumenta mucho el daño.'
     }
   },
   {
     id: 'mayhem',
     cost: 3,
     characterId: 'lune',
-    canBreak: false,
+    canBreak: true,
     stains: [],
     en: {
       name: 'Mayhem',
       description:
-        'Consumes all Stains to deal high elemental damage to the target. Can Break if 4 Stains are consumed.'
+        'Consumes all Stains to deal high elemental damage to the target. Can <span class="text-yellow-600 font-semibold">Break</span> <img src="/ui/status-effect/break.png" alt="Break Icon" /> if 4 Stains are consumed.'
     },
     es: {
       name: 'Caos',
       description:
-        'Consume todos los borrones para inflingirle mucho daño elemental al objetivo. Si se consume 4 borrones, puede causar ruptura.'
+        'Consume todos los borrones para inflingirle mucho daño elemental al objetivo. Si se consume 4 borrones, puede causar <span class="text-yellow-600 font-semibold">ruptura</span> <img src="/ui/status-effect/break.png" alt="Break Icon" />.'
     }
   },
   {
@@ -351,11 +355,13 @@ const LUNE_SKILLS: Skill[] = [
     stains: ['light'],
     en: {
       name: 'Rebirth',
-      description: 'Revives an ally with 30-70% Health and 2 additional AP. Consumes {Lightning x3}: Costs 0 AP.'
+      description:
+        'Revives an ally with 30-70% Health and 2 additional <span class="text-blue-400 font-semibold">AP</span>.\nConsumes <img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" /><img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" /><img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" />: Costs 0 <span class="text-blue-400 font-semibold">AP</span>.'
     },
     es: {
       name: 'Renacer',
-      description: 'Revive a un aliado con un 30% al 70% de vida y 2 PA adicionales. Consume {Rayo x3}: Consume 0 PA.'
+      description:
+        'Revive a un aliado con un 30% al 70% de vida y 2 <span class="text-blue-400 font-semibold">PA</span> adicionales.\nConsume <img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" /><img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" /><img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" />: Consume 0 <span class="text-blue-400 font-semibold">PA</span>.'
     }
   },
   {
@@ -367,29 +373,29 @@ const LUNE_SKILLS: Skill[] = [
     en: {
       name: 'Revitalization',
       description:
-        'Heals 1-3 allies by 40-60% Health. Consumes {Fire x3} to also apply Regen that heals on turn start for 3 turns.'
+        '<span class="text-lime-600 font-semibold">Heals</span> <img src="/ui/status-effect/heal.png" alt="Heal Icon" /> 1-3 allies by 40-60% Health.\nConsumes <img src="/ui/stains/fire.png" alt="Fire Stain Icon" /><img src="/ui/stains/fire.png" alt="Fire Stain Icon" /><img src="/ui/stains/fire.png" alt="Fire Stain Icon" /> to also apply <span class="text-lime-600 font-semibold">Regen</span> <img src="/ui/status-effect/regen.png" alt="Regen Icon" /> that heals on turn start for 3 turns.'
     },
     es: {
       name: 'Revitalización',
       description:
-        'Cura de 1 a 3 aliados entre un 40% y un 60% de vida. Consume {Fuego x3} para aplicar también regeneración, que cura al inicia del turno.'
+        '<span class="text-lime-600 font-semibold">Cura</span> <img src="/ui/status-effect/heal.png" alt="Heal Icon" /> de 1 a 3 aliados entre un 40% y un 60% de vida.\nConsume <img src="/ui/stains/fire.png" alt="Fire Stain Icon" /><img src="/ui/stains/fire.png" alt="Fire Stain Icon" /><img src="/ui/stains/fire.png" alt="Fire Stain Icon" /> para aplicar también <span class="text-lime-600 font-semibold">regeneración</span> <img src="/ui/status-effect/regen.png" alt="Regen Icon" />, que cura al inicia del turno.'
     }
   },
   {
     id: 'rockslide',
     cost: 5,
     characterId: 'lune',
-    canBreak: false,
+    canBreak: true,
     stains: ['earth', 'light'],
     en: {
       name: 'Rockslide',
       description:
-        'Deals medium single target Earth damage. 2 hits. Can Break Consumes {Lightning}, {Ice}, {Fuego} for greatly increased damage.'
+        'Deals medium single target <span class="text-lime-500 font-semibold">Earth</span> damage. 2 hits. Can <span class="text-yellow-600 font-semibold">Break</span> <img src="/ui/status-effect/break.png" alt="Break Icon" />.\nConsumes <img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" /><img src="/ui/stains/ice.png" alt="Ice Stain Icon" /><img src="/ui/stains/fire.png" alt="Fire Stain Icon" /> for greatly increased damage.'
     },
     es: {
       name: 'Alud',
       description:
-        'Inflige daño de tierra moderado a un objetivo. 2 golpes. Puede causar ruptura. Consume {Rayo}, {Hielo}, {Fuego} para infligir mucho más daño.'
+        'Inflige daño de <span class="text-lime-500 font-semibold">tierra</span> moderado a un objetivo. 2 golpes. Puede causar <span class="text-yellow-600 font-semibold">ruptura</span> <img src="/ui/status-effect/break.png" alt="Break Icon" />.\nConsume <img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" /><img src="/ui/stains/ice.png" alt="Ice Stain Icon" /><img src="/ui/stains/fire.png" alt="Fire Stain Icon" /> para infligir mucho más daño.'
     }
   },
   {
@@ -401,12 +407,12 @@ const LUNE_SKILLS: Skill[] = [
     en: {
       name: 'Storm Caller',
       description:
-        'All enemies receive medium Lightning damage at the end of their turn, and low Lightning damage when they receive damage. Duration: 3 turns. Consumes {Fire x2} for double thunder strikes on turn end.'
+        'All enemies receive medium <span class="text-yellow-500 font-semibold">Lightning</span> damage at the end of their turn, and low <span class="text-yellow-500 font-semibold">Lightning</span> damage when they receive damage. Duration: 3 turns.\nConsumes <img src="/ui/stains/fire.png" alt="Fire Stain Icon" /><img src="/ui/stains/fire.png" alt="Fire Stain Icon" /> for double thunder strikes on turn end.'
     },
     es: {
       name: 'Invocación de Tormentas',
       description:
-        'Todos los enemigos reciben daño de rayo moerado al final de su turno, y daño de rayo leve cuando reciben daño. Duración: 3 turnos. Consume {Fuego x2} para desatar ataques de trueno dobles al finalizar el turno.'
+        'Todos los enemigos reciben daño de <span class="text-yellow-500 font-semibold">rayo</span> moerado al final de su turno, y daño de <span class="text-yellow-500 font-semibold">rayo</span> leve cuando reciben daño. Duración: 3 turnos.\nConsume <img src="/ui/stains/fire.png" alt="Fire Stain Icon" /><img src="/ui/stains/fire.png" alt="Fire Stain Icon" /> para desatar ataques de trueno dobles al finalizar el turno.'
     }
   },
   {
@@ -418,12 +424,12 @@ const LUNE_SKILLS: Skill[] = [
     en: {
       name: 'Terraquake',
       description:
-        'Deals low Earth damage and Break damage to all enemies every turn. Also increases all Break damage received by 50%. Duration: 3 turns. Consumes {Lightning x2} to increase the Duration to 5 turns.'
+        'Deals low <span class="text-lime-500 font-semibold">Earth</span> damage and <span class="text-yellow-600 font-semibold">break damage</span> <img src="/ui/status-effect/break.png" alt="Break Icon" /> to all enemies every turn. Also increases all <span class="text-yellow-600 font-semibold">break damage</span> <img src="/ui/status-effect/break.png" alt="Break Icon" /> received by 50%. Duration: 3 turns.\nConsumes <img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" /><img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" /> to increase the Duration to 5 turns.'
     },
     es: {
       name: 'Terremoto',
       description:
-        'Inflige daño de tierra y de ruptura leve a todos los enemigos cada turno. Además, aumenta todo el daño de ruptura recibido un 50%. Duración: 3 turnos. Consume {Rayo x2} para aumentar la duración a 5 turnos.'
+        'Inflige daño de <span class="text-lime-500 font-semibold">tierra</span> y de <span class="text-yellow-600 font-semibold">ruptura</span> <img src="/ui/status-effect/break.png" alt="Break Icon" /> leve a todos los enemigos cada turno. Además, aumenta todo el daño de <span class="text-yellow-600 font-semibold">ruptura</span> <img src="/ui/status-effect/break.png" alt="Break Icon" /> recibido un 50%. Duración: 3 turnos.\nConsume <img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" /><img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" /> para aumentar la duración a 5 turnos.'
     }
   },
   {
@@ -435,12 +441,12 @@ const LUNE_SKILLS: Skill[] = [
     en: {
       name: 'Thermal Transfer',
       description:
-        'Deals low single target Ice damage. 2 hits. Gains 4 AP if target is Burning. Consumes {Earth x2}: Play a second turn.'
+        'Deals low single target <span class="text-blue-300 font-semibold">Ice</span> damage. 2 hits. Gains 4 <span class="text-blue-400 font-semibold">AP</span> if target is <span class="text-orange-400 font-semibold">Burning</span> <img src="/ui/status-effect/burn.png" alt="Burn Icon" />.\nConsumes <img src="/ui/stains/earth.png" alt="Earth Stain Icon" /><img src="/ui/stains/earth.png" alt="Earth Stain Icon" />: Play a second turn.'
     },
     es: {
       name: 'Transferencia Térmica',
       description:
-        'Inflige daño de hielo leve a un objetivo. 2 golpes. Obtiene 4 PA si el objetivo sufre quemadura. Consume {Tierra x2}: Actúa una segunda vez.'
+        'Inflige daño de <span class="text-blue-300 font-semibold">hielo</span> leve a un objetivo. 2 golpes. Obtiene 4 <span class="text-blue-400 font-semibold">PA</span> si el objetivo sufre <span class="text-orange-400 font-semibold">quemadura</span> <img src="/ui/status-effect/burn.png" alt="Burn Icon" />.\nConsume <img src="/ui/stains/earth.png" alt="Earth Stain Icon" /><img src="/ui/stains/earth.png" alt="Earth Stain Icon" />: Actúa una segunda vez.'
     }
   },
   {
@@ -452,12 +458,12 @@ const LUNE_SKILLS: Skill[] = [
     en: {
       name: 'Thunderfall',
       description:
-        'Deals medium Lightning damage to random enemies. 2-6 hits. Critical Hits trigger an additional hit. Consumes {Fire} for increased damage.'
+        'Deals medium <span class="text-yellow-500 font-semibold">Lightning</span> damage to random enemies. 2-6 hits. <span class="text-red-600 font-semibold">Critical Hits</span> <img src="/ui/status-effect/crit.png" alt="Critical Hit Icon" /> trigger an additional hit.\nConsumes <img src="/ui/stains/fire.png" alt="Fire Stain Icon" /> for increased damage.'
     },
     es: {
       name: 'Tempestad',
       description:
-        'Inflige daño de rayo moderado a enemigos al azar. 2 a 6 golpes. Los golpes críticos propinan un golpe adicional. Consume {Fuego} para infligir más daño.'
+        'Inflige daño de <span class="text-yellow-500 font-semibold">rayo</span> moderado a enemigos al azar. 2 a 6 golpes. Los <span class="text-red-600 font-semibold">golpes críticos</span> <img src="/ui/status-effect/crit.png" alt="Critical Hit Icon" /> propinan un golpe adicional.\nConsume <img src="/ui/stains/fire.png" alt="Fire Stain Icon" /> para infligir más daño.'
     }
   },
   {
@@ -469,12 +475,12 @@ const LUNE_SKILLS: Skill[] = [
     en: {
       name: 'Typhoon',
       description:
-        'On turn start, deals high Ice damage to all enemies and Heals allies. Consumes {Earth x2}: Duration increased from 3 to 5 turns.'
+        'On turn start, deals high <span class="text-blue-300 font-semibold">Ice</span> damage to all enemies and <span class="text-lime-600 font-semibold">Heals</span> <img src="/ui/status-effect/heal.png" alt="Heal Icon" /> allies.\nConsumes <img src="/ui/stains/earth.png" alt="Earth Stain Icon" /><img src="/ui/stains/earth.png" alt="Earth Stain Icon" />: Duration increased from 3 to 5 turns.'
     },
     es: {
       name: 'Tifón',
       description:
-        'Al inicio del turno, inflige mucho daño de hielo a todos los enemigos y cura a los aliados. Consume {Tierra x2}: Aumenta la duración de 3 a 5 turnos.'
+        'Al inicio del turno, inflige mucho daño de <span class="text-blue-300 font-semibold">hielo</span> a todos los enemigos y <span class="text-lime-600 font-semibold">cura</span> <img src="/ui/status-effect/heal.png" alt="Heal Icon" /> a los aliados.\nConsume <img src="/ui/stains/earth.png" alt="Earth Stain Icon" /><img src="/ui/stains/earth.png" alt="Earth Stain Icon" />: Aumenta la duración de 3 a 5 turnos.'
     }
   },
   {
@@ -485,12 +491,13 @@ const LUNE_SKILLS: Skill[] = [
     stains: ['fire', 'light'],
     en: {
       name: 'Wildfire',
-      description: 'Deals medium Fire damage to all enemies. 1 hit. Applies 3 Burn Consumes {Ice x2}: Increased Damage'
+      description:
+        'Deals medium <span class="text-red-400 font-semibold">Fire</span> damage to all enemies. 1 hit. Applies 3 <span class="text-orange-400 font-semibold">Burn</span> <img src="/ui/status-effect/burn.png" alt="Burn Icon" />.\nConsumes <img src="/ui/stains/ice.png" alt="Ice Stain Icon" /><img src="/ui/stains/ice.png" alt="Ice Stain Icon" />: Increased Damage'
     },
     es: {
       name: 'Fuego Indómito',
       description:
-        'Inflige daño de fuego moderado a todos los enemigos. 1 golpe. Aplica 3 acumulaciones de quemadura. Consume {Hielo x2}: Aumenta el daño.'
+        'Inflige daño de <span class="text-red-400 font-semibold">fuego</span> moderado a todos los enemigos. 1 golpe. Aplica 3 acumulaciones de <span class="text-orange-400 font-semibold">quemadura</span> <img src="/ui/status-effect/burn.png" alt="Burn Icon" />.\nConsume <img src="/ui/stains/ice.png" alt="Ice Stain Icon" /><img src="/ui/stains/ice.png" alt="Ice Stain Icon" />: Aumenta el daño.'
     }
   }
 ];
@@ -549,11 +556,13 @@ const MAELLE_SKILLS: Skill[] = [
     canBreak: false,
     en: {
       name: 'Degagement',
-      description: 'Deals low single target Fire damage. 1 hit. Target becomes weak to Fire damage for 2 turns.'
+      description:
+        'Deals low single target <span class="text-red-400 font-semibold">Fire</span> damage. 1 hit. Target becomes weak to <span class="text-red-400 font-semibold">Fire</span> damage for 2 turns.'
     },
     es: {
       name: 'Degagement',
-      description: 'Deals low single target Fire damage. 1 hit. Target becomes weak to Fire damage for 2 turns.'
+      description:
+        'Deals low single target <span class="text-red-400 font-semibold">Fire</span> damage. 1 hit. Target becomes weak to <span class="text-red-400 font-semibold">Fire</span> damage for 2 turns.'
     }
   },
   {
@@ -742,12 +751,12 @@ const MAELLE_SKILLS: Skill[] = [
     en: {
       name: 'Pyrolyse',
       description:
-        'Deals extreme single target Fire damage. 3 hits. Applies 5 Burn  per hit. Offensive Stance: Applies 2 more Burn  per hit.'
+        'Deals extreme single target <span class="text-red-400 font-semibold">Fire</span> damage. 3 hits. Applies 5 Burn  per hit. Offensive Stance: Applies 2 more Burn  per hit.'
     },
     es: {
       name: 'Pyrolyse',
       description:
-        'Deals extreme single target Fire damage. 3 hits. Applies 5 Burn  per hit. Offensive Stance: Applies 2 more Burn  per hit.'
+        'Deals extreme single target <span class="text-red-400 font-semibold">Fire</span> damage. 3 hits. Applies 5 Burn  per hit. Offensive Stance: Applies 2 more Burn  per hit.'
     }
   },
   {
@@ -758,12 +767,12 @@ const MAELLE_SKILLS: Skill[] = [
     en: {
       name: 'Rain of Fire',
       description:
-        'Deals medium single target Fire damage. 2 hits. Applies 3 Burn  per hit. Defensive Stance: applies 2 more Burn  per hit.'
+        'Deals medium single target <span class="text-red-400 font-semibold">Fire</span> damage. 2 hits. Applies 3 Burn  per hit. Defensive Stance: applies 2 more Burn  per hit.'
     },
     es: {
       name: 'Rain of Fire',
       description:
-        'Deals medium single target Fire damage. 2 hits. Applies 3 Burn  per hit. Defensive Stance: applies 2 more Burn  per hit.'
+        'Deals medium single target <span class="text-red-400 font-semibold">Fire</span> damage. 2 hits. Applies 3 Burn  per hit. Defensive Stance: applies 2 more Burn  per hit.'
     }
   },
   {
@@ -774,12 +783,12 @@ const MAELLE_SKILLS: Skill[] = [
     en: {
       name: 'Revenge',
       description:
-        'Deals high single target Fire damage. 1 hit. Damage increased for each hit received since the previous turn. Can Break'
+        'Deals high single target <span class="text-red-400 font-semibold">Fire</span> damage. 1 hit. Damage increased for each hit received since the previous turn. Can Break'
     },
     es: {
       name: 'Revenge',
       description:
-        'Deals high single target Fire damage. 1 hit. Damage increased for each hit received since the previous turn. Can Break'
+        'Deals high single target <span class="text-red-400 font-semibold">Fire</span> damage. 1 hit. Damage increased for each hit received since the previous turn. Can Break'
     }
   },
   {
@@ -789,11 +798,13 @@ const MAELLE_SKILLS: Skill[] = [
     canBreak: false,
     en: {
       name: 'Spark',
-      description: 'Deals low single target Fire damage. 1 hit. Applies 3 Burn  Offensive Stance: Applies 2 more Burn'
+      description:
+        'Deals low single target <span class="text-red-400 font-semibold">Fire</span> damage. 1 hit. Applies 3 Burn  Offensive Stance: Applies 2 more Burn'
     },
     es: {
       name: 'Spark',
-      description: 'Deals low single target Fire damage. 1 hit. Applies 3 Burn  Offensive Stance: Applies 2 more Burn'
+      description:
+        'Deals low single target <span class="text-red-400 font-semibold">Fire</span> damage. 1 hit. Applies 3 Burn  Offensive Stance: Applies 2 more Burn'
     }
   },
   {
@@ -1575,12 +1586,12 @@ const MONOCO_SKILLS: Skill[] = [
     en: {
       name: 'Benisseur Mortar',
       description:
-        'Deals medium single target Ice damage. 3 hits. Change to Almighty Mask if target is Marked. Caster Mask: Increased damage.'
+        'Deals medium single target <span class="text-blue-300 font-semibold">Ice</span> damage. 3 hits. Change to Almighty Mask if target is Marked. Caster Mask: Increased damage.'
     },
     es: {
       name: 'Mortero de Bénisseur',
       description:
-        'Inflige daño de hielo moderado a un objetivo. 3 golpes. Cambia a Máscara omnipotente si el objetivo está marcado. Máscara conjuradora: Aumenta el daño.'
+        'Inflige daño de <span class="text-blue-300 font-semibold">hielo</span> moderado a un objetivo. 3 golpes. Cambia a Máscara omnipotente si el objetivo está marcado. Máscara conjuradora: Aumenta el daño.'
     }
   },
   {
@@ -1593,12 +1604,12 @@ const MONOCO_SKILLS: Skill[] = [
     en: {
       name: 'Braseleur Smash',
       description:
-        'Deals medium finslge target Fire damage and applies 3 Burn. 2 hits. Balanced Mask: Increased damage.'
+        'Deals medium single target <span class="text-red-400 font-semibold">Fire</span> damage and applies 3 Burn. 2 hits. Balanced Mask: Increased damage.'
     },
     es: {
       name: 'Golpe de Braseleur',
       description:
-        'Inflige daño de fuego moderado a un objetivo y le aplica 3 acumulaciones de quemadura. 2 golpes. Máscara equilibrada: Aumenta el daño.'
+        'Inflige daño de <span class="text-red-400 font-semibold">fuego</span> moderado a un objetivo y le aplica 3 acumulaciones de quemadura. 2 golpes. Máscara equilibrada: Aumenta el daño.'
     }
   },
   {
@@ -1679,12 +1690,12 @@ const MONOCO_SKILLS: Skill[] = [
     en: {
       name: 'Chevaliere Ice',
       description:
-        'Deals high Ice damage to all enemies. 3 hits. Applies Slow to the targets for 3 turns. Balanced Mask: Increased damage.'
+        'Deals high <span class="text-blue-300 font-semibold">Ice</span> damage to all enemies. 3 hits. Applies Slow to the targets for 3 turns. Balanced Mask: Increased damage.'
     },
     es: {
       name: 'Hielo de Chevalière',
       description:
-        'Inflige mucho daño de hielo a todos los enemigos. 3 golpes. Les aplica lentitud a los objetivos durante 3 turnos. Máscara equilibrada: Aumenta el daño.'
+        'Inflige mucho daño de <span class="text-blue-300 font-semibold">hielo</span> a todos los enemigos. 3 golpes. Les aplica lentitud a los objetivos durante 3 turnos. Máscara equilibrada: Aumenta el daño.'
     }
   },
   {
@@ -1839,12 +1850,12 @@ const MONOCO_SKILLS: Skill[] = [
     en: {
       name: 'Danseuse Waltz',
       description:
-        'Deals high single target Fire damage. 3 hits. Deals more damage against Burning targets. Balanced Mask: Increased damage.'
+        'Deals high single target <span class="text-red-400 font-semibold">Fire</span> damage. 3 hits. Deals more damage against Burning targets. Balanced Mask: Increased damage.'
     },
     es: {
       name: 'Vals de Danseuse',
       description:
-        'Inflige mucho daño de fuego a un objetivo. 3 golpes. Inflige más daño contra objetivos que sufren quemadura. Máscara equilibrada: Aumenta el daño.'
+        'Inflige mucho daño de <span class="text-red-400 font-semibold">fuego</span> a un objetivo. 3 golpes. Inflige más daño contra objetivos que sufren quemadura. Máscara equilibrada: Aumenta el daño.'
     }
   },
   {
@@ -2033,12 +2044,12 @@ const MONOCO_SKILLS: Skill[] = [
     en: {
       name: 'Lancelier Impale',
       description:
-        'Deals low single target Ice damage. 1 hit. Slows  the target for 3 turns. Agile Mask: Increased damage.'
+        'Deals low single target <span class="text-blue-300 font-semibold">Ice</span> damage. 1 hit. Slows  the target for 3 turns. Agile Mask: Increased damage.'
     },
     es: {
       name: 'Empalamiento de Lancelier',
       description:
-        'Inflige daño de hielo leve a un objetivo. 1 golpes. Le aplica lentitud al objetivo durante 3 turnos. Máscara ágil: Aumenta el daño.'
+        'Inflige daño de <span class="text-blue-300 font-semibold">hielo</span> leve a un objetivo. 1 golpes. Le aplica lentitud al objetivo durante 3 turnos. Máscara ágil: Aumenta el daño.'
     }
   },
   {
@@ -2245,7 +2256,7 @@ const MONOCO_SKILLS: Skill[] = [
     es: {
       name: 'Fuego de Sakapatate',
       description:
-        'Inflige daño de fuego extremo a todos los enemigos. 3 golpes. Aplica 3 acumulaciones de quemadura por golpe. Máscara omnipotente: Aumenta el daño.'
+        'Inflige daño de <span class="text-red-400 font-semibold">fuego</span> extremo a todos los enemigos. 3 golpes. Aplica 3 acumulaciones de quemadura por golpe. Máscara omnipotente: Aumenta el daño.'
     }
   },
   {
@@ -2293,12 +2304,13 @@ const MONOCO_SKILLS: Skill[] = [
     roulettePositions: 4,
     en: {
       name: 'Stalact Punches',
-      description: 'Deals medium single target Ice damage. 4 hits. High Break damage. Heavy Mask: Increased damage.'
+      description:
+        'Deals medium single target <span class="text-blue-300 font-semibold">Ice</span> damage. 4 hits. High Break damage. Heavy Mask: Increased damage.'
     },
     es: {
       name: 'Puñetazos de Stalact',
       description:
-        'Inflige daño de hielo moderado a un objetivo. 4 golpes. Inflige mucho daño de ruptura. Máscara pesada: Aumenta el daño.'
+        'Inflige daño de <span class="text-blue-300 font-semibold">hielo</span> moderado a un objetivo. 4 golpes. Inflige mucho daño de ruptura. Máscara pesada: Aumenta el daño.'
     }
   },
   {
@@ -2320,7 +2332,7 @@ const MONOCO_SKILLS: Skill[] = [
   }
 ];
 
-const SKILLS = [
+const SKILLS: Skill[] = [
   ...GUSTAVE_SKILLS,
   ...LUNE_SKILLS,
   ...MAELLE_SKILLS,

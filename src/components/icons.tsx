@@ -15,8 +15,8 @@ export const ElementIcon = ({ element, size = 24 }: { element: string; size?: nu
 export const BreakIcon = () => {
   return (
     <Image
-      src={`/ui/break-status-effect.png`}
-      alt={`Break icon`}
+      src={`/ui/status-effect/break.png`}
+      alt="Break Icon"
       width={16}
       height={16}
     />

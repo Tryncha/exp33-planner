@@ -1,6 +1,6 @@
-import { LuneSkill, Skill } from '../types';
+import { GustaveSkill, LuneSkill, ScielSkill, Skill } from '../types';
 
-const GUSTAVE_SKILLS: Skill[] = [
+const GUSTAVE_SKILLS: GustaveSkill[] = [
   {
     id: 'from-fire',
     cost: 4,
@@ -135,12 +135,12 @@ const LUNE_SKILLS: LuneSkill[] = [
     en: {
       name: 'Crippling Tsunami',
       description:
-        'Deals medium <span class="text-blue-300 font-semibold">Ice</span> damage to all enemies. 1 hit. Applies <span class="text-red-600 font-semibold">Slow</span> <img src="/ui/status-effect/slow.png" alt="Slow Icon" /> for 3 turns.\nConsumes <img src="/ui/stains/earth.png" alt="Earth Stain Icon" /><img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" /><img src="/ui/stains/fire.png" alt="Fire Stain Icon" /> for greatly increased damage.'
+        'Deals medium <span class="text-blue-300 font-semibold">Ice</span> damage to all enemies. 1 hit. Applies <span class="text-red-700 font-semibold">Slow</span> <img src="/ui/status-effect/slow.png" alt="Slow Icon" /> for 3 turns.\nConsumes <img src="/ui/stains/earth.png" alt="Earth Stain Icon" /><img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" /><img src="/ui/stains/fire.png" alt="Fire Stain Icon" /> for greatly increased damage.'
     },
     es: {
       name: 'Tsunami Incapacitante',
       description:
-        'Inflige daño de <span class="text-blue-300 font-semibold">hielo</span> moderado a todos los enemigos. 1 golpe. Aplica <span class="text-red-600 font-semibold">lentitud</span> <img src="/ui/status-effect/slow.png" alt="Slow Icon" /> durante 3 turnos.\nConsume <img src="/ui/stains/earth.png" alt="Earth Stain Icon" /><img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" /><img src="/ui/stains/fire.png" alt="Fire Stain Icon" /> para infligir mucho más daño.'
+        'Inflige daño de <span class="text-blue-300 font-semibold">hielo</span> moderado a todos los enemigos. 1 golpe. Aplica <span class="text-red-700 font-semibold">lentitud</span> <img src="/ui/status-effect/slow.png" alt="Slow Icon" /> durante 3 turnos.\nConsume <img src="/ui/stains/earth.png" alt="Earth Stain Icon" /><img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" /><img src="/ui/stains/fire.png" alt="Fire Stain Icon" /> para infligir mucho más daño.'
     }
   },
   {
@@ -186,12 +186,12 @@ const LUNE_SKILLS: LuneSkill[] = [
     en: {
       name: 'Electrify',
       description:
-        'Deals low single target <span class="text-yellow-500 font-semibold">Lightning</span> damage. 3 hits. <span class="text-red-600 font-semibold">Critical Hits</span> <img src="/ui/status-effect/crit.png" alt="Critical Hit Icon" /> trigger an additional hit.\nConsumes <img src="/ui/stains/fire.png" alt="Fire Stain Icon" /> to generate one Light Stain <img src="/ui/stains/light.png" alt="Light Stain Icon" />.'
+        'Deals low single target <span class="text-yellow-500 font-semibold">Lightning</span> damage. 3 hits. <span class="text-red-700 font-semibold">Critical Hits</span> <img src="/ui/status-effect/crit.png" alt="Critical Hit Icon" /> trigger an additional hit.\nConsumes <img src="/ui/stains/fire.png" alt="Fire Stain Icon" /> to generate one Light Stain <img src="/ui/stains/light.png" alt="Light Stain Icon" />.'
     },
     es: {
       name: 'Electrocución',
       description:
-        'Inflige daño de <span class="text-yellow-500 font-semibold">rayo</span> leve a un objetivo. 3 golpes. Los <span class="text-red-600 font-semibold">golpes críticos</span> <img src="/ui/status-effect/crit.png" alt="Critical Hit Icon" /> propinan un golpe adicional.\nConsume <img src="/ui/stains/fire.png" alt="Fire Stain Icon" /> para generar un borrón de luz <img src="/ui/stains/light.png" alt="Light Stain Icon" />.'
+        'Inflige daño de <span class="text-yellow-500 font-semibold">rayo</span> leve a un objetivo. 3 golpes. Los <span class="text-red-700 font-semibold">golpes críticos</span> <img src="/ui/status-effect/crit.png" alt="Critical Hit Icon" /> propinan un golpe adicional.\nConsume <img src="/ui/stains/fire.png" alt="Fire Stain Icon" /> para generar un borrón de luz <img src="/ui/stains/light.png" alt="Light Stain Icon" />.'
     }
   },
   {
@@ -220,12 +220,12 @@ const LUNE_SKILLS: LuneSkill[] = [
     en: {
       name: 'Elemental Trick',
       description:
-        'Deals low single target <span class="text-blue-300 font-semibold">Ice</span>, <span class="text-red-400 font-semibold">Fire</span>, <span class="text-yellow-500 font-semibold">Lightning</span>, and <span class="text-lime-500 font-semibold">Earth</span> damage. 4 hits.\n<span class="text-red-600 font-semibold">Critical Hits</span> <img src="/ui/status-effect/crit.png" alt="Critical Hit Icon" /> generate the corresponding Stain.'
+        'Deals low single target <span class="text-blue-300 font-semibold">Ice</span>, <span class="text-red-400 font-semibold">Fire</span>, <span class="text-yellow-500 font-semibold">Lightning</span>, and <span class="text-lime-500 font-semibold">Earth</span> damage. 4 hits.\n<span class="text-red-700 font-semibold">Critical Hits</span> <img src="/ui/status-effect/crit.png" alt="Critical Hit Icon" /> generate the corresponding Stain.'
     },
     es: {
       name: 'Truco Elemental',
       description:
-        'Inflige daño de <span class="text-blue-300 font-semibold">hielo</span>, <span class="text-red-400 font-semibold">fuego</span>, <span class="text-yellow-500 font-semibold">rayo</span> y <span class="text-lime-500 font-semibold">tierra</span> leve a un objetivo. 4 golpes.\nLos <span class="text-red-600 font-semibold">golpes críticos</span> <img src="/ui/status-effect/crit.png" alt="Critical Hit Icon" /> generan el borrón correspondiente.'
+        'Inflige daño de <span class="text-blue-300 font-semibold">hielo</span>, <span class="text-red-400 font-semibold">fuego</span>, <span class="text-yellow-500 font-semibold">rayo</span> y <span class="text-lime-500 font-semibold">tierra</span> leve a un objetivo. 4 golpes.\nLos <span class="text-red-700 font-semibold">golpes críticos</span> <img src="/ui/status-effect/crit.png" alt="Critical Hit Icon" /> generan el borrón correspondiente.'
     }
   },
   {
@@ -288,12 +288,12 @@ const LUNE_SKILLS: LuneSkill[] = [
     en: {
       name: 'Ice Lance',
       description:
-        'Deals medium single target <span class="text-blue-300 font-semibold">Ice</span> damage that <span class="text-red-600 font-semibold">Slows</span> <img src="/ui/status-effect/slow.png" alt="Slow Icon" /> the target. 1 Hit.\nConsumes <img src="/ui/stains/earth.png" alt="Earth Stain Icon" /> to deal increased damage.'
+        'Deals medium single target <span class="text-blue-300 font-semibold">Ice</span> damage that <span class="text-red-700 font-semibold">Slows</span> <img src="/ui/status-effect/slow.png" alt="Slow Icon" /> the target. 1 Hit.\nConsumes <img src="/ui/stains/earth.png" alt="Earth Stain Icon" /> to deal increased damage.'
     },
     es: {
       name: 'Lanza de Hielo',
       description:
-        'Inflige daño de <span class="text-blue-300 font-semibold">hielo</span> moderado a un objetivo y le causa <span class="text-red-600 font-semibold">lentitud</span> <img src="/ui/status-effect/slow.png" alt="Slow Icon" />. 1 golpe.\nConsume <img src="/ui/stains/earth.png" alt="Earth Stain Icon" /> para infligir más daño.'
+        'Inflige daño de <span class="text-blue-300 font-semibold">hielo</span> moderado a un objetivo y le causa <span class="text-red-700 font-semibold">lentitud</span> <img src="/ui/status-effect/slow.png" alt="Slow Icon" />. 1 golpe.\nConsume <img src="/ui/stains/earth.png" alt="Earth Stain Icon" /> para infligir más daño.'
     }
   },
   {
@@ -305,12 +305,12 @@ const LUNE_SKILLS: LuneSkill[] = [
     en: {
       name: 'Immolation',
       description:
-        'Deals low single target <span class="text-red-400 font-semibold">Fire</span> damage and 3 <span class="text-orange-400 font-semibold">Burn</span> <img src="/ui/status-effect/burn.png" alt="Burn Icon" />. 1 hit. Applies 2 more <span class="text-orange-400 font-semibold">Burns</span> <img src="/ui/status-effect/burn.png" alt="Burn Icon" /> if the target is <span class="text-red-600 font-semibold">Marked</span> <img src="/ui/status-effect/mark.png" alt="Mark Icon" />.\nConsumes <img src="/ui/stains/ice.png" alt="Ice Stain Icon" /> for increased damage.'
+        'Deals low single target <span class="text-red-400 font-semibold">Fire</span> damage and 3 <span class="text-orange-400 font-semibold">Burn</span> <img src="/ui/status-effect/burn.png" alt="Burn Icon" />. 1 hit. Applies 2 more <span class="text-orange-400 font-semibold">Burns</span> <img src="/ui/status-effect/burn.png" alt="Burn Icon" /> if the target is <span class="text-red-700 font-semibold">Marked</span> <img src="/ui/status-effect/mark.png" alt="Mark Icon" />.\nConsumes <img src="/ui/stains/ice.png" alt="Ice Stain Icon" /> for increased damage.'
     },
     es: {
       name: 'Inmolación',
       description:
-        'Inflige daño de <span class="text-red-400 font-semibold">fuego</span> leve y 3 acumulaciones de <span class="text-orange-400 font-semibold">quemadura</span> <img src="/ui/status-effect/burn.png" alt="Burn Icon" /> a un objetivo. 1 golpe. Aplica 2 acumulaciones más de <span class="text-orange-400 font-semibold">quemadura</span> <img src="/ui/status-effect/burn.png" alt="Burn Icon" /> si el objetivo está <span class="text-red-600 font-semibold">marcado</span> <img src="/ui/status-effect/mark.png" alt="Mark Icon" />.\nConsume <img src="/ui/stains/ice.png" alt="Ice Stain Icon" /> para infligir más daño.'
+        'Inflige daño de <span class="text-red-400 font-semibold">fuego</span> leve y 3 acumulaciones de <span class="text-orange-400 font-semibold">quemadura</span> <img src="/ui/status-effect/burn.png" alt="Burn Icon" /> a un objetivo. 1 golpe. Aplica 2 acumulaciones más de <span class="text-orange-400 font-semibold">quemadura</span> <img src="/ui/status-effect/burn.png" alt="Burn Icon" /> si el objetivo está <span class="text-red-700 font-semibold">marcado</span> <img src="/ui/status-effect/mark.png" alt="Mark Icon" />.\nConsume <img src="/ui/stains/ice.png" alt="Ice Stain Icon" /> para infligir más daño.'
     }
   },
   {
@@ -322,12 +322,12 @@ const LUNE_SKILLS: LuneSkill[] = [
     en: {
       name: 'Lightning Dance',
       description:
-        'Deals very high single target <span class="text-yellow-500 font-semibold">Lightning</span> damage. 6 hits. <span class="text-red-600 font-semibold">Critical Hits</span> <img src="/ui/status-effect/crit.png" alt="Critical Hit Icon" /> trigger an additional hit.\nConsumes <img src="/ui/stains/earth.png" alt="Earth Stain Icon" /><img src="/ui/stains/ice.png" alt="Ice Stain Icon" /><img src="/ui/stains/fire.png" alt="Fire Stain Icon" />: Greatly increased damage.'
+        'Deals very high single target <span class="text-yellow-500 font-semibold">Lightning</span> damage. 6 hits. <span class="text-red-700 font-semibold">Critical Hits</span> <img src="/ui/status-effect/crit.png" alt="Critical Hit Icon" /> trigger an additional hit.\nConsumes <img src="/ui/stains/earth.png" alt="Earth Stain Icon" /><img src="/ui/stains/ice.png" alt="Ice Stain Icon" /><img src="/ui/stains/fire.png" alt="Fire Stain Icon" />: Greatly increased damage.'
     },
     es: {
       name: 'Danza del Relámpago',
       description:
-        'Inflige muchísimo daño de <span class="text-yellow-500 font-semibold">rayo</span> a un objetivo. 6 golpes. Los <span class="text-red-600 font-semibold">golpes críticos</span> <img src="/ui/status-effect/crit.png" alt="Critical Hit Icon" /> propinan un golpe adicional.\nConsume <img src="/ui/stains/earth.png" alt="Earth Stain Icon" /><img src="/ui/stains/ice.png" alt="Ice Stain Icon" /><img src="/ui/stains/fire.png" alt="Fire Stain Icon" />: Aumenta mucho el daño.'
+        'Inflige muchísimo daño de <span class="text-yellow-500 font-semibold">rayo</span> a un objetivo. 6 golpes. Los <span class="text-red-700 font-semibold">golpes críticos</span> <img src="/ui/status-effect/crit.png" alt="Critical Hit Icon" /> propinan un golpe adicional.\nConsume <img src="/ui/stains/earth.png" alt="Earth Stain Icon" /><img src="/ui/stains/ice.png" alt="Ice Stain Icon" /><img src="/ui/stains/fire.png" alt="Fire Stain Icon" />: Aumenta mucho el daño.'
     }
   },
   {
@@ -458,12 +458,12 @@ const LUNE_SKILLS: LuneSkill[] = [
     en: {
       name: 'Thunderfall',
       description:
-        'Deals medium <span class="text-yellow-500 font-semibold">Lightning</span> damage to random enemies. 2-6 hits. <span class="text-red-600 font-semibold">Critical Hits</span> <img src="/ui/status-effect/crit.png" alt="Critical Hit Icon" /> trigger an additional hit.\nConsumes <img src="/ui/stains/fire.png" alt="Fire Stain Icon" /> for increased damage.'
+        'Deals medium <span class="text-yellow-500 font-semibold">Lightning</span> damage to random enemies. 2-6 hits. <span class="text-red-700 font-semibold">Critical Hits</span> <img src="/ui/status-effect/crit.png" alt="Critical Hit Icon" /> trigger an additional hit.\nConsumes <img src="/ui/stains/fire.png" alt="Fire Stain Icon" /> for increased damage.'
     },
     es: {
       name: 'Tempestad',
       description:
-        'Inflige daño de <span class="text-yellow-500 font-semibold">rayo</span> moderado a enemigos al azar. 2 a 6 golpes. Los <span class="text-red-600 font-semibold">golpes críticos</span> <img src="/ui/status-effect/crit.png" alt="Critical Hit Icon" /> propinan un golpe adicional.\nConsume <img src="/ui/stains/fire.png" alt="Fire Stain Icon" /> para infligir más daño.'
+        'Inflige daño de <span class="text-yellow-500 font-semibold">rayo</span> moderado a enemigos al azar. 2 a 6 golpes. Los <span class="text-red-700 font-semibold">golpes críticos</span> <img src="/ui/status-effect/crit.png" alt="Critical Hit Icon" /> propinan un golpe adicional.\nConsume <img src="/ui/stains/fire.png" alt="Fire Stain Icon" /> para infligir más daño.'
     }
   },
   {
@@ -855,37 +855,56 @@ const MAELLE_SKILLS: Skill[] = [
   }
 ];
 
-const SCIEL_SKILLS: Skill[] = [
+const SCIEL_SKILLS: ScielSkill[] = [
   {
     id: 'all-set',
     cost: 6,
     characterId: 'sciel',
     canBreak: false,
-    en: { name: 'All Set', description: 'Applies Shell , Powerful , and Rush  to all allies.' },
-    es: { name: 'All Set', description: 'Applies Shell , Powerful , and Rush  to all allies.' }
+    charge: 'sun',
+    en: {
+      name: 'All Set',
+      description:
+        'Applies <span class="text-lime-500 font-semibold">Shell</span> <img src="/ui/status-effect/shell.png" alt="Shell Icon" />, <span class="text-lime-500 font-semibold">Powerful</span> <img src="/ui/status-effect/powerful.png" alt="Powerful Icon" />, and <span class="text-lime-500 font-semibold">Rush</span> <img src="/ui/status-effect/rush.png" alt="Rush Icon" /> to all allies.'
+    },
+    es: {
+      name: 'Todo Listo',
+      description:
+        'Aplica <span class="text-lime-500 font-semibold">coraza</span> <img src="/ui/status-effect/shell.png" alt="Shell Icon" />, <span class="text-lime-500 font-semibold">fortalecimiento</span> <img src="/ui/status-effect/powerful.png" alt="Powerful Icon" /> y <span class="text-lime-500 font-semibold">prisa</span> <img src="/ui/status-effect/rush.png" alt="Rush Icon" /> a todos los aliados.'
+    }
   },
   {
     id: 'bad-omen',
     cost: 3,
     characterId: 'sciel',
     canBreak: false,
-    en: { name: 'Bad Omen', description: 'Deals low Dark damage to all enemies. 2 hits. Applies 2 Foretell  per hit.' },
-    es: { name: 'Bad Omen', description: 'Deals low Dark damage to all enemies. 2 hits. Applies 2 Foretell  per hit.' }
+    charge: 'sun',
+    en: {
+      name: 'Bad Omen',
+      description:
+        'Deals low <span class="text-purple-400 font-semibold">Dark</span> damage to all enemies. 2 hits.\nApplies 2 <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> per hit.'
+    },
+    es: {
+      name: 'Mal Presagio',
+      description:
+        'Inflige daño de <span class="text-purple-400 font-semibold">oscuridad</span> leve a todos los enemigos. 2 golpes.\nAplica 2 acumulaciones de <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> por golpe.'
+    }
   },
   {
     id: 'card-weaver',
     cost: 3,
     characterId: 'sciel',
     canBreak: false,
+    charge: 'sun',
     en: {
       name: 'Card Weaver',
       description:
-        "Deals low single target Physical damage. 1 hit. Propagates target's Foretell  to all enemies. Plays a second turn."
+        'Deals low single target <span class="text-taupe-400 font-semibold">Physical</span> damage. 1 hit.\nPropagates target\'s <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> to all enemies.\nPlays a second turn.'
     },
     es: {
-      name: 'Card Weaver',
+      name: 'Tejedora de Cartas',
       description:
-        "Deals low single target Physical damage. 1 hit. Propagates target's Foretell  to all enemies. Plays a second turn."
+        'Inflige daño <span class="text-taupe-400 font-semibold">físico</span> leve a un objetivo. 1 golpe.\nPropaga el <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> del objetivo a todos los enemigos.\nActúa una segunda vez.'
     }
   },
   {
@@ -893,13 +912,15 @@ const SCIEL_SKILLS: Skill[] = [
     cost: 0,
     characterId: 'sciel',
     canBreak: false,
+    charge: 'moon',
     en: {
       name: 'Dark Cleansing',
       description: "Cleanses an ally of their Status Effects and propogates the target's buff to all allies."
     },
     es: {
-      name: 'Dark Cleansing',
-      description: "Cleanses an ally of their Status Effects and propogates the target's buff to all allies."
+      name: 'Purificación Oscura',
+      description:
+        'Disipa las alteraciones de estado de un aliado y propaga los potenciadores del objetivo a todos los aliados.'
     }
   },
   {
@@ -907,13 +928,16 @@ const SCIEL_SKILLS: Skill[] = [
     cost: 6,
     characterId: 'sciel',
     canBreak: false,
+    charge: 'moon',
     en: {
       name: 'Dark Wave',
-      description: 'Deals high Dark damage to all enemies. 3 hits. Consumes all Foretell  to deal additional damage.'
+      description:
+        'Deals high <span class="text-purple-400 font-semibold">Dark</span> damage to all enemies. 3 hits.\nConsumes all <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> to deal additional damage.'
     },
     es: {
-      name: 'Dark Wave',
-      description: 'Deals high Dark damage to all enemies. 3 hits. Consumes all Foretell  to deal additional damage.'
+      name: 'Oleada Oscura',
+      description:
+        'Inflige mucho daño de <span class="text-purple-400 font-semibold">oscuridad</span> a todos los enemigos. 3 golpes.\nConsume todas las acumulaciones de <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> para infligir más daño.'
     }
   },
   {
@@ -921,29 +945,33 @@ const SCIEL_SKILLS: Skill[] = [
     cost: 5,
     characterId: 'sciel',
     canBreak: false,
+    charge: 'moon',
     en: {
       name: 'Delaying Slash',
       description:
-        "Deals medium single targe damage. 2 hits. Uses weapon's element. Consumes Foretell  to increase damage and delay target's turn."
+        'Deals medium single targe damage. 2 hits.\nUses weapon\'s element.\nConsumes <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> to increase damage and delay target\'s turn.'
     },
     es: {
-      name: 'Delaying Slash',
+      name: 'Corte Retardante',
       description:
-        "Deals medium single targe damage. 2 hits. Uses weapon's element. Consumes Foretell  to increase damage and delay target's turn."
+        'Inflige daño moderado a un objetivo. 2 golpes.\nUsa el elemento del arma.\nConsume <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> para aumentar el daño y retrasar el turno del objetivo.'
     }
   },
   {
     id: 'final-path',
     cost: 9,
     characterId: 'sciel',
-    canBreak: false,
+    canBreak: true,
+    charge: 'sun',
     en: {
       name: 'Final Path',
-      description: 'Deal extreme single target Dark damage and applies 10 Foretell  1 hit. Can Break'
+      description:
+        'Deal extreme single target <span class="text-purple-400 font-semibold">Dark</span> damage and applies 10 <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> 1 hit.\nCan <span class="text-yellow-600 font-semibold">Break</span> <img src="/ui/status-effect/break.png" alt="Break Icon" />.'
     },
     es: {
-      name: 'Final Path',
-      description: 'Deal extreme single target Dark damage and applies 10 Foretell  1 hit. Can Break'
+      name: 'Senda Final',
+      description:
+        'Inflige daño de <span class="text-purple-400 font-semibold">oscuridad</span> extremo a un objetivo y le aplica 10 acumulaciones de <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" />. 1 golpe.\nPuede causar <span class="text-yellow-600 font-semibold">ruptura</span> <img src="/ui/status-effect/break.png" alt="Break Icon" />.'
     }
   },
   {
@@ -951,13 +979,16 @@ const SCIEL_SKILLS: Skill[] = [
     cost: 3,
     characterId: 'sciel',
     canBreak: false,
+    charge: 'moon',
     en: {
       name: 'Firing Shadow',
-      description: 'Deals low Dark damage to all enemies. 3 hits. Consumes 1 Foretell  per hit for increased damage.'
+      description:
+        'Deals low <span class="text-purple-400 font-semibold">Dark</span> damage to all enemies. 3 hits.\nConsumes 1 <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> per hit for increased damage.'
     },
     es: {
-      name: 'Firing Shadow',
-      description: 'Deals low Dark damage to all enemies. 3 hits. Consumes 1 Foretell  per hit for increased damage.'
+      name: 'Sombra Ardiente',
+      description:
+        'Inflige daño de <span class="text-purple-400 font-semibold">oscuridad</span> leve a todos los enemigos. 3 golpes.\nConsume 1 acumulación de <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> por golpe para infligir más daño.'
     }
   },
   {
@@ -965,15 +996,16 @@ const SCIEL_SKILLS: Skill[] = [
     cost: 2,
     characterId: 'sciel',
     canBreak: false,
+    charge: 'sun',
     en: {
       name: 'Focused Foretell',
       description:
-        'Deals medium single target Physical damage. 1 hit. Applies 2 Foretell  Applies 3 additional Foretell  if target has 0 Foretell'
+        'Deals medium single target <span class="text-taupe-400 font-semibold">Physical</span> damage. 1 hit.\nApplies 2 <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" />.\nApplies 3 additional Foretell if target has 0 <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" />.'
     },
     es: {
-      name: 'Focused Foretell',
+      name: 'Augurio Enfocado',
       description:
-        'Deals medium single target Physical damage. 1 hit. Applies 2 Foretell  Applies 3 additional Foretell  if target has 0 Foretell'
+        'Inflige daño <span class="text-taupe-400 font-semibold">físico</span> moderado a un objetivo. 1 golpe.\nAplica 2 acumulaciones de <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" />.\nAplica 3 acumulaciones más de <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> si el objetivo no tiene acumulaciones de <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" />.'
     }
   },
   {
@@ -981,23 +1013,31 @@ const SCIEL_SKILLS: Skill[] = [
     cost: 5,
     characterId: 'sciel',
     canBreak: false,
-    en: { name: "Fortune's Fury", description: 'Targeted ally deals double damage for 1 turn.' },
-    es: { name: "Fortune's Fury", description: 'Targeted ally deals double damage for 1 turn.' }
+    charge: 'sun',
+    en: {
+      name: "Fortune's Fury",
+      description: 'Targeted ally deals double damage for 1 turn.'
+    },
+    es: {
+      name: 'Furia de la Fortuna',
+      description: 'El aliado seleccionado inflige daño doble durante 1 turno.'
+    }
   },
   {
     id: 'grim-harvest',
     cost: 5,
     characterId: 'sciel',
     canBreak: false,
+    charge: 'moon',
     en: {
       name: 'Grim Harvest',
       description:
-        'Deals medium single target Dark damage. 1 hit. Heals  all allies by 30% Health. Consumes Foretell  to increase Heal  by 5% per Foretell'
+        'Deals medium single target <span class="text-purple-400 font-semibold">Dark</span> damage. 1 hit.\n<span class="text-lime-600 font-semibold">Heals</span> <img src="/ui/status-effect/heal.png" alt="Heal Icon" />  all allies by 30% Health.\nConsumes <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> to increase <span class="text-lime-600 font-semibold">Heal</span> <img src="/ui/status-effect/heal.png" alt="Heal Icon" /> by 5% per <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" />'
     },
     es: {
-      name: 'Grim Harvest',
+      name: 'Cosecha Nefasta',
       description:
-        'Deals medium single target Dark damage. 1 hit. Heals  all allies by 30% Health. Consumes Foretell  to increase Heal  by 5% per Foretell'
+        'Inflige daño de <span class="text-purple-400 font-semibold">oscuridad</span> moderado a un objetivo. 1 golpe.\n<span class="text-lime-600 font-semibold">Cura</span> <img src="/ui/status-effect/heal.png" alt="Heal Icon" /> a todos los aliados un 30% de vida.\nConsume <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> para aumentar la <span class="text-lime-600 font-semibold">curación</span> <img src="/ui/status-effect/heal.png" alt="Heal Icon" /> un 5% por acumulación de <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" />.'
     }
   },
   {
@@ -1005,15 +1045,16 @@ const SCIEL_SKILLS: Skill[] = [
     cost: 3,
     characterId: 'sciel',
     canBreak: false,
+    charge: 'moon',
     en: {
       name: 'Harvest',
       description:
-        "Deals medium single target damage. 1 hit. Uses weapon's element.  Heals  self by 40% Health. Consumes all Foretell  to increase Heal  by 5% per Foretell"
+        'Deals medium single target damage. 1 hit.\nUses weapon\'s element.\n<span class="text-lime-600 font-semibold">Heals</span> <img src="/ui/status-effect/heal.png" alt="Heal Icon" /> self by 40% Health.\nConsumes all <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> to increase <span class="text-lime-600 font-semibold">Heal</span> <img src="/ui/status-effect/heal.png" alt="Heal Icon" /> by 5% per <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" />.'
     },
     es: {
-      name: 'Harvest',
+      name: 'Cosecha',
       description:
-        "Deals medium single target damage. 1 hit. Uses weapon's element.  Heals  self by 40% Health. Consumes all Foretell  to increase Heal  by 5% per Foretell"
+        'Inflige daño moderado a un objetivo. 1 golpe.\nUsa el elemento del arma.\n<span class="text-lime-600 font-semibold">Cura</span> <img src="/ui/status-effect/heal.png" alt="Heal Icon" /> a Sciel un 40% de vida.\nConsume todo el <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> para aumentar la <span class="text-lime-600 font-semibold">curación</span> <img src="/ui/status-effect/heal.png" alt="Heal Icon" /> un 5% por cada acumulación de <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" />.'
     }
   },
   {
@@ -1021,21 +1062,32 @@ const SCIEL_SKILLS: Skill[] = [
     cost: 5,
     characterId: 'sciel',
     canBreak: false,
-    en: { name: 'Intervention', description: 'Targeted ally plays immediately and gains 4 AP' },
-    es: { name: 'Intervention', description: 'Targeted ally plays immediately and gains 4 AP' }
+    charge: 'moon',
+    en: {
+      name: 'Intervention',
+      description: 'Targeted ally plays immediately and gains 4 <span class="text-blue-400 font-semibold">AP</span>.'
+    },
+    es: {
+      name: 'Intervención',
+      description:
+        'El aliado seleccionado actúa de inmediato y obtiene 4 <span class="text-blue-400 font-semibold">PA</span>.'
+    }
   },
   {
     id: 'marking-card',
     cost: 3,
     characterId: 'sciel',
     canBreak: false,
+    charge: 'sun',
     en: {
       name: 'Marking Card',
-      description: 'Deals medium single target Dark damge. 2 hits. Applies Mark  to the target. Applies 3 Foretell'
+      description:
+        'Deals medium single target <span class="text-purple-400 font-semibold">Dark</span> damge. 2 hits.\nApplies <span class="text-red-700 font-semibold">Mark</span> <img src="/ui/status-effect/mark.png" alt="Mark Icon" /> to the target.\nApplies 3 <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" />.'
     },
     es: {
-      name: 'Marking Card',
-      description: 'Deals medium single target Dark damge. 2 hits. Applies Mark  to the target. Applies 3 Foretell'
+      name: 'Carta de Marca',
+      description:
+        'Inflige daño de <span class="text-purple-400 font-semibold">oscuridad</span> moderado a un objetivo. 2 golpes.\nLe aplica <span class="text-red-700 font-semibold">marca</span> <img src="/ui/status-effect/mark.png" alt="Mark Icon" /> al objetivo.\nAplica 3 acumulaciones de <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" />.'
     }
   },
   {
@@ -1043,31 +1095,33 @@ const SCIEL_SKILLS: Skill[] = [
     cost: 4,
     characterId: 'sciel',
     canBreak: false,
+    charge: 'moon',
     en: {
       name: 'Our Sacrifice',
       description:
-        "Deals extreme Dark damage to all enemies. 1 hit. Absorbs allies' Health and enemies'  Foretell  to deal increased damage."
+        'Deals extreme <span class="text-purple-400 font-semibold">Dark</span> damage to all enemies. 1 hit.\nAbsorbs allies\' Health and enemies\' <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> to deal increased damage.'
     },
     es: {
-      name: 'Our Sacrifice',
+      name: 'Nuestro Sacrificio',
       description:
-        "Deals extreme Dark damage to all enemies. 1 hit. Absorbs allies' Health and enemies'  Foretell  to deal increased damage."
+        'Inflige daño de <span class="text-purple-400 font-semibold">oscuridad</span> extremo a todos los enemigos. 1 golpe.\nAbsorbe la vida de los aliados y el <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> de los enemigos para infligir más daño.'
     }
   },
   {
     id: 'phantom-blade',
     cost: 5,
     characterId: 'sciel',
-    canBreak: false,
+    canBreak: true,
+    charge: 'moon',
     en: {
       name: 'Phantom Blade',
       description:
-        'Deals high single target Dark damage. 1 hit. Consumes all Foretell  to deal additional damage. Can Break'
+        'Deals high single target <span class="text-purple-400 font-semibold">Dark</span> damage. 1 hit.\nConsumes all <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> to deal additional damage.\nCan <span class="text-yellow-600 font-semibold">Break</span> <img src="/ui/status-effect/break.png" alt="Break Icon" />.'
     },
     es: {
-      name: 'Phantom Blade',
+      name: 'Espada Fantasma',
       description:
-        'Deals high single target Dark damage. 1 hit. Consumes all Foretell  to deal additional damage. Can Break'
+        'Inflige mucho daño de <span class="text-purple-400 font-semibold">oscuridad</span> a un objetivo. 1 golpe.\nConsume todas las acumulaciones de <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> para infligir más daño.\nPuede causar <span class="text-yellow-600 font-semibold">ruptura</span> <img src="/ui/status-effect/break.png" alt="Break Icon" />.'
     }
   },
   {
@@ -1075,15 +1129,16 @@ const SCIEL_SKILLS: Skill[] = [
     cost: 4,
     characterId: 'sciel',
     canBreak: false,
+    charge: 'moon',
     en: {
       name: 'Plentiful Harvest',
       description:
-        'Deals medium single target Physical damage. 2 hits. Consumes all Foretell  on a target and gives 1 AP  to a party member for each Foretell  consumed.'
+        'Deals medium single target <span class="text-taupe-400 font-semibold">Physical</span> damage. 2 hits.\nConsumes all <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> on a target and gives 1 <span class="text-blue-400 font-semibold">AP</span> to a party member for each <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> consumed.'
     },
     es: {
-      name: 'Plentiful Harvest',
+      name: 'Cosecha Abundante',
       description:
-        'Deals medium single target Physical damage. 2 hits. Consumes all Foretell  on a target and gives 1 AP  to a party member for each Foretell  consumed.'
+        'Inflige daño <span class="text-taupe-400 font-semibold">físico</span> moderado a un objetivo. 2 golpes.\nConsume todas las acumulaciones de <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> de un objetivo y otorga 1 <span class="text-blue-400 font-semibold">PA</span> al grupo por cada acumulación de <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> consumida.'
     }
   },
   {
@@ -1091,23 +1146,32 @@ const SCIEL_SKILLS: Skill[] = [
     cost: 3,
     characterId: 'sciel',
     canBreak: false,
-    en: { name: 'Rush', description: 'Applies Rush  to 1-3 allies, increasing their speed for 3 turns.' },
-    es: { name: 'Rush', description: 'Applies Rush  to 1-3 allies, increasing their speed for 3 turns.' }
+    charge: 'sun',
+    en: {
+      name: 'Rush',
+      description:
+        'Applies <span class="text-lime-500 font-semibold">Rush</span> <img src="/ui/status-effect/rush.png" alt="Rush Icon" /> to 1-3 allies, increasing their speed for 3 turns.'
+    },
+    es: {
+      name: 'Prisa',
+      description:
+        'Aplica <span class="text-lime-500 font-semibold">prisa</span> <img src="/ui/status-effect/rush.png" alt="Rush Icon" /> a entre 1 y 3 aliados, que aumenta su velocidad durante 3 turnos.'
+    }
   },
   {
     id: 'sealed-fate',
     cost: 4,
     characterId: 'sciel',
     canBreak: false,
+    charge: 'moon',
     en: {
       name: 'Sealed Fate',
-      description:
-        "Deals high single target damage. 5-7 hits. Uses weapon's element. Each hit can consume 1 Foretell  to deal 200% more damage. Critical Hitsdon't remove the Foretell  but still gets the damage increase."
+      description: `Deals high single target damage. 5-7 hits.\nUses weapon's element.\nEach hit can consume 1 <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> to deal 200% more damage.\n<span class="text-red-700 font-semibold">Critical Hits</span> <img src="/ui/status-effect/crit.png" alt="Critical Hit Icon" /> don't remove the <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> but still gets the damage increase.`
     },
     es: {
-      name: 'Sealed Fate',
+      name: 'Destino Sellado',
       description:
-        "Deals high single target damage. 5-7 hits. Uses weapon's element. Each hit can consume 1 Foretell  to deal 200% more damage. Critical Hitsdon't remove the Foretell  but still gets the damage increase."
+        'Inflige mucho daño a un objetivo. 5 a 7 golpes.\nUsa el elemento del arma.\nCada golpe puede consumir 1 acumulación de <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> para infligir un 200% más de daño.\nLos <span class="text-red-700 font-semibold">golpes críticos</span> <img src="/ui/status-effect/crit.png" alt="Critical Hit Icon" /> no consumen <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" />, pero sí otorgan el aumento de daño.'
     }
   },
   {
@@ -1115,15 +1179,16 @@ const SCIEL_SKILLS: Skill[] = [
     cost: 4,
     characterId: 'sciel',
     canBreak: false,
+    charge: 'sun',
     en: {
       name: 'Searing Bond',
       description:
-        'Deals medium single target Dark damage. 1 hit. Applies 5 Foretell  Also deals damage and applies Foretell  to every other Burning  enemies.'
+        'Deals medium single target <span class="text-purple-400 font-semibold">Dark</span> damage. 1 hit.\nApplies 5 <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" />.\nAlso deals damage and applies <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> to every other <span class="text-orange-400 font-semibold">Burning</span> <img src="/ui/status-effect/burn.png" alt="Burn Icon" /> enemies.'
     },
     es: {
-      name: 'Searing Bond',
+      name: 'Vínculo Abrasador',
       description:
-        'Deals medium single target Dark damage. 1 hit. Applies 5 Foretell  Also deals damage and applies Foretell  to every other Burning  enemies.'
+        'Inflige daño de <span class="text-purple-400 font-semibold">oscuridad</span> moderado a un objetivo. 1 golpe.\nAplica 5 acumulaciones de <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" />.\nAdemás, inflige daño y aplica <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> a los demás enemigos que sufran <span class="text-orange-400 font-semibold">quemadura</span> <img src="/ui/status-effect/burn.png" alt="Burn Icon" />.'
     }
   },
   {
@@ -1131,15 +1196,15 @@ const SCIEL_SKILLS: Skill[] = [
     cost: 7,
     characterId: 'sciel',
     canBreak: false,
+    charge: 'sun',
     en: {
       name: 'Spectral Sweep',
-      description:
-        "Deals medium single target damage. 2 to 6 hits. Uses weapon's element. Applies 1 Foretell  per hit. Critical Hits apply an additional Foretell"
+      description: `Deals medium single target damage. 2 to 6 hits.\nUses weapon's element. Applies 1 <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> per hit.\n<span class="text-red-700 font-semibold">Critical Hits</span> <img src="/ui/status-effect/crit.png" alt="Critical Hit Icon" /> apply an additional <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" />.`
     },
     es: {
-      name: 'Spectral Sweep',
+      name: 'Barrido Espectral',
       description:
-        "Deals medium single target damage. 2 to 6 hits. Uses weapon's element. Applies 1 Foretell  per hit. Critical Hits apply an additional Foretell"
+        'Inflige daño moderado a un objetivo. 2 a 6 golpes.\nAplica 1 acumulación de <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> por golpe.\nLos <span class="text-red-700 font-semibold">golpes críticos</span> <img src="/ui/status-effect/crit.png" alt="Critical Hit Icon" /> aplican una acumulación adicional de <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" />.'
     }
   },
   {
@@ -1147,15 +1212,16 @@ const SCIEL_SKILLS: Skill[] = [
     cost: 9,
     characterId: 'sciel',
     canBreak: false,
+    charge: 'moon',
     en: {
       name: 'Twilight Dance',
       description:
-        'Deals extreme single target Dark damage. 4 hits. During Twilight , extends Twilight  duration by 1 turn. Consumes all Foretell  to deal additional damage.'
+        'Deals extreme single target <span class="text-purple-400 font-semibold">Dark</span> damage. 4 hits.\nDuring <span class="text-fuchsia-400 font-semibold">Twilight</span> <img src="/ui/charges/twilight.png" alt="Twilight Icon" />, extends <span class="text-fuchsia-400 font-semibold">Twilight</span> <img src="/ui/charges/twilight.png" alt="Twilight Icon" /> duration by 1 turn.\nConsumes all <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> to deal additional damage.'
     },
     es: {
-      name: 'Twilight Dance',
+      name: 'Danza Crepuscular',
       description:
-        'Deals extreme single target Dark damage. 4 hits. During Twilight , extends Twilight  duration by 1 turn. Consumes all Foretell  to deal additional damage.'
+        'Inflige daño de <span class="text-purple-400 font-semibold">oscuridad</span> extremo a un objetivo. 4 golpes.\nDurante <span class="text-fuchsia-400 font-semibold">Crepúsculo</span> <img src="/ui/charges/twilight.png" alt="Twilight Icon" />, extiende la duración de <span class="text-fuchsia-400 font-semibold">Crepúsculo</span> <img src="/ui/charges/twilight.png" alt="Twilight Icon" /> en 1 turno.\nConsume todas las acumulaciones de <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> para infligir más daño.'
     }
   },
   {
@@ -1163,13 +1229,16 @@ const SCIEL_SKILLS: Skill[] = [
     cost: 2,
     characterId: 'sciel',
     canBreak: false,
+    charge: 'moon',
     en: {
       name: 'Twilight Slash',
-      description: 'Deals low single target Dark damage. 1 hit. Consumes all Foretell  to deal additional damage.'
+      description:
+        'Deals low single target <span class="text-purple-400 font-semibold">Dark</span> damage. 1 hit.\nConsumes all <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> to deal additional damage.'
     },
     es: {
-      name: 'Twilight Slash',
-      description: 'Deals low single target Dark damage. 1 hit. Consumes all Foretell  to deal additional damage.'
+      name: 'Corte Crepuscular',
+      description:
+        'Inflige daño de <span class="text-purple-400 font-semibold">oscuridad</span> leve a un objetivo. 1 golpe.\nConsume todas las acumulaciones de <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> para infligir más daño.'
     }
   }
 ];

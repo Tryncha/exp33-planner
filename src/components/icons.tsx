@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { MonocoMask } from '../types';
+import { LuneStain, MonocoMask, ScielCharge } from '../types';
 
 export const ElementIcon = ({ element, size = 24 }: { element: string; size?: number }) => {
   return (
@@ -23,13 +23,24 @@ export const BreakIcon = () => {
   );
 };
 
-export const StainIcon = ({ element }: { element: string }) => {
+export const StainIcon = ({ stain }: { stain: LuneStain }) => {
   return (
     <Image
-      src={`/ui/stains/${element}.png`}
-      alt={`${element} icon`}
+      src={`/ui/stains/${stain}.png`}
+      alt={`${stain} icon`}
       width={20}
       height={20}
+    />
+  );
+};
+
+export const ChargeIcon = ({ charge }: { charge: ScielCharge }) => {
+  return (
+    <Image
+      src={`/ui/charges/${charge}.png`}
+      alt={`${charge} icon`}
+      width={16}
+      height={16}
     />
   );
 };

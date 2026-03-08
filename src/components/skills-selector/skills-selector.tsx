@@ -1,11 +1,11 @@
 import { useBuild } from '@/src/context/build-context';
 import { Modal } from '@/src/context/modal-context';
 import SKILLS from '@/src/data/skills';
-import { LuneSkill, MonocoSkill, Skill, SkillFiltersType } from '@/src/types';
+import { LuneSkill, MonocoSkill, ScielSkill, Skill, SkillFiltersType } from '@/src/types';
 import Image from 'next/image';
 import Diamond from '../diamond';
 import { useLocale } from 'next-intl';
-import { BreakIcon, ElementIcon, StainIcon } from '../icons';
+import { BreakIcon, ChargeIcon, ElementIcon, StainIcon } from '../icons';
 import { useState } from 'react';
 import SkillFilters from './skill-filters';
 import ParsedDescription from '../parsed-description';
@@ -24,7 +24,7 @@ const SkillOption = ({
   return (
     <div
       onClick={onClick}
-      className={`${isEquipped ? 'bg-taupe-700 hover:bg-taupe-600' : 'hover:bg-taupe-800'} flex h-40 w-104 flex-col gap-2 border border-taupe-700 p-2 hover:cursor-pointer`}
+      className={`${isEquipped ? 'bg-taupe-700 hover:bg-taupe-600' : 'hover:bg-taupe-800'} flex h-48 w-104 flex-col gap-2 border border-taupe-700 p-2 hover:cursor-pointer`}
     >
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
@@ -43,11 +43,18 @@ const SkillOption = ({
               {skillData.stains.map((stn, i) => (
                 <StainIcon
                   key={`${skillData.id}-stain-${i}`}
-                  element={stn}
+                  stain={stn}
                 />
               ))}
             </div>
           )}
+
+          {skillData.characterId === 'sciel' && (
+            <Diamond className="mx-1 border border-taupe-500 p-0.5">
+              <ChargeIcon charge={skillData.charge} />
+            </Diamond>
+          )}
+
           {skillData.canBreak && (
             <Diamond className="mx-2 flex size-4 rotate-45 items-center justify-center border border-taupe-300 font-semibold">
               <BreakIcon />
@@ -80,8 +87,9 @@ const SkillsSelector = ({
   const [filters, setFilters] = useState<SkillFiltersType>({
     byName: '',
     canBreak: false,
-    byLuneElement: '',
-    byMask: ''
+    byLuneStain: '',
+    byScielCharge: '',
+    byMonocoMask: ''
   });
 
   function handleChange(newSkillId: Skill['id']) {
@@ -98,12 +106,17 @@ const SkillsSelector = ({
     .filter((sk: Skill) => (!filters.canBreak ? sk : sk.canBreak))
 
     // Lune
-    // filter by Element
-    .filter((sk: Skill) => (!filters.byLuneElement ? sk : (sk as LuneSkill).stains.includes(filters.byLuneElement)))
+    // filter by Stain
+    .filter((sk: Skill) => (!filters.byLuneStain ? sk : (sk as LuneSkill).stains.includes(filters.byLuneStain)))
+
+    // Sciel
+    // filter by Charge
+    .filter((sk: Skill) => (!filters.byScielCharge ? sk : (sk as ScielSkill).charge === filters.byScielCharge))
 
     // Monoco
     // filter by Mask
-    .filter((sk: Skill) => (!filters.byMask ? sk : filters.byMask === (sk as MonocoSkill).buffedMask))
+    // Al revés no funciona...
+    .filter((sk: Skill) => (!filters.byMonocoMask ? sk : filters.byMonocoMask === (sk as MonocoSkill).buffedMask))
 
     // Sort alphabetically
     .sort((a: Skill, b: Skill) => a[locale].name.localeCompare(b[locale].name, locale, { sensitivity: 'base' }));

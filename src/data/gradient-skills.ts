@@ -101,6 +101,7 @@ const SCIEL_GRADIENT_SKILLS: Skill[] = [
     cost: 1,
     characterId: 'sciel',
     canBreak: false,
+    charge: 'sun',
     en: {
       name: 'Shadow Bringer',
       description: 'Deals high single target Dark damage to random enemies. 10 hits. Applies 1 Foretell per hit.'
@@ -115,6 +116,7 @@ const SCIEL_GRADIENT_SKILLS: Skill[] = [
     cost: 2,
     characterId: 'sciel',
     canBreak: true,
+    charge: 'moon',
     en: {
       name: 'Doom',
       description:
@@ -131,6 +133,7 @@ const SCIEL_GRADIENT_SKILLS: Skill[] = [
     cost: 3,
     characterId: 'sciel',
     canBreak: false,
+    charge: 'moon',
     en: {
       name: 'End Slice',
       description:

@@ -167,3 +167,8 @@ export function swapElements<T>(arr: T[], indexA: number, indexB: number) {
 export function calcTotalLumina(luminasData: Picto[]) {
   return luminasData.reduce((acc, pic) => acc + pic.luminaPoints, 0);
 }
+
+export function capitalizeWord(word: string) {
+  const normalizedWord = word.toLowerCase();
+  return normalizedWord[0].toUpperCase() + normalizedWord.slice(1, normalizedWord.length);
+}

@@ -9,6 +9,7 @@ import { BreakIcon, ChargeIcon, ElementIcon, StainIcon } from '../icons';
 import { useState } from 'react';
 import SkillFilters from './skill-filters';
 import ParsedDescription from '../parsed-description';
+import RichText from '../rich-text';
 
 const SkillOption = ({
   skillData,
@@ -66,6 +67,7 @@ const SkillOption = ({
         </div>
       </div>
       <ParsedDescription description={skillData[locale].description} />
+      <RichText textToEnrich={skillData[locale].description} />
     </div>
   );
 };

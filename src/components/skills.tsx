@@ -11,6 +11,7 @@ import Diamond from './diamond';
 import GRADIENT_SKILLS from '../data/gradient-skills';
 import Tooltip from './tooltip';
 import ParsedDescription from './parsed-description';
+import RichText from './rich-text';
 
 const EmptySkillSlot = ({ onClick }: { onClick: () => void }) => {
   const t = useTranslations('Skills');
@@ -62,6 +63,7 @@ const SkillSlot = ({
       >
         <ParsedDescription description={skillData[locale].description} />
       </Tooltip>
+
       <Image
         src={`/skills/${skillData.characterId}/${skillData.id}.png`}
         alt={skillData[locale].name}

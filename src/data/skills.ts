@@ -9,7 +9,7 @@ const GUSTAVE_SKILLS: GustaveSkill[] = [
     en: {
       name: 'From Fire',
       description:
-        "Deals medium single target damage. 3 hits. Uses weapon's element. Heals self by 20% if the target Burns"
+        "Deals medium single target damage. 3 hits. Uses weapon's element. <textIcon:heal>Heals</textIcon> self by 20% if the target <textIcon:burn>Burns</textIcon>."
     },
     es: {
       name: 'Desde el fuego',

@@ -8,8 +8,8 @@ import { capitalizeWord } from '../lib/utils';
 // <name:value1-value2>text</name> || <name:value1-value2/>
 const TAG_REGEX_1 = /<(\w+)(?::([\w-]+))?>(.*?)<\/\1>|<(\w+):([\w-]+)\/>/g;
 
-// <name1-name2:value>text</name1-name2> || <name1-name2:value/>
-const TAG_REGEX_2 = /<([\w-]+)(?::(\w+))?>(.*?)<\/\1>|<([\w-]+):(\w+)\/>/g;
+// <name1-name2:value>text</name1-name2> || <name1-name2:value />
+const TAG_REGEX_2 = /<([\w-]+)(?::(\w+))?>(.*?)<\/\1>|<([\w-]+):(\w+) \/>/g;
 
 export function parseRichText(textToEnrich: string) {
   const nodes = [];
@@ -32,7 +32,7 @@ export function parseRichText(textToEnrich: string) {
         children: match[3]
       });
     } else {
-      // tokens like: <name:value/>
+      // tokens like: <name:value />
       nodes.push({
         type: match[4],
         value: match[5]
@@ -79,28 +79,19 @@ const RichText = ({ textToEnrich }: { textToEnrich: string }) => {
           return <span key={i}>{node.value}</span>;
         }
 
-        if (node.type === 'textIcon' && node.value === 'heal') {
+        if (node.type === 'textIcon') {
+          const nodeValue = node.value as keyof typeof ICON_COLORS;
           return (
             <span
               key={i}
-              className="font-semibold text-lime-600"
+              className={`${ICON_COLORS[nodeValue]} font-semibold`}
             >
-              {node.children} <TextIcon icon="heal" />
+              {node.children} <TextIcon icon={nodeValue} />
             </span>
           );
         }
 
-        if (node.type === 'textIcon' && node.value === 'burn') {
-          return (
-            <span
-              key={i}
-              className="font-semibold text-orange-600"
-            >
-              {node.children} <TextIcon icon="burn" />
-            </span>
-          );
-        }
-
+        // tokens like: <name:value />
         if (node.type === 'icon') {
           return <TextIcon icon={node.value} />;
         }

@@ -1291,7 +1291,7 @@ const PICTOS: Picto[] = [
       effect: 'On applying a Burn stack, apply a second one.'
     },
     es: {
-      name: 'Quemadura doble.',
+      name: 'Quemadura doble',
       effect: 'Al aplicar una acumulación de qeumadura, aplicas una segunda.'
     }
   },

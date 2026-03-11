@@ -15,7 +15,7 @@ export const ElementIcon = ({ element, size = 24 }: { element: string; size?: nu
 export const BreakIcon = () => {
   return (
     <Image
-      src={`/ui/status-effect/break.png`}
+      src={`/icons/break.png`}
       alt="Break Icon"
       width={16}
       height={16}
@@ -26,7 +26,7 @@ export const BreakIcon = () => {
 export const StainIcon = ({ stain }: { stain: LuneStain }) => {
   return (
     <Image
-      src={`/ui/stains/${stain}.png`}
+      src={`/icons/${stain}-stain.png`}
       alt={`${stain} icon`}
       width={20}
       height={20}
@@ -37,7 +37,7 @@ export const StainIcon = ({ stain }: { stain: LuneStain }) => {
 export const ChargeIcon = ({ charge }: { charge: ScielCharge }) => {
   return (
     <Image
-      src={`/ui/charges/${charge}.png`}
+      src={`/icons/${charge}-charge.png`}
       alt={`${charge} icon`}
       width={16}
       height={16}
@@ -48,7 +48,7 @@ export const ChargeIcon = ({ charge }: { charge: ScielCharge }) => {
 export const MonocoMaskIcon = ({ mask }: { mask: MonocoMask }) => {
   return (
     <Image
-      src={`/ui/${mask}-mask.png`}
+      src={`/icons/${mask}-mask.png`}
       alt={`${mask} mask icon`}
       width={20}
       height={20}

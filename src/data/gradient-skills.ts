@@ -201,7 +201,7 @@ const MONOCO_GRADIENT_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: false,
     buffedMask: 'almighty',
-    roulettePositions: 2,
+    movedPositions: 2,
     en: {
       name: 'Mighty Strike',
       description:
@@ -219,7 +219,7 @@ const MONOCO_GRADIENT_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: false,
     buffedMask: 'almighty',
-    roulettePositions: 2,
+    movedPositions: 2,
     en: {
       name: 'Sanctuary',
       description: 'Gives 2 Shields and applies Regen to all allies for 3 turns.'
@@ -235,7 +235,7 @@ const MONOCO_GRADIENT_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: true,
     buffedMask: 'almighty',
-    roulettePositions: 2,
+    movedPositions: 2,
     en: {
       name: 'Break Point',
       description:

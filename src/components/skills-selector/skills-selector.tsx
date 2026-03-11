@@ -5,10 +5,9 @@ import { LuneSkill, MonocoSkill, ScielSkill, Skill, SkillFiltersType } from '@/s
 import Image from 'next/image';
 import Diamond from '../diamond';
 import { useLocale } from 'next-intl';
-import { BreakIcon, ChargeIcon, ElementIcon, StainIcon } from '../icons';
+import { BreakIcon, ChargeIcon, StainIcon } from '../icons';
 import { useState } from 'react';
 import SkillFilters from './skill-filters';
-import ParsedDescription from '../parsed-description';
 import RichText from '../rich-text';
 
 const SkillOption = ({
@@ -66,7 +65,6 @@ const SkillOption = ({
           </Diamond>
         </div>
       </div>
-      <ParsedDescription description={skillData[locale].description} />
       <RichText textToEnrich={skillData[locale].description} />
     </div>
   );

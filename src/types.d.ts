@@ -7,6 +7,7 @@ import {
   PICTO_CATEGORIES,
   PICTO_CATEGORIES_FROM_GAME,
   PICTO_STATS,
+  MAELLE_POSTURES,
   SCIEL_CHARGES
 } from './lib/constants';
 
@@ -16,6 +17,7 @@ export type AttributeId = (typeof ATTRIBUTES)[number];
 export type Element = (typeof ELEMENTS)[number];
 export type LuneStain = (typeof LUNE_STAINS)[number];
 export type ScielCharge = (typeof SCIEL_CHARGES)[number];
+export type MaellePosture = (typeof MAELLE_POSTURES)[number];
 
 export type CharacterStatId = 'attack-power' | 'speed' | 'critical-rate' | 'health' | 'defense';
 
@@ -167,6 +169,7 @@ export interface LuneSkill extends SkillBase {
 
 export interface MaelleSkill extends SkillBase {
   characterId: 'maelle';
+  nextPosture?: MaellePosture;
 }
 
 export interface ScielSkill extends SkillBase {
@@ -176,12 +179,13 @@ export interface ScielSkill extends SkillBase {
 
 export interface VersoSkill extends SkillBase {
   characterId: 'verso';
+  buffedRank?: 'S' | 'A' | 'B' | 'C' | 'D';
 }
 
 export interface MonocoSkill extends SkillBase {
   characterId: 'monoco';
   buffedMask: MonocoMask;
-  roulettePositions: number;
+  movedPositions: number;
 }
 
 export type Skill = GustaveSkill | LuneSkill | MaelleSkill | ScielSkill | VersoSkill | MonocoSkill;

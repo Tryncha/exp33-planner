@@ -1,4 +1,4 @@
-import { GustaveSkill, LuneSkill, ScielSkill, Skill } from '../types';
+import { GustaveSkill, LuneSkill, MaelleSkill, MonocoSkill, ScielSkill, Skill, VersoSkill } from '../types';
 
 const GUSTAVE_SKILLS: GustaveSkill[] = [
   {
@@ -9,12 +9,12 @@ const GUSTAVE_SKILLS: GustaveSkill[] = [
     en: {
       name: 'From Fire',
       description:
-        "Deals medium single target damage. 3 hits. Uses weapon's element. <textIcon:heal>Heals</textIcon> self by 20% if the target <textIcon:burn>Burns</textIcon>."
+        "Deals medium single target damage. 3 hits. Uses weapon's element.\n<right-icon:heal>Heals</right-icon> self by 20% if the target <right-icon:burn>Burns</right-icon>."
     },
     es: {
       name: 'Desde el fuego',
       description:
-        'Inflige daño moderado a un objetivo. 3 golpes. Usa el elemento del arma. Cura un 20% de vida si el objetivo sufre quemadura.'
+        'Inflige daño moderado a un objetivo. 3 golpes. Usa el elemento del arma.\n<right-icon:heal>Cura</right-icon> un 20% de vida si el objetivo sufre <right-icon:burn>quemadura</right-icon>.'
     }
   },
   {
@@ -25,12 +25,12 @@ const GUSTAVE_SKILLS: GustaveSkill[] = [
     en: {
       name: 'Lumière Assault',
       description:
-        "Deals low single target damage. 5 hits. Uses weapon's element. Critical Hits generate 1 Additional Charge ."
+        "Deals low single target damage. 5 hits. Uses weapon's element.\n<right-icon:crit>Critical Hits</right-icon> generate 1 Additional <right-icon:gustave-charge>Charge</right-icon>."
     },
     es: {
       name: 'Asalto de Lumière',
       description:
-        'Inflige daño leve a un objetivo. 5 golpes. Usa el elemento del arma. Los golpes críticos generan 1 carga adicional.'
+        'Inflige daño leve a un objetivo. 5 golpes. Usa el elemento del arma.\nLos <right-icon:crit>golpes críticos</right-icon> generan 1 <right-icon:gustave-charge>carga</right-icon> adicional.'
     }
   },
   {
@@ -40,11 +40,13 @@ const GUSTAVE_SKILLS: GustaveSkill[] = [
     canBreak: false,
     en: {
       name: 'Marking Shot',
-      description: 'Deals low single target Lightning damage. 1 hit. Applies Mark'
+      description:
+        'Deals low single target <color:lightning>Lightning</color> damage. 1 hit.\nApplies <right-icon:mark>Mark</right-icon>.'
     },
     es: {
       name: 'Disparo marcador',
-      description: 'Inflige daño de rayo leve a un objetivo. 1 golpe. Aplica marca.'
+      description:
+        'Inflige daño de <color:lightning>rayo</color> leve a un objetivo. 1 golpe.\nAplica <right-icon:mark>marca</right-icon>.'
     }
   },
   {
@@ -54,12 +56,13 @@ const GUSTAVE_SKILLS: GustaveSkill[] = [
     canBreak: true,
     en: {
       name: 'Overcharge',
-      description: 'High Lightning damage based on the amount of Charges. 1 hit. Can Break'
+      description:
+        'High <color:lightning>Lightning</color> damage based on the amount of <right-icon:gustave-charge>Charges</right-icon>. 1 hit.\nCan <right-icon:break>Break</right-icon>.'
     },
     es: {
       name: 'Sobrecarga',
       description:
-        'Inflige mucho daño de rayo a un solo objetivo en función de la cantidad de cargas. 1 golpe. Puede causar ruptura. Restablece las cargas.'
+        'Inflige mucho daño de <color:lightning>rayo</color> a un solo objetivo en función de la cantidad de <right-icon:gustave-charge>cargas</right-icon>. 1 golpe.\nPuede causar <right-icon:break>ruptura</right-icon>. Restablece las cargas.'
     }
   },
   {
@@ -69,12 +72,13 @@ const GUSTAVE_SKILLS: GustaveSkill[] = [
     canBreak: false,
     en: {
       name: 'Powerful',
-      description: 'Applies Powerful to 1-3 allies, increasing the damage they deal for 3 turns. Gives 0 to 2 Charges'
+      description:
+        'Applies <right-icon:powerful>Powerful</right-icon> to 1-3 allies, increasing the damage they deal for 3 turns.\nGives 0 to 2 <right-icon:gustave-charge>Charges</right-icon>.'
     },
     es: {
       name: 'Fortalecimiento',
       description:
-        'Aplica fortalecimiento a entre 1 y 3 aliados, lo que aumenta el daño que infliguen durante 3 turnos. Otorga de 0 a 2 cargas.'
+        'Aplica <right-icon:powerful>fortalecimiento</right-icon> a entre 1 y 3 aliados, lo que aumenta el daño que inflinguen durante 3 turnos.\nOtorga de 0 a 2 <right-icon:gustave-charge>cargas</right-icon>.'
     }
   },
   {
@@ -84,11 +88,13 @@ const GUSTAVE_SKILLS: GustaveSkill[] = [
     canBreak: false,
     en: {
       name: 'Recovery',
-      description: 'Recovers 50% Health and dispels Status Effects. Gives 0-2 Charges'
+      description:
+        'Recovers 50% <right-icon:heal>Health</right-icon> and dispels Status Effects.\nGives 0-2 <right-icon:gustave-charge>Charges</right-icon>.'
     },
     es: {
       name: 'Recuperación',
-      description: 'Recupera un 50% de vida y disipa las alteraciones e estado. Otorga de 0 a 2 cargas.'
+      description:
+        'Recupera un 50% de <right-icon:heal>vida</right-icon> y disipa las alteraciones e estado.\nOtorga de 0 a 2 <right-icon:gustave-charge>cargas</right-icon>.'
     }
   },
   {
@@ -99,12 +105,12 @@ const GUSTAVE_SKILLS: GustaveSkill[] = [
     en: {
       name: 'Shatter',
       description:
-        'Deals High Lightning damage to all enemies. 1 hit. Can Break. If a target is Broken by the hit, Overcharge is fully Charged.'
+        'Deals High <color:lightning>Lightning</color> damage to all enemies. 1 hit.\nCan <right-icon:break>Break</right-icon>.\nIf a target is Broken by the hit, Overcharge is fully Charged.'
     },
     es: {
       name: 'Destrozo',
       description:
-        'Inflige mucho daño de rayo a todos los enemigos. 1 golpe. Puede causar ruptura. Si le causa ruptura a un objetivo, Sobrecarga se carga por completo.'
+        'Inflige mucho daño de <color:lightning>rayo</color> a todos los enemigos. 1 golpe.\nPuede causar <right-icon:break>ruptura</right-icon>.\nSi le causa ruptura a un objetivo, Sobrecarga se carga por completo.'
     }
   },
   {
@@ -115,12 +121,12 @@ const GUSTAVE_SKILLS: GustaveSkill[] = [
     en: {
       name: 'Strike Storm',
       description:
-        "Deals very high single target damage. 6 hits. Uses Weapon's element. Critical Hits generate 2 additional Charges."
+        "Deals very high single target damage. 6 hits. Uses Weapon's element.\n<right-icon:crit>Critical Hits</right-icon> generate 2 additional <right-icon:gustave-charge>Charges</right-icon>."
     },
     es: {
       name: 'Tormenta de ataques',
       description:
-        'Inflige muchísimo daño a un objetivo. 6 golpes. Usa el elemento del arma. Los golpes críticos generan 2 cargas adicionales.'
+        'Inflige muchísimo daño a un objetivo. 6 golpes. Usa el elemento del arma.\nLos <right-icon:crit>golpes críticos</right-icon> generan 2 <right-icon:gustave-charge>cargas</right-icon> adicionales.'
     }
   }
 ];
@@ -135,12 +141,12 @@ const LUNE_SKILLS: LuneSkill[] = [
     en: {
       name: 'Crippling Tsunami',
       description:
-        'Deals medium <span class="text-blue-300 font-semibold">Ice</span> damage to all enemies. 1 hit. Applies <span class="text-red-700 font-semibold">Slow</span> <img src="/ui/status-effect/slow.png" alt="Slow Icon" /> for 3 turns.\nConsumes <img src="/ui/stains/earth.png" alt="Earth Stain Icon" /><img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" /><img src="/ui/stains/fire.png" alt="Fire Stain Icon" /> for greatly increased damage.'
+        'Deals medium <color:ice>Ice</color> damage to all enemies. 1 hit. Applies <right-icon:slow>Slow</right-icon> for 3 turns.\nConsumes <icon:earth-stain /><icon:lightning-stain /><icon:fire-stain /> for greatly increased damage.'
     },
     es: {
       name: 'Tsunami Incapacitante',
       description:
-        'Inflige daño de <span class="text-blue-300 font-semibold">hielo</span> moderado a todos los enemigos. 1 golpe. Aplica <span class="text-red-700 font-semibold">lentitud</span> <img src="/ui/status-effect/slow.png" alt="Slow Icon" /> durante 3 turnos.\nConsume <img src="/ui/stains/earth.png" alt="Earth Stain Icon" /><img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" /><img src="/ui/stains/fire.png" alt="Fire Stain Icon" /> para infligir mucho más daño.'
+        'Inflige daño de <color:ice>hielo</color> moderado a todos los enemigos. 1 golpe. Aplica <right-icon:slow>lentitud</right-icon> durante 3 turnos.\nConsume <icon:earth-stain /><icon:lightning-stain /><icon:fire-stain /> para infligir mucho más daño.'
     }
   },
   {
@@ -152,12 +158,12 @@ const LUNE_SKILLS: LuneSkill[] = [
     en: {
       name: 'Crustal Crush',
       description:
-        'Deals high single target <span class="text-lime-500 font-semibold">Earth</span> and <span class="text-yellow-600 font-semibold">break damage</span> <img src="/ui/status-effect/break.png" alt="Break Icon" />. 5 hits.\nConsumes <img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" /><img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" />: Increased damage.'
+        'Deals high single target <color:earth>Earth</color> and <right-icon:break>break damage</right-icon>. 5 hits.\nConsumes <icon:lightning-stain /><icon:lightning-stain />: Increased damage.'
     },
     es: {
       name: 'Corteza Aplastante',
       description:
-        'Inflige mucho daño de <span class="text-lime-500 font-semibold">tierra</span> y de <span class="text-yellow-600 font-semibold">ruptura</span> <img src="/ui/status-effect/break.png" alt="Break Icon" /> a un enemigo. 5 golpes.\nConsume <img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" /><img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" />: Aumenta el daño.'
+        'Inflige mucho daño de <color:earth>tierra</color> y de <right-icon:break>ruptura</right-icon> a un enemigo. 5 golpes.\nConsume <icon:lightning-stain /><icon:lightning-stain />: Aumenta el daño.'
     }
   },
   {
@@ -169,12 +175,12 @@ const LUNE_SKILLS: LuneSkill[] = [
     en: {
       name: 'Earth Rising',
       description:
-        'Deals low <span class="text-lime-500 font-semibold">Earth</span> damage to all enemies. 1 hit.\nConsumes <img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" /> for increased damage.'
+        'Deals low <color:earth>Earth</color> damage to all enemies. 1 hit.\nConsumes <icon:lightning-stain /> for increased damage.'
     },
     es: {
       name: 'Alzamiento Terrestre',
       description:
-        'Inflige daño de <span class="text-lime-500 font-semibold">tierra</span> leve a todos los enemigos. 1 golpe.\nConsume <img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" /> para infligir más daño.'
+        'Inflige daño de <color:earth>tierra</color> leve a todos los enemigos. 1 golpe.\nConsume <icon:lightning-stain /> para infligir más daño.'
     }
   },
   {
@@ -186,12 +192,12 @@ const LUNE_SKILLS: LuneSkill[] = [
     en: {
       name: 'Electrify',
       description:
-        'Deals low single target <span class="text-yellow-500 font-semibold">Lightning</span> damage. 3 hits. <span class="text-red-700 font-semibold">Critical Hits</span> <img src="/ui/status-effect/crit.png" alt="Critical Hit Icon" /> trigger an additional hit.\nConsumes <img src="/ui/stains/fire.png" alt="Fire Stain Icon" /> to generate one Light Stain <img src="/ui/stains/light.png" alt="Light Stain Icon" />.'
+        'Deals low single target <color:lightning>Lightning</color> damage. 3 hits. <right-icon:crit>Critical Hits</right-icon> trigger an additional hit.\nConsumes <icon:fire-stain /> to generate one Light Stain <icon:light-stain />.'
     },
     es: {
       name: 'Electrocución',
       description:
-        'Inflige daño de <span class="text-yellow-500 font-semibold">rayo</span> leve a un objetivo. 3 golpes. Los <span class="text-red-700 font-semibold">golpes críticos</span> <img src="/ui/status-effect/crit.png" alt="Critical Hit Icon" /> propinan un golpe adicional.\nConsume <img src="/ui/stains/fire.png" alt="Fire Stain Icon" /> para generar un borrón de luz <img src="/ui/stains/light.png" alt="Light Stain Icon" />.'
+        'Inflige daño de <color:lightning>rayo</color> leve a un objetivo. 3 golpes. Los <right-icon:crit>golpes críticos</right-icon> propinan un golpe adicional.\nConsume <icon:fire-stain /> para generar un borrón de luz <icon:light-stain />.'
     }
   },
   {
@@ -203,12 +209,12 @@ const LUNE_SKILLS: LuneSkill[] = [
     en: {
       name: 'Elemental Genesis',
       description:
-        'Deals extreme damage to all enemies. 8 hits. Each hit deals damage in a random element.\nCan only be cast with <img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" /><img src="/ui/stains/earth.png" alt="Earth Stain Icon" /><img src="/ui/stains/fire.png" alt="Fire Stain Icon" /><img src="/ui/stains/ice.png" alt="Ice Stain Icon" />.'
+        'Deals extreme damage to all enemies. 8 hits. Each hit deals damage in a random element.\nCan only be cast with <icon:lightning-stain /><icon:earth-stain /><icon:fire-stain /><icon:ice-stain />.'
     },
     es: {
       name: 'Génesis Elemental',
       description:
-        'Inflige daño extremo a todos los enemigos. 8 golpes. Cada golpe inflige daño de un elemento al azar.\nSolo se puede lanzar con <img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" /><img src="/ui/stains/earth.png" alt="Earth Stain Icon" /><img src="/ui/stains/fire.png" alt="Fire Stain Icon" /><img src="/ui/stains/ice.png" alt="Ice Stain Icon" />.'
+        'Inflige daño extremo a todos los enemigos. 8 golpes. Cada golpe inflige daño de un elemento al azar.\nSolo se puede lanzar con <icon:lightning-stain /><icon:earth-stain /><icon:fire-stain /><icon:ice-stain />.'
     }
   },
   {
@@ -220,12 +226,12 @@ const LUNE_SKILLS: LuneSkill[] = [
     en: {
       name: 'Elemental Trick',
       description:
-        'Deals low single target <span class="text-blue-300 font-semibold">Ice</span>, <span class="text-red-400 font-semibold">Fire</span>, <span class="text-yellow-500 font-semibold">Lightning</span>, and <span class="text-lime-500 font-semibold">Earth</span> damage. 4 hits.\n<span class="text-red-700 font-semibold">Critical Hits</span> <img src="/ui/status-effect/crit.png" alt="Critical Hit Icon" /> generate the corresponding Stain.'
+        'Deals low single target <color:ice>Ice</color>, <color:fire>Fire</color>, <color:lightning>Lightning</color>, and <color:earth>Earth</color> damage. 4 hits.\n<right-icon:crit>Critical Hits</right-icon> generate the corresponding Stain.'
     },
     es: {
       name: 'Truco Elemental',
       description:
-        'Inflige daño de <span class="text-blue-300 font-semibold">hielo</span>, <span class="text-red-400 font-semibold">fuego</span>, <span class="text-yellow-500 font-semibold">rayo</span> y <span class="text-lime-500 font-semibold">tierra</span> leve a un objetivo. 4 golpes.\nLos <span class="text-red-700 font-semibold">golpes críticos</span> <img src="/ui/status-effect/crit.png" alt="Critical Hit Icon" /> generan el borrón correspondiente.'
+        'Inflige daño de <color:ice>hielo</color>, <color:fire>fuego</color>, <color:lightning>rayo</color> y <color:earth>tierra</color> leve a un objetivo. 4 golpes.\nLos <right-icon:crit>golpes críticos</right-icon> generan el borrón correspondiente.'
     }
   },
   {
@@ -237,12 +243,12 @@ const LUNE_SKILLS: LuneSkill[] = [
     en: {
       name: 'Fire Rage',
       description:
-        'Deals increasingly high <span class="text-red-400 font-semibold">Fire</span> damage to all enemies every turn until Lune receives damage. Stuns self if interrupted.\nConsumes <img src="/ui/stains/ice.png" alt="Ice Stain Icon" /><img src="/ui/stains/ice.png" alt="Ice Stain Icon" />: Increased Damage.'
+        'Deals increasingly high <color:fire>Fire</color> damage to all enemies every turn until Lune receives damage. Stuns self if interrupted.\nConsumes <icon:ice-stain /><icon:ice-stain />: Increased Damage.'
     },
     es: {
       name: 'Furia Ígnea',
       description:
-        'Inflige daño de <span class="text-red-400 font-semibold">fuego</span> creciente cada turno a todos los enemigos hasta que Lune sufra daño. Si se interrumpe, aturde a Lune.\nConsume <img src="/ui/stains/ice.png" alt="Ice Stain Icon" /><img src="/ui/stains/ice.png" alt="Ice Stain Icon" />: Aumenta el daño.'
+        'Inflige daño de <color:fire>fuego</color> creciente cada turno a todos los enemigos hasta que Lune sufra daño. Si se interrumpe, aturde a Lune.\nConsume <icon:ice-stain /><icon:ice-stain />: Aumenta el daño.'
     }
   },
   {
@@ -254,12 +260,12 @@ const LUNE_SKILLS: LuneSkill[] = [
     en: {
       name: 'Healing Light',
       description:
-        '<span class="text-lime-600 font-semibold">Heals</span> <img src="/ui/status-effect/heal.png" alt="Heal Icon" /> the targeted Ally and dispels Status Effects.\nConsumes <img src="/ui/stains/earth.png" alt="Earth Stain Icon" /><img src="/ui/stains/earth.png" alt="Earth Stain Icon" />: Costs 0 <span class="text-blue-400 font-semibold">AP</span>.'
+        '<right-icon:heal>Heals</right-icon> the targeted Ally and dispels Status Effects.\nConsumes <icon:earth-stain /><icon:earth-stain />: Costs 0 <color:ap>AP</color>.'
     },
     es: {
       name: 'Luz Curativa',
       description:
-        '<span class="text-lime-600 font-semibold">Cura</span> <img src="/ui/status-effect/heal.png" alt="Heal Icon" /> al aliado seleccionado entre un 30% y un 50% de la vida y disipa las alteraciones de estado.\nConsume <img src="/ui/stains/earth.png" alt="Earth Stain Icon" /><img src="/ui/stains/earth.png" alt="Earth Stain Icon" />: Consume 0 <span class="text-blue-400 font-semibold">PA</span>.'
+        '<right-icon:heal>Cura</right-icon> al aliado seleccionado entre un 30% y un 50% de la vida y disipa las alteraciones de estado.\nConsume <icon:earth-stain /><icon:earth-stain />: Consume 0 <color:ap>PA</color>.'
     }
   },
   {
@@ -271,12 +277,12 @@ const LUNE_SKILLS: LuneSkill[] = [
     en: {
       name: 'Hell',
       description:
-        'Deals very high <span class="text-red-400 font-semibold">Fire</span> damage that applies 5 <span class="text-orange-400 font-semibold">Burn</span> <img src="/ui/status-effect/burn.png" alt="Burn Icon" /> per hit to all enemies. 2 hits. Deals self-damage if failed.\nConsumes <img src="/ui/stains/ice.png" alt="Ice Stain Icon" /><img src="/ui/stains/earth.png" alt="Earth Stain Icon" /><img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" />: Greatly increased damage.'
+        'Deals very high <color:fire>Fire</color> damage that applies 5 <right-icon:burn>Burn</right-icon> per hit to all enemies. 2 hits. Deals self-damage if failed.\nConsumes <icon:ice-stain /><icon:earth-stain /><icon:lightning-stain />: Greatly increased damage.'
     },
     es: {
       name: 'Infierno',
       description:
-        'Inflige muchísimo daño de <span class="text-red-400 font-semibold">fuego</span> y aplica 5 acumulaciones de <span class="text-orange-400 font-semibold">quemadura</span> <img src="/ui/status-effect/burn.png" alt="Burn Icon" /> por golpe a todos los enemigos. 2 golpes. Si falla, Lune se daña a sí misma.\nConsume <img src="/ui/stains/ice.png" alt="Ice Stain Icon" /><img src="/ui/stains/earth.png" alt="Earth Stain Icon" /><img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" />: Aumenta mucho el daño.'
+        'Inflige muchísimo daño de <color:fire>fuego</color> y aplica 5 acumulaciones de <right-icon:burn>quemadura</right-icon> por golpe a todos los enemigos. 2 golpes. Si falla, Lune se daña a sí misma.\nConsume <icon:ice-stain /><icon:earth-stain /><icon:lightning-stain />: Aumenta mucho el daño.'
     }
   },
   {
@@ -288,12 +294,12 @@ const LUNE_SKILLS: LuneSkill[] = [
     en: {
       name: 'Ice Lance',
       description:
-        'Deals medium single target <span class="text-blue-300 font-semibold">Ice</span> damage that <span class="text-red-700 font-semibold">Slows</span> <img src="/ui/status-effect/slow.png" alt="Slow Icon" /> the target. 1 Hit.\nConsumes <img src="/ui/stains/earth.png" alt="Earth Stain Icon" /> to deal increased damage.'
+        'Deals medium single target <color:ice>Ice</color> damage that <right-icon:slow>Slow</right-icon> the target. 1 Hit.\nConsumes <icon:earth-stain /> to deal increased damage.'
     },
     es: {
       name: 'Lanza de Hielo',
       description:
-        'Inflige daño de <span class="text-blue-300 font-semibold">hielo</span> moderado a un objetivo y le causa <span class="text-red-700 font-semibold">lentitud</span> <img src="/ui/status-effect/slow.png" alt="Slow Icon" />. 1 golpe.\nConsume <img src="/ui/stains/earth.png" alt="Earth Stain Icon" /> para infligir más daño.'
+        'Inflige daño de <color:ice>hielo</color> moderado a un objetivo y le causa <right-icon:slow>lentitud</right-icon> 1 golpe.\nConsume <icon:earth-stain /> para infligir más daño.'
     }
   },
   {
@@ -305,12 +311,12 @@ const LUNE_SKILLS: LuneSkill[] = [
     en: {
       name: 'Immolation',
       description:
-        'Deals low single target <span class="text-red-400 font-semibold">Fire</span> damage and 3 <span class="text-orange-400 font-semibold">Burn</span> <img src="/ui/status-effect/burn.png" alt="Burn Icon" />. 1 hit. Applies 2 more <span class="text-orange-400 font-semibold">Burns</span> <img src="/ui/status-effect/burn.png" alt="Burn Icon" /> if the target is <span class="text-red-700 font-semibold">Marked</span> <img src="/ui/status-effect/mark.png" alt="Mark Icon" />.\nConsumes <img src="/ui/stains/ice.png" alt="Ice Stain Icon" /> for increased damage.'
+        'Deals low single target <color:fire>Fire</color> damage and 3 <right-icon:heal>Heals</right-icon>. 1 hit. Applies 2 more <right-icon:burn>Burns</right-icon> if the target is <right-icon:mark>Marked</right-icon>.\nConsumes <icon:ice-stain /> for increased damage.'
     },
     es: {
       name: 'Inmolación',
       description:
-        'Inflige daño de <span class="text-red-400 font-semibold">fuego</span> leve y 3 acumulaciones de <span class="text-orange-400 font-semibold">quemadura</span> <img src="/ui/status-effect/burn.png" alt="Burn Icon" /> a un objetivo. 1 golpe. Aplica 2 acumulaciones más de <span class="text-orange-400 font-semibold">quemadura</span> <img src="/ui/status-effect/burn.png" alt="Burn Icon" /> si el objetivo está <span class="text-red-700 font-semibold">marcado</span> <img src="/ui/status-effect/mark.png" alt="Mark Icon" />.\nConsume <img src="/ui/stains/ice.png" alt="Ice Stain Icon" /> para infligir más daño.'
+        'Inflige daño de <color:fire>fuego</color> leve y 3 acumulaciones de <right-icon:burn>quemadura</right-icon> a un objetivo. 1 golpe. Aplica 2 acumulaciones más de <right-icon:burn>quemadura</right-icon> si el objetivo está <right-icon:mark>marcado</right-icon>.\nConsume <icon:ice-stain /> para infligir más daño.'
     }
   },
   {
@@ -322,12 +328,12 @@ const LUNE_SKILLS: LuneSkill[] = [
     en: {
       name: 'Lightning Dance',
       description:
-        'Deals very high single target <span class="text-yellow-500 font-semibold">Lightning</span> damage. 6 hits. <span class="text-red-700 font-semibold">Critical Hits</span> <img src="/ui/status-effect/crit.png" alt="Critical Hit Icon" /> trigger an additional hit.\nConsumes <img src="/ui/stains/earth.png" alt="Earth Stain Icon" /><img src="/ui/stains/ice.png" alt="Ice Stain Icon" /><img src="/ui/stains/fire.png" alt="Fire Stain Icon" />: Greatly increased damage.'
+        'Deals very high single target <color:lightning>Lightning</color> damage. 6 hits. <right-icon:crit>Critical Hits</right-icon> trigger an additional hit.\nConsumes <icon:earth-stain /><icon:ice-stain /><icon:fire-stain />: Greatly increased damage.'
     },
     es: {
       name: 'Danza del Relámpago',
       description:
-        'Inflige muchísimo daño de <span class="text-yellow-500 font-semibold">rayo</span> a un objetivo. 6 golpes. Los <span class="text-red-700 font-semibold">golpes críticos</span> <img src="/ui/status-effect/crit.png" alt="Critical Hit Icon" /> propinan un golpe adicional.\nConsume <img src="/ui/stains/earth.png" alt="Earth Stain Icon" /><img src="/ui/stains/ice.png" alt="Ice Stain Icon" /><img src="/ui/stains/fire.png" alt="Fire Stain Icon" />: Aumenta mucho el daño.'
+        'Inflige muchísimo daño de <color:lightning>rayo</color> a un objetivo. 6 golpes. Los <right-icon:crit>golpes críticos</right-icon> propinan un golpe adicional.\nConsume <icon:earth-stain /><icon:ice-stain /><icon:fire-stain />: Aumenta mucho el daño.'
     }
   },
   {
@@ -339,12 +345,12 @@ const LUNE_SKILLS: LuneSkill[] = [
     en: {
       name: 'Mayhem',
       description:
-        'Consumes all Stains to deal high elemental damage to the target. Can <span class="text-yellow-600 font-semibold">Break</span> <img src="/ui/status-effect/break.png" alt="Break Icon" /> if 4 Stains are consumed.'
+        'Consumes all Stains to deal high elemental damage to the target. Can <right-icon:break>Break</right-icon> if 4 Stains are consumed.'
     },
     es: {
       name: 'Caos',
       description:
-        'Consume todos los borrones para inflingirle mucho daño elemental al objetivo. Si se consume 4 borrones, puede causar <span class="text-yellow-600 font-semibold">ruptura</span> <img src="/ui/status-effect/break.png" alt="Break Icon" />.'
+        'Consume todos los borrones para inflingirle mucho daño elemental al objetivo. Si se consume 4 borrones, puede causar <right-icon:break>ruptura</right-icon>.'
     }
   },
   {
@@ -356,12 +362,12 @@ const LUNE_SKILLS: LuneSkill[] = [
     en: {
       name: 'Rebirth',
       description:
-        'Revives an ally with 30-70% Health and 2 additional <span class="text-blue-400 font-semibold">AP</span>.\nConsumes <img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" /><img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" /><img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" />: Costs 0 <span class="text-blue-400 font-semibold">AP</span>.'
+        'Revives an ally with 30-70% Health and 2 additional <color:ap>AP</color>.\nConsumes <icon:lightning-stain /><icon:lightning-stain /><icon:lightning-stain />: Costs 0 <color:ap>AP</color>.'
     },
     es: {
       name: 'Renacer',
       description:
-        'Revive a un aliado con un 30% al 70% de vida y 2 <span class="text-blue-400 font-semibold">PA</span> adicionales.\nConsume <img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" /><img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" /><img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" />: Consume 0 <span class="text-blue-400 font-semibold">PA</span>.'
+        'Revive a un aliado con un 30% al 70% de vida y 2 <color:ap>PA</color> adicionales.\nConsume <icon:lightning-stain /><icon:lightning-stain /><icon:lightning-stain />: Consume 0 <color:ap>PA</color>.'
     }
   },
   {
@@ -373,12 +379,12 @@ const LUNE_SKILLS: LuneSkill[] = [
     en: {
       name: 'Revitalization',
       description:
-        '<span class="text-lime-600 font-semibold">Heals</span> <img src="/ui/status-effect/heal.png" alt="Heal Icon" /> 1-3 allies by 40-60% Health.\nConsumes <img src="/ui/stains/fire.png" alt="Fire Stain Icon" /><img src="/ui/stains/fire.png" alt="Fire Stain Icon" /><img src="/ui/stains/fire.png" alt="Fire Stain Icon" /> to also apply <span class="text-lime-600 font-semibold">Regen</span> <img src="/ui/status-effect/regen.png" alt="Regen Icon" /> that heals on turn start for 3 turns.'
+        '<right-icon:heal>Heals</right-icon> 1-3 allies by 40-60% Health.\nConsumes <icon:fire-stain /><icon:fire-stain /><icon:fire-stain /> to also apply <right-icon:regen>Regen</right-icon> that heals on turn start for 3 turns.'
     },
     es: {
       name: 'Revitalización',
       description:
-        '<span class="text-lime-600 font-semibold">Cura</span> <img src="/ui/status-effect/heal.png" alt="Heal Icon" /> de 1 a 3 aliados entre un 40% y un 60% de vida.\nConsume <img src="/ui/stains/fire.png" alt="Fire Stain Icon" /><img src="/ui/stains/fire.png" alt="Fire Stain Icon" /><img src="/ui/stains/fire.png" alt="Fire Stain Icon" /> para aplicar también <span class="text-lime-600 font-semibold">regeneración</span> <img src="/ui/status-effect/regen.png" alt="Regen Icon" />, que cura al inicia del turno.'
+        '<right-icon:heal>Cura</right-icon> de 1 a 3 aliados entre un 40% y un 60% de vida.\nConsume <icon:fire-stain /><icon:fire-stain /><icon:fire-stain /> para aplicar también <right-icon:regen>regeneración</right-icon>, que cura al inicia del turno.'
     }
   },
   {
@@ -390,12 +396,12 @@ const LUNE_SKILLS: LuneSkill[] = [
     en: {
       name: 'Rockslide',
       description:
-        'Deals medium single target <span class="text-lime-500 font-semibold">Earth</span> damage. 2 hits. Can <span class="text-yellow-600 font-semibold">Break</span> <img src="/ui/status-effect/break.png" alt="Break Icon" />.\nConsumes <img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" /><img src="/ui/stains/ice.png" alt="Ice Stain Icon" /><img src="/ui/stains/fire.png" alt="Fire Stain Icon" /> for greatly increased damage.'
+        'Deals medium single target <color:earth>Earth</color> damage. 2 hits. <right-icon:break>Can Break</right-icon>.\nConsumes <icon:lightning-stain /><icon:ice-stain /><icon:fire-stain /> for greatly increased damage.'
     },
     es: {
       name: 'Alud',
       description:
-        'Inflige daño de <span class="text-lime-500 font-semibold">tierra</span> moderado a un objetivo. 2 golpes. Puede causar <span class="text-yellow-600 font-semibold">ruptura</span> <img src="/ui/status-effect/break.png" alt="Break Icon" />.\nConsume <img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" /><img src="/ui/stains/ice.png" alt="Ice Stain Icon" /><img src="/ui/stains/fire.png" alt="Fire Stain Icon" /> para infligir mucho más daño.'
+        'Inflige daño de <color:earth>tierra</color> moderado a un objetivo. 2 golpes. Puede causar <right-icon:break>ruptura</right-icon>.\nConsume <icon:lightning-stain /><icon:ice-stain /><icon:fire-stain /> para infligir mucho más daño.'
     }
   },
   {
@@ -407,12 +413,12 @@ const LUNE_SKILLS: LuneSkill[] = [
     en: {
       name: 'Storm Caller',
       description:
-        'All enemies receive medium <span class="text-yellow-500 font-semibold">Lightning</span> damage at the end of their turn, and low <span class="text-yellow-500 font-semibold">Lightning</span> damage when they receive damage. Duration: 3 turns.\nConsumes <img src="/ui/stains/fire.png" alt="Fire Stain Icon" /><img src="/ui/stains/fire.png" alt="Fire Stain Icon" /> for double thunder strikes on turn end.'
+        'All enemies receive medium <color:lightning>Lightning</color> damage at the end of their turn, and low <color:lightning>Lightning</color> damage when they receive damage. Duration: 3 turns.\nConsumes <icon:fire-stain /><icon:fire-stain /> for double thunder strikes on turn end.'
     },
     es: {
       name: 'Invocación de Tormentas',
       description:
-        'Todos los enemigos reciben daño de <span class="text-yellow-500 font-semibold">rayo</span> moerado al final de su turno, y daño de <span class="text-yellow-500 font-semibold">rayo</span> leve cuando reciben daño. Duración: 3 turnos.\nConsume <img src="/ui/stains/fire.png" alt="Fire Stain Icon" /><img src="/ui/stains/fire.png" alt="Fire Stain Icon" /> para desatar ataques de trueno dobles al finalizar el turno.'
+        'Todos los enemigos reciben daño de <color:lightning>rayo</color> moerado al final de su turno, y daño de <color:lightning>rayo</color> leve cuando reciben daño. Duración: 3 turnos.\nConsume <icon:fire-stain /><icon:fire-stain /> para desatar ataques de trueno dobles al finalizar el turno.'
     }
   },
   {
@@ -424,12 +430,12 @@ const LUNE_SKILLS: LuneSkill[] = [
     en: {
       name: 'Terraquake',
       description:
-        'Deals low <span class="text-lime-500 font-semibold">Earth</span> damage and <span class="text-yellow-600 font-semibold">break damage</span> <img src="/ui/status-effect/break.png" alt="Break Icon" /> to all enemies every turn. Also increases all <span class="text-yellow-600 font-semibold">break damage</span> <img src="/ui/status-effect/break.png" alt="Break Icon" /> received by 50%. Duration: 3 turns.\nConsumes <img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" /><img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" /> to increase the Duration to 5 turns.'
+        'Deals low <color:earth>Earth</color> damage and <right-icon:break>break damage</right-icon> to all enemies every turn. Also increases all <right-icon:break>break damage</right-icon> received by 50%. Duration: 3 turns.\nConsumes <icon:lightning-stain /><icon:lightning-stain /> to increase the Duration to 5 turns.'
     },
     es: {
       name: 'Terremoto',
       description:
-        'Inflige daño de <span class="text-lime-500 font-semibold">tierra</span> y de <span class="text-yellow-600 font-semibold">ruptura</span> <img src="/ui/status-effect/break.png" alt="Break Icon" /> leve a todos los enemigos cada turno. Además, aumenta todo el daño de <span class="text-yellow-600 font-semibold">ruptura</span> <img src="/ui/status-effect/break.png" alt="Break Icon" /> recibido un 50%. Duración: 3 turnos.\nConsume <img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" /><img src="/ui/stains/lightning.png" alt="Lightning Stain Icon" /> para aumentar la duración a 5 turnos.'
+        'Inflige daño de <color:earth>tierra</color> y de <right-icon:break>ruptura</right-icon> leve a todos los enemigos cada turno. Además, aumenta todo el daño de <right-icon:break>ruptura</right-icon> recibido un 50%. Duración: 3 turnos.\nConsume <icon:lightning-stain /><icon:lightning-stain /> para aumentar la duración a 5 turnos.'
     }
   },
   {
@@ -441,12 +447,12 @@ const LUNE_SKILLS: LuneSkill[] = [
     en: {
       name: 'Thermal Transfer',
       description:
-        'Deals low single target <span class="text-blue-300 font-semibold">Ice</span> damage. 2 hits. Gains 4 <span class="text-blue-400 font-semibold">AP</span> if target is <span class="text-orange-400 font-semibold">Burning</span> <img src="/ui/status-effect/burn.png" alt="Burn Icon" />.\nConsumes <img src="/ui/stains/earth.png" alt="Earth Stain Icon" /><img src="/ui/stains/earth.png" alt="Earth Stain Icon" />: Play a second turn.'
+        'Deals low single target <color:ice>Ice</color> damage. 2 hits. Gains 4 <color:ap>AP</color> if target is <right-icon:burn>Burning</right-icon>.\nConsumes <icon:earth-stain /><icon:earth-stain />: Play a second turn.'
     },
     es: {
       name: 'Transferencia Térmica',
       description:
-        'Inflige daño de <span class="text-blue-300 font-semibold">hielo</span> leve a un objetivo. 2 golpes. Obtiene 4 <span class="text-blue-400 font-semibold">PA</span> si el objetivo sufre <span class="text-orange-400 font-semibold">quemadura</span> <img src="/ui/status-effect/burn.png" alt="Burn Icon" />.\nConsume <img src="/ui/stains/earth.png" alt="Earth Stain Icon" /><img src="/ui/stains/earth.png" alt="Earth Stain Icon" />: Actúa una segunda vez.'
+        'Inflige daño de <color:ice>hielo</color> leve a un objetivo. 2 golpes. Obtiene 4 <color:ap>PA</color> si el objetivo sufre <right-icon:burn>quemadura</right-icon>.\nConsume <icon:earth-stain /><icon:earth-stain />: Actúa una segunda vez.'
     }
   },
   {
@@ -458,12 +464,12 @@ const LUNE_SKILLS: LuneSkill[] = [
     en: {
       name: 'Thunderfall',
       description:
-        'Deals medium <span class="text-yellow-500 font-semibold">Lightning</span> damage to random enemies. 2-6 hits. <span class="text-red-700 font-semibold">Critical Hits</span> <img src="/ui/status-effect/crit.png" alt="Critical Hit Icon" /> trigger an additional hit.\nConsumes <img src="/ui/stains/fire.png" alt="Fire Stain Icon" /> for increased damage.'
+        'Deals medium <color:lightning>Lightning</color> damage to random enemies. 2-6 hits. <right-icon:crit>Critical Hits</right-icon> trigger an additional hit.\nConsumes <icon:fire-stain /> for increased damage.'
     },
     es: {
       name: 'Tempestad',
       description:
-        'Inflige daño de <span class="text-yellow-500 font-semibold">rayo</span> moderado a enemigos al azar. 2 a 6 golpes. Los <span class="text-red-700 font-semibold">golpes críticos</span> <img src="/ui/status-effect/crit.png" alt="Critical Hit Icon" /> propinan un golpe adicional.\nConsume <img src="/ui/stains/fire.png" alt="Fire Stain Icon" /> para infligir más daño.'
+        'Inflige daño de <color:lightning>rayo</color> moderado a enemigos al azar. 2 a 6 golpes. Los <right-icon:crit>golpes críticos</right-icon> propinan un golpe adicional.\nConsume <icon:fire-stain /> para infligir más daño.'
     }
   },
   {
@@ -475,12 +481,12 @@ const LUNE_SKILLS: LuneSkill[] = [
     en: {
       name: 'Typhoon',
       description:
-        'On turn start, deals high <span class="text-blue-300 font-semibold">Ice</span> damage to all enemies and <span class="text-lime-600 font-semibold">Heals</span> <img src="/ui/status-effect/heal.png" alt="Heal Icon" /> allies.\nConsumes <img src="/ui/stains/earth.png" alt="Earth Stain Icon" /><img src="/ui/stains/earth.png" alt="Earth Stain Icon" />: Duration increased from 3 to 5 turns.'
+        'On turn start, deals high <color:ice>Ice</color> damage to all enemies and <right-icon:heal>Heals</right-icon> allies.\nConsumes <icon:earth-stain /><icon:earth-stain />: Duration increased from 3 to 5 turns.'
     },
     es: {
       name: 'Tifón',
       description:
-        'Al inicio del turno, inflige mucho daño de <span class="text-blue-300 font-semibold">hielo</span> a todos los enemigos y <span class="text-lime-600 font-semibold">cura</span> <img src="/ui/status-effect/heal.png" alt="Heal Icon" /> a los aliados.\nConsume <img src="/ui/stains/earth.png" alt="Earth Stain Icon" /><img src="/ui/stains/earth.png" alt="Earth Stain Icon" />: Aumenta la duración de 3 a 5 turnos.'
+        'Al inicio del turno, inflige mucho daño de <color:ice>hielo</color> a todos los enemigos y <right-icon:heal>cura</right-icon> a los aliados.\nConsume <icon:earth-stain /><icon:earth-stain />: Aumenta la duración de 3 a 5 turnos.'
     }
   },
   {
@@ -492,31 +498,32 @@ const LUNE_SKILLS: LuneSkill[] = [
     en: {
       name: 'Wildfire',
       description:
-        'Deals medium <span class="text-red-400 font-semibold">Fire</span> damage to all enemies. 1 hit. Applies 3 <span class="text-orange-400 font-semibold">Burn</span> <img src="/ui/status-effect/burn.png" alt="Burn Icon" />.\nConsumes <img src="/ui/stains/ice.png" alt="Ice Stain Icon" /><img src="/ui/stains/ice.png" alt="Ice Stain Icon" />: Increased Damage'
+        'Deals medium <color:fire>Fire</color> damage to all enemies. 1 hit. Applies 3 <right-icon:heal>Heals</right-icon>.\nConsumes <icon:ice-stain /><icon:ice-stain />: Increased Damage'
     },
     es: {
       name: 'Fuego Indómito',
       description:
-        'Inflige daño de <span class="text-red-400 font-semibold">fuego</span> moderado a todos los enemigos. 1 golpe. Aplica 3 acumulaciones de <span class="text-orange-400 font-semibold">quemadura</span> <img src="/ui/status-effect/burn.png" alt="Burn Icon" />.\nConsume <img src="/ui/stains/ice.png" alt="Ice Stain Icon" /><img src="/ui/stains/ice.png" alt="Ice Stain Icon" />: Aumenta el daño.'
+        'Inflige daño de <color:fire>fuego</color> moderado a todos los enemigos. 1 golpe. Aplica 3 acumulaciones de <right-icon:burn>quemadura</right-icon>.\nConsume <icon:ice-stain /><icon:ice-stain />: Aumenta el daño.'
     }
   }
 ];
 
-const MAELLE_SKILLS: Skill[] = [
+const MAELLE_SKILLS: MaelleSkill[] = [
   {
     id: 'breaking-rules',
     cost: 3,
     characterId: 'maelle',
     canBreak: false,
+    nextPosture: 'offensive',
     en: {
       name: 'Breaking Rules',
       description:
-        "Deals low single target Physical damage. 2 hits. Destroys all target's Shields  Gains 1 AP  per Shield destroyed. If target us Defenceless , play a second turn."
+        "Deals low single target <color:physical>Physical</color> damage. 2 hits.\nDestroys all target's <right-icon:shield>Shields</right-icon> Gains 1 <color:ap>AP</color> per <right-icon:shield>Shield</right-icon> destroyed.\nIf target is <right-icon:defenceless>Defenceless</right-icon>, play a second turn."
     },
     es: {
-      name: 'Breaking Rules',
+      name: 'Ruptura de Reglas',
       description:
-        "Deals low single target Physical damage. 2 hits. Destroys all target's Shields  Gains 1 AP  per Shield destroyed. If target us Defenceless , play a second turn."
+        'Inflige daño <color:physical>físico</color> leve a un objetivo. 2 golpes.\nDestruye todos los <right-icon:shield>escudos</right-icon> del objetivo. Otorga 1 <color:ap>PA</color> por <right-icon:shield>escudo</right-icon> destruído.\nSi el objetivo sufre <right-icon:defenceless>fragilidad</right-icon>, actúa una segunda vez.'
     }
   },
   {
@@ -524,15 +531,16 @@ const MAELLE_SKILLS: Skill[] = [
     cost: 5,
     characterId: 'maelle',
     canBreak: false,
+    nextPosture: 'offensive',
     en: {
       name: 'Burning Canvas',
       description:
-        'Change Stance: Offensive Deals high single target Void damage. 5 hits. Applies 1 Burn  per hit. Damage increased for each Burn  on the targe'
+        'Deals high single target <color:void>Void</color> damage. 5 hits.\nApplies 1 <right-icon:burn>Burn</right-icon> per hit. Damage increased for each <right-icon:burn>Burn</right-icon> on the target.'
     },
     es: {
-      name: 'Burning Canvas',
+      name: 'Lienzo Ardiente',
       description:
-        'Change Stance: Offensive Deals high single target Void damage. 5 hits. Applies 1 Burn  per hit. Damage increased for each Burn  on the targe'
+        'Inflige mucho daño de <color:void>vacío</color> a un objetivo. 5 golpes.\nAplica 1 acumulación de <right-icon:burn>quemadura</right-icon> por golpe. Inflige más daño por cada <right-icon:burn>quemadura</right-icon> en el objetivo.'
     }
   },
   {
@@ -540,13 +548,16 @@ const MAELLE_SKILLS: Skill[] = [
     cost: 4,
     characterId: 'maelle',
     canBreak: false,
+    nextPosture: 'offensive',
     en: {
       name: 'Combustion',
-      description: 'Deals medium single target Physical Damage. 2 Hits. Consumes up to 10 Burn  for increased damage.'
+      description:
+        'Deals medium single target <color:physical>Physical</color> Damage. 2 Hits.\nConsumes up to 10 <right-icon:burn>Burn</right-icon> for increased damage.'
     },
     es: {
-      name: 'Combustion',
-      description: 'Deals medium single target Physical Damage. 2 Hits. Consumes up to 10 Burn  for increased damage.'
+      name: 'Combustión',
+      description:
+        'Inflige daño <color:physical>físico</color> moderado a un objetivo. 2 golpes.\nConsume hasta 10 acumulaciones de <right-icon:burn>quemadura</right-icon> para infligir más daño.'
     }
   },
   {
@@ -554,15 +565,16 @@ const MAELLE_SKILLS: Skill[] = [
     cost: 2,
     characterId: 'maelle',
     canBreak: false,
+    nextPosture: 'offensive',
     en: {
       name: 'Degagement',
       description:
-        'Deals low single target <span class="text-red-400 font-semibold">Fire</span> damage. 1 hit. Target becomes weak to <span class="text-red-400 font-semibold">Fire</span> damage for 2 turns.'
+        'Deals low single target <color:fire>Fire</color> damage. 1 hit.\nTarget becomes weak to <color:fire>Fire</color> damage for 2 turns.'
     },
     es: {
-      name: 'Degagement',
+      name: 'Desenganche',
       description:
-        'Deals low single target <span class="text-red-400 font-semibold">Fire</span> damage. 1 hit. Target becomes weak to <span class="text-red-400 font-semibold">Fire</span> damage for 2 turns.'
+        'Inflige daño de <color:fire>fuego</color> leve a un objetivo. 1 golpe.\nEl objetivo se vuelve débil contra el daño de <color:fire>fuego</color> durante 2 turnos.'
     }
   },
   {
@@ -570,15 +582,16 @@ const MAELLE_SKILLS: Skill[] = [
     cost: 3,
     characterId: 'maelle',
     canBreak: false,
+    nextPosture: 'defensive',
     en: {
       name: 'Egide',
       description:
-        'Protects allies by taking damage in their place, for 2 turns. Duration is extended by 1 on gaining Shell'
+        'Protects allies by taking damage in their place, for 2 turns.\nDuration is extended by 1 on gaining <right-icon:shell>Shell</right-icon>.'
     },
     es: {
-      name: 'Egide',
+      name: 'Égida',
       description:
-        'Protects allies by taking damage in their place, for 2 turns. Duration is extended by 1 on gaining Shell'
+        'Durante 2 turnos, recibe el daño de los aliados para protegerlos.\nLa duración se extiende en 1 al obtener <right-icon:shell>coraza</right-icon>.'
     }
   },
   {
@@ -586,13 +599,16 @@ const MAELLE_SKILLS: Skill[] = [
     cost: 4,
     characterId: 'maelle',
     canBreak: false,
+    nextPosture: 'offensive',
     en: {
       name: "Fencer's Flurry",
-      description: "Deals medium damage to all enemies. 1 hit. Uses weapon's element. Applies Defenceless  for 1 turn."
+      description:
+        "Deals medium damage to all enemies. 1 hit.\nUses weapon's element.\nApplies <right-icon:defenceless>Defenceless</right-icon> for 1 turn."
     },
     es: {
-      name: "Fencer's Flurry",
-      description: "Deals medium damage to all enemies. 1 hit. Uses weapon's element. Applies Defenceless  for 1 turn."
+      name: 'Ráfaga de Esgrimista',
+      description:
+        'Inflige daño moderado a todos los enemigos. 1 golpe.\nUsa el elemento del arma.\nAplica <right-icon:defenceless>fragilidad</right-icon> durante 1 turno.'
     }
   },
   {
@@ -603,12 +619,12 @@ const MAELLE_SKILLS: Skill[] = [
     en: {
       name: 'Fleuret Fury',
       description:
-        'Deals high single target Physical damage. 3 hits. If in Virtuose Stance, stay in Virtuose Stance Can Break'
+        'Deals high single target <color:physical>Physical</color> damage. 3 hits.\nIf in  <right-icon:virtuose-stance>Virtuose Stance</right-icon>, stay in <right-icon:virtuose-stance>Virtuose Stance</right-icon>.\nCan <right-icon:break>Break</right-icon>.'
     },
     es: {
-      name: 'Fleuret Fury',
+      name: 'Furia de Floretes',
       description:
-        'Deals high single target Physical damage. 3 hits. If in Virtuose Stance, stay in Virtuose Stance Can Break'
+        'Inflige mucho daño <color:physical>físico</color> a un objetivo. 3 golpes.\nSi está en <right-icon:virtuose-stance>postura virtuosa</right-icon>, permanece en <right-icon:virtuose-stance>postura virtuosa</right-icon>.\nPuede causar <right-icon:break>ruptura</right-icon>.'
     }
   },
   {
@@ -616,34 +632,47 @@ const MAELLE_SKILLS: Skill[] = [
     cost: 3,
     characterId: 'maelle',
     canBreak: false,
+    nextPosture: 'offensive',
     en: {
       name: 'Guard Down',
-      description: 'Change Stance: Offensive Applies Defenceless  to all enemies for 3 turns.'
+      description: 'Applies <right-icon:defenceless>Defenceless</right-icon> to all enemies for 3 turns.'
     },
-    es: { name: 'Guard Down', description: 'Change Stance: Offensive Applies Defenceless  to all enemies for 3 turns.' }
+    es: {
+      name: 'Guardia Baja',
+      description: 'Aplica <right-icon:defenceless>fragilidad</right-icon> a todos los enemigos durante 3 turnos.'
+    }
   },
   {
     id: 'guard-up',
     cost: 3,
     characterId: 'maelle',
     canBreak: false,
-    en: { name: 'Guard Up', description: 'Applies Shell , reducing damage taken, to up to 3 allies for 3 turns.' },
-    es: { name: 'Guard Up', description: 'Applies Shell , reducing damage taken, to up to 3 allies for 3 turns.' }
+    nextPosture: 'offensive',
+    en: {
+      name: 'Guard Up',
+      description: 'Applies <right-icon:shell>Shell</right-icon>, reducing damage taken, to up to 3 allies for 3 turns.'
+    },
+    es: {
+      name: 'Guardia Alta',
+      description:
+        'Durante 3 turnos, aplica <right-icon:shell>coraza</right-icon> a un máximo de 3 aliados para reducir el daño que reciben.'
+    }
   },
   {
     id: 'gustaves-homage',
     cost: 8,
     characterId: 'maelle',
     canBreak: false,
+    nextPosture: 'virtuose',
     en: {
       name: "Gustave's Homage",
       description:
-        "Deals high single target Lightning damage. 8 hits. Increased damage to Marked  targets, Doesn't remove Mark."
+        "Deals high single target <color:lightning>Lightning</color> damage. 8 hits.\nIncreased damage to <right-icon:mark>Marked</right-icon> targets.\nDoesn't remove <right-icon:mark>Mark</right-icon>."
     },
     es: {
-      name: "Gustave's Homage",
+      name: 'Homenaje a Gustave',
       description:
-        "Deals high single target Lightning damage. 8 hits. Increased damage to Marked  targets, Doesn't remove Mark."
+        'Inflige mucho daño de <color:lightning>rayo</color> a un objetivo. 8 golpes.\nMayor daño contra objetivos <right-icon:mark>marcados</right-icon>.\nNo elimina la <right-icon:mark>marca</right-icon>.'
     }
   },
   {
@@ -651,34 +680,47 @@ const MAELLE_SKILLS: Skill[] = [
     cost: 1,
     characterId: 'maelle',
     canBreak: false,
+    nextPosture: 'virtuose',
     en: {
       name: 'Last Chance',
-      description: 'Reduces self-Health to 1 but refills all AP  Switches to Virtuose Stance'
+      description:
+        'Reduces self-Health to 1 but refills all <color:ap>AP</color>.\nSwitches to <right-icon:virtuose-stance>Virtuose Stance</right-icon>.'
     },
-    es: { name: 'Last Chance', description: 'Reduces self-Health to 1 but refills all AP  Switches to Virtuose Stance' }
+    es: {
+      name: 'Última Oportunidad',
+      description:
+        'Reduce la vida propia a 1, pero restaura todos los <color:ap>PA</color>.\nCambia a <right-icon:virtuose-stance>postura virtuosa</right-icon>.'
+    }
   },
   {
     id: 'mezzo-forte',
     cost: 1,
     characterId: 'maelle',
     canBreak: false,
-    en: { name: 'Mezzo Forte', description: 'Reapplies current stance and gives 2-4 AP' },
-    es: { name: 'Mezzo Forte', description: 'Reapplies current stance and gives 2-4 AP' }
+    en: {
+      name: 'Mezzo Forte',
+      description: 'Reapplies current stance and gives 2-4 <color:ap>AP</color>.'
+    },
+    es: {
+      name: 'Mezzoforte',
+      description: 'Vuelve a aplicar la postura actual y otorga de 2 a 4 <color:ap>PA</color>.'
+    }
   },
   {
     id: 'momentum-strike',
     cost: 7,
     characterId: 'maelle',
     canBreak: false,
+    nextPosture: 'defensive',
     en: {
       name: 'Momentum Strike',
       description:
-        "Deals high single target damage. 1 hit. Uses weapon's element. Increased damage to Marked  targets. Virtuose Stance : Costs 4 AP"
+        "Deals high single target damage. 1 hit.\nUses weapon's element.\nIncreased damage to <right-icon:mark>Marked</right-icon> targets.\n<right-icon:virtuose-stance>Virtuose Stance</right-icon>: Costs 4 <color:ap>AP</color>."
     },
     es: {
-      name: 'Momentum Strike',
+      name: 'Ataque con Impulso',
       description:
-        "Deals high single target damage. 1 hit. Uses weapon's element. Increased damage to Marked  targets. Virtuose Stance : Costs 4 AP"
+        'Inflige mucho daño a un objetivo. 1 golpe.\nUsa el elemento del arma.\nMayor daño contra objetivos <right-icon:mark>marcados</right-icon>.\n<right-icon:virtuose-stance>Postura virtuosa</right-icon>: Consume 4 <color:ap>PA</color>.'
     }
   },
   {
@@ -686,13 +728,16 @@ const MAELLE_SKILLS: Skill[] = [
     cost: 1,
     characterId: 'maelle',
     canBreak: false,
+    nextPosture: 'offensive',
     en: {
       name: 'Offensive Switch',
-      description: "Deals low single target damage and applies Defenceless  for 3 turns. 1 hit. Uses weapon's element."
+      description:
+        "Deals low single target damage and applies <right-icon:defenceless>Defenceless</right-icon> for 3 turns. 1 hit.\nUses weapon's element."
     },
     es: {
-      name: 'Offensive Switch',
-      description: "Deals low single target damage and applies Defenceless  for 3 turns. 1 hit. Uses weapon's element."
+      name: 'Cambio Ofensivo',
+      description:
+        'Inflige daño leve a un objetivo y aplica <right-icon:defenceless>fragilidad</right-icon> durante 3 turnos. 1 golpe.\nUsa el elemento del arma.'
     }
   },
   {
@@ -700,15 +745,16 @@ const MAELLE_SKILLS: Skill[] = [
     cost: 9,
     characterId: 'maelle',
     canBreak: false,
+    nextPosture: 'defensive',
     en: {
       name: 'Payback',
       description:
-        'Deals very high single target Physical damage. 1 hit. Reduced AP  cost for each attack parried since last turn. Can Break'
+        'Deals very high single target <color:physical>Physical</color> damage. 1 hit.\nReduced <color:ap>AP</color> cost for each attack parried since last turn.\nCan <right-icon:break>Break</right-icon>.'
     },
     es: {
-      name: 'Payback',
+      name: 'Revancha',
       description:
-        'Deals very high single target Physical damage. 1 hit. Reduced AP  cost for each attack parried since last turn. Can Break'
+        'Inflige muchísimo daño <color:physical>físico</color> a un objetivo. 1 golpe.\nConsume menos <color:ap>PA</color> por cada ataque bloqueado desde el último turno.\nPuede causar <right-icon:break>ruptura</right-icon>.'
     }
   },
   {
@@ -716,15 +762,16 @@ const MAELLE_SKILLS: Skill[] = [
     cost: 5,
     characterId: 'maelle',
     canBreak: false,
+    nextPosture: 'defensive',
     en: {
       name: 'Percee',
       description:
-        'Deals medium single target Physical damage. 1 hit. Increased damage to Marked  targets. Virtuose Stance : Costs 2 AP'
+        'Deals medium single target <color:physical>Physical</color> damage. 1 hit.\nIncreased damage to <right-icon:mark>Marked</right-icon> targets.\n<right-icon:virtuose-stance>Virtuose Stance</right-icon>: Costs 2 <color:ap>AP</color>.'
     },
     es: {
-      name: 'Percee',
+      name: 'Percée',
       description:
-        'Deals medium single target Physical damage. 1 hit. Increased damage to Marked  targets. Virtuose Stance : Costs 2 AP'
+        'Inflige daño <color:physical>físico</color> moderado a un objetivo. 1 golpe.\nMayor daño contra objetivos <right-icon:mark>marcados</right-icon>.\n<right-icon:virtuose-stance>Postura virtuosa</right-icon>: Consume 2 <color:ap>PA</color>.'
     }
   },
   {
@@ -732,15 +779,16 @@ const MAELLE_SKILLS: Skill[] = [
     cost: 7,
     characterId: 'maelle',
     canBreak: false,
+    nextPosture: 'defensive',
     en: {
       name: 'Phantom Strike',
       description:
-        'Change Stance: Defensive Deals very high Void damage to all enemies. 4 hits. Also gives +35% of a Gradient Charge.'
+        'Deals very high <color:void>Void</color> damage to all enemies. 4 hits.\nAlso gives +35% of a Gradient Charge.'
     },
     es: {
-      name: 'Phantom Strike',
+      name: 'Ataque Fantasma',
       description:
-        'Change Stance: Defensive Deals very high Void damage to all enemies. 4 hits. Also gives +35% of a Gradient Charge.'
+        'Inflige muchísimo daño de <color:void>vacío</color> a todos los enemigos. 4 golpes.\nTambién otorga un 35% de una carga de gradiente.'
     }
   },
   {
@@ -748,15 +796,16 @@ const MAELLE_SKILLS: Skill[] = [
     cost: 9,
     characterId: 'maelle',
     canBreak: false,
+    nextPosture: 'defensive',
     en: {
       name: 'Pyrolyse',
       description:
-        'Deals extreme single target <span class="text-red-400 font-semibold">Fire</span> damage. 3 hits. Applies 5 Burn  per hit. Offensive Stance: Applies 2 more Burn  per hit.'
+        'Deals extreme single target <color:fire>Fire</color> damage. 3 hits.\nApplies 5 <right-icon:burn>Burn</right-icon> per hit.\n<right-icon:offensive-stance>Offensive Stance</right-icon>: Applies 2 more <right-icon:burn>Burn</right-icon> per hit.'
     },
     es: {
-      name: 'Pyrolyse',
+      name: 'Pirólisis',
       description:
-        'Deals extreme single target <span class="text-red-400 font-semibold">Fire</span> damage. 3 hits. Applies 5 Burn  per hit. Offensive Stance: Applies 2 more Burn  per hit.'
+        'Inflige daño de fuego extremo a un objetivo. 3 golpes.\nAplica 5 acumulaciones de <right-icon:burn>quemadura</right-icon> por golpe.\n<right-icon:offensive-stance>Postura ofensive</right-icon>: Aplica 2 acumulaciones más de <right-icon:burn>quemadura</right-icon> por golpe.'
     }
   },
   {
@@ -764,15 +813,16 @@ const MAELLE_SKILLS: Skill[] = [
     cost: 5,
     characterId: 'maelle',
     canBreak: false,
+    nextPosture: 'offensive',
     en: {
       name: 'Rain of Fire',
       description:
-        'Deals medium single target <span class="text-red-400 font-semibold">Fire</span> damage. 2 hits. Applies 3 Burn  per hit. Defensive Stance: applies 2 more Burn  per hit.'
+        'Deals medium single target <color:fire>Fire</color> damage. 2 hits.\nApplies 3 <right-icon:burn>Burn</right-icon> per hit.\n<right-icon:defensive-stance>Defensive Stance</right-icon>: applies 2 more <right-icon:burn>Burn</right-icon> per hit.'
     },
     es: {
-      name: 'Rain of Fire',
+      name: 'Lluvia de Fuego',
       description:
-        'Deals medium single target <span class="text-red-400 font-semibold">Fire</span> damage. 2 hits. Applies 3 Burn  per hit. Defensive Stance: applies 2 more Burn  per hit.'
+        'Inflige daño de <color:fire>fuego</color> moderado a un objetivo. 2 golpes.\nAplica 3 acumulaciones de <right-icon:burn>quemadura</right-icon> por golpe.\n<right-icon:defensive-stance>Postura defensiva</right-icon>: Aplica 2 acumulaciones de <right-icon:burn>quemadura</right-icon> más por golpe.'
     }
   },
   {
@@ -780,15 +830,16 @@ const MAELLE_SKILLS: Skill[] = [
     cost: 5,
     characterId: 'maelle',
     canBreak: false,
+    nextPosture: 'defensive',
     en: {
       name: 'Revenge',
       description:
-        'Deals high single target <span class="text-red-400 font-semibold">Fire</span> damage. 1 hit. Damage increased for each hit received since the previous turn. Can Break'
+        'Deals high single target <color:fire>Fire</color> damage. 1 hit.\nDamage increased for each hit received since the previous turn.\nCan <right-icon:break>Break</right-icon>.'
     },
     es: {
-      name: 'Revenge',
+      name: 'Venganza',
       description:
-        'Deals high single target <span class="text-red-400 font-semibold">Fire</span> damage. 1 hit. Damage increased for each hit received since the previous turn. Can Break'
+        'Inflige mucho daño de <color:fire>fuego</color> a un objetivo. 1 golpe.\nAumenta el daño por cada golpe recibido desde el turno anterior.\nPuede causar <right-icon:break>ruptura</right-icon>.'
     }
   },
   {
@@ -796,15 +847,16 @@ const MAELLE_SKILLS: Skill[] = [
     cost: 3,
     characterId: 'maelle',
     canBreak: false,
+    nextPosture: 'defensive',
     en: {
       name: 'Spark',
       description:
-        'Deals low single target <span class="text-red-400 font-semibold">Fire</span> damage. 1 hit. Applies 3 Burn  Offensive Stance: Applies 2 more Burn'
+        'Deals low single target <color:fire>Fire</color> damage. 1 hit.\nApplies 3 <right-icon:burn>Burn</right-icon>.\n<right-icon:offensive-stance>Offensive Stance</right-icon>: Applies 2 more <right-icon:burn>Burn</right-icon>.'
     },
     es: {
-      name: 'Spark',
+      name: 'Chispa',
       description:
-        'Deals low single target <span class="text-red-400 font-semibold">Fire</span> damage. 1 hit. Applies 3 Burn  Offensive Stance: Applies 2 more Burn'
+        'Inflige daño de <color:fire>fuego</color> leve a un objetivo. 1 golpe.\nAplica 3 acumulaciones de <right-icon:burn>quemadura</right-icon>.\n<right-icon:offensive-stance>Postura ofensiva</right-icon>: Aplica 2 acumulaciones más de <right-icon:burn>quemadura</right-icon>.'
     }
   },
   {
@@ -812,15 +864,16 @@ const MAELLE_SKILLS: Skill[] = [
     cost: 8,
     characterId: 'maelle',
     canBreak: false,
+    nextPosture: 'stanceless',
     en: {
       name: 'Stendhal',
       description:
-        'Change Stance: Stanceless Deals extreme single target Void damage. 1 hit. Removes self-Shields  and self applies Defenceless'
+        'Deals extreme single target <color:void>Void</color> damage. 1 hit.\nRemoves <right-icon:shield>self-Shields</right-icon> and self applies <right-icon:defenceless>Defenceless</right-icon>.'
     },
     es: {
       name: 'Stendhal',
       description:
-        'Change Stance: Stanceless Deals extreme single target Void damage. 1 hit. Removes self-Shields  and self applies Defenceless'
+        'Inflige daño de <color:void>vacío</color> extremo a un objetivo. 1 golpe.\nElimina los <right-icon:shield>escudos propios</right-icon> y se aplica <right-icon:defenceless>fragilidad</right-icon>.'
     }
   },
   {
@@ -828,15 +881,16 @@ const MAELLE_SKILLS: Skill[] = [
     cost: 3,
     characterId: 'maelle',
     canBreak: false,
+    nextPosture: 'virtuose',
     en: {
       name: 'Swift Stride',
       description:
-        'Deals low single target Physical damage. 1 hit. Switches to Virtuose Stance  if target is Burning  Regains 0 to 2 AP'
+        'Deals low single target <color:physical>Physical</color> damage. 1 hit.\nSwitches to <right-icon:virtuose-stance>Virtuose Stance</right-icon> if target is <right-icon:burn>Burning</right-icon>.\nRegains 0 to 2 <color:ap>AP</color>.'
     },
     es: {
-      name: 'Swift Stride',
+      name: 'Zancada Rauda',
       description:
-        'Deals low single target Physical damage. 1 hit. Switches to Virtuose Stance  if target is Burning  Regains 0 to 2 AP'
+        'Inflige daño <color:physical>físico</color> leve a un objetivo. 1 golpe.\nCambia a <right-icon:virtuose-stance>postura virtuosa</right-icon> si el objetivo sufre <right-icon:burn>quemadura</right-icon>.\nRecupera de 0 a 2 <color:ap>PA</color>.'
     }
   },
   {
@@ -844,13 +898,16 @@ const MAELLE_SKILLS: Skill[] = [
     cost: 9,
     characterId: 'maelle',
     canBreak: false,
+    nextPosture: 'defensive',
     en: {
       name: 'Sword Ballet',
-      description: "Deals extreme single target damage. 5 hits. Uses weapon's element. Critical Hitsdeal double damage."
+      description:
+        "Deals extreme single target damage. 5 hits.\nUses weapon's element.\n<right-icon:crit>Critical Hits</right-icon> deal double damage."
     },
     es: {
-      name: 'Sword Ballet',
-      description: "Deals extreme single target damage. 5 hits. Uses weapon's element. Critical Hitsdeal double damage."
+      name: 'Ballet de Espadas',
+      description:
+        'Inflige daño extremo a un objetivo. 5 golpes.\nUsa el elemento del arma.\nLos <right-icon:crit>golpes críticos</right-icon> infligen daño doble.'
     }
   }
 ];
@@ -865,12 +922,12 @@ const SCIEL_SKILLS: ScielSkill[] = [
     en: {
       name: 'All Set',
       description:
-        'Applies <span class="text-lime-500 font-semibold">Shell</span> <img src="/ui/status-effect/shell.png" alt="Shell Icon" />, <span class="text-lime-500 font-semibold">Powerful</span> <img src="/ui/status-effect/powerful.png" alt="Powerful Icon" />, and <span class="text-lime-500 font-semibold">Rush</span> <img src="/ui/status-effect/rush.png" alt="Rush Icon" /> to all allies.'
+        'Applies <right-icon:shell>Shell</right-icon>, <right-icon:powerful>Powerful</right-icon>, and <right-icon:rush>Rush</right-icon> to all allies.'
     },
     es: {
       name: 'Todo Listo',
       description:
-        'Aplica <span class="text-lime-500 font-semibold">coraza</span> <img src="/ui/status-effect/shell.png" alt="Shell Icon" />, <span class="text-lime-500 font-semibold">fortalecimiento</span> <img src="/ui/status-effect/powerful.png" alt="Powerful Icon" /> y <span class="text-lime-500 font-semibold">prisa</span> <img src="/ui/status-effect/rush.png" alt="Rush Icon" /> a todos los aliados.'
+        'Aplica <right-icon:shell>coraza</right-icon>, <right-icon:powerful>fortalecimiento</right-icon> y <right-icon:rush>prisa</right-icon> a todos los aliados.'
     }
   },
   {
@@ -882,12 +939,12 @@ const SCIEL_SKILLS: ScielSkill[] = [
     en: {
       name: 'Bad Omen',
       description:
-        'Deals low <span class="text-purple-400 font-semibold">Dark</span> damage to all enemies. 2 hits.\nApplies 2 <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> per hit.'
+        'Deals low <color:dark>Dark</color> damage to all enemies. 2 hits.\nApplies 2 <right-icon:foretell>Foretell</right-icon> per hit.'
     },
     es: {
       name: 'Mal Presagio',
       description:
-        'Inflige daño de <span class="text-purple-400 font-semibold">oscuridad</span> leve a todos los enemigos. 2 golpes.\nAplica 2 acumulaciones de <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> por golpe.'
+        'Inflige daño de <color:dark>oscuridad</color> leve a todos los enemigos. 2 golpes.\nAplica 2 acumulaciones de <right-icon:foretell>augurio</right-icon> por golpe.'
     }
   },
   {
@@ -899,12 +956,12 @@ const SCIEL_SKILLS: ScielSkill[] = [
     en: {
       name: 'Card Weaver',
       description:
-        'Deals low single target <span class="text-taupe-400 font-semibold">Physical</span> damage. 1 hit.\nPropagates target\'s <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> to all enemies.\nPlays a second turn.'
+        "Deals low single target <color:physical>Physical</color> damage. 1 hit.\nPropagates target's <right-icon:foretell>Foretell</right-icon> to all enemies.\nPlays a second turn."
     },
     es: {
       name: 'Tejedora de Cartas',
       description:
-        'Inflige daño <span class="text-taupe-400 font-semibold">físico</span> leve a un objetivo. 1 golpe.\nPropaga el <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> del objetivo a todos los enemigos.\nActúa una segunda vez.'
+        'Inflige daño <color:physical>físico</color> leve a un objetivo. 1 golpe.\nPropaga el <right-icon:foretell>augurio</right-icon> del objetivo a todos los enemigos.\nActúa una segunda vez.'
     }
   },
   {
@@ -932,12 +989,12 @@ const SCIEL_SKILLS: ScielSkill[] = [
     en: {
       name: 'Dark Wave',
       description:
-        'Deals high <span class="text-purple-400 font-semibold">Dark</span> damage to all enemies. 3 hits.\nConsumes all <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> to deal additional damage.'
+        'Deals high <color:dark>Dark</color> damage to all enemies. 3 hits.\nConsumes all <right-icon:foretell>Foretell</right-icon> to deal additional damage.'
     },
     es: {
       name: 'Oleada Oscura',
       description:
-        'Inflige mucho daño de <span class="text-purple-400 font-semibold">oscuridad</span> a todos los enemigos. 3 golpes.\nConsume todas las acumulaciones de <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> para infligir más daño.'
+        'Inflige mucho daño de <color:dark>oscuridad</color> a todos los enemigos. 3 golpes.\nConsume todas las acumulaciones de <right-icon:foretell>augurio</right-icon> para infligir más daño.'
     }
   },
   {
@@ -949,12 +1006,12 @@ const SCIEL_SKILLS: ScielSkill[] = [
     en: {
       name: 'Delaying Slash',
       description:
-        'Deals medium single targe damage. 2 hits.\nUses weapon\'s element.\nConsumes <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> to increase damage and delay target\'s turn.'
+        "Deals medium single targe damage. 2 hits.\nUses weapon's element.\nConsumes <right-icon:foretell>Foretell</right-icon> to increase damage and delay target's turn."
     },
     es: {
       name: 'Corte Retardante',
       description:
-        'Inflige daño moderado a un objetivo. 2 golpes.\nUsa el elemento del arma.\nConsume <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> para aumentar el daño y retrasar el turno del objetivo.'
+        'Inflige daño moderado a un objetivo. 2 golpes.\nUsa el elemento del arma.\nConsume <right-icon:foretell>augurio</right-icon> para aumentar el daño y retrasar el turno del objetivo.'
     }
   },
   {
@@ -966,12 +1023,12 @@ const SCIEL_SKILLS: ScielSkill[] = [
     en: {
       name: 'Final Path',
       description:
-        'Deal extreme single target <span class="text-purple-400 font-semibold">Dark</span> damage and applies 10 <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> 1 hit.\nCan <span class="text-yellow-600 font-semibold">Break</span> <img src="/ui/status-effect/break.png" alt="Break Icon" />.'
+        'Deal extreme single target <color:dark>Dark</color> damage and applies 10 <right-icon:foretell>Foretell</right-icon> 1 hit.\nCan <right-icon:break>Break</right-icon>.'
     },
     es: {
       name: 'Senda Final',
       description:
-        'Inflige daño de <span class="text-purple-400 font-semibold">oscuridad</span> extremo a un objetivo y le aplica 10 acumulaciones de <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" />. 1 golpe.\nPuede causar <span class="text-yellow-600 font-semibold">ruptura</span> <img src="/ui/status-effect/break.png" alt="Break Icon" />.'
+        'Inflige daño de <color:dark>oscuridad</color> extremo a un objetivo y le aplica 10 acumulaciones de <right-icon:foretell>augurio</right-icon>. 1 golpe.\nPuede causar <right-icon:break>ruptura</right-icon>.'
     }
   },
   {
@@ -983,12 +1040,12 @@ const SCIEL_SKILLS: ScielSkill[] = [
     en: {
       name: 'Firing Shadow',
       description:
-        'Deals low <span class="text-purple-400 font-semibold">Dark</span> damage to all enemies. 3 hits.\nConsumes 1 <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> per hit for increased damage.'
+        'Deals low <color:dark>Dark</color> damage to all enemies. 3 hits.\nConsumes 1 <right-icon:foretell>Foretell</right-icon> per hit for increased damage.'
     },
     es: {
       name: 'Sombra Ardiente',
       description:
-        'Inflige daño de <span class="text-purple-400 font-semibold">oscuridad</span> leve a todos los enemigos. 3 golpes.\nConsume 1 acumulación de <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> por golpe para infligir más daño.'
+        'Inflige daño de <color:dark>oscuridad</color> leve a todos los enemigos. 3 golpes.\nConsume 1 acumulación de <right-icon:foretell>augurio</right-icon> por golpe para infligir más daño.'
     }
   },
   {
@@ -1000,12 +1057,12 @@ const SCIEL_SKILLS: ScielSkill[] = [
     en: {
       name: 'Focused Foretell',
       description:
-        'Deals medium single target <span class="text-taupe-400 font-semibold">Physical</span> damage. 1 hit.\nApplies 2 <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" />.\nApplies 3 additional Foretell if target has 0 <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" />.'
+        'Deals medium single target <color:physical>Physical</color> damage. 1 hit.\nApplies 2 <right-icon:foretell>Foretell</right-icon>.\nApplies 3 additional Foretell if target has 0 <right-icon:foretell>Foretell</right-icon>.'
     },
     es: {
       name: 'Augurio Enfocado',
       description:
-        'Inflige daño <span class="text-taupe-400 font-semibold">físico</span> moderado a un objetivo. 1 golpe.\nAplica 2 acumulaciones de <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" />.\nAplica 3 acumulaciones más de <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> si el objetivo no tiene acumulaciones de <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" />.'
+        'Inflige daño <color:physical>físico</color> moderado a un objetivo. 1 golpe.\nAplica 2 acumulaciones de <right-icon:foretell>augurio</right-icon>.\nAplica 3 acumulaciones más de <right-icon:foretell>augurio</right-icon> si el objetivo no tiene acumulaciones de <right-icon:foretell>augurio</right-icon>.'
     }
   },
   {
@@ -1032,12 +1089,12 @@ const SCIEL_SKILLS: ScielSkill[] = [
     en: {
       name: 'Grim Harvest',
       description:
-        'Deals medium single target <span class="text-purple-400 font-semibold">Dark</span> damage. 1 hit.\n<span class="text-lime-600 font-semibold">Heals</span> <img src="/ui/status-effect/heal.png" alt="Heal Icon" />  all allies by 30% Health.\nConsumes <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> to increase <span class="text-lime-600 font-semibold">Heal</span> <img src="/ui/status-effect/heal.png" alt="Heal Icon" /> by 5% per <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" />'
+        'Deals medium single target <color:dark>Dark</color> damage. 1 hit.\n<right-icon:heal>Heals</right-icon> all allies by 30% Health.\nConsumes <right-icon:foretell>Foretell</right-icon> to increase <right-icon:heal>Heal</right-icon> by 5% per <right-icon:foretell>Foretell</right-icon>'
     },
     es: {
       name: 'Cosecha Nefasta',
       description:
-        'Inflige daño de <span class="text-purple-400 font-semibold">oscuridad</span> moderado a un objetivo. 1 golpe.\n<span class="text-lime-600 font-semibold">Cura</span> <img src="/ui/status-effect/heal.png" alt="Heal Icon" /> a todos los aliados un 30% de vida.\nConsume <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> para aumentar la <span class="text-lime-600 font-semibold">curación</span> <img src="/ui/status-effect/heal.png" alt="Heal Icon" /> un 5% por acumulación de <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" />.'
+        'Inflige daño de <color:dark>oscuridad</color> moderado a un objetivo. 1 golpe.\n<right-icon:heal>Cura</right-icon> a todos los aliados un 30% de vida.\nConsume <right-icon:foretell>augurio</right-icon> para aumentar la <right-icon:heal>curación</right-icon> un 5% por acumulación de <right-icon:foretell>augurio</right-icon>.'
     }
   },
   {
@@ -1049,12 +1106,12 @@ const SCIEL_SKILLS: ScielSkill[] = [
     en: {
       name: 'Harvest',
       description:
-        'Deals medium single target damage. 1 hit.\nUses weapon\'s element.\n<span class="text-lime-600 font-semibold">Heals</span> <img src="/ui/status-effect/heal.png" alt="Heal Icon" /> self by 40% Health.\nConsumes all <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> to increase <span class="text-lime-600 font-semibold">Heal</span> <img src="/ui/status-effect/heal.png" alt="Heal Icon" /> by 5% per <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" />.'
+        "Deals medium single target damage. 1 hit.\nUses weapon's element.\n<right-icon:heal>Heals</right-icon> self by 40% Health.\nConsumes all <right-icon:foretell>Foretell</right-icon> to increase <right-icon:heal>Heal</right-icon> by 5% per <right-icon:foretell>Foretell</right-icon>."
     },
     es: {
       name: 'Cosecha',
       description:
-        'Inflige daño moderado a un objetivo. 1 golpe.\nUsa el elemento del arma.\n<span class="text-lime-600 font-semibold">Cura</span> <img src="/ui/status-effect/heal.png" alt="Heal Icon" /> a Sciel un 40% de vida.\nConsume todo el <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> para aumentar la <span class="text-lime-600 font-semibold">curación</span> <img src="/ui/status-effect/heal.png" alt="Heal Icon" /> un 5% por cada acumulación de <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" />.'
+        'Inflige daño moderado a un objetivo. 1 golpe.\nUsa el elemento del arma.\n<right-icon:heal>Cura</right-icon> a Sciel un 40% de vida.\nConsume todo el <right-icon:foretell>augurio</right-icon> para aumentar la <right-icon:heal>curación</right-icon> un 5% por cada acumulación de <right-icon:foretell>augurio</right-icon>.'
     }
   },
   {
@@ -1065,12 +1122,11 @@ const SCIEL_SKILLS: ScielSkill[] = [
     charge: 'moon',
     en: {
       name: 'Intervention',
-      description: 'Targeted ally plays immediately and gains 4 <span class="text-blue-400 font-semibold">AP</span>.'
+      description: 'Targeted ally plays immediately and gains 4 <color:ap>AP</color>.'
     },
     es: {
       name: 'Intervención',
-      description:
-        'El aliado seleccionado actúa de inmediato y obtiene 4 <span class="text-blue-400 font-semibold">PA</span>.'
+      description: 'El aliado seleccionado actúa de inmediato y obtiene 4 <color:ap>PA</color>.'
     }
   },
   {
@@ -1082,12 +1138,12 @@ const SCIEL_SKILLS: ScielSkill[] = [
     en: {
       name: 'Marking Card',
       description:
-        'Deals medium single target <span class="text-purple-400 font-semibold">Dark</span> damge. 2 hits.\nApplies <span class="text-red-700 font-semibold">Mark</span> <img src="/ui/status-effect/mark.png" alt="Mark Icon" /> to the target.\nApplies 3 <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" />.'
+        'Deals medium single target <color:dark>Dark</color> damge. 2 hits.\nApplies <right-icon:mark>Mark</right-icon> to the target.\nApplies 3 <right-icon:foretell>Foretell</right-icon>.'
     },
     es: {
       name: 'Carta de Marca',
       description:
-        'Inflige daño de <span class="text-purple-400 font-semibold">oscuridad</span> moderado a un objetivo. 2 golpes.\nLe aplica <span class="text-red-700 font-semibold">marca</span> <img src="/ui/status-effect/mark.png" alt="Mark Icon" /> al objetivo.\nAplica 3 acumulaciones de <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" />.'
+        'Inflige daño de <color:dark>oscuridad</color> moderado a un objetivo. 2 golpes.\nLe aplica <right-icon:mark>marca</right-icon> al objetivo.\nAplica 3 acumulaciones de <right-icon:foretell>augurio</right-icon>.'
     }
   },
   {
@@ -1099,12 +1155,12 @@ const SCIEL_SKILLS: ScielSkill[] = [
     en: {
       name: 'Our Sacrifice',
       description:
-        'Deals extreme <span class="text-purple-400 font-semibold">Dark</span> damage to all enemies. 1 hit.\nAbsorbs allies\' Health and enemies\' <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> to deal increased damage.'
+        "Deals extreme <color:dark>Dark</color> damage to all enemies. 1 hit.\nAbsorbs allies' Health and enemies' <right-icon:foretell>Foretell</right-icon> to deal increased damage."
     },
     es: {
       name: 'Nuestro Sacrificio',
       description:
-        'Inflige daño de <span class="text-purple-400 font-semibold">oscuridad</span> extremo a todos los enemigos. 1 golpe.\nAbsorbe la vida de los aliados y el <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> de los enemigos para infligir más daño.'
+        'Inflige daño de <color:dark>oscuridad</color> extremo a todos los enemigos. 1 golpe.\nAbsorbe la vida de los aliados y el <right-icon:foretell>augurio</right-icon> de los enemigos para infligir más daño.'
     }
   },
   {
@@ -1116,12 +1172,12 @@ const SCIEL_SKILLS: ScielSkill[] = [
     en: {
       name: 'Phantom Blade',
       description:
-        'Deals high single target <span class="text-purple-400 font-semibold">Dark</span> damage. 1 hit.\nConsumes all <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> to deal additional damage.\nCan <span class="text-yellow-600 font-semibold">Break</span> <img src="/ui/status-effect/break.png" alt="Break Icon" />.'
+        'Deals high single target <color:dark>Dark</color> damage. 1 hit.\nConsumes all <right-icon:foretell>Foretell</right-icon> to deal additional damage.\nCan <right-icon:break>Break</right-icon>.'
     },
     es: {
       name: 'Espada Fantasma',
       description:
-        'Inflige mucho daño de <span class="text-purple-400 font-semibold">oscuridad</span> a un objetivo. 1 golpe.\nConsume todas las acumulaciones de <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> para infligir más daño.\nPuede causar <span class="text-yellow-600 font-semibold">ruptura</span> <img src="/ui/status-effect/break.png" alt="Break Icon" />.'
+        'Inflige mucho daño de <color:dark>oscuridad</color> a un objetivo. 1 golpe.\nConsume todas las acumulaciones de <right-icon:foretell>augurio</right-icon> para infligir más daño.\nPuede causar <right-icon:break>ruptura</right-icon>.'
     }
   },
   {
@@ -1133,12 +1189,12 @@ const SCIEL_SKILLS: ScielSkill[] = [
     en: {
       name: 'Plentiful Harvest',
       description:
-        'Deals medium single target <span class="text-taupe-400 font-semibold">Physical</span> damage. 2 hits.\nConsumes all <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> on a target and gives 1 <span class="text-blue-400 font-semibold">AP</span> to a party member for each <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> consumed.'
+        'Deals medium single target <color:physical>Physical</color> damage. 2 hits.\nConsumes all <right-icon:foretell>Foretell</right-icon> on a target and gives 1 <color:ap>AP</color> to a party member for each <right-icon:foretell>Foretell</right-icon> consumed.'
     },
     es: {
       name: 'Cosecha Abundante',
       description:
-        'Inflige daño <span class="text-taupe-400 font-semibold">físico</span> moderado a un objetivo. 2 golpes.\nConsume todas las acumulaciones de <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> de un objetivo y otorga 1 <span class="text-blue-400 font-semibold">PA</span> al grupo por cada acumulación de <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> consumida.'
+        'Inflige daño <color:physical>físico</color> moderado a un objetivo. 2 golpes.\nConsume todas las acumulaciones de <right-icon:foretell>augurio</right-icon> de un objetivo y otorga 1 <color:ap>PA</color> al grupo por cada acumulación de <right-icon:foretell>augurio</right-icon> consumida.'
     }
   },
   {
@@ -1149,13 +1205,12 @@ const SCIEL_SKILLS: ScielSkill[] = [
     charge: 'sun',
     en: {
       name: 'Rush',
-      description:
-        'Applies <span class="text-lime-500 font-semibold">Rush</span> <img src="/ui/status-effect/rush.png" alt="Rush Icon" /> to 1-3 allies, increasing their speed for 3 turns.'
+      description: 'Applies <right-icon:rush>Rush</right-icon> to 1-3 allies, increasing their speed for 3 turns.'
     },
     es: {
       name: 'Prisa',
       description:
-        'Aplica <span class="text-lime-500 font-semibold">prisa</span> <img src="/ui/status-effect/rush.png" alt="Rush Icon" /> a entre 1 y 3 aliados, que aumenta su velocidad durante 3 turnos.'
+        'Aplica <right-icon:rush>prisa</right-icon> a entre 1 y 3 aliados, que aumenta su velocidad durante 3 turnos.'
     }
   },
   {
@@ -1166,12 +1221,12 @@ const SCIEL_SKILLS: ScielSkill[] = [
     charge: 'moon',
     en: {
       name: 'Sealed Fate',
-      description: `Deals high single target damage. 5-7 hits.\nUses weapon's element.\nEach hit can consume 1 <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> to deal 200% more damage.\n<span class="text-red-700 font-semibold">Critical Hits</span> <img src="/ui/status-effect/crit.png" alt="Critical Hit Icon" /> don't remove the <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> but still gets the damage increase.`
+      description: `Deals high single target damage. 5-7 hits.\nUses weapon's element.\nEach hit can consume 1 <right-icon:foretell>Foretell</right-icon> to deal 200% more damage.\n<right-icon:crit>Critical Hits</right-icon> don't remove the <right-icon:foretell>Foretell</right-icon> but still gets the damage increase.`
     },
     es: {
       name: 'Destino Sellado',
       description:
-        'Inflige mucho daño a un objetivo. 5 a 7 golpes.\nUsa el elemento del arma.\nCada golpe puede consumir 1 acumulación de <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> para infligir un 200% más de daño.\nLos <span class="text-red-700 font-semibold">golpes críticos</span> <img src="/ui/status-effect/crit.png" alt="Critical Hit Icon" /> no consumen <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" />, pero sí otorgan el aumento de daño.'
+        'Inflige mucho daño a un objetivo. 5 a 7 golpes.\nUsa el elemento del arma.\nCada golpe puede consumir 1 acumulación de <right-icon:foretell>augurio</right-icon> para infligir un 200% más de daño.\nLos <right-icon:crit>golpes críticos</right-icon> no consumen <right-icon:foretell>augurio</right-icon>, pero sí otorgan el aumento de daño.'
     }
   },
   {
@@ -1183,12 +1238,12 @@ const SCIEL_SKILLS: ScielSkill[] = [
     en: {
       name: 'Searing Bond',
       description:
-        'Deals medium single target <span class="text-purple-400 font-semibold">Dark</span> damage. 1 hit.\nApplies 5 <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" />.\nAlso deals damage and applies <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> to every other <span class="text-orange-400 font-semibold">Burning</span> <img src="/ui/status-effect/burn.png" alt="Burn Icon" /> enemies.'
+        'Deals medium single target <color:dark>Dark</color> damage. 1 hit.\nApplies 5 <right-icon:foretell>Foretell</right-icon>.\nAlso deals damage and applies <right-icon:foretell>Foretell</right-icon> to every other <right-icon:burn>Burning</right-icon> enemies.'
     },
     es: {
       name: 'Vínculo Abrasador',
       description:
-        'Inflige daño de <span class="text-purple-400 font-semibold">oscuridad</span> moderado a un objetivo. 1 golpe.\nAplica 5 acumulaciones de <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" />.\nAdemás, inflige daño y aplica <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> a los demás enemigos que sufran <span class="text-orange-400 font-semibold">quemadura</span> <img src="/ui/status-effect/burn.png" alt="Burn Icon" />.'
+        'Inflige daño de <color:dark>oscuridad</color> moderado a un objetivo. 1 golpe.\nAplica 5 acumulaciones de <right-icon:foretell>augurio</right-icon>.\nAdemás, inflige daño y aplica <right-icon:foretell>augurio</right-icon> a los demás enemigos que sufran <right-icon:burn>quemadura</right-icon>.'
     }
   },
   {
@@ -1199,12 +1254,12 @@ const SCIEL_SKILLS: ScielSkill[] = [
     charge: 'sun',
     en: {
       name: 'Spectral Sweep',
-      description: `Deals medium single target damage. 2 to 6 hits.\nUses weapon's element. Applies 1 <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> per hit.\n<span class="text-red-700 font-semibold">Critical Hits</span> <img src="/ui/status-effect/crit.png" alt="Critical Hit Icon" /> apply an additional <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" />.`
+      description: `Deals medium single target damage. 2 to 6 hits.\nUses weapon's element. Applies 1 <right-icon:foretell>Foretell</right-icon> per hit.\n<right-icon:crit>Critical Hits</right-icon> apply an additional <right-icon:foretell>Foretell</right-icon>.`
     },
     es: {
       name: 'Barrido Espectral',
       description:
-        'Inflige daño moderado a un objetivo. 2 a 6 golpes.\nAplica 1 acumulación de <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> por golpe.\nLos <span class="text-red-700 font-semibold">golpes críticos</span> <img src="/ui/status-effect/crit.png" alt="Critical Hit Icon" /> aplican una acumulación adicional de <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" />.'
+        'Inflige daño moderado a un objetivo. 2 a 6 golpes.\nAplica 1 acumulación de <right-icon:foretell>augurio</right-icon> por golpe.\nLos <right-icon:crit>golpes críticos</right-icon> aplican una acumulación adicional de <right-icon:foretell>augurio</right-icon>.'
     }
   },
   {
@@ -1216,12 +1271,12 @@ const SCIEL_SKILLS: ScielSkill[] = [
     en: {
       name: 'Twilight Dance',
       description:
-        'Deals extreme single target <span class="text-purple-400 font-semibold">Dark</span> damage. 4 hits.\nDuring <span class="text-fuchsia-400 font-semibold">Twilight</span> <img src="/ui/charges/twilight.png" alt="Twilight Icon" />, extends <span class="text-fuchsia-400 font-semibold">Twilight</span> <img src="/ui/charges/twilight.png" alt="Twilight Icon" /> duration by 1 turn.\nConsumes all <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> to deal additional damage.'
+        'Deals extreme single target <color:dark>Dark</color> damage. 4 hits.\nDuring <right-icon:twilight>Twilight</right-icon>, extends <right-icon:twilight>Twilight</right-icon> duration by 1 turn.\nConsumes all <right-icon:foretell>Foretell</right-icon> to deal additional damage.'
     },
     es: {
       name: 'Danza Crepuscular',
       description:
-        'Inflige daño de <span class="text-purple-400 font-semibold">oscuridad</span> extremo a un objetivo. 4 golpes.\nDurante <span class="text-fuchsia-400 font-semibold">Crepúsculo</span> <img src="/ui/charges/twilight.png" alt="Twilight Icon" />, extiende la duración de <span class="text-fuchsia-400 font-semibold">Crepúsculo</span> <img src="/ui/charges/twilight.png" alt="Twilight Icon" /> en 1 turno.\nConsume todas las acumulaciones de <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> para infligir más daño.'
+        'Inflige daño de <color:dark>oscuridad</color> extremo a un objetivo. 4 golpes.\nDurante <right-icon:twilight>Crepúsculo</right-icon>, extiende la duración de <right-icon:twilight>Crepúsculo</right-icon> en 1 turno.\nConsume todas las acumulaciones de <right-icon:foretell>augurio</right-icon> para infligir más daño.'
     }
   },
   {
@@ -1233,31 +1288,32 @@ const SCIEL_SKILLS: ScielSkill[] = [
     en: {
       name: 'Twilight Slash',
       description:
-        'Deals low single target <span class="text-purple-400 font-semibold">Dark</span> damage. 1 hit.\nConsumes all <span class="text-taupe-400 font-semibold">Foretell</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> to deal additional damage.'
+        'Deals low single target <color:dark>Dark</color> damage. 1 hit.\nConsumes all <right-icon:foretell>Foretell</right-icon> to deal additional damage.'
     },
     es: {
       name: 'Corte Crepuscular',
       description:
-        'Inflige daño de <span class="text-purple-400 font-semibold">oscuridad</span> leve a un objetivo. 1 golpe.\nConsume todas las acumulaciones de <span class="text-taupe-400 font-semibold">augurio</span> <img src="/ui/charges/foretell.png" alt="Foretell Icon" /> para infligir más daño.'
+        'Inflige daño de <color:dark>oscuridad</color> leve a un objetivo. 1 golpe.\nConsume todas las acumulaciones de <right-icon:foretell>augurio</right-icon> para infligir más daño.'
     }
   }
 ];
 
-const VERSO_SKILLS: Skill[] = [
+const VERSO_SKILLS: VersoSkill[] = [
   {
     id: 'ascending-assault',
     cost: 5,
     characterId: 'verso',
     canBreak: false,
+    buffedRank: 'S',
     en: {
       name: 'Ascending Assault',
       description:
-        "Deals low single target damage. 1 hit. Uses weapon's element. Increase damage at each cast. : Costs 2 AP"
+        "Deals low single target damage. 1 hit.\nUses weapon's element.\nIncrease damage at each cast.\n<icon:s-rank />: Costs 2 <color:ap>AP</color>."
     },
     es: {
-      name: 'Ascending Assault',
+      name: 'Asalto Ascendente',
       description:
-        "Deals low single target damage. 1 hit. Uses weapon's element. Increase damage at each cast. : Costs 2 AP"
+        'Inflige daño leve a un objetivo. 1 golpe.\nUsa el elemento del arma.\nAumenta el daño con cada lanzamiento.\n<icon:s-rank />: Consume 2 <color:ap>PA</color>.'
     }
   },
   {
@@ -1265,23 +1321,33 @@ const VERSO_SKILLS: Skill[] = [
     cost: 3,
     characterId: 'verso',
     canBreak: false,
-    en: { name: 'Assault Zero', description: 'Critical Hits generate 1 additional Perfection  : Increased damage.' },
-    es: { name: 'Assault Zero', description: 'Critical Hits generate 1 additional Perfection  : Increased damage.' }
+    buffedRank: 'B',
+    en: {
+      name: 'Assault Zero',
+      description:
+        "Deals low single target damage. 5 hits.\nUses weapon's element.\n<right-icon:crit>Critical Hits</right-icon> generate 1 additional <right-icon:perfection>Perfection</right-icon>.\n<icon:b-rank />: Increased damage."
+    },
+    es: {
+      name: 'Asalto Cero',
+      description:
+        'Inflige daño leve a un objetivo. 5 golpes.\nUsa el elemento del arma.\nLos <right-icon:crit>golpes críticos</right-icon> generan 1 de <right-icon:perfection>perfección</right-icon> adicional.\n<icon:b-rank />: Aumenta el daño.'
+    }
   },
   {
     id: 'berserk-slash',
     cost: 4,
     characterId: 'verso',
     canBreak: false,
+    buffedRank: 'C',
     en: {
       name: 'Berserk Slash',
       description:
-        'Deals medium single target Physical damage. 3 hits. Damage is increased for each health Verso is missing. : Increased damage'
+        'Deals medium single target <color:physical>Physical</color> damage. 3 hits.\nDamage is increased for each health Verso is missing.\n<icon:c-rank />: Increased damage'
     },
     es: {
-      name: 'Berserk Slash',
+      name: 'Corte Frenético',
       description:
-        'Deals medium single target Physical damage. 3 hits. Damage is increased for each health Verso is missing. : Increased damage'
+        'Inflige daño <color:physical>físico</color> moderado a un objetivo. 3 golpes.\nEl daño aumenta en función de la vida que le falte a Verso.\n<icon:c-rank />: Aumenta el daño.'
     }
   },
   {
@@ -1289,15 +1355,16 @@ const VERSO_SKILLS: Skill[] = [
     cost: 3,
     characterId: 'verso',
     canBreak: false,
+    buffedRank: 'B',
     en: {
       name: 'Blitz',
       description:
-        'Deals low single target Physical damage. 1 hit. Plays a second time. Kills non-boss enemies with less than 10% health. : Increased damage.'
+        'Deals low single target <color:physical>Physical</color> damage. 1 hit.\nPlays a second time. Kills non-boss enemies with less than 10% health.\n<icon:b-rank />: Increased damage.'
     },
     es: {
-      name: 'Blitz',
+      name: 'Relámpago',
       description:
-        'Deals low single target Physical damage. 1 hit. Plays a second time. Kills non-boss enemies with less than 10% health. : Increased damage.'
+        'Inflige daño <color:physical>físico</color> leve a un objetivo. 1 golpe.\nActúa una segunda vez. Mata a los enemigos que no sean jefes y que tengan menos del 10% de vida.\n<icon:b-rank />: Aumenta el daño.'
     }
   },
   {
@@ -1307,11 +1374,11 @@ const VERSO_SKILLS: Skill[] = [
     canBreak: false,
     en: {
       name: 'Burden',
-      description: 'Removes all Status Effects from all allies and applies them to Verso. Gains 1 Rank.'
+      description: 'Removes all Status Effects from all allies and applies them to Verso.\nGains 1 Rank.'
     },
     es: {
-      name: 'Burden',
-      description: 'Removes all Status Effects from all allies and applies them to Verso. Gains 1 Rank.'
+      name: 'Lastre',
+      description: 'Disipa las alteraciones de estado de todos los aliados y se las aplica a Verso.\nObtiene 1 grado.'
     }
   },
   {
@@ -1319,15 +1386,16 @@ const VERSO_SKILLS: Skill[] = [
     cost: 3,
     characterId: 'verso',
     canBreak: false,
+    buffedRank: 'B',
     en: {
       name: 'Defiant Strike',
       description:
-        'Deals high single target Physical damage that applies Mark  2 hits. Costs 30% of current Health. : Increased damage.'
+        'Deals high single target <color:physical>Physical</color> damage that applies <right-icon:mark>Mark</right-icon>. 2 hits.\nCosts 30% of current Health.\n<icon:b-rank />: Increased damage.'
     },
     es: {
-      name: 'Defiant Strike',
+      name: 'Ataque Desafiante',
       description:
-        'Deals high single target Physical damage that applies Mark  2 hits. Costs 30% of current Health. : Increased damage.'
+        'Inflige mucho daño <color:physical>físico</color> a un objetivo y le aplica <right-icon:mark>marca</right-icon>. 2 golpes.\nConsume el 30% de la vida actual.\n<icon:b-rank />: Aumenta el daño.'
     }
   },
   {
@@ -1335,15 +1403,16 @@ const VERSO_SKILLS: Skill[] = [
     cost: 9,
     characterId: 'verso',
     canBreak: false,
+    buffedRank: 'A',
     en: {
       name: 'End Bringer',
       description:
-        'Deals extreme single target Physical damage. 6 hits. Increased damage if the target is Stunned  : Can reapply Stun'
+        'Deals extreme single target <color:physical>Physical</color> damage. 6 hits.\nIncreased damage if the target is <right-icon:stun>Stunned</right-icon>.\n<icon:a-rank />: Can reapply <right-icon:stun>Stun</right-icon>.'
     },
     es: {
-      name: 'End Bringer',
+      name: 'Heraldo del Fin',
       description:
-        'Deals extreme single target Physical damage. 6 hits. Increased damage if the target is Stunned  : Can reapply Stun'
+        'Inflige daño físico extremo a un objetivo. 6 golpes.\nAumenta el daño si el objetivo está <right-icon:stun>aturdido</right-icon>.\n<icon:a-rank />: Puede volver a aplicar <right-icon:stun>aturdimiento</right-icon>.'
     }
   },
   {
@@ -1351,15 +1420,16 @@ const VERSO_SKILLS: Skill[] = [
     cost: 5,
     characterId: 'verso',
     canBreak: false,
+    buffedRank: 'S',
     en: {
       name: 'Follow Up',
       description:
-        'Deals medium single target Light damage. 1 hit. Damage increased for each Free Aim shot this turn, up to 10 times. : Costs 2 AP'
+        'Deals medium single target <color:light>Light</color> damage. 1 hit.\nDamage increased for each Free Aim shot this turn, up to 10 times.\n<icon:s-rank />: Costs 2 <color:ap>AP</color>.'
     },
     es: {
-      name: 'Follow Up',
+      name: 'Mira Letal',
       description:
-        'Deals medium single target Light damage. 1 hit. Damage increased for each Free Aim shot this turn, up to 10 times. : Costs 2 AP'
+        'Inflige daño de <color:light>luz</color> moderado a un objetivo. 1 golpe.\nEl daño aumenta por cada disparo con apuntado libre efectuado en este turno, hasta un máximo de 10 veces.\n<icon:s-rank />: Consume 2 <color:ap>PA</color>.'
     }
   },
   {
@@ -1367,15 +1437,16 @@ const VERSO_SKILLS: Skill[] = [
     cost: 4,
     characterId: 'verso',
     canBreak: false,
+    buffedRank: 'B',
     en: {
       name: 'From Fire',
       description:
-        "Deals medium single target damage. 3 hits. Uses weapon's element. Heals  self by 20% Health if the target Burns  : Increased damage."
+        "Deals medium single target damage. 3 hits.\nUses weapon's element.\n<right-icon:heal>Heals</right-icon> self by 20% Health if the target <right-icon:burn>Burns</right-icon>.\n<icon:b-rank />: Increased damage."
     },
     es: {
-      name: 'From Fire',
+      name: 'Desde el Fuego',
       description:
-        "Deals medium single target damage. 3 hits. Uses weapon's element. Heals  self by 20% Health if the target Burns  : Increased damage."
+        'Inflige daño moderado a un objetivo. 3 golpes.\nUsa el elemento del arma.\n<right-icon:heal>Cura</right-icon> un 20% de vida si el objetivo sufre <right-icon:burn>quemadura</right-icon>.\n<icon:b-rank />: Aumenta el daño.'
     }
   },
   {
@@ -1383,13 +1454,16 @@ const VERSO_SKILLS: Skill[] = [
     cost: 3,
     characterId: 'verso',
     canBreak: false,
+    buffedRank: 'C',
     en: {
       name: 'Leadership',
-      description: 'Reduces current Rank. Gives 2-4 AP  to other allies. : +1 more AP  to other allies'
+      description:
+        'Reduces current Rank.\nGives 2-4 <color:ap>AP</color> to other allies.\n<icon:c-rank />: +1 more <color:ap>AP</color> to other allies.'
     },
     es: {
-      name: 'Leadership',
-      description: 'Reduces current Rank. Gives 2-4 AP  to other allies. : +1 more AP  to other allies'
+      name: 'Liderazgo',
+      description:
+        'Reduce el grado actual.\nOtorga de 2 a 4 <color:ap>PA</color> a otros aliados.\n<icon:c-rank />: +1 <color:ap>PA</color> más a otros aliados.'
     }
   },
   {
@@ -1397,13 +1471,16 @@ const VERSO_SKILLS: Skill[] = [
     cost: 4,
     characterId: 'verso',
     canBreak: false,
+    buffedRank: 'A',
     en: {
       name: 'Light Holder',
-      description: 'Medium single target Light damage. 5 hits. At completion, gains 1 Rank. : +2 AP'
+      description:
+        'Medium single target <color:light>Light</color> damage. 5 hits.\nAt completion, gains 1 Rank.\n<icon:a-rank />: +2 <color:ap>AP</color>.'
     },
     es: {
-      name: 'Light Holder',
-      description: 'Medium single target Light damage. 5 hits. At completion, gains 1 Rank. : +2 AP'
+      name: 'Portaluz',
+      description:
+        'Inflige daño de <color:light>luz</color> moderado a un objetivo. 5 golpes.\nTras completarse, otorga 1 grado.\n<icon:a-rank />: +2 <color:ap>PA</color>.'
     }
   },
   {
@@ -1411,13 +1488,16 @@ const VERSO_SKILLS: Skill[] = [
     cost: 2,
     characterId: 'verso',
     canBreak: false,
+    buffedRank: 'C',
     en: {
       name: 'Marking Shot',
-      description: "Deals low single target damage. 1 hit. Uses weapon's element. Applies Mark  : Increased damage"
+      description:
+        "Deals low single target damage. 1 hit.\nUses weapon's element.\nApplies <right-icon:mark>Mark</right-icon>.\n<icon:c-rank />: Increased damage."
     },
     es: {
-      name: 'Marking Shot',
-      description: "Deals low single target damage. 1 hit. Uses weapon's element. Applies Mark  : Increased damage"
+      name: 'Disparo Marcador',
+      description:
+        'Inflige daño leve a un objetivo. 1 golpe.\nUsa el elemento del arma.\nAplica <right-icon:mark>marca</right-icon>.\n<icon:c-rank />: Aumenta el daño.'
     }
   },
   {
@@ -1425,35 +1505,48 @@ const VERSO_SKILLS: Skill[] = [
     cost: 6,
     characterId: 'verso',
     canBreak: false,
-    en: { name: 'Overload', description: 'Increases Rank to  and refills all AP  but sets self-Health to 1.' },
-    es: { name: 'Overload', description: 'Increases Rank to  and refills all AP  but sets self-Health to 1.' }
+    en: {
+      name: 'Overload',
+      description: 'Increases Rank to <icon:a-rank /> and refills all <color:ap>AP</color> but sets self-Health to 1.'
+    },
+    es: {
+      name: 'Sobrecarga',
+      description:
+        'Aumenta el grado a <icon:a-rank /> y restablece todos los <color:ap>PA</color>, pero deja la vida propia en 1.'
+    }
   },
   {
     id: 'paradigm-shift',
     cost: 1,
     characterId: 'verso',
     canBreak: false,
+    buffedRank: 'C',
     en: {
       name: 'Paradigm Shift',
-      description: 'Deals low Physical single target damage and gives 1-3 AP  back. 3 hits. :  +1 AP'
+      description:
+        'Deals low <color:physical>Physical</color> single target damage and gives 1-3 <color:ap>AP</color> back. 3 hits.\n<icon:c-rank />: +1 <color:ap>AP</color>.'
     },
     es: {
-      name: 'Paradigm Shift',
-      description: 'Deals low Physical single target damage and gives 1-3 AP  back. 3 hits. :  +1 AP'
+      name: 'Cambio de Paradigma',
+      description:
+        'Inflige daño <color:physical>físico</color> leve a un objetivo y devuelve de 1 a 3 <color:ap>PA</color>. 3 golpes.\n<icon:c-rank />: +1 <color:ap>PA</color>.'
     }
   },
   {
     id: 'perfect-break',
     cost: 7,
     characterId: 'verso',
-    canBreak: false,
+    canBreak: true,
+    buffedRank: 'B',
     en: {
       name: 'Perfect Break',
-      description: 'Deals very high single target Light damage. 1 hit.  Can Break  Rank  on Break  : Costs 5 AP'
+      description:
+        'Deals very high single target <color:light>Light</color> damage. 1 hit.\nCan <right-icon:break>Break</right-icon>.\n Rank <icon:s-rank /> on <right-icon:break>Break</right-icon>.\n<icon:b-rank />: Costs 5 <color:ap>AP</color>'
     },
     es: {
-      name: 'Perfect Break',
-      description: 'Deals very high single target Light damage. 1 hit.  Can Break  Rank  on Break  : Costs 5 AP'
+      name: 'Ruptura Perfecta',
+      description:
+        'Inflige muchísimo daño de <color:light>luz</color> a un objetivo. 1 golpe.\nPuede causar <right-icon:break>ruptura</right-icon>.\nGrado <icon:s-rank /> en caso de <right-icon:break>ruptura</right-icon>.\n<icon:b-rank />: Consume 5 <color:ap>PA</color>.'
     }
   },
   {
@@ -1461,29 +1554,33 @@ const VERSO_SKILLS: Skill[] = [
     cost: 3,
     characterId: 'verso',
     canBreak: false,
+    buffedRank: 'C',
     en: {
       name: 'Perfect Recovery',
       description:
-        'Recovers  50% Health and dispels Status Effects. Gives 0-2 Perfection  : Increased heal to 100% Health.'
+        '<right-icon:heal>Recovers</right-icon> 50% Health and dispels Status Effects.\nGives 0-2 <right-icon:perfection>Perfection</right-icon>.\n<icon:c-rank />: Increased heal to 100% Health.'
     },
     es: {
-      name: 'Perfect Recovery',
+      name: 'Recuperación Perfecta',
       description:
-        'Recovers  50% Health and dispels Status Effects. Gives 0-2 Perfection  : Increased heal to 100% Health.'
+        '<right-icon:heal>Recupera</right-icon> un 50% de vida y disipa las alteraciones de estado.\nOtorga de 0 a 2 acumulaciones de <right-icon:perfection>perfección</right-icon>.\n<icon:c-rank />: Aumenta la curación al 100% de la vida.'
     }
   },
   {
     id: 'phantom-stars',
     cost: 9,
     characterId: 'verso',
-    canBreak: false,
+    canBreak: true,
+    buffedRank: 'S',
     en: {
       name: 'Phantom Stars',
-      description: 'Deals extreme Light damage to all enemies. 5 hits. Can Break  : Costs 5 AP'
+      description:
+        'Deals extreme <color:light>Light</color> damage to all enemies. 5 hits.\nCan <right-icon:break>Break</right-icon>.\n<icon:s-rank />: Costs 5 <color:ap>AP</color>.'
     },
     es: {
-      name: 'Phantom Stars',
-      description: 'Deals extreme Light damage to all enemies. 5 hits. Can Break  : Costs 5 AP'
+      name: 'Estrellas Fantasma',
+      description:
+        'Inflige daño de <color:light>luz</color> extremo a todos los enemigos. 5 golpes.\nPuede causar <right-icon:break>ruptura</right-icon>.\n<icon:s-rank />: Consume 5 <color:ap>PA</color>.'
     }
   },
   {
@@ -1491,15 +1588,16 @@ const VERSO_SKILLS: Skill[] = [
     cost: 3,
     characterId: 'verso',
     canBreak: false,
+    buffedRank: 'A',
     en: {
       name: 'Powerful',
       description:
-        'Applies Powerful  to 1-3 Allies, increasing damage they deal for 3 turns. Gives 0-2 Perfection  : Duration increased to 5 turns.'
+        'Applies <right-icon:powerful>Powerful</right-icon> to 1-3 Allies, increasing damage they deal for 3 turns.\nGives 0-2 <right-icon:perfection>Perfection</right-icon>.\n<icon:a-rank />: Duration increased to 5 turns.'
     },
     es: {
-      name: 'Powerful',
+      name: 'Fortalecimiento',
       description:
-        'Applies Powerful  to 1-3 Allies, increasing damage they deal for 3 turns. Gives 0-2 Perfection  : Duration increased to 5 turns.'
+        'Aplica <right-icon:powerful>fortalecimiento</right-icon> a entre 1 y 3 aliados, lo que aumenta el daño que infligen durante 3 turnos.\nOtorga de 0 a 2 acumulaciones de <right-icon:perfection>perfección</right-icon>.\n<icon:a-rank />: La duración aumenta a 5 turnos.'
     }
   },
   {
@@ -1507,13 +1605,16 @@ const VERSO_SKILLS: Skill[] = [
     cost: 5,
     characterId: 'verso',
     canBreak: false,
+    buffedRank: 'B',
     en: {
       name: 'Purification',
-      description: 'Deals single target medium Light damage. 2 hits. Dispels self Status Effects. : Increased damage.'
+      description:
+        'Deals single target medium <color:light>Light</color> damage. 2 hits.\nDispels self Status Effects.\n<icon:b-rank />: Increased damage.'
     },
     es: {
-      name: 'Purification',
-      description: 'Deals single target medium Light damage. 2 hits. Dispels self Status Effects. : Increased damage.'
+      name: 'Purificación',
+      description:
+        'Inflige daño de <color:light>luz</color> moderado a un objetivo. 2 golpes.\nDisipa las alteraciones de estado propias.\n<icon:b-rank />: Aumenta el daño.'
     }
   },
   {
@@ -1521,24 +1622,33 @@ const VERSO_SKILLS: Skill[] = [
     cost: 2,
     characterId: 'verso',
     canBreak: false,
+    buffedRank: 'D',
     en: {
       name: 'Quick Strike',
-      description: 'Deals low single target Physical damage. 1 hit. : Gives more Perfection'
+      description:
+        'Deals low single target <color:physical>Physical</color> damage. 1 hit.\n<icon:d-rank />: Gives more <right-icon:perfection>Perfection</right-icon>.'
     },
-    es: { name: 'Quick Strike', description: 'Deals low single target Physical damage. 1 hit. : Gives more Perfection' }
+    es: {
+      name: 'Ataque Rápido',
+      description:
+        'Inflige daño <color:physical>físico</color> leve a un objetivo. 1 golpe.\n<icon:d-rank />: Otorga más <right-icon:perfection>perfección</right-icon>.'
+    }
   },
   {
     id: 'radiant-slash',
     cost: 2,
     characterId: 'verso',
-    canBreak: false,
+    canBreak: true,
+    buffedRank: 'C',
     en: {
       name: 'Radiant Slash',
-      description: 'Deals low Light damage to all enemies. 1 hit. Can Break  : Increased damage.'
+      description:
+        'Deals low <color:light>Light</color> damage to all enemies. 1 hit.\nCan <right-icon:break>Break</right-icon>.\n<icon:c-rank />: Increased damage.'
     },
     es: {
-      name: 'Radiant Slash',
-      description: 'Deals low Light damage to all enemies. 1 hit. Can Break  : Increased damage.'
+      name: 'Corte Radiante',
+      description:
+        'Inflige daño de <color:light>luz</color> leve a todos los enemigos. 1 golpe.\nPuede causar <right-icon:break>ruptura</right-icon>.\n<icon:c-rank />: Aumenta el daño.'
     }
   },
   {
@@ -1546,15 +1656,16 @@ const VERSO_SKILLS: Skill[] = [
     cost: 6,
     characterId: 'verso',
     canBreak: false,
+    buffedRank: 'C',
     en: {
       name: 'Speed Burst',
       description:
-        'Deals high single target Light damage. 5 hits. Damage increased by Speed difference with the target. : Increased damage'
+        'Deals high single target <color:light>Light</color> damage. 5 hits.\nDamage increased by Speed difference with the target.\n<icon:c-rank />: Increased damage'
     },
     es: {
-      name: 'Speed Burst',
+      name: 'Acelerón',
       description:
-        'Deals high single target Light damage. 5 hits. Damage increased by Speed difference with the target. : Increased damage'
+        'Inflige mucho daño de <color:light>luz</color> a un objetivo. 5 golpes.\nEl daño aumenta según la diferencia de velocidad con el objetivo.\n<icon:c-rank />: Aumenta el daño.'
     }
   },
   {
@@ -1562,15 +1673,16 @@ const VERSO_SKILLS: Skill[] = [
     cost: 9,
     characterId: 'verso',
     canBreak: false,
+    buffedRank: 'S',
     en: {
       name: 'Steeled Strike',
       description:
-        'After 1 turn, deals extreme single target Physical damage. 13 hits. Interrupted if any damage taken. : Increased damage.'
+        'After 1 turn, deals extreme single target <color:physical>Physical</color> damage. 13 hits.\nInterrupted if any damage taken.\n<icon:s-rank />: Increased damage.'
     },
     es: {
-      name: 'Steeled Strike',
+      name: 'Ataque de Acero',
       description:
-        'After 1 turn, deals extreme single target Physical damage. 13 hits. Interrupted if any damage taken. : Increased damage.'
+        'Después de 1 turno, inflige daño <color:physical>físico</color> extremo a un objetivo. 13 golpes.\nSe interrumpe al recibir daño.\n<icon:s-rank />: Aumenta el daño.'
     }
   },
   {
@@ -1578,35 +1690,37 @@ const VERSO_SKILLS: Skill[] = [
     cost: 7,
     characterId: 'verso',
     canBreak: false,
+    buffedRank: 'C',
     en: {
       name: 'Strike Storm',
       description:
-        "Deals very high single target damage. 5 hits. Uses weapon's element. Critical Hits generate 2 additional Perfection  : Increased damage"
+        "Deals very high single target damage. 5 hits.\nUses weapon's element.\n<right-icon:crit>Critical Hits</right-icon> generate 2 additional <right-icon:perfection>Perfection</right-icon>.\n<icon:c-rank />: Increased damage"
     },
     es: {
-      name: 'Strike Storm',
+      name: 'Tormenta de Ataques',
       description:
-        "Deals very high single target damage. 5 hits. Uses weapon's element. Critical Hits generate 2 additional Perfection  : Increased damage"
+        'Inflige muchísimo daño a un objetivo. 5 golpes.\nUsa el elemento del arma.\nLos <right-icon:crit>golpes críticos</right-icon> generan 2 de <right-icon:perfection>perfección</right-icon> adicional.\n<icon:c-rank />: Aumenta el daño.'
     }
   }
 ];
 
-const MONOCO_SKILLS: Skill[] = [
+const MONOCO_SKILLS: MonocoSkill[] = [
   {
     id: 'abbest-wind',
     cost: 2,
     characterId: 'monoco',
     canBreak: false,
     buffedMask: 'agile',
-    roulettePositions: 2,
+    movedPositions: 2,
     en: {
       name: 'Abbest Wind',
-      description: 'Deals low single target Physical damage. 1 hit. Plays a second turn. Agile Mask: Costs 0 AP'
+      description:
+        'Deals low single target <color:physical>Physical</color> damage. 1 hit. Plays a second turn.\n<left-icon:agile-mask>Agile Mask</left-icon>: Costs 0 <color:ap>AP</color>.'
     },
     es: {
       name: 'Viento de Abbest',
       description:
-        'Inflige daño físico leve a un objetivo. 1 golpe. Actúa una segunda vez. Máscara ágil: No consume PA.'
+        'Inflige daño <color:physical>físico</color> leve a un objetivo. 1 golpe. Actúa una segunda vez.\n<left-icon:agile-mask>Máscara ágil</left-icon>: No consume <color:ap>PA</color>.'
     }
   },
   {
@@ -1615,16 +1729,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: false,
     buffedMask: 'agile',
-    roulettePositions: 4,
+    movedPositions: 4,
     en: {
       name: 'Aberration Light',
       description:
-        'Deals high Light damage to all enemies. 2 hits. Applies 4 Burn per hit. Agile Mask: Applies 2 more Burn per hit.'
+        'Deals high <color:light>Light</color> damage to all enemies. 2 hits. Applies 4 <color:burn>Burn</color> per hit.\n<left-icon:agile-mask>Agile Mask</left-icon>: Applies 2 more <color:burn>Burn</color> per hit.'
     },
     es: {
       name: 'Luz de Aberración',
       description:
-        'Inflige mucho daño de luz a todos los enemigos. 2 golpes. Aplica 4 acumulaciones ed quemadura por golpe. Máscara ágil: Aplica 2 acumulaciones más de quemadura por golpe.'
+        'Inflige mucho daño de <color:light>luz</color> a todos los enemigos. 2 golpes. Aplica 4 acumulaciones de <color:burn>quemadura</color> por golpe.\n<left-icon:agile-mask>Máscara ágil</left-icon>: Aplica 2 acumulaciones más de <color:burn>quemadura</color> por golpe.'
     }
   },
   {
@@ -1633,16 +1747,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: false,
     buffedMask: 'caster',
-    roulettePositions: 3,
+    movedPositions: 3,
     en: {
       name: 'Ballet Charm',
       description:
-        'Deals low single target Light damage. 1 hit. Applies Powerless to the taret for 3 turns. Caster Mask: Increased damage.'
+        'Deals low single target <color:light>Light</color> damage. 1 hit. Applies <right-icon:powerless>Powerless</right-icon> to the taret for 3 turns.\n<left-icon:caster-mask>Caster Mask</left-icon>: Increased damage.'
     },
     es: {
       name: 'Encanto de Bailarina',
       description:
-        'Inflige daño de luz leve a un objetivo. 1 golpe. Le aplica debilitamiento al objetivo durante 3 turnos. Máscara conjuradora: Aumenta el daño.'
+        'Inflige daño de <color:light>luz</color> leve a un objetivo. 1 golpe. Le aplica <right-icon:powerless>debilitamiento</right-icon> al objetivo durante 3 turnos.\n<left-icon:caster-mask>Máscara conjuradora</left-icon>: Aumenta el daño.'
     }
   },
   {
@@ -1651,34 +1765,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: false,
     buffedMask: 'caster',
-    roulettePositions: 6,
+    movedPositions: 6,
     en: {
       name: 'Benisseur Mortar',
       description:
-        'Deals medium single target <span class="text-blue-300 font-semibold">Ice</span> damage. 3 hits. Change to Almighty Mask if target is Marked. Caster Mask: Increased damage.'
+        'Deals medium single target <color:ice>Ice</color> damage. 3 hits. Change to Almight Mask <left-icon:almighty-mask>Almighty Mask</left-icon> if target is <right-icon:mark>Marked</right-icon>.\n<left-icon:caster-mask>Caster Mask</left-icon>: Increased damage.'
     },
     es: {
       name: 'Mortero de Bénisseur',
       description:
-        'Inflige daño de <span class="text-blue-300 font-semibold">hielo</span> moderado a un objetivo. 3 golpes. Cambia a Máscara omnipotente si el objetivo está marcado. Máscara conjuradora: Aumenta el daño.'
-    }
-  },
-  {
-    id: 'braseleur-smash',
-    cost: 4,
-    characterId: 'monoco',
-    canBreak: false,
-    buffedMask: 'balanced',
-    roulettePositions: 2,
-    en: {
-      name: 'Braseleur Smash',
-      description:
-        'Deals medium single target <span class="text-red-400 font-semibold">Fire</span> damage and applies 3 Burn. 2 hits. Balanced Mask: Increased damage.'
-    },
-    es: {
-      name: 'Golpe de Braseleur',
-      description:
-        'Inflige daño de <span class="text-red-400 font-semibold">fuego</span> moderado a un objetivo y le aplica 3 acumulaciones de quemadura. 2 golpes. Máscara equilibrada: Aumenta el daño.'
+        'Inflige daño de <color:ice>hielo</color> moderado a un objetivo. 3 golpes. Cambia a Máscara omnipotente <left-icon:almighty-mask>Almighty Mask</left-icon> si el objetivo está <right-icon:mark>marcado</right-icon>.\n<left-icon:caster-mask>Máscara conjuradora</left-icon>: Aumenta el daño.'
     }
   },
   {
@@ -1687,14 +1783,34 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: false,
     buffedMask: 'heavy',
-    roulettePositions: 5,
+    movedPositions: 5,
     en: {
       name: 'Boucheclier Fortify',
-      description: 'Applies Shell to 1-3 Allies for 3 turns. Heavy Mask: Also applies 1 Shield.'
+      description:
+        'Applies <right-icon:shell>Shell</right-icon> to 1-3 Allies for 3 turns.\n<left-icon:heavy-mask>Heavy Mask</left-icon>: Also applies 1 <right-icon:shield>Shield</right-icon>.'
     },
     es: {
       name: 'Forificación de Boucheclier',
-      description: 'Les aplica coraza a entre 1 y 3 aliados durante 3 turnos. Máscara pesada: También aplica 1 escudo.'
+      description:
+        'Les aplica <right-icon:shell>coraza</right-icon> a entre 1 y 3 aliados durante 3 turnos.\n<left-icon:heavy-mask>Máscara pesada</left-icon>: También aplica 1 <right-icon:shield>escudo</right-icon>.'
+    }
+  },
+  {
+    id: 'braseleur-smash',
+    cost: 4,
+    characterId: 'monoco',
+    canBreak: false,
+    buffedMask: 'balanced',
+    movedPositions: 2,
+    en: {
+      name: 'Braseleur Smash',
+      description:
+        'Deals medium single target <color:fire>Fire</color> damage and applies 3 <color:burn>Burn</color>. 2 hits.\n<left-icon:balanced-mask>Balanced Mask</left-icon>: Increased damage.'
+    },
+    es: {
+      name: 'Golpe de Braseleur',
+      description:
+        'Inflige daño de <color:fire>fuego</color> moderado a un objetivo y le aplica 3 acumulaciones de <color:burn>quemadura</color>. 2 golpes.\n<left-icon:balanced-mask>Máscara equilibrada</left-icon>: Aumenta el daño.'
     }
   },
   {
@@ -1703,15 +1819,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: true,
     buffedMask: 'caster',
-    roulettePositions: 4,
+    movedPositions: 4,
     en: {
       name: 'Bruler Bash',
-      description: 'Deals medium single target Physical damage. 3 hits. Can Break. Caster Mask: Increased damage.'
+      description:
+        'Deals medium single target <color:physical>Physical</color> damage. 3 hits. Can <right-icon:break>Break</right-icon>.\n<left-icon:caster-mask>Caster Mask</left-icon>: Increased damage.'
     },
     es: {
       name: 'Embate de Bruler',
       description:
-        'Inflige daño físico moderado a un objetivo. 3 golpes. Puede causar ruptura. Máscara conjuradora: Aumenta el daño.'
+        'Inflige daño <color:physical>físico</color> moderado a un objetivo. 3 golpes. Puede causar <right-icon:break>ruptura</right-icon>.\n<left-icon:caster-mask>Máscara conjuradora</left-icon>: Aumenta el daño.'
     }
   },
   {
@@ -1720,16 +1837,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: false,
     buffedMask: 'balanced',
-    roulettePositions: 3,
+    movedPositions: 3,
     en: {
       name: 'Chalier Combo',
       description:
-        'Deals high single target Physical damage. 6 hits. Interrupted if failed. Balanced Mask: Increased damage.'
+        'Deals high single target <color:physical>Physical</color> damage. 6 hits. Interrupted if failed.\n<left-icon:balanced-mask>Balanced Mask</left-icon>: Increased damage.'
     },
     es: {
       name: 'Combo de Chalier',
       description:
-        'Inflige mucho daño físico a un objetivo. 6 golpes. Se interrumpe si falla. Máscara equilibrada: Aumenta el daño.'
+        'Inflige mucho daño <color:physical>físico</color> a un objetivo. 6 golpes. Se interrumpe si falla.\n<left-icon:balanced-mask>Máscara equilibrada</left-icon>: Aumenta el daño.'
     }
   },
   {
@@ -1738,15 +1855,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: false,
     buffedMask: 'agile',
-    roulettePositions: 4,
+    movedPositions: 4,
     en: {
       name: 'Chapelier Slash',
-      description: 'Deals high Physical damage to all enemies. 3 hits. Applies Mark. Agile Mask: Increased damage.'
+      description:
+        'Deals high <color:physical>Physical</color> damage to all enemies. 3 hits. Applies <right-icon:mark>Mark</right-icon>.\n<left-icon:agile-mask>Agile Mask</left-icon>: Increased damage.'
     },
     es: {
       name: 'Corte de Chapelier',
       description:
-        'Inflige mucho daño físico a todos los enemigos. 3 golpes. Aplica marca. Máscara ágil: Aumenta el daño.'
+        'Inflige mucho daño <color:physical>físico</color> a todos los enemigos. 3 golpes. Aplica <right-icon:mark>marca</right-icon>.\n<left-icon:agile-mask>Máscara ágil</left-icon>: Aumenta el daño.'
     }
   },
   {
@@ -1755,16 +1873,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: false,
     buffedMask: 'balanced',
-    roulettePositions: 2,
+    movedPositions: 2,
     en: {
       name: 'Chevaliere Ice',
       description:
-        'Deals high <span class="text-blue-300 font-semibold">Ice</span> damage to all enemies. 3 hits. Applies Slow to the targets for 3 turns. Balanced Mask: Increased damage.'
+        'Deals high <color:ice>Ice</color> damage to all enemies. 3 hits. Applies <right-icon:slow>Slow</right-icon> to the targets for 3 turns.\n<left-icon:balanced-mask>Balanced Mask</left-icon>: Increased damage.'
     },
     es: {
       name: 'Hielo de Chevalière',
       description:
-        'Inflige mucho daño de <span class="text-blue-300 font-semibold">hielo</span> a todos los enemigos. 3 golpes. Les aplica lentitud a los objetivos durante 3 turnos. Máscara equilibrada: Aumenta el daño.'
+        'Inflige mucho daño de <color:ice>hielo</color> a todos los enemigos. 3 golpes. Les aplica <right-icon:slow>lentitud</right-icon> a los objetivos durante 3 turnos.\n<left-icon:balanced-mask>Máscara equilibrada</left-icon>: Aumenta el daño.'
     }
   },
   {
@@ -1773,16 +1891,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: false,
     buffedMask: 'agile',
-    roulettePositions: 3,
+    movedPositions: 3,
     en: {
       name: 'Chevaliere Piercing',
       description:
-        'Deals single target Physical damage through Shields. 6 hits. Damage increased for each Shield on the target. Agile Mask: Increased damage.'
+        'Deals single target <color:physical>Physical</color> damage through <right-icon:shield>Shields</right-icon>. 6 hits. Damage increased for each <right-icon:shield>Shield</right-icon> on the target.\n<left-icon:agile-mask>Agile Mask</left-icon>: Increased damage.'
     },
     es: {
       name: 'Perforación de Chevalière',
       description:
-        'Inflige daño físico a un objetivo a través de los escudos. 6 golpes. Inflige más daño por cada escudo del objetivo. Máscara ágil: Aumenta el daño.'
+        'Inflige daño <color:physical>físico</color> a un objetivo a través de los <right-icon:shield>escudos</right-icon>. 6 golpes. Inflige más daño por cada <right-icon:shield>escudo</right-icon> del objetivo.\n<left-icon:agile-mask>Máscara ágil</left-icon>: Aumenta el daño.'
     }
   },
   {
@@ -1791,16 +1909,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: false,
     buffedMask: 'heavy',
-    roulettePositions: 3,
+    movedPositions: 3,
     en: {
       name: 'Chevaliere Thrusts',
       description:
-        'Deals high Physical damage to all enemis. 3 hits. Critical Hits deal double damage. Heavy Mask: Increased damage.'
+        'Deals high <color:physical>Physical</color> damage to all enemis. 3 hits. <right-icon:crit>Critical Hits</right-icon> deal double damage.\n<left-icon:heavy-mask>Heavy Mask</left-icon>: Increased damage.'
     },
     es: {
       name: 'Acometidas de Chevalière',
       description:
-        'Inflige mucho daño físico a todos los enemigos. Los golpes críticos infligen daño doble. Máscara pesada: Aumenta el daño.'
+        'Inflige mucho daño <color:physical>físico</color> a todos los enemigos. Los <right-icon:crit>golpes críticos</right-icon> infligen daño doble.\n<left-icon:heavy-mask>Máscara pesada</left-icon>: Aumenta el daño.'
     }
   },
   {
@@ -1809,16 +1927,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: false,
     buffedMask: 'balanced',
-    roulettePositions: 3,
+    movedPositions: 3,
     en: {
       name: 'Clair Enfeeble',
       description:
-        'Deals medium Light damage to all enemies. 1 hit. Applies Powerless for 3 turns. Balanced Mask: Increased damage.'
+        'Deals medium <color:light>Light</color> damage to all enemies. 1 hit. Applies <right-icon:powerless>Powerless</right-icon> for 3 turns.\n<left-icon:balanced-mask>Balanced Mask</left-icon>: Increased damage.'
     },
     es: {
       name: 'Debilitamiento de Clair',
       description:
-        'Inflige daño de luz moderado a todos los enemigos. 1 golpe. Aplica debilitamiento durantes 3 turnos. Máscara equilibrada: Aumenta el daño.'
+        'Inflige daño de <color:light>luz</color> moderado a todos los enemigos. 1 golpe. Aplica <right-icon:powerless>debilitamiento</right-icon> durantes 3 turnos.\n<left-icon:balanced-mask>Máscara equilibrada</left-icon>: Aumenta el daño.'
     }
   },
   {
@@ -1827,16 +1945,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: false,
     buffedMask: 'balanced',
-    roulettePositions: 2,
+    movedPositions: 2,
     en: {
       name: 'Contorsionniste Blast',
       description:
-        'Deals medium Physical damage to all enemies. 1 hit. Heals all allies by 10% Health for each enemy hit. Balanced Mask: Increased damage.'
+        'Deals medium <color:physical>Physical</color> damage to all enemies. 1 hit. <right-icon:heal>Heals</right-icon> all allies by 10% Health for each enemy hit.\n<left-icon:balanced-mask>Balanced Mask</left-icon>: Increased damage.'
     },
     es: {
       name: 'Ataque de Contorsionista',
       description:
-        'Inflige daño físico moderado a todos los enemigos. 1 golpe. Cura a todos los aliados un 10% de vida por cada enemigo impactado. Máscara equilibrada: Aumenta el daño.'
+        'Inflige daño <color:physical>físico</color> moderado a todos los enemigos. 1 golpe. <right-icon:heal>Cura</right-icon> a todos los aliados un 10% de vida por cada enemigo impactado.\n<left-icon:balanced-mask>Máscara equilibrada</left-icon>: Aumenta el daño.'
     }
   },
   {
@@ -1845,16 +1963,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: false,
     buffedMask: 'caster',
-    roulettePositions: 4,
+    movedPositions: 4,
     en: {
       name: 'Creation Void',
       description:
-        'Deals extreme Void damage to random targets. 3 hits. More damage if the same target is hit multiple times. Caster Mask: Increased damage'
+        'Deals extreme <color:void>Void</color> damage to random targets. 3 hits. More damage if the same target is hit multiple times.\n<left-icon:caster-mask>Caster Mask</left-icon>: Increased damage.'
     },
     es: {
       name: 'Vacío de Creación',
       description:
-        'Inflige daño de vacío extremo a objetivos al azar. 3 golpes. Inflige más daño si golpea al mismo objetivo varias veces. Máscara conjuradora: Aumenta el daño.'
+        'Inflige daño de <color:void>vacío</color> extremo a objetivos al azar. 3 golpes. Inflige más daño si golpea al mismo objetivo varias veces.\n<left-icon:caster-mask>Máscara conjuradora</left-icon>: Aumenta el daño.'
     }
   },
   {
@@ -1863,32 +1981,34 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: false,
     buffedMask: 'heavy',
-    roulettePositions: 4,
+    movedPositions: 4,
     en: {
       name: 'Cruler Barrier',
-      description: 'Applies 1-2 Shields to the target. Heavy Mask: Gives 2 AP to the target.'
+      description:
+        'Applies 1-2 <right-icon:shield>Shields</right-icon> to the target.\n<left-icon:heavy-mask>Heavy Mask</left-icon>: Gives 2 <color:ap>AP</color> to the target.'
     },
     es: {
       name: 'Barrera de Cruler',
-      description: 'Le aplica de 1 a 2 escudos al objetivo. Máscara pesada: Le otorga 2 PA al objetivo.'
+      description:
+        'Le aplica de 1 a 2 <right-icon:shield>escudos</right-icon> al objetivo.\n<left-icon:heavy-mask>Máscara pesada</left-icon>: Le otorga 2 <color:ap>PA</color> al objetivo.'
     }
   },
   {
     id: 'cultist-blood',
     cost: 3,
     characterId: 'monoco',
-    roulettePositions: 5,
+    movedPositions: 5,
     buffedMask: 'heavy',
     canBreak: false,
     en: {
       name: 'Cultist Blood',
       description:
-        'Deals medium Dark damage to all enemies. 3 hits. Sacrifices 90% Health to increase damage. Heavy Mask: Increased damage.'
+        'Deals medium <color:dark>Dark</color> damage to all enemies. 3 hits. Sacrifices 90% Health to increase damage.\n<left-icon:heavy-mask>Heavy Mask</left-icon>: Increased damage.'
     },
     es: {
       name: 'Sangre de Sectaria',
       description:
-        'Inflige daño de oscuridad moderado a todos los enemigos. 3 golpes. Sacrifica el 90% de la vida para infligir más daño. Máscara pesada: Aumenta el daño.'
+        'Inflige daño de <color:dark>oscuridad</color> moderado a todos los enemigos. 3 golpes. Sacrifica el 90% de la vida para infligir más daño.\n<left-icon:heavy-mask>Máscara pesada</left-icon>: Aumenta el daño.'
     }
   },
   {
@@ -1897,16 +2017,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: false,
     buffedMask: 'agile',
-    roulettePositions: 3,
+    movedPositions: 3,
     en: {
       name: 'Cultist Slashes',
       description:
-        'Deals medium single target Dark damage. 3 hits. Deals more damage the less Health Monoco has. Agile Mask: Increased Damage.'
+        'Deals medium single target <color:dark>Dark</color> damage. 3 hits. Deals more damage the less Health Monoco has.\n<left-icon:agile-mask>Agile Mask</left-icon>: Increased Damage.'
     },
     es: {
       name: 'Cortes de Sectario',
       description:
-        'Inflige daño de oscuridad moderado a un objetivo. 3 golpes. Inflige más daño cuanta menos vida tenga Monoco. Máscara ágil: Aumenta el daño.'
+        'Inflige daño de <color:dark>oscuridad</color> moderado a un objetivo. 3 golpes. Inflige más daño cuanta menos vida tenga Monoco.\n<left-icon:agile-mask>Máscara ágil</left-icon>: Aumenta el daño.'
     }
   },
   {
@@ -1915,16 +2035,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: false,
     buffedMask: 'balanced',
-    roulettePositions: 3,
+    movedPositions: 3,
     en: {
       name: 'Danseuse Waltz',
       description:
-        'Deals high single target <span class="text-red-400 font-semibold">Fire</span> damage. 3 hits. Deals more damage against Burning targets. Balanced Mask: Increased damage.'
+        'Deals high single target <color:fire>Fire</color> damage. 3 hits. Deals more damage against <color:burn>Burning</color> targets.\n<left-icon:balanced-mask>Balanced Mask</left-icon>: Increased damage.'
     },
     es: {
       name: 'Vals de Danseuse',
       description:
-        'Inflige mucho daño de <span class="text-red-400 font-semibold">fuego</span> a un objetivo. 3 golpes. Inflige más daño contra objetivos que sufren quemadura. Máscara equilibrada: Aumenta el daño.'
+        'Inflige mucho daño de <color:fire>fuego</color> a un objetivo. 3 golpes. Inflige más daño contra objetivos que sufren <color:burn>quemadura</color>.\n<left-icon:balanced-mask>Máscara equilibrada</left-icon>: Aumenta el daño.'
     }
   },
   {
@@ -1933,16 +2053,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: false,
     buffedMask: 'caster',
-    roulettePositions: 5,
+    movedPositions: 5,
     en: {
       name: 'Demineur Thunder',
       description:
-        'Deals low single target Lightning damage. 1 hit. Deals extra Break Damage. Caster Mask: Increased Break damage.'
+        'Deals low single target <color:lightning>Lightning</color> damage. 1 hit. Deals extra <right-icon:break>Break</right-icon> Damage.\n<left-icon:caster-mask>Caster Mask</left-icon>: Increased <right-icon:break>Break</right-icon> Damage.'
     },
     es: {
       name: 'Trueno de Démineur',
       description:
-        'Inflige daño de rayo leve a un objetivo. 1 golpe. Inflige daño de ruptura adicional. Máscara conjuradora: Aumenta el daño de ruptura.'
+        'Inflige daño de <color:lightning>rayo</color> leve a un objetivo. 1 golpe. Inflige daño de <right-icon:break>ruptura</right-icon> adicional.\n<left-icon:caster-mask>Máscara conjuradora</left-icon>: Aumenta el daño de <right-icon:break>ruptura</right-icon>.'
     }
   },
   {
@@ -1951,15 +2071,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: true,
     buffedMask: 'almighty',
-    roulettePositions: 1,
+    movedPositions: 1,
     en: {
       name: 'Duallist Storm',
-      description: 'Deals extreme single target Physical damage. 4 hits. Can Break. Almighty Mask: Increased damage.'
+      description:
+        'Deals extreme single target <color:physical>Physical</color> damage. 4 hits. Can <right-icon:break>Break</right-icon>.\n<left-icon:almighty-mask>Almighty Mask</left-icon>: Increased damage.'
     },
     es: {
       name: 'Tormenta de Dualista',
       description:
-        'Inflige daño físico extremo a un objetivo. 4 golpes. Puede causar ruptura. Máscara omnipotente: Aumenta el daño.'
+        'Inflige daño <color:physical>físico</color> extremo a un objetivo. 4 golpes. Puede causar <right-icon:break>ruptura</right-icon>.\n<left-icon:almighty-mask>Máscara omnipotente</left-icon>: Aumenta el daño.'
     }
   },
   {
@@ -1968,16 +2089,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: false,
     buffedMask: 'agile',
-    roulettePositions: 4,
+    movedPositions: 4,
     en: {
       name: 'Echassier Stabs',
       description:
-        'Deals medium single target Physical damage. 2 hits. Second hit applies Mark to the target. Agile Mask: Increased damage.'
+        'Deals medium single target <color:physical>Physical</color> damage. 2 hits. Second hit applies <right-icon:mark>Mark</right-icon> to the target.\n<left-icon:agile-mask>Agile Mask</left-icon>: Increased damage.'
     },
     es: {
       name: 'Puñaladas de Échassier',
       description:
-        'Inflige daño físico moderado a un objetivo. 2 golpes. El segundo golpe le aplica marca al objetivo. Máscara ágil: Aumenta el daño.'
+        'Inflige daño <color:physical>físico</color> moderado a un objetivo. 2 golpes. El segundo golpe le aplica <right-icon:mark>marca</right-icon> al objetivo.\n<left-icon:agile-mask>Máscara ágil</left-icon>: Aumenta el daño.'
     }
   },
   {
@@ -1986,16 +2107,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: false,
     buffedMask: 'heavy',
-    roulettePositions: 5,
+    movedPositions: 5,
     en: {
       name: 'Eveque Spear',
       description:
-        'Deals high single target Earth damage and applies Powerless for 3 turns. 1 hit. Heavy Mask: Increased damage.'
+        'Deals high single target <color:earth>Earth</color> damage and applies <right-icon:powerless>Powerless</right-icon> for 3 turns. 1 hit.\n<left-icon:heavy-mask>Heavy Mask</left-icon>: Increased damage.'
     },
     es: {
       name: 'Lanza de Évèque',
       description:
-        'Inflige mucho daño de tierra a un objetivo y le aplica debilitamiento durante 3 turnos. 1 golpe. Máscara pesada: Aumenta el daño.'
+        'Inflige mucho daño de <color:earth>tierra</color> a un objetivo y le aplica <right-icon:powerless>debilitamiento</right-icon> durante 3 turnos. 1 golpe.\n<left-icon:heavy-mask>Máscara pesada</left-icon>: Aumenta el daño.'
     }
   },
   {
@@ -2004,15 +2125,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: false,
     buffedMask: 'balanced',
-    roulettePositions: 2,
+    movedPositions: 2,
     en: {
       name: 'Gault Fury',
-      description: 'Deals low single target Physical damage. 4 hits. Applies Mark. Balanced Mask: Increased damage.'
+      description:
+        'Deals low single target <color:physical>Physical</color> damage. 4 hits. Applies <right-icon:mark>Mark</right-icon>.\n<left-icon:balanced-mask>Balanced Mask</left-icon>: Increased damage.'
     },
     es: {
       name: 'Furia de Gault',
       description:
-        'Inflige daño físico leve a un objetivo. 4 golpes. Aplica marca. Máscara equilibrada: Aumenta el daño.'
+        'Inflige daño <color:physical>físico</color> leve a un objetivo. 4 golpes. Aplica <right-icon:mark>marca</right-icon>.\n<left-icon:balanced-mask>Máscara equilibrada</left-icon>: Aumenta el daño.'
     }
   },
   {
@@ -2021,16 +2143,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: false,
     buffedMask: 'heavy',
-    roulettePositions: 6,
+    movedPositions: 6,
     en: {
-      name: 'Glaise Earthquakes',
+      name: 'Glaise <color:earth>Earth</color>quakes',
       description:
-        'Deals medium Earth damage to all enemies. 3 hits. Applies Powerful to self. Heavy Mask: applies Powerful  to all allies.'
+        'Deals medium <color:earth>Earth</color> damage to all enemies. 3 hits. Applies <right-icon:powerful>Powerful</right-icon> to self.\n<left-icon:heavy-mask>Heavy Mask</left-icon>: applies <right-icon:powerful>Powerful</right-icon> to all allies.'
     },
     es: {
       name: 'Terremotos de Glaise',
       description:
-        'Inflige daño de tierra moderado a todos los enemigos. 3 golpes. Le aplica fortalecimiento a Monoco. Máscara pesada: Les aplica fortalecimiento a todos los aliados.'
+        'Inflige daño de <color:earth>tierra</color> moderado a todos los enemigos. 3 golpes. Le aplica <right-icon:powerful>fortalecimiento</right-icon> a Monoco.\n<left-icon:heavy-mask>Máscara pesada</left-icon>: Les aplica <right-icon:powerful>fortalecimiento</right-icon> a todos los aliados.'
     }
   },
   {
@@ -2039,16 +2161,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: false,
     buffedMask: 'heavy',
-    roulettePositions: 4,
+    movedPositions: 4,
     en: {
       name: 'Grosse Tete Whack',
       description:
-        'Deals high single target Physical damage. 5 hits. Applies Defenceless for 3 turns. Heavy Mask: Increased damage.'
+        'Deals high single target <color:physical>Physical</color> damage. 5 hits. Applies <right-icon:defenceless>Defenceless</right-icon> for 3 turns.\n<left-icon:heavy-mask>Heavy Mask</left-icon>: Increased damage.'
     },
     es: {
       name: 'Porrazo de Grosse Tète',
       description:
-        'Inflige muchod año físico a un objetivo. 5 golpes. Aplica fragilidad durante 3 turnos. Máscara pesada: Aumenta el daño.'
+        'Inflige muchod año <color:physical>físico</color> a un objetivo. 5 golpes. Aplica <right-icon:defenceless>fragilidad</right-icon> durante 3 turnos.\n<left-icon:heavy-mask>Máscara pesada</left-icon>: Aumenta el daño.'
     }
   },
   {
@@ -2057,16 +2179,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: false,
     buffedMask: 'heavy',
-    roulettePositions: 6,
+    movedPositions: 6,
     en: {
       name: 'Hexga Crush',
       description:
-        'Deals medium single target Earth damage. 2 hits. Applies Defenceless to the target for 3 turns. Heavy Mask: Increased damage.'
+        'Deals medium single target <color:earth>Earth</color> damage. 2 hits. Applies <right-icon:defenceless>Defenceless</right-icon> to the target for 3 turns.\n<left-icon:heavy-mask>Heavy Mask</left-icon>: Increased damage.'
     },
     es: {
       name: 'Aplastamiento de Hexga',
       description:
-        'Inflige daño de tierra moderado a un objetivo. 2 golpes. Le aplica fragilidad al objetivo durante 3 turnos. Máscara pesada: Aumenta la duración de fragilidad a 5 turnos.'
+        'Inflige daño de <color:earth>tierra</color> moderado a un objetivo. 2 golpes. Le aplica <right-icon:defenceless>fragilidad</right-icon> al objetivo durante 3 turnos.\n<left-icon:heavy-mask>Máscara pesada</left-icon>: Aumenta la duración de <right-icon:defenceless>fragilidad</right-icon> a 5 turnos.'
     }
   },
   {
@@ -2075,14 +2197,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: false,
     buffedMask: 'heavy',
-    roulettePositions: 6,
+    movedPositions: 6,
     en: {
       name: 'Jar Lampstorm',
-      description: 'Deals medium Physical damage to all enemies. 4 hits. Heavy Mask: Increased damage.'
+      description:
+        'Deals medium <color:physical>Physical</color> damage to all enemies. 4 hits.\n<left-icon:heavy-mask>Heavy Mask</left-icon>: Increased damage.'
     },
     es: {
       name: 'Tormenta de Faroles de Jarrón',
-      description: 'Inflige daño físico moderado a todos los enemigos. 4 golpes. Máscara pesada: Aumenta el daño.'
+      description:
+        'Inflige daño <color:physical>físico</color> moderado a todos los enemigos. 4 golpes.\n<left-icon:heavy-mask>Máscara pesada</left-icon>: Aumenta el daño.'
     }
   },
   {
@@ -2091,16 +2215,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: false,
     buffedMask: 'almighty',
-    roulettePositions: 1,
+    movedPositions: 1,
     en: {
       name: 'Lampmaster Light',
       description:
-        'Deals high Light damage to all enemies. 1 hit. Increased damage at each cast. Almighty Mask: Increased damage.'
+        'Deals high <color:light>Light</color> damage to all enemies. 1 hit. Increased damage at each cast.\n<left-icon:almighty-mask>Almighty Mask</left-icon>: Increased damage.'
     },
     es: {
       name: 'Luz del Señor de los Faroles',
       description:
-        'Inflige mucho daño de luz a todos los enemigos. 1 golpe. Inflige más daño con cada lanzamiento. Máscara omnipotente: Aumenta el daño.'
+        'Inflige mucho daño de <color:light>luz</color> a todos los enemigos. 1 golpe. Inflige más daño con cada lanzamiento.\n<left-icon:almighty-mask>Máscara omnipotente</left-icon>: Aumenta el daño.'
     }
   },
   {
@@ -2109,16 +2233,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: false,
     buffedMask: 'agile',
-    roulettePositions: 4,
+    movedPositions: 4,
     en: {
       name: 'Lancelier Impale',
       description:
-        'Deals low single target <span class="text-blue-300 font-semibold">Ice</span> damage. 1 hit. Slows  the target for 3 turns. Agile Mask: Increased damage.'
+        'Deals low single target <color:ice>Ice</color> damage. 1 hit. <right-icon:slow>Slows</right-icon> the target for 3 turns.\n<left-icon:agile-mask>Agile Mask</left-icon>: Increased damage.'
     },
     es: {
       name: 'Empalamiento de Lancelier',
       description:
-        'Inflige daño de <span class="text-blue-300 font-semibold">hielo</span> leve a un objetivo. 1 golpes. Le aplica lentitud al objetivo durante 3 turnos. Máscara ágil: Aumenta el daño.'
+        'Inflige daño de <color:ice>hielo</color> leve a un objetivo. 1 golpes. Le aplica <right-icon:slow>lentitud</right-icon> al objetivo durante 3 turnos.\n<left-icon:agile-mask>Máscara ágil</left-icon>: Aumenta el daño.'
     }
   },
   {
@@ -2127,16 +2251,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: false,
     buffedMask: 'agile',
-    roulettePositions: 3,
+    movedPositions: 3,
     en: {
       name: 'Luster Slices',
       description:
-        'Deals low single target Physical damage. 3 hits. Applies Rush to self for 3 turns. Agile Mask: Increased damage.'
+        'Deals low single target <color:physical>Physical</color> damage. 3 hits. Applies <right-icon:rush>Rush</right-icon> to self for 3 turns.\n<left-icon:agile-mask>Agile Mask</left-icon>: Increased damage.'
     },
     es: {
       name: 'Tajaduras de Luster',
       description:
-        'Inflige daño físico leve a un objetivo. 3 golpes. Le aplica prisa a Monoco durante 3 turnos. Máscara ágil: Aumenta el daño.'
+        'Inflige daño <color:physical>físico</color> leve a un objetivo. 3 golpes. Le aplica <right-icon:rush>prisa</right-icon> a Monoco durante 3 turnos.\n<left-icon:agile-mask>Máscara ágil</left-icon>: Aumenta el daño.'
     }
   },
   {
@@ -2145,15 +2269,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: true,
     buffedMask: 'balanced',
-    roulettePositions: 2,
+    movedPositions: 2,
     en: {
       name: 'Moissonneuse Vendange',
-      description: 'Deals High single target Physical damage. 3 hits. Can Break. Balanced Mask: Increased damage.'
+      description:
+        'Deals High single target <color:physical>Physical</color> damage. 3 hits. Can <right-icon:break>Break</right-icon>.\n<left-icon:balanced-mask>Balanced Mask</left-icon>: Increased damage.'
     },
     es: {
       name: 'Vendimia de Moissonneuse',
       description:
-        'Inflige mucho daño físico a un objetivo. Puede causar ruptura. Máscara equilibrada: Aumenta el daño.'
+        'Inflige mucho daño <color:physical>físico</color> a un objetivo. Puede causar <right-icon:break>ruptura</right-icon>.\n<left-icon:balanced-mask>Máscara equilibrada</left-icon>: Aumenta el daño.'
     }
   },
   {
@@ -2162,16 +2287,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: false,
     buffedMask: 'heavy',
-    roulettePositions: 3,
+    movedPositions: 3,
     en: {
       name: 'Obscur Sword',
       description:
-        'Deals high single target Dark damage. 5 hits. Deals more damage against Powerless targets. Heavy Mask: Increased damage.'
+        'Deals high single target <color:dark>Dark</color> damage. 5 hits. Deals more damage against <right-icon:powerless>Powerless</right-icon> targets.\n<left-icon:heavy-mask>Heavy Mask</left-icon>: Increased damage.'
     },
     es: {
       name: 'Espada de Obscur',
       description:
-        'Inflige mucho daño de oscuridad a un objetivo. 5 golpes. Inflige más daño contra objetivos debilitados. Máscara pesada: Aumenta el daño.'
+        'Inflige mucho daño de <color:dark>oscuridad</color> a un objetivo. 5 golpes. Inflige más daño contra objetivos debilitados.\n<left-icon:heavy-mask>Máscara pesada</left-icon>: Aumenta el daño.'
     }
   },
   {
@@ -2180,15 +2305,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: false,
     buffedMask: 'caster',
-    roulettePositions: 3,
+    movedPositions: 3,
     en: {
       name: 'Orphelin Cheers',
-      description: 'Applies Powerful to 1-3 Allies. Caster Mask: Also gives 3 AP to targets.'
+      description:
+        'Applies <right-icon:powerful>Powerful</right-icon> to 1-3 Allies.\n<left-icon:caster-mask>Caster Mask</left-icon>: Also gives 3 <color:ap>AP</color> to targets.'
     },
     es: {
       name: 'Vítores de Orphelin',
       description:
-        'Les aplica fortalecimiento a entre 1 y 3 aliados. Máscara conjuradora: También les otorga 3 PA a los objetivos.'
+        'Les aplica <right-icon:powerful>fortalecimiento</right-icon> a entre 1 y 3 aliados.\n<left-icon:caster-mask>Máscara conjuradora</left-icon>: También les otorga 3 <color:ap>PA</color> a los objetivos.'
     }
   },
   {
@@ -2197,14 +2323,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: false,
     buffedMask: 'caster',
-    roulettePositions: 3,
+    movedPositions: 3,
     en: {
       name: 'Pelerin Heal',
-      description: 'Applies Regen to all allies. Caster Mask: also Heals 40% Health.'
+      description:
+        'Applies <right-icon:regen>Regen</right-icon> to all allies.\n<left-icon:caster-mask>Caster Mask</left-icon>: also <right-icon:heal>Heals</right-icon> 40% Health.'
     },
     es: {
-      name: 'Curación de Pèlerin',
-      description: 'Les aplica regeneración a todos los aliados. Máscara conjuradora: También cura un 40% de la vida.'
+      name: '<right-icon:heal>Cura</right-icon>ción de Pèlerin',
+      description:
+        'Les aplica <right-icon:regen>regeneración</right-icon> a todos los aliados.\n<left-icon:caster-mask>Máscara conjuradora</left-icon>: También cura un 40% de la vida.'
     }
   },
   {
@@ -2213,15 +2341,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: true,
     buffedMask: 'heavy',
-    roulettePositions: 5,
+    movedPositions: 5,
     en: {
       name: 'Portier Crash',
-      description: 'Deals high Physical damage to all enemies. 1 hit. Can Break. Heavy Mask: Increased damage.'
+      description:
+        'Deals high <color:physical>Physical</color> damage to all enemies. 1 hit. Can <right-icon:break>Break</right-icon>.\n<left-icon:heavy-mask>Heavy Mask</left-icon>: Increased damage.'
     },
     es: {
       name: 'Choque de Portier',
       description:
-        'Inflige mucho daño físico a todos los enemigos. 1 golpe. Puede causar ruptura. Máscara pesada: Aumenta el daño.'
+        'Inflige mucho daño <color:physical>físico</color> a todos los enemigos. 1 golpe. Puede causar <right-icon:break>ruptura</right-icon>.\n<left-icon:heavy-mask>Máscara pesada</left-icon>: Aumenta el daño.'
     }
   },
   {
@@ -2230,14 +2359,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: false,
     buffedMask: 'caster',
-    roulettePositions: 6,
+    movedPositions: 6,
     en: {
       name: 'Potier Energy',
-      description: 'Gives 1-3 AP to all allies. Caster Mask: Gives 1 additional AP'
+      description:
+        'Gives 1-3 <color:ap>AP</color> to all allies.\n<left-icon:caster-mask>Caster Mask</left-icon>: Gives 1 additional <color:ap>AP</color>'
     },
     es: {
       name: 'Energía de Potier',
-      description: 'Les otorga de 1 a 3 PA a todos los aliados. Máscara conjuradora: Otorga 1 PA adicional.'
+      description:
+        'Les otorga de 1 a 3 <color:ap>PA</color> a todos los aliados.\n<left-icon:caster-mask>Máscara conjuradora</left-icon>: Otorga 1 <color:ap>PA</color> adicional.'
     }
   },
   {
@@ -2246,16 +2377,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: true,
     buffedMask: 'agile',
-    roulettePositions: 4,
+    movedPositions: 4,
     en: {
       name: 'Ramasseur Bonk',
       description:
-        "Deals low single target Dark damage. 1 hit. Can Break. Agile Mask: fills 20% of the target's Break Bar."
+        "Deals low single target <color:dark>Dark</color> damage. 1 hit. Can <right-icon:break>Break</right-icon>.\n<left-icon:agile-mask>Agile Mask</left-icon>: fills 20% of the target's Break Bar."
     },
     es: {
       name: 'Coscorrón de Ramasseur',
       description:
-        'Inflige daño de oscuridad leve a un objetivo. 1 golpe. Puede causar ruptura. Máscara ágil: Carga un 20% de la barra de ruptura del objetivo.'
+        'Inflige daño de <color:dark>oscuridad</color> leve a un objetivo. 1 golpe. Puede causar <right-icon:break>ruptura</right-icon>.\n<left-icon:agile-mask>Máscara ágil</left-icon>: Carga un 20% de la barra de <right-icon:break>ruptura</right-icon> del objetivo.'
     }
   },
   {
@@ -2264,15 +2395,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: true,
     buffedMask: 'heavy',
-    roulettePositions: 3,
+    movedPositions: 3,
     en: {
       name: 'Rocher Hammering',
-      description: 'Deals medium single target Physical damage. 4 hits. Can Break. Heavy Mask: Increased damage.'
+      description:
+        'Deals medium single target <color:physical>Physical</color> damage. 4 hits. Can <right-icon:break>Break</right-icon>.\n<left-icon:heavy-mask>Heavy Mask</left-icon>: Increased damage.'
     },
     es: {
       name: 'Martillazos de Rocher',
       description:
-        'Inflige daño físico moderado a un objetivo. 4 golpes. Puede causar ruptura. Máscara pesada: Aumenta el daño.'
+        'Inflige daño <color:physical>físico</color> moderado a un objetivo. 4 golpes. Puede causar <right-icon:break>ruptura</right-icon>.\n<left-icon:heavy-mask>Máscara pesada</left-icon>: Aumenta el daño.'
     }
   },
   {
@@ -2281,16 +2413,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: false,
     buffedMask: 'balanced',
-    roulettePositions: 3,
+    movedPositions: 3,
     en: {
       name: 'Sakapatate Estoc',
       description:
-        'Deals low single target Lightning damage. 1 hit. Deals more damage if the target is Stunned. Balanced Mask: Increased damage.'
+        'Deals low single target <color:lightning>Lightning</color> damage. 1 hit. Deals more damage if the target is <right-icon:stun>Stunned</right-icon>.\n<left-icon:balanced-mask>Balanced Mask</left-icon>: Increased damage.'
     },
     es: {
       name: 'Estocada de Sakapatate',
       description:
-        'Inflige daño de rayo leve a un objetivo. 1 golpe. Inflige más daño si el objetivo está aturdido. Máscara equilibrada: Aumenta el daño.'
+        'Inflige daño de <color:lightning>rayo</color> leve a un objetivo. 1 golpe. Inflige más daño si el objetivo está <right-icon:stun>aturdido</right-icon>.\n<left-icon:balanced-mask>Máscara equilibrada</left-icon>: Aumenta el daño.'
     }
   },
   {
@@ -2299,16 +2431,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: false,
     buffedMask: 'caster',
-    roulettePositions: 6,
+    movedPositions: 6,
     en: {
       name: 'Sakapatate Explosion',
       description:
-        'Deals medium Lightning damage to random enemies. 3 hits. Critical Hits trigger an additional hit. Caster Mask: Increased damage.'
+        'Deals medium <color:lightning>Lightning</color> damage to random enemies. 3 hits. <right-icon:crit>Critical Hits</right-icon> trigger an additional hit.\n<left-icon:caster-mask>Caster Mask</left-icon>: Increased damage.'
     },
     es: {
       name: 'Exposión de Sakapatate',
       description:
-        'Inflige daño de rayo moderado a enemigos al azar. 3 golpes. Los golpes críticos propinan un golpe adicional. Máscara conjuradora: Aumenta el daño.'
+        'Inflige daño de <color:lightning>rayo</color> moderado a enemigos al azar. 3 golpes. Los <right-icon:crit>golpes críticos</right-icon> propinan un golpe adicional.\n<left-icon:caster-mask>Máscara conjuradora</left-icon>: Aumenta el daño.'
     }
   },
   {
@@ -2317,15 +2449,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: false,
     buffedMask: 'almighty',
-    roulettePositions: 1,
+    movedPositions: 1,
     en: {
       name: 'Sakapatate Fire',
-      description: 'Deals extreme Fire to all enemies. 3 hits. Apply 3 Burn per hit. Almighty Mask: Increased damage.'
+      description:
+        'Deals extreme <color:fire>Fire</color> to all enemies. 3 hits. Apply 3 <color:burn>Burn</color> per hit.\n<left-icon:almighty-mask>Almighty Mask</left-icon>: Increased damage.'
     },
     es: {
       name: 'Fuego de Sakapatate',
       description:
-        'Inflige daño de <span class="text-red-400 font-semibold">fuego</span> extremo a todos los enemigos. 3 golpes. Aplica 3 acumulaciones de quemadura por golpe. Máscara omnipotente: Aumenta el daño.'
+        'Inflige daño de <color:fire>fuego</color> extremo a todos los enemigos. 3 golpes. Aplica 3 acumulaciones de <color:burn>quemadura</color> por golpe.\n<left-icon:almighty-mask>Máscara omnipotente</left-icon>: Aumenta el daño.'
     }
   },
   {
@@ -2334,16 +2467,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: false,
     buffedMask: 'heavy',
-    roulettePositions: 5,
+    movedPositions: 5,
     en: {
       name: 'Sakapatate Slam',
       description:
-        'Deals high Physical damage to all enemies. 1 hit. Increased damage to Marked targets. Heavy Mask: Increased damage.'
+        'Deals high <color:physical>Physical</color> damage to all enemies. 1 hit. Increased damage to <right-icon:mark>Marked</right-icon> targets.\n<left-icon:heavy-mask>Heavy Mask</left-icon>: Increased damage.'
     },
     es: {
       name: 'Azote de Sakapatate',
       description:
-        'Inflige mucho daño físico a todos los enemigos. 1 golpe. Inflige más daño contra enemigos marcados. Máscara pesada: Aumenta el daño.'
+        'Inflige mucho daño <color:physical>físico</color> a todos los enemigos. 1 golpe. Inflige más daño contra enemigos <right-icon:mark>marcado</right-icon>s.\n<left-icon:heavy-mask>Máscara pesada</left-icon>: Aumenta el daño.'
     }
   },
   {
@@ -2352,16 +2485,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: false,
     buffedMask: 'caster',
-    roulettePositions: 5,
+    movedPositions: 5,
     en: {
       name: 'Sapling Absorption',
       description:
-        'Deals high Dark damage. 3 hits. Recovers 5% Health on hit. Caster Mask: Increased damage and double Heal.'
+        'Deals high <color:dark>Dark</color> damage. 3 hits. <right-icon:heal>Recovers</right-icon> 5% Health on hit.\n<left-icon:caster-mask>Caster Mask</left-icon>: Increased damage and double <right-icon:heal>Heal</right-icon>.'
     },
     es: {
       name: 'Absorción de Retoño',
       description:
-        'Inflige mucho daño de oscuridad. 3 golpes. Recupera un 5% de vida al impactar. Máscara conjuradora: Aumenta el daño y duplica la curación.'
+        'Inflige mucho daño de <color:dark>oscuridad</color>. 3 golpes. <right-icon:heal>Recupera</right-icon> un 5% de vida al impactar.\n<left-icon:caster-mask>Máscara conjuradora</left-icon>: Aumenta el daño y duplica la <right-icon:heal>curación</right-icon>.'
     }
   },
   {
@@ -2370,16 +2503,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: false,
     buffedMask: 'heavy',
-    roulettePositions: 4,
+    movedPositions: 4,
     en: {
       name: 'Stalact Punches',
       description:
-        'Deals medium single target <span class="text-blue-300 font-semibold">Ice</span> damage. 4 hits. High Break damage. Heavy Mask: Increased damage.'
+        'Deals medium single target <color:ice>Ice</color> damage. 4 hits. High <right-icon:break>Break</right-icon> damage.\n<left-icon:heavy-mask>Heavy Mask</left-icon>: Increased damage.'
     },
     es: {
       name: 'Puñetazos de Stalact',
       description:
-        'Inflige daño de <span class="text-blue-300 font-semibold">hielo</span> moderado a un objetivo. 4 golpes. Inflige mucho daño de ruptura. Máscara pesada: Aumenta el daño.'
+        'Inflige daño de <color:ice>hielo</color> moderado a un objetivo. 4 golpes. Inflige mucho daño de <right-icon:break>ruptura</right-icon>.\n<left-icon:heavy-mask>Máscara pesada</left-icon>: Aumenta el daño.'
     }
   },
   {
@@ -2388,15 +2521,16 @@ const MONOCO_SKILLS: Skill[] = [
     characterId: 'monoco',
     canBreak: false,
     buffedMask: 'caster',
-    roulettePositions: 4,
+    movedPositions: 4,
     en: {
       name: 'Troubadour Trumpet',
-      description: 'Applies a random buff to 1 to 3 allies. Caster Mask: applies a second random buff.'
+      description:
+        'Applies a random buff to 1 to 3 allies.\n<left-icon:caster-mask>Caster Mask</left-icon>: applies a second random buff.'
     },
     es: {
       name: 'Trompeta de Trovador',
       description:
-        'Les aplica un potenciador al azar a entre 1 y 3 aliados. Máscara conjuradora: Aplica un segundo potenciador al azar.'
+        'Les aplica un potenciador al azar a entre 1 y 3 aliados.\n<left-icon:caster-mask>Máscara conjuradora</left-icon>: Aplica un segundo potenciador al azar.'
     }
   }
 ];

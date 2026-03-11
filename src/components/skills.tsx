@@ -10,7 +10,6 @@ import { useLocale, useTranslations } from 'next-intl';
 import Diamond from './diamond';
 import GRADIENT_SKILLS from '../data/gradient-skills';
 import Tooltip from './tooltip';
-import ParsedDescription from './parsed-description';
 import RichText from './rich-text';
 
 const EmptySkillSlot = ({ onClick }: { onClick: () => void }) => {
@@ -61,7 +60,7 @@ const SkillSlot = ({
         isHovering={isHovering}
         className="w-md border border-taupe-700 bg-taupe-800 p-2"
       >
-        <ParsedDescription description={skillData[locale].description} />
+        <RichText textToEnrich={skillData[locale].description} />
       </Tooltip>
 
       <Image
@@ -104,7 +103,7 @@ const GradientSkill = ({ gradientSkillData }: { gradientSkillData: Skill }) => {
         isHovering={isHovering}
         className="w-md border border-taupe-700 bg-taupe-800 p-2"
       >
-        <ParsedDescription description={gradientSkillData[locale].description} />
+        <RichText textToEnrich={gradientSkillData[locale].description} />
       </Tooltip>
       <Image
         src={`/gradient-skills/${gradientSkillData.characterId}/${gradientSkillData.id}.png`}

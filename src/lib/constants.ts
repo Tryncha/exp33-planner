@@ -216,6 +216,9 @@ export const LUNE_STAINS = ['fire', 'ice', 'earth', 'lightning', 'light'] as con
 // Sciel
 export const SCIEL_CHARGES = ['sun', 'moon'] as const;
 
+// Maelle
+export const MAELLE_POSTURES = ['stanceless', 'offensive', 'defensive', 'virtuose'] as const;
+
 // Monoco
 export const MONOCO_MASKS = ['caster', 'agile', 'balanced', 'heavy', 'almighty'] as const;
 

@@ -13,8 +13,9 @@ import { useBuild } from '../context/build-context';
 import { useVault } from '../context/vault-context';
 import { useLocale, useTranslations } from 'next-intl';
 import Diamond from './diamond';
+import { redirect } from '../i18n/navigation';
 
-const BuildResume = ({ buildResume, openPlanner }: { buildResume: Build; openPlanner: () => void }) => {
+const BuildResume = ({ buildResume }: { buildResume: Build }) => {
   const t = useTranslations();
   const locale = useLocale();
 
@@ -31,7 +32,7 @@ const BuildResume = ({ buildResume, openPlanner }: { buildResume: Build; openPla
 
   function editBuild() {
     setBaseBuild(buildResume);
-    openPlanner();
+    redirect({ href: '/planner', locale: locale });
   }
 
   return (

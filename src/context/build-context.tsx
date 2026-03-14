@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer } from 'react';
-import { Build, CharacterData, AttributeId, Weapon, Picto, Skill } from '../types';
+import { Build, AttributeId, Weapon, Picto, Skill } from '../types';
 import buildReducer from './build-reducer';
 import { CHARACTER_TEMPLATES } from '../lib/constants';
 
@@ -11,6 +11,7 @@ interface BuildContextType {
   changeWeapon: (newWeaponId: Weapon['id']) => void;
   changeSkill: (slotToChange: number, newSkillId: Skill['id']) => void;
   changePicto: (slotToChange: number, newPictoId: Picto['id']) => void;
+  removePicto: (slotToRemove: number) => void;
   addLumina: (luminaToAdd: Picto['id']) => void;
   removeLumina: (luminaToRemove: Picto['id']) => void;
 }
@@ -54,6 +55,10 @@ export const BuildProvider = ({ children }: { children: React.ReactNode }) => {
     buildDispatch({ type: 'CHANGE_PICTO', payload: { slotToChange, newPictoId } });
   }
 
+  function removePicto(slotToRemove: number) {
+    buildDispatch({ type: 'REMOVE_PICTO', payload: { slotToRemove } });
+  }
+
   function addLumina(luminaToAdd: Picto['id']) {
     buildDispatch({ type: 'ADD_LUMINA', payload: { luminaToAdd } });
   }
@@ -70,6 +75,7 @@ export const BuildProvider = ({ children }: { children: React.ReactNode }) => {
     changeWeapon,
     changeSkill,
     changePicto,
+    removePicto,
     addLumina,
     removeLumina
   };

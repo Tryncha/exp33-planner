@@ -19,14 +19,14 @@ const WeaponInfo = () => {
   const weaponData = getWeaponData(weaponId);
 
   return (
-    <div className="flex w-md flex-col border border-taupe-700">
+    <section className="flex flex-1 flex-col border border-taupe-700">
       <WeaponSelector
         isOpen={isModalOpen.weapons}
         onClose={closeAll}
       />
 
       {/* Weapon Info */}
-      <section
+      <div
         onClick={() => openModal('weapons')}
         className="flex items-center p-2 hover:cursor-pointer hover:bg-taupe-900"
       >
@@ -66,7 +66,7 @@ const WeaponInfo = () => {
             ))}
           </div>
         </section>
-      </section>
+      </div>
 
       {/* Passives */}
       {characterId === 'gustave' ? (
@@ -88,7 +88,7 @@ const WeaponInfo = () => {
           ))}
         </div>
       )}
-    </div>
+    </section>
   );
 };
 

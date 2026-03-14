@@ -15,29 +15,32 @@ const Stats = () => {
   const stats = calcStats(baseStats, attributes, pictosData);
 
   return (
-    <div className="flex flex-col gap-1 border border-taupe-700 p-2">
-      {/* <h2 className="text-center font-semibold">{t('title')}</h2> */}
-      <StatOutput
-        label={t('attackPower')}
-        value={`${stats.attackPower}`}
-      />
-      <StatOutput
-        label={t('speed')}
-        value={`${stats.speed}`}
-      />
-      <StatOutput
-        label={t('critRate')}
-        value={`${stats.critRate}%`}
-      />
-      <StatOutput
-        label={t('health')}
-        value={`${stats.health}`}
-      />
-      <StatOutput
-        label={t('defense')}
-        value={`${stats.defense}`}
-      />
-    </div>
+    <section className="flex flex-col border border-taupe-700">
+      <h2 className="py-1 text-center font-semibold">{t('title')}</h2>
+      <hr className="border-taupe-700" />
+      <div className="flex flex-col gap-1 p-2">
+        <StatOutput
+          label={t('attackPower')}
+          value={`${stats.attackPower}`}
+        />
+        <StatOutput
+          label={t('speed')}
+          value={`${stats.speed}`}
+        />
+        <StatOutput
+          label={t('critRate')}
+          value={`${stats.critRate}%`}
+        />
+        <StatOutput
+          label={t('health')}
+          value={`${stats.health}`}
+        />
+        <StatOutput
+          label={t('defense')}
+          value={`${stats.defense}`}
+        />
+      </div>
+    </section>
   );
 };
 

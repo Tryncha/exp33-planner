@@ -11,7 +11,7 @@
     "imgAlt": "{name} Habilidad",
     "selectSkill": "Selecciona una habilidad"
   },
-  "addBuildButton": "Añadir build",
+  "addBuildButton": "Crear una build",
   "BaseSelector": {
     "selectCharacter": "Selecciona un personaje"
   },
@@ -90,7 +90,8 @@
     "power": "Poder",
     "element": "Elemento",
     "gustaveNotPassive": "Las armas de Gustave no tienen habilidades pasivas",
-    "notPassives": "Esta arma no tiene habilidades pasivas"
+    "notPassives": "Esta arma no tiene habilidades pasivas",
+    "title": "Información del Arma"
   },
   "WeaponPassive": {
     "abbrLevel": "Nv"
@@ -98,5 +99,8 @@
   "BuildResume": {
     "deleteButton": "Borrar",
     "level": "Nivel"
-  }
+  },
+  "planner": "Planificador",
+  "appDescription": "Planea builds para los personajes de Clair Obscur: Expedition 33.\nEscoge un personaje, equipa armas, asigna habilidades, y optimiza pictos y lúminas.",
+  "loadFromVault": "o carga una guardada"
 }

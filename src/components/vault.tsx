@@ -1,14 +1,16 @@
+'use client';
+
 import { useTranslations } from 'next-intl';
 import { useVault } from '../context/vault-context';
 import BuildResume from './build-resume';
 
-const Vault = ({ openPlanner }: { openPlanner: () => void }) => {
+const Vault = () => {
   const t = useTranslations('Vault');
 
   const { vault } = useVault();
 
   return (
-    <section className="border border-taupe-700 p-2">
+    <section className="p-4">
       {vault.length === 0 ? (
         <div className="text-xs">{t('empty')}</div>
       ) : (
@@ -17,7 +19,6 @@ const Vault = ({ openPlanner }: { openPlanner: () => void }) => {
             <BuildResume
               key={bld.id}
               buildResume={bld}
-              openPlanner={openPlanner}
             />
           ))}
         </div>

@@ -1,7 +1,7 @@
 import { use } from 'react';
-import { Locale, useTranslations } from 'next-intl';
+import { Locale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import Placeholder from '@/src/components/page-placeholder';
+import LandingPage from '@/src/components/landing-page';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -15,14 +15,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 const HomePage = ({ params }: { params: Promise<{ locale: string }> }) => {
   const { locale } = use(params);
   setRequestLocale(locale as Locale);
-  const t = useTranslations('HomePage');
 
-  return (
-    <main className="p-4">
-      {/* <h1 className="text-center text-2xl">{t('title')}</h1> */}
-      <Placeholder />
-    </main>
-  );
+  return <LandingPage />;
 };
 
 export default HomePage;

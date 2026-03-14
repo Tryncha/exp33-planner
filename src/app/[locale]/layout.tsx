@@ -4,11 +4,13 @@ import { hasLocale, Locale, NextIntlClientProvider } from 'next-intl';
 // App Providers
 import Providers from '../../components/providers';
 
+import Header from '@/src/components/header';
 import { routing } from '@/src/i18n/routing';
 import { notFound } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
-import { imFeelDoublePica, sourceSans3 } from '@/src/lib/fonts';
+import { sourceSans3 } from '@/src/lib/fonts';
 import '../globals.css';
+import Vault from '@/src/components/vault';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -31,9 +33,24 @@ const RootLocaleLayout = async ({
 
   return (
     <html lang={locale}>
-      <body className={`${sourceSans3.className} bg-taupe-950 text-taupe-100`}>
+      <body
+        className={`${sourceSans3.className} bg-taupe-950 text-taupe-100`}
+        // // Dotted grid background
+        // // Using CSS `style` attribute for simplicity instead Tailwind
+        // style={{
+        //   // taupe-700 = #473c39
+        //   backgroundImage: 'radial-gradient(circle, #473c39 1px, rgba(0, 0, 0, 0) 1px)',
+        //   // Space between dots: x-axis, y-axis
+        //   backgroundSize: '50px 50px'
+        // }}
+      >
         <NextIntlClientProvider>
-          <Providers>{children}</Providers>
+          <Providers>
+            <Header />
+            {children}
+            <hr className="mx-4 border-taupe-700" />
+            <Vault />
+          </Providers>
         </NextIntlClientProvider>
       </body>
     </html>

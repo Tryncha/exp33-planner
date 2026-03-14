@@ -5,7 +5,9 @@ import { PICTO_CATEGORIES } from '@/src/lib/constants';
 import { Picto, PictoCategory } from '@/src/types';
 import { ArrowDownUp } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
+import Image from 'next/image';
 import { useState } from 'react';
+import Tooltip from '../tooltip';
 
 const LuminaOption = ({
   pictoData,
@@ -17,6 +19,41 @@ const LuminaOption = ({
   onClick: () => void;
 }) => {
   const locale = useLocale();
+
+  const { build } = useBuild();
+  const { pictosIds } = build;
+
+  const [isHovering, setIsHovering] = useState(false);
+
+  const isAlreadyEquippedAsPicto = pictosIds.includes(pictoData.id);
+
+  if (isAlreadyEquippedAsPicto) {
+    return (
+      <div
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+        className={`${isEquipped ? 'bg-taupe-700/50' : ''} relative flex h-20 w-84 flex-col justify-center gap-1 border border-taupe-700 px-4 py-2`}
+      >
+        <Tooltip
+          isHovering={isHovering}
+          className="w-xs border border-taupe-700 bg-taupe-800 p-2 text-center text-xs"
+        >
+          Lumina already equipped as Picto
+        </Tooltip>
+        <div className="flex items-center justify-between">
+          <Image
+            src={`/pictos/${pictoData.id}.png`}
+            alt={pictoData[locale].name}
+            width={20}
+            height={20}
+          />
+          <h2 className="font-semibold">{pictoData[locale].name}</h2>
+          <span className="font-bold">{pictoData.luminaPoints}</span>
+        </div>
+        <p className="text-xs">{pictoData[locale].effect}</p>
+      </div>
+    );
+  }
 
   return (
     <div

@@ -97,7 +97,7 @@ const GradientSkill = ({ gradientSkillData }: { gradientSkillData: Skill }) => {
     <div
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
-      className="relative flex h-18 items-center gap-4 px-2 hover:bg-taupe-900"
+      className="relative flex h-18 items-center gap-4 pr-3 pl-2 hover:bg-taupe-900"
     >
       <Tooltip
         isHovering={isHovering}
@@ -123,6 +123,8 @@ const GradientSkill = ({ gradientSkillData }: { gradientSkillData: Skill }) => {
 };
 
 const Skills = () => {
+  const t = useTranslations();
+
   const { build, changeSkill } = useBuild();
   const { characterId, skillIds } = build;
 
@@ -143,44 +145,52 @@ const Skills = () => {
   }
 
   return (
-    <div className="flex gap-2 border border-taupe-700 p-2">
+    <section className="flex flex-1 flex-col border border-taupe-700">
       <SkillsSelector
         selectedSlot={selectedSlot}
         isOpen={isModalOpen.skills}
         onClose={closeAll}
       />
+      <h2 className="py-1 text-center font-semibold">{t('Skills.title')}</h2>
+      <hr className="border-taupe-700" />
+      <div className="flex p-2">
+        {/* Basic Skills */}
+        <div className="grid flex-1 grid-cols-2 grid-rows-2">
+          {skillsData.map((skill, indexSlot) =>
+            !skill ? (
+              <EmptySkillSlot
+                key={`skill-${indexSlot}`}
+                onClick={() => openModalAndSetSlot(indexSlot)}
+              />
+            ) : (
+              <SkillSlot
+                key={`skill-${indexSlot}`}
+                skillData={skill}
+                onClick={() => openModalAndSetSlot(indexSlot)}
+                removeSkill={(e) => removeSkill(e, indexSlot)}
+              />
+            )
+          )}
+        </div>
 
-      {/* Basic Skills */}
-      <div className="grid flex-1 grid-cols-2 grid-rows-2">
-        {skillsData.map((skill, indexSlot) =>
-          !skill ? (
-            <EmptySkillSlot
-              key={`skill-${indexSlot}`}
-              onClick={() => openModalAndSetSlot(indexSlot)}
-            />
-          ) : (
-            <SkillSlot
-              key={`skill-${indexSlot}`}
-              skillData={skill}
-              onClick={() => openModalAndSetSlot(indexSlot)}
-              removeSkill={(e) => removeSkill(e, indexSlot)}
-            />
-          )
+        {characterId !== 'gustave' && (
+          <>
+            {/* Separator */}
+            <div className="mx-2 border-l border-taupe-700" />
+
+            {/* Gradient Skills */}
+            <div className="flex w-56 flex-col justify-between">
+              {gradientSkillsData.map((grSk) => (
+                <GradientSkill
+                  key={grSk.id}
+                  gradientSkillData={grSk}
+                />
+              ))}
+            </div>
+          </>
         )}
       </div>
-
-      {/* Gradient Skills */}
-      {characterId !== 'gustave' && (
-        <div className="flex w-56 flex-col justify-between border-l border-taupe-700 pl-2">
-          {gradientSkillsData.map((grSk) => (
-            <GradientSkill
-              key={grSk.id}
-              gradientSkillData={grSk}
-            />
-          ))}
-        </div>
-      )}
-    </div>
+    </section>
   );
 };
 

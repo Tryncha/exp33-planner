@@ -11,7 +11,7 @@
     "imgAlt": "{name} Skill",
     "selectSkill": "Select a skill"
   },
-  "addBuildButton": "Add build",
+  "addBuildButton": "Create build",
   "BaseSelector": {
     "selectCharacter": "Select a Character"
   },
@@ -90,7 +90,8 @@
     "power": "Power",
     "element": "Element",
     "gustaveNotPassive": "Gustave's weapons doesn't have passives",
-    "notPassives": "This weapon has not passives"
+    "notPassives": "This weapon has not passives",
+    "title": "Weapon Info"
   },
   "WeaponPassive": {
     "abbrLevel": "Lvl"
@@ -98,5 +99,8 @@
   "BuildResume": {
     "deleteButton": "Delete",
     "level": "Level"
-  }
+  },
+  "planner": "Planner",
+  "appDescription": "Plan character builds for Clair Obscur: Expedition 33.\nChoose your character, equip weapons, assign skills, and optimize pictos and luminas.",
+  "loadFromVault": "or load from saved below"
 }

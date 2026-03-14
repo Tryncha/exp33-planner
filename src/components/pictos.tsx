@@ -68,7 +68,7 @@ const PictoSlot = ({
 };
 
 const Pictos = () => {
-  const { build, changePicto } = useBuild();
+  const { build, removePicto } = useBuild();
   const { pictosIds } = build;
 
   const { openModal, isModalOpen, closeAll } = useModal();
@@ -81,19 +81,20 @@ const Pictos = () => {
     setSelectedSlot(indexSlot);
   }
 
-  function removePicto(e: MouseEvent<HTMLButtonElement>, indexSlot: number) {
+  function removePictoAndStopPropagation(e: MouseEvent<HTMLButtonElement>, indexSlot: number) {
     e.stopPropagation();
-    changePicto(indexSlot, '');
+    removePicto(indexSlot);
   }
 
   return (
-    <div className="flex w-md flex-1 flex-col rounded-xs border border-taupe-700">
+    <section className="flex flex-1 flex-col rounded-xs border border-taupe-700">
       <PictosSelector
         selectedSlot={selectedSlot}
         isOpen={isModalOpen.pictos}
         onClose={closeAll}
       />
-      {/* <h2 className="border-b border-taupe-700 py-1 text-center text-xl font-semibold">Pictos</h2> */}
+
+      {/* <h2 className="border-b border-taupe-700 py-1 text-center font-semibold">Pictos</h2> */}
       {pictosData.map((pic, indexSlot) =>
         !pic ? (
           <EmptyPictoSlot
@@ -105,11 +106,11 @@ const Pictos = () => {
             key={`picto-${indexSlot}`}
             pictoData={pic}
             onClick={() => openModalAndSetSlot(indexSlot)}
-            removePicto={(e) => removePicto(e, indexSlot)}
+            removePicto={(e) => removePictoAndStopPropagation(e, indexSlot)}
           />
         )
       )}
-    </div>
+    </section>
   );
 };
 

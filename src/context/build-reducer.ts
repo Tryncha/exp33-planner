@@ -42,6 +42,12 @@ type BuildAction =
       };
     }
   | {
+      type: 'REMOVE_PICTO';
+      payload: {
+        slotToRemove: number;
+      };
+    }
+  | {
       type: 'ADD_LUMINA';
       payload: {
         luminaToAdd: Picto['id'];
@@ -118,11 +124,9 @@ function buildReducer(buildState: Build, action: BuildAction) {
     case 'CHANGE_PICTO': {
       const { slotToChange, newPictoId } = action.payload;
 
-      if (
-        newPictoId &&
-        buildState.pictosIds.includes(newPictoId) &&
-        buildState.pictosIds[slotToChange] !== newPictoId
-      ) {
+      // Picto is already equipped and it's in a different slot,
+      // then swap equipped Pictos
+      if (buildState.pictosIds.includes(newPictoId) && buildState.pictosIds[slotToChange] !== newPictoId) {
         const newPictosIds = [...buildState.pictosIds];
         const pictoIndex = buildState.pictosIds.indexOf(newPictoId);
 
@@ -134,9 +138,27 @@ function buildReducer(buildState: Build, action: BuildAction) {
         };
       }
 
+      // If Lumina effect is already equipped
+      // then remove Lumina and equip Picto
+      if (buildState.luminasIds.includes(newPictoId)) {
+        return {
+          ...buildState,
+          pictosIds: buildState.pictosIds.with(slotToChange, newPictoId) as [string, string, string],
+          luminasIds: buildState.luminasIds.filter((lumId) => lumId !== newPictoId)
+        };
+      }
+
       return {
         ...buildState,
         pictosIds: buildState.pictosIds.with(slotToChange, newPictoId) as [string, string, string]
+      };
+    }
+
+    case 'REMOVE_PICTO': {
+      const { slotToRemove } = action.payload;
+      return {
+        ...buildState,
+        pictosIds: buildState.pictosIds.with(slotToRemove, '') as [string, string, string]
       };
     }
 

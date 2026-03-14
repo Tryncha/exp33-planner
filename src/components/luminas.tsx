@@ -64,13 +64,13 @@ const Luminas = () => {
   const sortedLuminas = luminasData.sort(alphabeticallySort).sort(luminaSort);
 
   return (
-    <div className="flex flex-1 flex-col border border-taupe-700">
+    <section className="flex flex-1 flex-col border border-taupe-700">
       <LuminasSelector
         isOpen={isModalOpen.luminas}
         onClose={closeAll}
       />
       <div className="flex justify-between border-b border-taupe-700">
-        <h2 className="flex-1 py-1 text-center text-xl font-semibold">Luminas ({totalLumina})</h2>
+        <h2 className="flex-1 py-1 text-center font-semibold">Luminas ({totalLumina})</h2>
         <button
           onClick={toggleSortByLumina}
           className="border-l border-taupe-700 px-2 hover:cursor-pointer hover:bg-taupe-900"
@@ -84,7 +84,7 @@ const Luminas = () => {
           <Plus strokeWidth={3} />
         </button>
       </div>
-      <div className="scrollbar-thumb-taupe-600 scrollbar-track-taupe-800 scrollbar-thin flex h-140 flex-col overflow-y-auto">
+      <div className="scrollbar-thumb-taupe-600 scrollbar-track-taupe-800 scrollbar-thin flex h-153 flex-col overflow-y-auto">
         {sortedLuminas.map((pic) => (
           <LuminaInfo
             key={pic.id}
@@ -92,7 +92,7 @@ const Luminas = () => {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

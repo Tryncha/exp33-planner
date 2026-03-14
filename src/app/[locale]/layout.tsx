@@ -46,7 +46,6 @@ const RootLocaleLayout = async ({
       >
         <NextIntlClientProvider>
           <Providers>
-            <Header />
             {children}
             <hr className="mx-4 border-taupe-700" />
             <Vault />

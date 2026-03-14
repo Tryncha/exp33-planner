@@ -22,9 +22,7 @@ const LandingPage = () => {
       <h2 className={`${ebGaramond.className} text-5xl font-semibold tracking-wider uppercase blur-[0.25px]`}>
         {t('planner')}
       </h2>
-      <div className="my-8 w-md text-center text-sm">
-        <p className="whitespace-pre-line">{t('appDescription')}</p>
-      </div>
+      <p className="my-8 w-md text-center text-sm whitespace-pre-line">{t('appDescription')}</p>
       <div className="flex flex-col gap-2">
         <Link
           href="/selector"

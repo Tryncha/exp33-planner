@@ -9,9 +9,9 @@ import Stats from '@/src/components/stats';
 import WeaponInfo from '@/src/components/weapon-info';
 import { useBuild } from '@/src/context/build-context';
 import { useVault } from '@/src/context/vault-context';
-import { Link } from '@/src/i18n/navigation';
+import { Link, redirect } from '@/src/i18n/navigation';
 import { ArrowLeft, PencilLine } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -61,6 +61,7 @@ const PlannerHeader = () => {
 
 const PlannerPage = () => {
   const t = useTranslations('Planner');
+  const locale = useLocale();
 
   const { build } = useBuild();
   const { vault, addBuild, updateBuild } = useVault();
@@ -78,7 +79,7 @@ const PlannerPage = () => {
       updateBuild(build.id, { ...build });
     }
 
-    location.reload();
+    redirect({ href: '/', locale: locale });
   }
 
   return (

@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 import { Link } from '../i18n/navigation';
-import LanguageSelector from './language-selector';
+// import LanguageSelector from './language-selector';
 
 const Header = () => {
   const t = useTranslations();
@@ -14,7 +14,7 @@ const Header = () => {
         >
           Clair Obscur: Expedition 33 · {t('planner')}
         </Link>
-        <LanguageSelector />
+        {/* <LanguageSelector /> */}
       </div>
     </header>
   );

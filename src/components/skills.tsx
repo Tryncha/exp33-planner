@@ -70,7 +70,7 @@ const SkillSlot = ({
         height={48}
         className="absolute"
       />
-      <div className="relative mr-2 ml-6 flex flex-1 items-center justify-between border border-taupe-700 p-1">
+      <div className="relative -z-10 mr-2 ml-6 flex flex-1 items-center justify-between border border-taupe-700 p-1">
         <span className="pr-4 pl-6 text-center text-sm/5 font-semibold">{skillData[locale].name}</span>
         <Diamond className="absolute -right-2.5 flex size-5 rotate-45 items-center justify-center border border-blue-300 bg-blue-950 text-sm font-semibold text-blue-300">
           {skillData.cost}
@@ -112,7 +112,7 @@ const GradientSkill = ({ gradientSkillData }: { gradientSkillData: Skill }) => {
         height={48}
         className="absolute"
       />
-      <div className="relative mr-2 ml-6 flex flex-1 items-center justify-between border border-taupe-700 p-1">
+      <div className="relative -z-10 mr-2 ml-6 flex flex-1 items-center justify-between border border-taupe-700 p-1">
         <span className="pr-4 pl-6 text-center text-sm/5 font-semibold">{gradientSkillData[locale].name}</span>
         <Diamond className="absolute -right-2.5 flex size-5 rotate-45 items-center justify-center border border-gray-300 bg-gray-950 text-sm font-semibold text-gray-300">
           {gradientSkillData.cost}

@@ -60,7 +60,7 @@ const PlannerHeader = () => {
 };
 
 const PlannerPage = () => {
-  const t = useTranslations('Planner');
+  const t = useTranslations();
   const locale = useLocale();
 
   const { build } = useBuild();
@@ -71,15 +71,13 @@ const PlannerPage = () => {
   function saveBuildAndClose() {
     if (!buildExists) {
       const buildToSave = { ...build };
-
       buildToSave.id = uuidv4();
-
       addBuild(buildToSave);
     } else {
       updateBuild(build.id, { ...build });
     }
 
-    redirect({ href: '/', locale: locale });
+    redirect({ href: '/builds', locale: locale });
   }
 
   return (
@@ -112,14 +110,14 @@ const PlannerPage = () => {
           className="border border-taupe-700 px-2 py-1 text-xl font-bold hover:cursor-pointer hover:bg-taupe-800"
           onClick={saveBuildAndClose}
         >
-          {t('saveButton')}
+          {t('Planner.saveButton')}
         </button>
       ) : (
         <button
           className="border border-taupe-700 px-2 py-1 text-xl font-bold hover:cursor-pointer hover:bg-taupe-800"
           onClick={saveBuildAndClose}
         >
-          {t('confirm')}
+          {t('Planner.confirm')}
         </button>
       )}
     </section>

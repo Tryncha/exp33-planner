@@ -26,15 +26,29 @@ export const VaultProvider = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     try {
+      console.log('Searching builds in localStorage...');
       const savedVault = localStorage.getItem('vault');
-      if (savedVault) setBuilds(JSON.parse(savedVault));
-    } catch {}
+      if (savedVault) {
+        console.log('Build were found! Retrieving from localStorage...');
+        setBuilds(JSON.parse(savedVault));
+        console.log('Builds retrieved!');
+      } else {
+        console.log('No builds found in localStorage :(');
+        console.log('Try creating a new one!');
+      }
+    } catch {
+      console.log('There was an error searching for builds in localStorage...');
+    }
   }, []);
 
   useEffect(() => {
     try {
+      console.log('Saving builds in localStorage...');
       localStorage.setItem('vault', JSON.stringify(builds));
-    } catch {}
+      console.log('Build saved!');
+    } catch {
+      console.log('There was an error saving builds in localStorage...');
+    }
   }, [builds]);
 
   function addBuild(newBuild: Build) {

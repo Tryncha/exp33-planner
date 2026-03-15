@@ -8,7 +8,7 @@ import { CharacterData, CharacterId } from '@/src/types';
 import { useLocale, useTranslations } from 'next-intl';
 
 const SelectorPage = () => {
-  const t = useTranslations('BaseSelector');
+  const t = useTranslations();
   const locale = useLocale();
 
   const { setBaseBuild } = useBuild();
@@ -21,7 +21,7 @@ const SelectorPage = () => {
 
   return (
     <main className="relative flex h-155 flex-col items-center justify-center gap-1 p-2">
-      <h2 className="font-semibold">{t('selectCharacter')}</h2>
+      <h2 className="font-semibold">{t('BaseSelector.selectCharacter')}</h2>
       <div className="flex gap-2">
         {(['gustave', 'lune', 'maelle', 'sciel', 'verso', 'monoco'] as CharacterId[]).map((char) => (
           <OptionTemplate

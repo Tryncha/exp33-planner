@@ -12,7 +12,7 @@ import { getTranslations } from 'next-intl/server';
 import { sourceSans3 } from '@/src/lib/fonts';
 import '../globals.css';
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: Locale }> }) {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale: locale as Locale, namespace: 'Metadata' });
 
@@ -26,7 +26,7 @@ const RootLocaleLayout = async ({
   params
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale: Locale }>;
+  params: Promise<{ locale: string }>;
 }) => {
   const { locale } = await params;
 

@@ -14,7 +14,7 @@ const Header = () => {
         >
           Clair Obscur: Expedition 33 · {t('planner')}
         </Link>
-        {/* <LanguageSelector /> */}
+        <LanguageSelector />
       </div>
     </header>
   );

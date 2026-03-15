@@ -1,13 +1,9 @@
-import { use } from 'react';
-import { Locale, useTranslations } from 'next-intl';
-import { setRequestLocale } from 'next-intl/server';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { ebGaramond } from '@/src/lib/fonts';
 import { Link } from '@/src/i18n/navigation';
 
-const HomePage = ({ params }: { params: Promise<{ locale: string }> }) => {
-  const { locale } = use(params);
-  setRequestLocale(locale as Locale);
+const HomePage = () => {
   const t = useTranslations();
 
   return (

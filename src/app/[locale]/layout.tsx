@@ -8,15 +8,11 @@ import Header from '@/src/components/header';
 import Vault from '@/src/components/vault';
 import { routing } from '@/src/i18n/routing';
 import { notFound } from 'next/navigation';
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 import { sourceSans3 } from '@/src/lib/fonts';
 import '../globals.css';
 
-export function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }));
-}
-
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+export async function generateMetadata({ params }: { params: Promise<{ locale: Locale }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale: locale as Locale, namespace: 'Metadata' });
 
@@ -30,15 +26,13 @@ const RootLocaleLayout = async ({
   params
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
+  params: Promise<{ locale: Locale }>;
 }) => {
   const { locale } = await params;
 
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
-
-  setRequestLocale(locale as Locale);
 
   return (
     <html lang={locale}>

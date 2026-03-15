@@ -77,7 +77,7 @@ const PlannerPage = () => {
       updateBuild(build.id, { ...build });
     }
 
-    redirect({ href: '/builds', locale: locale });
+    redirect({ href: '/', locale: locale });
   }
 
   return (

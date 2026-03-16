@@ -26,15 +26,6 @@ const EmptySkillSlot = ({ onClick }: { onClick: () => void }) => {
       </div>
     </div>
   );
-
-  return (
-    <div
-      onClick={onClick}
-      className="flex h-18 items-center justify-center border border-taupe-700 text-sm text-taupe-500 hover:cursor-pointer hover:bg-taupe-900"
-    >
-      {t('selectSkill')}
-    </div>
-  );
 };
 
 const SkillSlot = ({
@@ -62,15 +53,14 @@ const SkillSlot = ({
       >
         <RichText textToEnrich={skillData[locale].description} />
       </Tooltip>
-
       <Image
         src={`/skills/${skillData.characterId}/${skillData.id}.png`}
         alt={skillData[locale].name}
         width={48}
         height={48}
-        className="absolute"
+        className="absolute z-10"
       />
-      <div className="relative -z-10 mr-2 ml-6 flex flex-1 items-center justify-between border border-taupe-700 p-1">
+      <div className="relative mr-2 ml-6 flex flex-1 items-center justify-between border border-taupe-700 p-1">
         <span className="pr-4 pl-6 text-center text-sm/5 font-semibold">{skillData[locale].name}</span>
         <Diamond className="absolute -right-2.5 flex size-5 rotate-45 items-center justify-center border border-blue-300 bg-blue-950 text-sm font-semibold text-blue-300">
           {skillData.cost}
@@ -110,9 +100,9 @@ const GradientSkill = ({ gradientSkillData }: { gradientSkillData: Skill }) => {
         alt={gradientSkillData[locale].name}
         width={48}
         height={48}
-        className="absolute"
+        className="absolute z-10"
       />
-      <div className="relative -z-10 mr-2 ml-6 flex flex-1 items-center justify-between border border-taupe-700 p-1">
+      <div className="relative mr-2 ml-6 flex flex-1 items-center justify-between border border-taupe-700 p-1">
         <span className="pr-4 pl-6 text-center text-sm/5 font-semibold">{gradientSkillData[locale].name}</span>
         <Diamond className="absolute -right-2.5 flex size-5 rotate-45 items-center justify-center border border-gray-300 bg-gray-950 text-sm font-semibold text-gray-300">
           {gradientSkillData.cost}

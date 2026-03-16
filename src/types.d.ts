@@ -183,8 +183,8 @@ export interface VersoSkill extends SkillBase {
 
 export interface MonocoSkill extends SkillBase {
   characterId: 'monoco';
-  buffedMask: MonocoMask;
-  movedPositions: number;
+  buffedMask?: MonocoMask;
+  movedPositions?: number;
 }
 
 export type Skill = GustaveSkill | LuneSkill | MaelleSkill | ScielSkill | VersoSkill | MonocoSkill;

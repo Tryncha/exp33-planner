@@ -1,6 +1,6 @@
-import { Skill } from '../types';
+import { LuneSkill, MaelleSkill, MonocoSkill, ScielSkill, Skill, VersoSkill } from '../types';
 
-const LUNE_GRADIENT_SKILLS: Skill[] = [
+const LUNE_GRADIENT_SKILLS: LuneSkill[] = [
   {
     id: 'tremor',
     cost: 1,
@@ -9,11 +9,13 @@ const LUNE_GRADIENT_SKILLS: Skill[] = [
     stains: ['light'],
     en: {
       name: 'Tremor',
-      description: "Deals high Earth damage to all enemies. 1 hit. Removes all enemies' Shields."
+      description:
+        "Deals high <color:earth>Earth</color> damage to all enemies. 1 hit.\nRemoves all enemies' <right-icon:shield>Shields</right-icon>."
     },
     es: {
-      name: 'Tremor',
-      description: "Deals high Earth damage to all enemies. 1 hit. Removes all enemies' Shields."
+      name: 'Temblor',
+      description:
+        'Inflige mucho daño de <color:earth>tierra</color> a todos los enemigos. 1 golpe.\nElimina los <right-icon:shield>escudos</right-icon> de todos los enemigos.'
     }
   },
   {
@@ -24,11 +26,11 @@ const LUNE_GRADIENT_SKILLS: Skill[] = [
     stains: ['light', 'light'],
     en: {
       name: 'Tree of Life',
-      description: 'Cleanses all Status Effect and Heals all allies.'
+      description: 'Cleanses all Status Effect and <right-icon:heal>Heal</right-icon> all allies.'
     },
     es: {
-      name: 'Tree of Life',
-      description: 'Cleanses all Status Effect and Heals all allies.'
+      name: 'Árbol de la Vida',
+      description: 'Disipa todas las alteraciones de estado y <right-icon:heal>cura</right-icon> a todos los aliados.'
     }
   },
   {
@@ -40,29 +42,30 @@ const LUNE_GRADIENT_SKILLS: Skill[] = [
     en: {
       name: 'Sky Break',
       description:
-        'Deals extreme damage to all enemies. 1 hit. Element depends on which Stains Lune has the most. Can Break.'
+        'Deals extreme damage to all enemies. 1 hit.\nElement depends on which Stains Lune has the most.\nCan <right-icon:break>Break</right-icon>.'
     },
     es: {
-      name: 'Sky Break',
+      name: 'Ruptura Celeste',
       description:
-        'Deals extreme damage to all enemies. 1 hit. Element depends on which Stains Lune has the most. Can Break.'
+        'Inflige daño extremo a todos los enemigos. 1 golpe.\nEl elemento depende del tipo de borrón más abundante de Lune.\nPuede causar <right-icon:break>ruptura</right-icon>.'
     }
   }
 ];
 
-const MAELLE_GRADIENT_SKILLS: Skill[] = [
+const MAELLE_GRADIENT_SKILLS: MaelleSkill[] = [
   {
     id: 'virtuose-strike',
     cost: 1,
     characterId: 'maelle',
     canBreak: false,
+    nextPosture: 'virtuose',
     en: {
       name: 'Virtuose Strike',
-      description: 'Deals high single target Physical damage. 5 hits.'
+      description: 'Deals high single target <color:physical>Physical</color> damage. 5 hits.'
     },
     es: {
-      name: 'Virtuose Strike',
-      description: 'Deals high single target Physical damage. 5 hits.'
+      name: 'Ataque Virtuoso',
+      description: 'Inflige mucho daño <color:physical>físico</color> a un objetivo. 5 golpes.'
     }
   },
   {
@@ -70,13 +73,16 @@ const MAELLE_GRADIENT_SKILLS: Skill[] = [
     cost: 2,
     characterId: 'maelle',
     canBreak: false,
+    nextPosture: 'offensive',
     en: {
       name: 'Phoenix Flame',
-      description: 'Applies 10 Burn to all enemies and revives all allies with 50 to 70% Health.'
+      description:
+        'Applies 10 <right-icon:burn>Burn</right-icon> to all enemies and revives all allies with 50 to 70% Health.'
     },
     es: {
-      name: 'Phoenix Flame',
-      description: 'Applies 10 Burn to all enemies and revives all allies with 50 to 70% Health.'
+      name: 'Llama del Fénix',
+      description:
+        'Aplica 10 acumulaciones de <right-icon:burn>quemadura</right-icon> a todos los enemigos y revive a todos los aliados con un 50% al 70% de vida.'
     }
   },
   {
@@ -84,18 +90,20 @@ const MAELLE_GRADIENT_SKILLS: Skill[] = [
     cost: 3,
     characterId: 'maelle',
     canBreak: false,
+    nextPosture: 'virtuose',
     en: {
       name: 'Gommage',
-      description: 'Kills weak targets. Otherwise deals extreme Void damage. 1 hit.'
+      description: 'Kills weak targets.\nOtherwise deals extreme <color:void>Void</color> damage. 1 hit.'
     },
     es: {
       name: 'Gommage',
-      description: 'Kills weak targets. Otherwise deals extreme Void damage. 1 hit.'
+      description:
+        'Mata a los enemigos débiles.\nDe lo contrario, inflige daño de <color:void>vacío</color> extremo. 1 golpe.'
     }
   }
 ];
 
-const SCIEL_GRADIENT_SKILLS: Skill[] = [
+const SCIEL_GRADIENT_SKILLS: ScielSkill[] = [
   {
     id: 'shadow-bringer',
     cost: 1,
@@ -104,11 +112,13 @@ const SCIEL_GRADIENT_SKILLS: Skill[] = [
     charge: 'sun',
     en: {
       name: 'Shadow Bringer',
-      description: 'Deals high single target Dark damage to random enemies. 10 hits. Applies 1 Foretell per hit.'
+      description:
+        'Deals high single target <color:dark>Dark</color> damage to random enemies. 10 hits.\nApplies 1 <right-icon:foretell>Foretell</right-icon> per hit.'
     },
     es: {
-      name: 'Shadow Bringer',
-      description: 'Deals high single target Dark damage to random enemies. 10 hits. Applies 1 Foretell per hit.'
+      name: 'Emisaria de las Sombras',
+      description:
+        'Inflige mucho daño de <color:dark>oscuridad</color> a enemigos al azar. 10 golpes.\nAplica 1 acumulación de <right-icon:foretell>augurio</right-icon> por golpe.'
     }
   },
   {
@@ -120,12 +130,12 @@ const SCIEL_GRADIENT_SKILLS: Skill[] = [
     en: {
       name: 'Doom',
       description:
-        'Deals very high single target Dark damage. 3 hits. Applies Powerless, Defenceless, and Slow for 3 turns. Can Break.'
+        'Deals very high single target <color:dark>Dark</color> damage. 3 hits.\nApplies <right-icon:powerless>Powerless</right-icon>, <right-icon:defenceless>Defenceless</right-icon>, and <right-icon:slow>Slow</right-icon> for 3 turns.\nCan <right-icon:break>Break</right-icon>.'
     },
     es: {
-      name: 'Doom',
+      name: 'Condena',
       description:
-        'Deals very high single target Dark damage. 3 hits. Applies Powerless, Defenceless, and Slow for 3 turns. Can Break.'
+        'Inflige mucho daño de <color:dark>oscuridad</color> a un objetivo. 3 golpes.\nAplica <right-icon:powerless>debilitamiento</right-icon>, <right-icon:defenceless>fragilidad</right-icon> y <right-icon:slow>lentitud</right-icon> durante 3 turnos.\nPuede causar <right-icon:break>ruptura</right-icon>.'
     }
   },
   {
@@ -137,17 +147,17 @@ const SCIEL_GRADIENT_SKILLS: Skill[] = [
     en: {
       name: 'End Slice',
       description:
-        'Deals extreme single target Physical damage. 1 hit. Damage is increased for each Foretell consumed since the beginning of the battle.'
+        'Deals extreme single target <color:physical>Physical</color> damage. 1 hit.\nDamage is increased for each <right-icon:foretell>Foretell</right-icon> consumed since the beginning of the battle.'
     },
     es: {
-      name: 'End Slice',
+      name: 'Tajadura Final',
       description:
-        'Deals extreme single target Physical damage. 1 hit. Damage is increased for each Foretell consumed since the beginning of the battle.'
+        'Inflige daño <color:physical>físico</color> extremo a un objetivo. 1 golpe.\nEl daño aumenta por cada acumulación de <right-icon:foretell>augurio</right-icon> consumida desde el inicio del combate.'
     }
   }
 ];
 
-const VERSO_GRADIENT_SKILLS: Skill[] = [
+const VERSO_GRADIENT_SKILLS: VersoSkill[] = [
   {
     id: 'sabotage',
     cost: 1,
@@ -155,11 +165,13 @@ const VERSO_GRADIENT_SKILLS: Skill[] = [
     canBreak: false,
     en: {
       name: 'Sabotage',
-      description: 'Deals medium Physical damage to all enemies. 1 hit. Applies Mark.'
+      description:
+        'Deals medium <color:physical>Physical</color> damage to all enemies. 1 hit.\nApplies <right-icon:mark>Mark</right-icon>.'
     },
     es: {
-      name: 'Sabotage',
-      description: 'Deals medium Physical damage to all enemies. 1 hit. Applies Mark.'
+      name: 'Sabotaje',
+      description:
+        'Inflige daño <color:physical>físico</color> moderado a todos los enemigos. 1 golpe.\nAplica <right-icon:mark>marca</right-icon>.'
     }
   },
   {
@@ -169,11 +181,13 @@ const VERSO_GRADIENT_SKILLS: Skill[] = [
     canBreak: true,
     en: {
       name: 'Striker',
-      description: 'Deals high single target Physical damage. 1 hit. Can break.'
+      description:
+        'Deals high single target <color:physical>Physical</color> damage. 1 hit.\nCan <right-icon:break>Break</right-icon>.'
     },
     es: {
-      name: 'Striker',
-      description: 'Deals high single target Physical damage. 1 hit. Can break.'
+      name: 'Asaltante',
+      description:
+        'Inflige mucho daño <color:physical>físico</color> a un objetivo. 1 golpe.\nPuede causar <right-icon:break>ruptura</right-icon>.'
     }
   },
   {
@@ -184,33 +198,31 @@ const VERSO_GRADIENT_SKILLS: Skill[] = [
     en: {
       name: "Angel's Eyes",
       description:
-        'Deals extreme Physical damage. 8 hits. Gain 1 additional Perfection per hit. Applies Aureole to Verso, reviving him if he dies.'
+        'Deals extreme <color:physical>Physical</color> damage. 8 hits.\nGain 1 additional <right-icon:perfection>Perfection</right-icon> per hit.\nApplies Aureole to Verso, reviving him if he dies.'
     },
     es: {
-      name: "Angel's Eyes",
+      name: 'Ojos de Ángel',
       description:
-        'Deals extreme Physical damage. 8 hits. Gain 1 additional Perfection per hit. Applies Aureole to Verso, reviving him if he dies.'
+        'Inflige daño <color:physical>físico</color> extremo. 8 golpes.\nOtorga 1 acumulación de <right-icon:perfection>perfección</right-icon> adicional por golpe.\nLe aplica Aureola a Verso, que le permite revivir si muere.'
     }
   }
 ];
 
-const MONOCO_GRADIENT_SKILLS: Skill[] = [
+const MONOCO_GRADIENT_SKILLS: MonocoSkill[] = [
   {
     id: 'mighty-strike',
     cost: 1,
     characterId: 'monoco',
     canBreak: false,
-    buffedMask: 'almighty',
-    movedPositions: 2,
     en: {
       name: 'Mighty Strike',
       description:
-        "Deals high single target damage. 2 hits. Uses weapon's element. Deals double damage if the target is Stunned. Goes to Almighty Mask."
+        "Deals high single target damage. 2 hits.\nUses weapon's element.\nDeals double damage if the target is <right-icon:stun>Stunned</right-icon>.\nGoes to <left-icon:almighty-mask>Almighty Mask</left-icon>."
     },
     es: {
-      name: 'Mighty Strike',
+      name: 'Golpe Potente',
       description:
-        "Deals high single target damage. 2 hits. Uses weapon's element. Deals double damage if the target is Stunned. Goes to Almighty Mask."
+        'Inflige mucho daño a un objetivo. 2 golpes.\nUsa el elemento del arma.\nInflige daño doble si el objetivo está <right-icon:stun>aturdido</right-icon>.\nCambia a <left-icon:almighty-mask>Máscara omnipotente</left-icon>.'
     }
   },
   {
@@ -218,15 +230,15 @@ const MONOCO_GRADIENT_SKILLS: Skill[] = [
     cost: 2,
     characterId: 'monoco',
     canBreak: false,
-    buffedMask: 'almighty',
-    movedPositions: 2,
     en: {
       name: 'Sanctuary',
-      description: 'Gives 2 Shields and applies Regen to all allies for 3 turns.'
+      description:
+        'Gives 2 <right-icon:shield>Shields</right-icon> and applies <right-icon:regen>Regen</right-icon> to all allies for 3 turns.'
     },
     es: {
-      name: 'Sanctuary',
-      description: 'Gives 2 Shields and applies Regen to all allies for 3 turns.'
+      name: 'Santuario',
+      description:
+        'Otorga 2 <right-icon:shield>escudos</right-icon> y aplica <right-icon:regen>regeneración</right-icon> a todos los aliados durante 3 turnos.'
     }
   },
   {
@@ -234,17 +246,15 @@ const MONOCO_GRADIENT_SKILLS: Skill[] = [
     cost: 3,
     characterId: 'monoco',
     canBreak: true,
-    buffedMask: 'almighty',
-    movedPositions: 2,
     en: {
       name: 'Break Point',
       description:
-        "Deals extreme single target damage. 1 hit. Uses weapon's element. Fills the target's Break Bar and Breaks it."
+        "Deals extreme single target damage. 1 hit.\nUses weapon's element.\nFills the target's Break Bar and <right-icon:break>Breaks</right-icon> it."
     },
     es: {
-      name: 'Break Point',
+      name: 'Punto de Ruptura',
       description:
-        "Deals extreme single target damage. 1 hit. Uses weapon's element. Fills the target's Break Bar and Breaks it."
+        'Inflige daño extremo a un objetivo. 1 golpe.\nUsa el elemento del arma.\nLlena la barra de ruptura del objetivo y la <right-icon:break>rompe</right-icon>.'
     }
   }
 ];
